@@ -177,6 +177,7 @@ def index():
         # Salva outém o JSON em um arquivo
         output_file = os.path.join('static', 'json', 'output.json')
         with open(output_file, 'w', encoding='utf-8') as f:
+            json_analisado['texto_original'] = texto_entrada
             json.dump(json_analisado, f, indent=4)
 
         # Renderiza a página da rede, passando os dados dos nós e arestas
@@ -194,7 +195,7 @@ def index():
         return render_template('network.html',
                                nodes_data=json.dumps(nodes),
                                edges_data=json.dumps(edges),
-                               texto_original="Dados carregados de output.json")
+                               texto_original=json_data['texto_original'])
     else:
         # Se o arquivo não existir, mostra a página inicial com o formulário
         return render_template('index.html')
