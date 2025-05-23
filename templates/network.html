@@ -94,7 +94,7 @@
 </head>
 <body>
     <div class="controls">
-        <a href="/" class="home-button">
+        <a href="/new" class="home-button">
             <i class="fas fa-home"></i> Nova Análise
         </a>
         </div>
@@ -136,25 +136,29 @@
         var options = {
             nodes: {
                 borderWidth: 2,
-                size: 20, // Tamanho base do nó
+                size: 20,
                 font: {
-                    size: 12, // Tamanho da fonte do label do nó
+                    size: 12,
                     face: 'Inter, sans-serif',
-                    color: '#333333'
+                    color: '#333333',
                 },
                 shadow: {
                     enabled: true,
                     size: 5,
                     x: 2,
                     y: 2
+                },
+                widthConstraint: {
+                    maximum: 150 
                 }
             },
             edges: {
                 width: 1.5,
                 smooth: {
                     enabled: true,
-                    type: "dynamic", // Melhora a disposição de arestas curvas
-                    roundness: 0.5
+                    type: "continuous",
+                    //type: "dynamic",
+                    roundness: 0.1
                 },
                 arrows: {
                   to: { enabled: true, scaleFactor: 0.8, type: 'arrow' }
@@ -162,21 +166,24 @@
                 font: {
                     size: 10,
                     face: 'Inter, sans-serif',
-                    align: 'middle', // 'horizontal', 'top', 'middle', 'bottom'
-                    strokeWidth: 3, // Contorno para melhor legibilidade
+                    align: 'middle',
+                    strokeWidth: 3,
                     strokeColor: '#ffffff'
                 },
                 color: {
-                    inherit: 'from' // Arestas podem herdar cor do nó de origem se não especificado
+                    inherit: 'from'
                 },
-                shadow: true
+                shadow: true,
+                widthConstraint: {
+                    maximum: 150 
+                }
             },
             layout: {
                 hierarchical: false,
                 improvedLayout: true,
             },
             interaction: {
-                hover: true,
+                hover: false,
                 navigationButtons: false, // Botões de navegação do Vis.js (podemos usar os nossos)
                 keyboard: {
                     enabled: true,
@@ -192,12 +199,12 @@
                 enabled: true,
                 solver: 'barnesHut', // Bom para redes maiores
                 barnesHut: {
-                    gravitationalConstant: -2500, // Quão fortemente os nós se repelem
-                    centralGravity: 0.15,        // Atrai nós para o centro
-                    springLength: 120,           // Comprimento ideal das "molas" (arestas)
-                    springConstant: 0.05,       // Rigidez das "molas"
-                    damping: 0.09,              // Amortece o movimento
-                    avoidOverlap: 0.2           // Evita sobreposição de nós
+                    gravitationalConstant: -5000, // Quão fortemente os nós se repelem
+                    centralGravity: 0.20,        // Atrai nós para o centro
+                    springLength: 150,           // Comprimento ideal das "molas" (arestas)
+                    springConstant: 0.01,       // Rigidez das "molas"
+                    damping: 0.9,              // Amortece o movimento
+                    avoidOverlap: 0.5           // Evita sobreposição de nós
                 },
                 stabilization: { // Tenta estabilizar a rede antes de exibir
                     enabled: true,
@@ -219,7 +226,7 @@
         var network = new vis.Network(container, data, options);
 
         network.on("stabilizationIterationsDone", function () {
-            // network.setOptions( { physics: false } ); // Opcional: desabilitar física após estabilização
+            //network.setOptions( { physics: false } ); // Desabilitar física após estabilização
             network.fit(); // Ajusta o zoom para caber todos os nós
         });
         
