@@ -48,7 +48,7 @@ Componentes chave incluem:
 
 A **tríplice contingência** (Antecedente-Comportamento-Consequência, ou A-B-C) é a unidade básica de análise.
 
-### Procedimento de Extração de Nós e Arestas (Até Etapa 6) 📝
+### Procedimento de Extração de Nós e Arestas
 
 Com base no texto narrativo fornecido, siga as etapas abaixo para construir a rede contingencial.
 
@@ -171,7 +171,7 @@ def _make_api_call(
 
 def analisar_texto_para_rede_contingencial_client_api(
     texto_narrativo: str,
-    model_name: str = "gemini-2.0-flash-exp", # Conforme solicitado pelo usuário
+    model_name: str = "gemini-2.5-flash-preview-05-20", #"gemini-2.0-flash-exp", # Conforme solicitado pelo usuário
     debug: bool = False
 ):
     
