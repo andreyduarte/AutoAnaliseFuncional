@@ -125,40 +125,26 @@ class FonteDadosEvidencia(str, Enum):
 class NoSujeito(BaseModel):
     id_sujeito: str = Field(..., description="Identificador único do sujeito (e.g., S1, S2).")
     nome_descritivo: Optional[str] = Field(None, description="Nome ou descrição curta do sujeito (e.g., 'João', 'Criança A').")
-    idade: Optional[Union[int, str]] = Field(None, description="Idade do sujeito.")
     historico_relevante: Optional[str] = Field(None, description="Breve resumo de informações contextuais importantes.")
-    especie: Optional[str] = Field("Humano", description="Espécie do sujeito.")
-    observacoes_adicionais: Optional[str] = None
 
 class NoEstimuloEvento(BaseModel):
     id_estimulo_evento: str = Field(..., description="Identificador único do estímulo/evento (e.g., E1, E2).")
     descricao: str = Field(..., description="Descrição textual objetiva do estímulo/evento.")
     tipo_fisico: Optional[TipoEstimuloEventoFisico] = None
     modalidade_sensorial_primaria: Optional[TipoModalidadeSensorial] = None
-    intensidade_percebida_inicial: Optional[str] = Field(None, description="Baixa, Média, Alta, ou escala.")
-    duracao_estimulo_evento_seg: Optional[float] = Field(None, description="Duração em segundos, se aplicável.")
     localizacao: Optional[str] = Field(None, description="Onde o estímulo/evento ocorre.")
-    data_hora_ocorrencia: Optional[datetime.datetime] = None
-    observacoes_adicionais: Optional[str] = None
 
 class NoAcaoComportamento(BaseModel):
     id_acao: str = Field(..., description="Identificador único da ação/comportamento (e.g., AC1, AC2).")
     descricao_topografica: str = Field(..., description="Descrição objetiva e mensurável da forma da ação.")
     tipo_observabilidade: Optional[TipoObservabilidadeAcao] = None
-    frequencia_base_periodo: Optional[str] = Field(None, description="e.g., '5 vezes por hora'.")
-    duracao_media_seg: Optional[float] = Field(None, description="Duração média em segundos.")
-    intensidade_media: Optional[str] = Field(None, description="e.g., 'Leve', 'Forte'.")
-    latencia_tipica_resposta_seg: Optional[float] = Field(None, description="Latência típica em segundos.")
     classe_funcional_hipotetica: Optional[List[str]] = Field(None, description="Possíveis funções inferidas (e.g., ['Busca de atenção', 'Fuga de tarefa']).")
-    observacoes_adicionais: Optional[str] = None
 
 class NoCondicaoEstado(BaseModel):
     id_condicao_estado: str = Field(..., description="Identificador único da condição/estado (e.g., CE1, CE2).")
     descricao: str = Field(..., description="Descrição da condição/estado.")
     tipo_condicao: Optional[TipoCondicao] = None
     duracao_condicao_desc: Optional[str] = Field(None, description="Descrição da duração, e.g., 'aproximadamente 2 horas', 'durante a aula'.")
-    data_hora_inicio: Optional[datetime.datetime] = None
-    observacoes_adicionais: Optional[str] = None
 
 class NoHipoteseAnalitica(BaseModel):
     id_hipotese: str = Field(..., description="Identificador único da hipótese (e.g., H1, H2).")
@@ -166,7 +152,6 @@ class NoHipoteseAnalitica(BaseModel):
     nivel_confianca: Optional[NivelConfiancaHipotese] = NivelConfiancaHipotese.BAIXO
     data_formulacao: datetime.datetime
     status_hipotese: Optional[StatusHipotese] = StatusHipotese.AGUARDANDO_TESTE
-    observacoes_adicionais: Optional[str] = None
 
 # --- Modelos de Arestas ---
 
@@ -174,16 +159,13 @@ class ArestaBase(BaseModel):
     id_aresta: str = Field(..., description="Identificador único da aresta (e.g., AR1, AR2).")
     id_origem_no: str = Field(..., description="ID do nó de origem.")
     id_destino_no: str = Field(..., description="ID do nó de destino.")
-    observacoes_adicionais: Optional[str] = None
 
 class ArestaEmissaoComportamental(ArestaBase):
     tipo_aresta: Literal["EMISSAO_COMPORTAMENTAL"] = "EMISSAO_COMPORTAMENTAL"
-    data_hora_especifica_emissao: Optional[datetime.datetime] = None
 
 class ArestaRelacaoTemporal(ArestaBase):
     tipo_aresta: Literal["RELACAO_TEMPORAL"] = "RELACAO_TEMPORAL"
     tipo_temporalidade: TipoTemporalidade
-    intervalo_atraso_seg: Optional[float] = Field(None, description="Se *_COM_ATRASO, especificar em segundos.")
     contiguidade_percebida: Optional[str] = Field(None, description="Alta, Média, Baixa.")
 
 class ArestaRelacaoFuncionalAntecedente(ArestaBase):
@@ -191,16 +173,13 @@ class ArestaRelacaoFuncionalAntecedente(ArestaBase):
     funcao_antecedente: FuncaoAntecedente
     prob_resposta_na_presenca: Optional[float] = Field(None, ge=0, le=1)
     prob_resposta_na_ausencia: Optional[float] = Field(None, ge=0, le=1)
-    historico_pareamento: Optional[str] = None
 
 class ArestaRelacaoFuncionalConsequente(ArestaBase):
     tipo_aresta: Literal["RELACAO_FUNCIONAL_CONSEQUENTE"] = "RELACAO_FUNCIONAL_CONSEQUENTE"
     funcao_consequente: FuncaoConsequente
     imediatismo_consequencia: Optional[ImediatismoConsequencia] = None
     magnitude_consequencia: Optional[str] = Field(None, description="Baixa, Média, Alta, ou escala.")
-    esquema_de_entrega: Optional[EsquemaDeEntrega] = None
     parametro_esquema: Optional[Union[int, str]] = Field(None, description="e.g., Se FR, o número de respostas.")
-    efeito_observado_na_frequencia_futura: Optional[EfeitoObservadoFrequencia] = None
 
 class ArestaRelacaoModuladoraEstado(ArestaBase):
     tipo_aresta: Literal["RELACAO_MODULADORA_ESTADO"] = "RELACAO_MODULADORA_ESTADO"
