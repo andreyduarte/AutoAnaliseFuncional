@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Comportamental Visualizada</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evitar barras de rolagem desnecessárias */
+            background-color: #f0f4f8; /* Um cinza azulado claro para o fundo */
+        }
+        #mynetwork {
+            width: 100vw;
+            height: 100vh;
+            border: 1px solid lightgray;
+            background-color: #ffffff; /* Fundo branco para a área da rede */
+        }
+        .controls {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+        .controls a, .controls button {
+            text-decoration: none;
+            background-color: #3b82f6; /* Azul Tailwind */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .controls a:hover, .controls button:hover {
+            background-color: #2563eb; /* Azul Tailwind mais escuro */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+         .controls .home-button {
+            background-color: #6b7280; /* Cinza Tailwind */
+        }
+        .controls .home-button:hover {
+            background-color: #4b5563; /* Cinza Tailwind mais escuro */
+        }
+        .info-box {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10;
+            max-width: 320px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1e3a8a; /* Azul escuro */
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .info-box ul {
+            padding-left: 20px; /* Para alinhar com marcadores */
+        }
+        .info-box li {
+            margin-bottom: 5px;
+            font-size: 0.875rem;
+        }
+        .info-box .legend-color-box {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <a href="/" class="home-button">
+            <i class="fas fa-home"></i> Nova Análise
+        </a>
+        </div>
+
+    <div id="mynetwork"></div>
+
+    <div class="info-box">
+        <h3>Legenda da Rede</h3>
+        <ul class="list-none p-0">
+            <li><span class="legend-color-box" style="background-color: #FFD700;"></span><span class="font-semibold">Sujeito:</span> Indivíduos</li>
+            <li><span class="legend-color-box" style="background-color: #ADD8E6; width:15px; height:10px; display:inline-block; border-radius:2px;"></span><span class="font-semibold">Ação:</span> Comportamentos</li>
+            <li><span class="legend-color-box" style="background-color: #90EE90; border-radius:50%;"></span><span class="font-semibold">Estímulo:</span> Eventos</li>
+            <li><span class="legend-color-box" style="background-color: #FFA07A; transform: rotate(45deg);"></span><span class="font-semibold">Condição:</span> Estados</li>
+        </ul>
+        <hr class="my-3 border-gray-300">
+        <p class="text-xs text-gray-600">Passe o mouse sobre nós/arestas para detalhes. Use scroll para zoom, clique e arraste para mover.</p>
+        {% if texto_original %}
+        <p class="text-xs text-gray-500 mt-2"><i>Análise para: "{{ texto_original|truncate(50) }}"</i></p>
+        {% endif %}
+    </div>
+
+    <script type="text/javascript">
+        // Os dados dos nós e arestas são injetados aqui pelo Flask
+        var nodesArray = {{ nodes_data|safe }};
+        var edgesArray = {{ edges_data|safe }};
+
+        // Cria os datasets para o Vis.js
+        var nodes = new vis.DataSet(nodesArray);
+        var edges = new vis.DataSet(edgesArray);
+
+        // Pega o container da rede
+        var container = document.getElementById('mynetwork');
+
+        // Provê os dados para a rede
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        var options = {
+            nodes: {
+                borderWidth: 2,
+                size: 20, // Tamanho base do nó
+                font: {
+                    size: 12, // Tamanho da fonte do label do nó
+                    face: 'Inter, sans-serif',
+                    color: '#333333'
+                },
+                shadow: {
+                    enabled: true,
+                    size: 5,
+                    x: 2,
+                    y: 2
+                }
+            },
+            edges: {
+                width: 1.5,
+                smooth: {
+                    enabled: true,
+                    type: "dynamic", // Melhora a disposição de arestas curvas
+                    roundness: 0.5
+                },
+                arrows: {
+                  to: { enabled: true, scaleFactor: 0.8, type: 'arrow' }
+                },
+                font: {
+                    size: 10,
+                    face: 'Inter, sans-serif',
+                    align: 'middle', // 'horizontal', 'top', 'middle', 'bottom'
+                    strokeWidth: 3, // Contorno para melhor legibilidade
+                    strokeColor: '#ffffff'
+                },
+                color: {
+                    inherit: 'from' // Arestas podem herdar cor do nó de origem se não especificado
+                },
+                shadow: true
+            },
+            layout: {
+                hierarchical: false,
+                improvedLayout: true,
+            },
+            interaction: {
+                hover: true,
+                navigationButtons: false, // Botões de navegação do Vis.js (podemos usar os nossos)
+                keyboard: {
+                    enabled: true,
+                    speed: {x: 10, y: 10, zoom: 0.05},
+                    bindToWindow: true
+                },
+                tooltipDelay: 150,
+                dragNodes: true,
+                zoomView: true,
+                dragView: true
+            },
+            physics: {
+                enabled: true,
+                solver: 'barnesHut', // Bom para redes maiores
+                barnesHut: {
+                    gravitationalConstant: -2500, // Quão fortemente os nós se repelem
+                    centralGravity: 0.15,        // Atrai nós para o centro
+                    springLength: 120,           // Comprimento ideal das "molas" (arestas)
+                    springConstant: 0.05,       // Rigidez das "molas"
+                    damping: 0.09,              // Amortece o movimento
+                    avoidOverlap: 0.2           // Evita sobreposição de nós
+                },
+                stabilization: { // Tenta estabilizar a rede antes de exibir
+                    enabled: true,
+                    iterations: 1000,
+                    updateInterval: 25,
+                    onlyDynamicEdges: false,
+                    fit: true
+                }
+            },
+            // Definições de grupo para estilização específica (já tratado em app.py, mas pode ser sobrescrito aqui)
+            // groups: {
+            //     sujeito: { color: { background:'#FFD700', border:'#FFA500' }, shape: 'ellipse' },
+            //     acao: { color: { background:'#ADD8E6', border:'#87CEEB' }, shape: 'box' },
+            //     estimulo: { color: { background:'#90EE90', border:'#3CB371' }, shape: 'ellipse' },
+            //     condicao: { color: { background:'#FFA07A', border:'#FF7F50' }, shape: 'diamond' }
+            // }
+        };
+
+        var network = new vis.Network(container, data, options);
+
+        network.on("stabilizationIterationsDone", function () {
+            // network.setOptions( { physics: false } ); // Opcional: desabilitar física após estabilização
+            network.fit(); // Ajusta o zoom para caber todos os nós
+        });
+        
+        // Exemplo de como adicionar um listener para clique
+        network.on("click", function(params) {
+            params.event = "[original event]";
+            console.log("Click event:", params);
+            // if (params.nodes.length > 0) {
+            //     var nodeId = params.nodes[0];
+            //     var nodeData = nodes.get(nodeId);
+            //     alert("Nó clicado: " + nodeData.label);
+            // }
+        });
+    </script>
+</body>
+</html>
