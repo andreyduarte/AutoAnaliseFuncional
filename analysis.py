@@ -173,7 +173,7 @@ def analisar_texto_para_rede_contingencial_client_api(
     texto_narrativo: str,
     model_name: str = "gemini-2.0-flash-exp", # Conforme solicitado pelo usuário
     debug: bool = False
-) -> Optional[RedeContingencialOutput]:
+):
     
     # loading Env
     load_dotenv()
