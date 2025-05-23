@@ -1,0 +1,762 @@
+{
+    "sujeitos": [
+        {
+            "id_sujeito": "S1",
+            "nome_descritivo": "Rato da Cidade",
+            "historico_relevante": "Morava na cidade, convidou o Rato do Campo para a cidade."
+        },
+        {
+            "id_sujeito": "S2",
+            "nome_descritivo": "Rato do Campo",
+            "historico_relevante": "Vivia no campo, aceitou o convite para a cidade, depois retornou ao campo."
+        }
+    ],
+    "acoes_comportamentos": [
+        {
+            "id_acao": "AC1",
+            "descricao_topografica": "Comer ra\u00edzes, ervas e frutos",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": null
+        },
+        {
+            "id_acao": "AC2",
+            "descricao_topografica": "Combinar e ir para a Cidade",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": null
+        },
+        {
+            "id_acao": "AC3",
+            "descricao_topografica": "Fugir e correr por todos os lados",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Fuga de est\u00edmulo aversivo"
+            ]
+        },
+        {
+            "id_acao": "AC4",
+            "descricao_topografica": "Esconder-se mais uma vez",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Fuga de est\u00edmulo aversivo"
+            ]
+        },
+        {
+            "id_acao": "AC5",
+            "descricao_topografica": "Dar adeus ao Rato da Cidade",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Fuga de est\u00edmulo aversivo"
+            ]
+        }
+    ],
+    "emissoes_comportamentais": [
+        {
+            "id_aresta": "AR1",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC1",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR2",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC1",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR3",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC2",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR4",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC2",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR5",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR6",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR7",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR8",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "AR9",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        }
+    ],
+    "estimulos_eventos": [
+        {
+            "id_estimulo_evento": "E1",
+            "descricao": "Convite para jantar na casa do Rato do Campo",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Auditivo",
+            "localizacao": "Campo"
+        },
+        {
+            "id_estimulo_evento": "E2",
+            "descricao": "Rato da Cidade expressa pena e convida o Rato do Campo para a cidade",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Campo"
+        },
+        {
+            "id_estimulo_evento": "E3",
+            "descricao": "Viver em casa grande e cheia de comida na Cidade",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Misto",
+            "localizacao": "Cidade"
+        },
+        {
+            "id_estimulo_evento": "E4",
+            "descricao": "Estar na despensa saboreando comidas sofisticadas",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Misto",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E5",
+            "descricao": "Entrada de um homem com dois gatos na despensa",
+            "tipo_fisico": "Misto",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E6",
+            "descricao": "Homem e gatos v\u00e3o embora, permitindo que os ratos saiam do esconderijo",
+            "tipo_fisico": "Misto",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E7",
+            "descricao": "Ratos abandonam esconderijos e est\u00e3o prestes a comer novamente",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Misto",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E8",
+            "descricao": "Rapaz entra na despensa",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E9",
+            "descricao": "Rapaz instala algumas ratoeiras",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E10",
+            "descricao": "Experi\u00eancia de 'tanta correria' e 'ratoeiras' na cidade",
+            "tipo_fisico": "Misto",
+            "modalidade_sensorial_primaria": "Misto",
+            "localizacao": "Cidade"
+        },
+        {
+            "id_estimulo_evento": "E11",
+            "descricao": "Rato do Campo verbaliza despedida e desejo de viver sem medo",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Auditivo",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E12",
+            "descricao": "Alimento consumido (ra\u00edzes, ervas, frutos)",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Gustativo",
+            "localizacao": "Campo"
+        },
+        {
+            "id_estimulo_evento": "E13",
+            "descricao": "Ratos escondidos e fora de perigo imediato",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Proprioceptivo",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E14",
+            "descricao": "Ratos escondidos novamente",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Proprioceptivo",
+            "localizacao": "Despensa da casa na Cidade"
+        },
+        {
+            "id_estimulo_evento": "E15",
+            "descricao": "Retorno ao campo e vida tranquila",
+            "tipo_fisico": "Misto",
+            "modalidade_sensorial_primaria": "Misto",
+            "localizacao": "Campo"
+        },
+        {
+            "id_estimulo_evento": "E16",
+            "descricao": "Presen\u00e7a de ra\u00edzes, ervas e frutos no campo",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Campo"
+        }
+    ],
+    "relacoes_temporais": [
+        {
+            "id_aresta": "AR10",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC1",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR11",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC2",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR12",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR13",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR14",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR15",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E6",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR16",
+            "id_origem_no": "E7",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR17",
+            "id_origem_no": "E8",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR18",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E9",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR19",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "AR20",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E11",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        }
+    ],
+    "condicoes_estados": [
+        {
+            "id_condicao_estado": "CE1",
+            "descricao": "Ambiente do Campo (seguro, com recursos naturais)",
+            "tipo_condicao": "Contexto Ambiental Geral",
+            "duracao_condicao_desc": "Permanente para o Rato do Campo"
+        },
+        {
+            "id_condicao_estado": "CE2",
+            "descricao": "Percep\u00e7\u00e3o do Rato da Cidade de que o Rato do Campo vive na mis\u00e9ria",
+            "tipo_condicao": "Opera\u00e7\u00e3o Motivadora",
+            "duracao_condicao_desc": "Momento da visita"
+        },
+        {
+            "id_condicao_estado": "CE3",
+            "descricao": "Promessa de riqueza e fartura na cidade",
+            "tipo_condicao": "Opera\u00e7\u00e3o Motivadora",
+            "duracao_condicao_desc": "Momento do convite"
+        },
+        {
+            "id_condicao_estado": "CE4",
+            "descricao": "Amea\u00e7a de ratoeiras instaladas",
+            "tipo_condicao": "Opera\u00e7\u00e3o Motivadora",
+            "duracao_condicao_desc": "Ap\u00f3s a instala\u00e7\u00e3o das ratoeiras"
+        },
+        {
+            "id_condicao_estado": "CE5",
+            "descricao": "Desejo do Rato do Campo de viver sem medo",
+            "tipo_condicao": "Opera\u00e7\u00e3o Motivadora",
+            "duracao_condicao_desc": "Ap\u00f3s experi\u00eancias aversivas na cidade"
+        },
+        {
+            "id_condicao_estado": "CE6",
+            "descricao": "Valoriza\u00e7\u00e3o da liberdade e tranquilidade pelo Rato do Campo",
+            "tipo_condicao": "Opera\u00e7\u00e3o Motivadora",
+            "duracao_condicao_desc": "Ap\u00f3s experi\u00eancias aversivas na cidade"
+        }
+    ],
+    "relacoes_funcionais_antecedentes": [
+        {
+            "id_aresta": "AR1",
+            "id_origem_no": "E16",
+            "id_destino_no": "AC1",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD",
+            "prob_resposta_na_presenca": 1,
+            "prob_resposta_na_ausencia": 0
+        },
+        {
+            "id_aresta": "AR2",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC2",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD",
+            "prob_resposta_na_presenca": 1,
+            "prob_resposta_na_ausencia": null
+        },
+        {
+            "id_aresta": "AR3",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US",
+            "prob_resposta_na_presenca": 1,
+            "prob_resposta_na_ausencia": null
+        },
+        {
+            "id_aresta": "AR4",
+            "id_origem_no": "E8",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US",
+            "prob_resposta_na_presenca": 1,
+            "prob_resposta_na_ausencia": null
+        },
+        {
+            "id_aresta": "AR5",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD",
+            "prob_resposta_na_presenca": 1,
+            "prob_resposta_na_ausencia": null
+        }
+    ],
+    "relacoes_funcionais_consequentes": [
+        {
+            "id_aresta": "AR6",
+            "id_origem_no": "AC1",
+            "id_destino_no": "E12",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia",
+            "parametro_esquema": null
+        },
+        {
+            "id_aresta": "AR7",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Atrasada",
+            "magnitude_consequencia": "Alta",
+            "parametro_esquema": null
+        },
+        {
+            "id_aresta": "AR8",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E13",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta",
+            "parametro_esquema": null
+        },
+        {
+            "id_aresta": "AR9",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E14",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta",
+            "parametro_esquema": null
+        },
+        {
+            "id_aresta": "AR10",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E15",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Atrasada",
+            "magnitude_consequencia": "Alta",
+            "parametro_esquema": null
+        }
+    ],
+    "relacoes_moduladoras_estado": [
+        {
+            "id_aresta": "AR_MOD1",
+            "id_origem_no": "CE1",
+            "id_destino_no": "AC1",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "CONTEXTO_FACILITADOR",
+            "alvo_da_modulacao_valor_ref_id_estimulo": null,
+            "descricao_efeito_modulatorio_valor": null,
+            "alvo_da_modulacao_frequencia_ref_id_acao": "AC1",
+            "descricao_efeito_modulatorio_frequencia": "Aumenta a frequ\u00eancia de AC1"
+        },
+        {
+            "id_aresta": "AR_MOD2",
+            "id_origem_no": "CE1",
+            "id_destino_no": "E12",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "CONTEXTO_FACILITADOR",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E12",
+            "descricao_efeito_modulatorio_valor": "Aumenta a acessibilidade e o valor refor\u00e7ador de E12",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD3",
+            "id_origem_no": "CE3",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E3",
+            "descricao_efeito_modulatorio_valor": "Aumenta o valor refor\u00e7ador de E3",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD4",
+            "id_origem_no": "CE3",
+            "id_destino_no": "AC2",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": null,
+            "descricao_efeito_modulatorio_valor": null,
+            "alvo_da_modulacao_frequencia_ref_id_acao": "AC2",
+            "descricao_efeito_modulatorio_frequencia": "Aumenta a frequ\u00eancia de AC2"
+        },
+        {
+            "id_aresta": "AR_MOD5",
+            "id_origem_no": "CE4",
+            "id_destino_no": "E5",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E5",
+            "descricao_efeito_modulatorio_valor": "Aumenta o valor aversivo de E5",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD6",
+            "id_origem_no": "CE4",
+            "id_destino_no": "E8",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E8",
+            "descricao_efeito_modulatorio_valor": "Aumenta o valor aversivo de E8",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD7",
+            "id_origem_no": "CE4",
+            "id_destino_no": "E9",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E9",
+            "descricao_efeito_modulatorio_valor": "Aumenta o valor aversivo de E9",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD8",
+            "id_origem_no": "CE4",
+            "id_destino_no": "E10",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E10",
+            "descricao_efeito_modulatorio_valor": "Aumenta o valor aversivo de E10",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD9",
+            "id_origem_no": "CE4",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": null,
+            "descricao_efeito_modulatorio_valor": null,
+            "alvo_da_modulacao_frequencia_ref_id_acao": "AC3",
+            "descricao_efeito_modulatorio_frequencia": "Aumenta a frequ\u00eancia de AC3"
+        },
+        {
+            "id_aresta": "AR_MOD10",
+            "id_origem_no": "CE4",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": null,
+            "descricao_efeito_modulatorio_valor": null,
+            "alvo_da_modulacao_frequencia_ref_id_acao": "AC4",
+            "descricao_efeito_modulatorio_frequencia": "Aumenta a frequ\u00eancia de AC4"
+        },
+        {
+            "id_aresta": "AR_MOD11",
+            "id_origem_no": "CE4",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": null,
+            "descricao_efeito_modulatorio_valor": null,
+            "alvo_da_modulacao_frequencia_ref_id_acao": "AC5",
+            "descricao_efeito_modulatorio_frequencia": "Aumenta a frequ\u00eancia de AC5"
+        },
+        {
+            "id_aresta": "AR_MOD12",
+            "id_origem_no": "CE4",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ABOLIDORA_OA",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E3",
+            "descricao_efeito_modulatorio_valor": "Diminui o valor refor\u00e7ador de E3",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD13",
+            "id_origem_no": "CE4",
+            "id_destino_no": "E4",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ABOLIDORA_OA",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E4",
+            "descricao_efeito_modulatorio_valor": "Diminui o valor refor\u00e7ador de E4",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD14",
+            "id_origem_no": "CE5",
+            "id_destino_no": "E15",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E15",
+            "descricao_efeito_modulatorio_valor": "Aumenta o valor refor\u00e7ador de E15",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD15",
+            "id_origem_no": "CE5",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": null,
+            "descricao_efeito_modulatorio_valor": null,
+            "alvo_da_modulacao_frequencia_ref_id_acao": "AC5",
+            "descricao_efeito_modulatorio_frequencia": "Aumenta a frequ\u00eancia de AC5"
+        },
+        {
+            "id_aresta": "AR_MOD16",
+            "id_origem_no": "CE6",
+            "id_destino_no": "E15",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": "E15",
+            "descricao_efeito_modulatorio_valor": "Aumenta o valor refor\u00e7ador de E15",
+            "alvo_da_modulacao_frequencia_ref_id_acao": null,
+            "descricao_efeito_modulatorio_frequencia": null
+        },
+        {
+            "id_aresta": "AR_MOD17",
+            "id_origem_no": "CE6",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_MODULADORA_ESTADO",
+            "tipo_modulacao_estado": "OPERA\u00c7\u00c3O_MOTIVADORA_ESTABELECEDORA_OE",
+            "alvo_da_modulacao_valor_ref_id_estimulo": null,
+            "descricao_efeito_modulatorio_valor": null,
+            "alvo_da_modulacao_frequencia_ref_id_acao": "AC5",
+            "descricao_efeito_modulatorio_frequencia": "Aumenta a frequ\u00eancia de AC5"
+        }
+    ],
+    "hipoteses_analiticas": [
+        {
+            "id_hipotese": "H1",
+            "descricao_hipotese": "O comportamento de comer ra\u00edzes, ervas e frutos do Rato do Campo \u00e9 mantido por refor\u00e7amento positivo (acesso a alimento), sob o controle discriminativo da presen\u00e7a de recursos naturais no campo, e facilitado pelo ambiente seguro do campo.",
+            "nivel_confianca": "Alto",
+            "data_formulacao": "2023-10-27T10:30:00.000000Z",
+            "status_hipotese": "Suportada por dados"
+        },
+        {
+            "id_hipotese": "H2",
+            "descricao_hipotese": "O comportamento do Rato do Campo de ir para a Cidade foi mantido por refor\u00e7amento positivo (acesso a recursos abundantes), sob o controle discriminativo do convite do Rato da Cidade, e estabelecido pela promessa de fartura.",
+            "nivel_confianca": "Alto",
+            "data_formulacao": "2023-10-27T10:30:00.000000Z",
+            "status_hipotese": "Suportada por dados"
+        },
+        {
+            "id_hipotese": "H3",
+            "descricao_hipotese": "Os comportamentos de fuga e esquiva do Rato do Campo na cidade (fugir, esconder-se) s\u00e3o mantidos por refor\u00e7amento negativo (remo\u00e7\u00e3o de est\u00edmulos aversivos como homens, gatos e ratoeiras), e a frequ\u00eancia desses comportamentos \u00e9 aumentada pela amea\u00e7a constante e experi\u00eancias aversivas.",
+            "nivel_confianca": "Alto",
+            "data_formulacao": "2023-10-27T10:30:00.000000Z",
+            "status_hipotese": "Suportada por dados"
+        },
+        {
+            "id_hipotese": "H4",
+            "descricao_hipotese": "O comportamento do Rato do Campo de retornar ao campo \u00e9 mantido por refor\u00e7amento negativo (fuga de est\u00edmulos aversivos da cidade), e a frequ\u00eancia desse comportamento \u00e9 estabelecida pelo desejo de viver sem medo e a valoriza\u00e7\u00e3o da liberdade e tranquilidade, que aumentam o valor refor\u00e7ador da vida no campo.",
+            "nivel_confianca": "Alto",
+            "data_formulacao": "2023-10-27T10:30:00.000000Z",
+            "status_hipotese": "Suportada por dados"
+        }
+    ],
+    "evidencias_para_hipoteses": [
+        {
+            "id_aresta": "AR_EV1",
+            "id_origem_no": "AC1",
+            "id_destino_no": "H1",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC1",
+                "E16",
+                "E12",
+                "AR1",
+                "AR6",
+                "CE1",
+                "AR_MOD1",
+                "AR_MOD2"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        },
+        {
+            "id_aresta": "AR_EV2",
+            "id_origem_no": "AC2",
+            "id_destino_no": "H2",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC2",
+                "E2",
+                "E3",
+                "AR2",
+                "AR7",
+                "CE3",
+                "AR_MOD3",
+                "AR_MOD4"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        },
+        {
+            "id_aresta": "AR_EV3",
+            "id_origem_no": "AC3",
+            "id_destino_no": "H3",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC3",
+                "AC4",
+                "E5",
+                "E8",
+                "E9",
+                "E10",
+                "E13",
+                "E14",
+                "AR3",
+                "AR4",
+                "AR8",
+                "AR9",
+                "CE4",
+                "AR_MOD5",
+                "AR_MOD6",
+                "AR_MOD7",
+                "AR_MOD8",
+                "AR_MOD9",
+                "AR_MOD10"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        },
+        {
+            "id_aresta": "AR_EV4",
+            "id_origem_no": "AC5",
+            "id_destino_no": "H4",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC5",
+                "E10",
+                "E11",
+                "E15",
+                "AR5",
+                "AR10",
+                "CE5",
+                "CE6",
+                "AR_MOD14",
+                "AR_MOD15",
+                "AR_MOD16",
+                "AR_MOD17"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        }
+    ],
+    "texto_original": "Um Rato que morava na cidade aceitou o convite para jantar na casa\r\nde um Rato que vivia no Campo. Chegando l\u00e1, no buraco em que vivia o\r\nRato do campo, comeram ra\u00edzes, ervas e frutos. At\u00e9 que o Rato da Cidade\r\ndisse: \u2014 Amigo, notei que voc\u00ea vive na mis\u00e9ria. Isso me d\u00e1 muita pena.\r\nVamos morar na Cidade, onde voc\u00ea ver\u00e1 a riqueza e a fartura que l\u00e1\r\ndesfrutamos.\r\nOs dois combinaram e foram para a Cidade. Foram viver numa casa\r\ngrande e cheia de comida.\r\nUm dia, estavam na despensa da casa, saboreando comidas\r\nsofisticadas quando, de repente, entra um homem com dois gatos. Foi a\r\nmaior correria, com os Ratos fugindo por todos os lados. Ent\u00e3o eles se\r\nesconderam at\u00e9 que o homem e os gatos fossem embora. Quando j\u00e1 haviam\r\nabandonado os seus esconderijos e estavam prestes a comer novamente, um\r\nrapaz entrou na despensa, obrigando todos a se esconder mais uma vez.\r\nAinda por cima, o rapaz instalou algumas ratoeiras.\r\nO Rato do Campo n\u00e3o quis mais saber de tanta correria e deu adeus ao\r\nRato da Cidade, dizendo: \u2014 Voc\u00eas que fiquem com toda essa fartura, que\r\neu quero mesmo \u00e9 viver comendo os frutos da terra sem medo de homens,\r\ngatos e ratoeiras. L\u00e1 no Campo tenho um prazer inigual\u00e1vel que \u00e9 a\r\nliberdade e a tranquilidade. "
+}
