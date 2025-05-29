@@ -22,6 +22,7 @@ import logging
 import json
 import os
 import datetime
+import time
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(module)s - %(message)s')
@@ -130,39 +131,42 @@ Com base no texto narrativo fornecido, siga as etapas abaixo para construir a re
 # --- Pydantic Schemas para Saídas de Etapas Específicas ---
 # Estes modelos definem o que esperamos que a API retorne para cada etapa modular.
 
-class OutputEtapaSujeitos(BaseModel):
+class BaseEtapa(BaseModel):
+    raciocinio: str = Field(..., description='Reflita sobre o que precisará fazer para completar essa etapa, frente ao contexto atual. Então descreva passo a passo seu raciocínio para executar a etapa da forma mais completa.')
+
+class OutputEtapaSujeitos(BaseEtapa):
     sujeitos: List[NoSujeito] = Field(default_factory=list)
 
-class OutputEtapaAcoes(BaseModel):
+class OutputEtapaAcoes(BaseEtapa):
     acoes_comportamentos: List[NoAcaoComportamento] = Field(default_factory=list)
     emissoes_comportamentais: List[ArestaEmissaoComportamental] = Field(default_factory=list)
 
-class OutputEtapaEventosTemporais(BaseModel):
+class OutputEtapaEventosTemporais(BaseEtapa):
     estimulos_eventos: List[NoEstimuloEvento] = Field(default_factory=list)
     relacoes_temporais: List[ArestaRelacaoTemporal] = Field(default_factory=list)
 
-class OutputEtapaFuncionaisAntecedentes(BaseModel):
+class OutputEtapaFuncionaisAntecedentes(BaseEtapa):
     relacoes_funcionais_antecedentes: List[ArestaRelacaoFuncionalAntecedente] = Field(default_factory=list)
     # A API pode sugerir atualizações em nós existentes, mas a fusão é feita no Python
     estimulos_eventos_atualizados: Optional[List[NoEstimuloEvento]] = Field(default_factory=list)
     acoes_comportamentos_atualizados: Optional[List[NoAcaoComportamento]] = Field(default_factory=list)
 
-class OutputEtapaFuncionaisConsequentes(BaseModel):
+class OutputEtapaFuncionaisConsequentes(BaseEtapa):
     relacoes_funcionais_consequentes: List[ArestaRelacaoFuncionalConsequente] = Field(default_factory=list)
     estimulos_eventos_atualizados: Optional[List[NoEstimuloEvento]] = Field(default_factory=list)
     acoes_comportamentos_atualizados: Optional[List[NoAcaoComportamento]] = Field(default_factory=list)
 
-class OutputEtapaCondicoesEstado(BaseModel):
+class OutputEtapaCondicoesEstado(BaseEtapa):
     condicoes_estados: List[NoCondicaoEstado] = Field(default_factory=list)
 
-class OutputEtapaRelacoesModuladoras(BaseModel):
+class OutputEtapaRelacoesModuladoras(BaseEtapa):
     relacoes_moduladoras_estado: List[ArestaRelacaoModuladoraEstado] = Field(default_factory=list)
     # A API pode sugerir atualizações em nós existentes
     condicoes_estados_atualizadas: Optional[List[NoCondicaoEstado]] = Field(default_factory=list)
     estimulos_eventos_atualizados: Optional[List[NoEstimuloEvento]] = Field(default_factory=list)
     acoes_comportamentos_atualizados: Optional[List[NoAcaoComportamento]] = Field(default_factory=list)
 
-class OutputEtapaHipoteses(BaseModel):
+class OutputEtapaHipoteses(BaseEtapa):
     hipoteses_analiticas: List[NoHipoteseAnalitica] = Field(default_factory=list)
     evidencias_para_hipoteses: List[ArestaEvidenciaParaHipotese] = Field(default_factory=list)
 
@@ -222,76 +226,97 @@ def _make_api_call(
     prompt_content: str,
     output_schema: Type[BaseModel]
 ) -> Optional[Dict[str, Any]]:
-    """Função auxiliar para fazer uma chamada à API e processar a resposta."""
+    """Função auxiliar para fazer uma chamada à API e processar a resposta com retries."""
     contents = [
         genai_types.Content(
             role="user",
             parts=[genai_types.Part.from_text(text=prompt_content)],
         ),
     ]
-    
-    # O schema Pydantic é convertido para o formato esperado pela API
 
     generation_config = genai_types.GenerateContentConfig(
         response_mime_type="application/json",
-        response_schema=output_schema, # Usa o schema Pydantic convertido
+        response_schema=output_schema,
         temperature=0
     )
 
-    logger.info(f"Enviando solicitação para o modelo Gemini. Schema: {output_schema.__name__}")
-    logger.debug(f"Prompt para API (primeiros 500 chars): {prompt_content[:500]}...")
-    
-    full_response_text = ""
-    try:
-        # Usamos o método generate_content do cliente, passando o nome do modelo.
-        # Se 'client' for o próprio modelo (e.g., genai.Client(model_name="...")),
-        # então a chamada seria client.generate_content(...)
-        response = client.models.generate_content(
-            model='gemini-2.0-flash-exp', #'gemini-2.5-flash-preview-05-20',
-            contents=cast(List[genai_types.Content], contents), # type: ignore
-            config=generation_config,
-        )
-        # Acessando o texto da resposta. A estrutura pode variar.
-        # Verifique a documentação da API para a forma correta de extrair o JSON.
-        if response.text:
-             full_response_text = response.text
-        else:
-            logger.error("Resposta da API não contém o texto esperado ou estrutura de candidatos.")
-            return None
+    retries = 0
+    max_retries = 3
+    success = False
+    parsed_json = None
 
-    except Exception as e_gc:
-        logger.error(f"Falha ao chamar client.generate_content: {e_gc}", exc_info=True)
-        # Tenta logar mais detalhes da exceção da API, se disponíveis
-        if hasattr(e_gc, 'response') and hasattr(e_gc.response, 'text'): # type: ignore
-            logger.error(f"Detalhes da resposta da API (erro): {e_gc.response.text}") # type: ignore
+    while retries < max_retries and not success:
+        logger.info(f"Tentativa {retries + 1}/{max_retries} de chamar o modelo Gemini. Schema: {output_schema.__name__}")
+        logger.debug(f"Prompt para API (primeiros 500 chars): {prompt_content[:500]}...")
+
+        full_response_text = ""
+        try:
+            response = client.models.generate_content(
+                model='gemini-2.0-flash-exp',
+                contents=cast(List[genai_types.Content], contents), # type: ignore
+                config=generation_config,
+            )
+            if response.text:
+                 full_response_text = response.text
+            else:
+                logger.error("Resposta da API não contém o texto esperado ou estrutura de candidatos.")
+                retries += 1
+                time.sleep(2 ** retries) # Exponential backoff
+                continue # Try again
+
+        except Exception as e_gc:
+            logger.error(f"Falha ao chamar client.generate_content (Tentativa {retries + 1}): {e_gc}", exc_info=True)
+            if hasattr(e_gc, 'response') and hasattr(e_gc.response, 'text'): # type: ignore
+                logger.error(f"Detalhes da resposta da API (erro): {e_gc.response.text}") # type: ignore
+            retries += 1
+            time.sleep(2 ** retries) # Exponential backoff
+            continue # Try again
+
+        logger.info(f"Resposta recebida do modelo para {output_schema.__name__} (Tentativa {retries + 1}).")
+
+        if not full_response_text:
+            logger.error("Resposta do modelo está vazia.")
+            retries += 1
+            time.sleep(2 ** retries) # Exponential backoff
+            continue # Try again
+
+        # Limpeza do JSON (comum em respostas de LLMs)
+        json_text = full_response_text.strip()
+        if json_text.startswith("```json"):
+            json_text = json_text[7:-3].strip()
+        elif json_text.startswith("```"):
+            json_text = json_text[3:-3].strip()
+
+        logger.debug(f"Texto JSON bruto recebido para {output_schema.__name__}: {json_text[:500]}...")
+
+        try:
+            parsed_json = json.loads(json_text)
+            # Valida com o schema Pydantic após o parse
+            output_schema(**parsed_json)
+            logger.info(f"Raciocínio da Etapa: {parsed_json.get('raciocinio', 'N/A')}")
+            success = True # JSON parsed and validated successfully
+        except json.JSONDecodeError as e:
+            logger.error(f"Erro ao decodificar JSON para {output_schema.__name__} (Tentativa {retries + 1}): {e}. Resposta: {json_text}")
+            retries += 1
+            time.sleep(2 ** retries) # Exponential backoff
+            # Continue loop to retry
+        except ValidationError as e:
+            logger.error(f"Erro de validação Pydantic para {output_schema.__name__} (Tentativa {retries + 1}): {e}. JSON: {json_text}")
+            retries += 1
+            time.sleep(2 ** retries) # Exponential backoff
+            # Continue loop to retry
+        except Exception as e:
+             logger.error(f"Erro inesperado ao processar resposta da API (Tentativa {retries + 1}): {e}", exc_info=True)
+             retries += 1
+             time.sleep(2 ** retries) # Exponential backoff
+             # Continue loop to retry
+
+
+    if not success:
+        logger.error(f"Falha final ao processar resposta da API para {output_schema.__name__} após {max_retries} tentativas.")
         return None
 
-    logger.info(f"Resposta recebida do modelo para {output_schema.__name__}.")
-    
-    if not full_response_text:
-        logger.error("Resposta do modelo está vazia.")
-        return None
-
-    # Limpeza do JSON (comum em respostas de LLMs)
-    json_text = full_response_text.strip()
-    if json_text.startswith("```json"):
-        json_text = json_text[7:-3].strip()
-    elif json_text.startswith("```"):
-        json_text = json_text[3:-3].strip()
-
-    logger.debug(f"Texto JSON bruto recebido para {output_schema.__name__}: {json_text[:500]}...")
-
-    try:
-        parsed_json = json.loads(json_text)
-        # Valida com o schema Pydantic após o parse
-        output_schema(**parsed_json)
-        return parsed_json
-    except json.JSONDecodeError as e:
-        logger.error(f"Erro ao decodificar JSON para {output_schema.__name__}: {e}. Resposta: {json_text}")
-        return None
-    except ValidationError as e:
-        logger.error(f"Erro de validação Pydantic para {output_schema.__name__}: {e}. JSON: {json_text}")
-        return None
+    return parsed_json
 
 # --- Funções de Extração por Etapa ---
 
@@ -368,8 +393,9 @@ def extrair_eventos_ambientais_e_relacoes_temporais(
 ) -> RedeContingencialOutput:
     logger.info("Iniciando Etapa 3: Extração de Eventos Ambientais e Relações Temporais")
     foco_da_etapa = (
-        "FOCO DESTA ETAPA: Para cada `Acao_Comportamento` identificada no contexto, identifique `Estímulos_Evento` (E1, E2...) que ocorrem *imediatamente antes* (antecedentes) e *imediatamente depois* (consequentes). "
-        "Descreva cada estímulo. Crie `ArestasRelacaoTemporal` (RT1, RT2...) indicando se o estímulo `PRECEDE_IMEDIATAMENTE` a ação ou se a ação `SUCEDE_IMEDIATAMENTE` o estímulo. "
+        "FOCO DESTA ETAPA: Para cada `Acao_Comportamento` identificada no contexto, identifique `Estímulos_Evento` (E1, E2...) e outros `Acao_Comportamento` que *precedem* (antecedentes) e que *procedem* (consequentes) a tal `Acao_Comportamento`. "
+        "Nenhum `Acao_Comportamento` deve ser deixado sem pelo menos um `Estímulos_Evento` antecedente e um consequente. Busque associá-los primeiro com os nós, mas caso não sejam suficientes extraia ou deduza novos."
+        "Comece descrevendo `Estímulos_Evento` antecedentes e consequentes para cada `Acao_Comportamento`. A seguir, crie `ArestasRelacaoTemporal` (RT1, RT2...) indicando se o estímulo `PRECEDE_IMEDIATAMENTE` a ação ou se a ação `SUCEDE_IMEDIATAMENTE` o estímulo. "
         "Use os IDs das ações do contexto."
         "\nReferência no Procedimento: Etapas 2.1 e 2.2."
     )

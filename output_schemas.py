@@ -124,11 +124,13 @@ class FonteDadosEvidencia(str, Enum):
 
 class NoSujeito(BaseModel):
     id_sujeito: str = Field(..., description="Identificador único do sujeito (e.g., S1, S2).")
+    raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
     nome_descritivo: Optional[str] = Field(None, description="Nome ou descrição curta do sujeito (e.g., 'João', 'Criança A').")
     historico_relevante: Optional[str] = Field(None, description="Breve resumo de informações contextuais importantes.")
 
 class NoEstimuloEvento(BaseModel):
     id_estimulo_evento: str = Field(..., description="Identificador único do estímulo/evento (e.g., E1, E2).")
+    raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
     descricao: str = Field(..., description="Descrição textual objetiva do estímulo/evento.")
     tipo_fisico: Optional[TipoEstimuloEventoFisico] = None
     modalidade_sensorial_primaria: Optional[TipoModalidadeSensorial] = None
@@ -136,6 +138,7 @@ class NoEstimuloEvento(BaseModel):
 
 class NoAcaoComportamento(BaseModel):
     id_acao: str = Field(..., description="Identificador único da ação/comportamento (e.g., AC1, AC2).")
+    raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
     descricao_topografica: str = Field(..., description="Descrição objetiva e mensurável da forma da ação.")
     tipo_observabilidade: Optional[TipoObservabilidadeAcao] = None
     classe_funcional_hipotetica: Optional[List[str]] = Field(None, description="Possíveis funções inferidas (e.g., ['Busca de atenção', 'Fuga de tarefa']).")
@@ -159,6 +162,7 @@ class ArestaBase(BaseModel):
     id_aresta: str = Field(..., description="Identificador único da aresta (e.g., AR1, AR2).")
     id_origem_no: str = Field(..., description="ID do nó de origem.")
     id_destino_no: str = Field(..., description="ID do nó de destino.")
+    raciocinio:str = Field(..., description="A lógica que justifica a inserção da aresta e sua relevância pra análise.")
 
 class ArestaEmissaoComportamental(ArestaBase):
     tipo_aresta: Literal["EMISSAO_COMPORTAMENTAL"] = "EMISSAO_COMPORTAMENTAL"
