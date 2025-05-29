@@ -699,25 +699,44 @@ def analisar(
 
 # --- Exemplo de Uso ---
 if __name__ == "__main__":
-    texto_exemplo = """Um Rato que morava na cidade aceitou o convite para jantar na casa de um Rato que vivia no Campo. Chegando lá, no buraco em que vivia o Rato do campo, comeram raízes, ervas e frutos. Até que o Rato da Cidade disse: — Amigo, notei que você vive na miséria. Isso me dá muita pena. Vamos morar na Cidade, onde você verá a riqueza e a fartura que lá desfrutamos.
-Os dois combinaram e foram para a Cidade. Foram viver numa casa grande e cheia de comida. Um dia, estavam na despensa da casa, saboreando comidas sofisticadas quando, de repente, entra um homem com dois gatos. Foi a maior correria, com os Ratos fugindo por todos os lados. Então eles se esconderam até que o homem e os gatos fossem embora. Quando já haviam abandonado os seus esconderijos e estavam prestes a comer novamente, um rapaz entrou na despensa, obrigando todos a se esconder mais uma vez. Ainda por cima, o rapaz instalou algumas ratoeiras.
-O Rato do Campo não quis mais saber de tanta correria e deu adeus ao Rato da Cidade, dizendo: — Vocês que fiquem com toda essa fartura, que eu quero mesmo é viver comendo os frutos da terra sem medo de homens, gatos e ratoeiras. Lá no Campo tenho um prazer inigualável que é a liberdade e a tranquilidade. 
-"""
+    import argparse
+    parser = argparse.ArgumentParser(description="Analisa um texto narrativo e gera uma rede contingencial em JSON.")
+    parser.add_argument("input_filepath", help="Caminho para o arquivo de texto de entrada.")
+    parser.add_argument("output_filepath", help="Caminho para salvar o arquivo JSON de saída.")
+    parser.add_argument("--debug", action="store_true", help="Ativa o logging de debug.")
+
+    args = parser.parse_args()
+
+    try:
+        with open(args.input_filepath, "r", encoding="utf-8") as f:
+            texto_para_analise = f.read()
+    except FileNotFoundError:
+        print(f"Erro: Arquivo de entrada não encontrado em {args.input_filepath}")
+        exit(1)
+    except Exception as e:
+        print(f"Erro ao ler o arquivo de entrada: {e}")
+        exit(1)
     
     resultado_analise_modular = analisar(
-        texto_narrativo=texto_exemplo,
-        debug=True 
+        texto_narrativo=texto_para_analise,
+        debug=args.debug 
     )
 
     if resultado_analise_modular:
-        print("\n--- Análise da Rede Contingencial (JSON Final Agregado Modular) ---")
-        # O resultado já é um dict, então não precisa de model_dump_json novamente
-        print(json.dumps(resultado_analise_modular, indent=2, ensure_ascii=False))
+        print(f"\n--- Análise da Rede Contingencial (JSON Final Agregado Modular para {args.input_filepath}) ---")
+        # O resultado já é um dict
+        output_json_string = json.dumps(resultado_analise_modular, indent=2, ensure_ascii=False)
+        print(output_json_string) # Imprime no stdout também
         
         # Salvar em arquivo para inspeção
-        output_file_path = "analise_modular_output.json"
-        with open(output_file_path, "w", encoding="utf-8") as f:
-            json.dump(resultado_analise_modular, f, indent=2, ensure_ascii=False)
-        print(f"\nResultado salvo em: {output_file_path}")
+        try:
+            # Garante que o diretório de saída exista
+            os.makedirs(os.path.dirname(args.output_filepath), exist_ok=True)
+            with open(args.output_filepath, "w", encoding="utf-8") as f:
+                f.write(output_json_string)
+            print(f"\nResultado salvo em: {args.output_filepath}")
+        except Exception as e:
+            print(f"Erro ao salvar o arquivo de saída: {e}")
+            exit(1)
     else:
-        print("\nA análise modular falhou ou não retornou dados válidos.")
+        print(f"\nA análise modular para {args.input_filepath} falhou ou não retornou dados válidos.")
