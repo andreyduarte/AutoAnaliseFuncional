@@ -2,90 +2,70 @@
     "sujeitos": [
         {
             "id_sujeito": "S1",
+            "raciocinio": "A \u00e1guia \u00e9 um dos personagens centrais da hist\u00f3ria, realizando diversas a\u00e7\u00f5es relevantes para a an\u00e1lise comportamental, como construir um ninho, raptar filhotes e pegar um peda\u00e7o de carne.",
             "nome_descritivo": "\u00c1guia"
         },
         {
             "id_sujeito": "S2",
+            "raciocinio": "A raposa \u00e9 o outro personagem central, tamb\u00e9m realizando a\u00e7\u00f5es importantes como dar cria, sair para ca\u00e7ar e devorar os filhotes da \u00e1guia em vingan\u00e7a.",
             "nome_descritivo": "Raposa"
-        },
-        {
-            "id_sujeito": "S3",
-            "nome_descritivo": "Filhotes da \u00c1guia"
-        },
-        {
-            "id_sujeito": "S4",
-            "nome_descritivo": "Filhotes da Raposa"
-        },
-        {
-            "id_sujeito": "S5",
-            "nome_descritivo": "Homens"
         }
     ],
     "acoes_comportamentos": [
         {
             "id_acao": "AC1",
-            "descricao_topografica": "Fazer ninho no alto de uma \u00e1rvore",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A \u00e1guia constr\u00f3i um ninho, o que \u00e9 uma a\u00e7\u00e3o preparat\u00f3ria para a cria\u00e7\u00e3o de seus filhotes.",
+            "descricao_topografica": "A \u00e1guia construiu um ninho no alto de uma \u00e1rvore."
         },
         {
             "id_acao": "AC2",
-            "descricao_topografica": "Descer do ninho",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A \u00e1guia desce do ninho para realizar outras a\u00e7\u00f5es, como raptar os filhotes da raposa e pegar um peda\u00e7o de carne.",
+            "descricao_topografica": "A \u00e1guia desceu do seu ninho."
         },
         {
             "id_acao": "AC3",
-            "descricao_topografica": "Raptar os filhotes da Raposa",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A \u00e1guia rapta os filhotes da raposa, demonstrando um comportamento predat\u00f3rio.",
+            "descricao_topografica": "A \u00e1guia raptou os filhotes da Raposa."
         },
         {
             "id_acao": "AC4",
-            "descricao_topografica": "Devorar os filhotes da Raposa",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A \u00e1guia devora os filhotes da raposa, consumando o ato de preda\u00e7\u00e3o.",
+            "descricao_topografica": "A \u00e1guia devorou os filhotes da Raposa."
         },
         {
             "id_acao": "AC5",
-            "descricao_topografica": "Dividir a ca\u00e7a com os filhotes",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A \u00e1guia divide a ca\u00e7a com seus filhotes, demonstrando cuidado parental.",
+            "descricao_topografica": "A \u00e1guia dividiu a ca\u00e7a com seus filhotes."
         },
         {
             "id_acao": "AC6",
-            "descricao_topografica": "Pegar um peda\u00e7o de carne com brasa",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A \u00e1guia pega um peda\u00e7o de carne, buscando alimento para si.",
+            "descricao_topografica": "A \u00e1guia pegou um peda\u00e7o de carne."
         },
         {
             "id_acao": "AC7",
-            "descricao_topografica": "Cair queimado no ch\u00e3o (filhotes)",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A raposa entra numa moita e d\u00e1 cria, demonstrando comportamento reprodutivo e de cuidado parental.",
+            "descricao_topografica": "A raposa entrou numa moita e deu cria ali."
         },
         {
             "id_acao": "AC8",
-            "descricao_topografica": "Entrar numa moita e dar cria",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A raposa sai para ca\u00e7ar, buscando alimento para si e seus filhotes.",
+            "descricao_topografica": "A raposa havia sa\u00eddo para ca\u00e7ar."
         },
         {
             "id_acao": "AC9",
-            "descricao_topografica": "Sair para ca\u00e7ar",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A raposa fica aflita ao perder seus filhotes, demonstrando uma resposta emocional \u00e0 perda.",
+            "descricao_topografica": "A raposa voltou e ficou muita aflita."
         },
         {
             "id_acao": "AC10",
-            "descricao_topografica": "Ficar aflita",
-            "tipo_observabilidade": "Encoberto"
+            "raciocinio": "A raposa pragueja, expressando sua frustra\u00e7\u00e3o e desejo de vingan\u00e7a.",
+            "descricao_topografica": "A raposa ficou praguejando."
         },
         {
             "id_acao": "AC11",
-            "descricao_topografica": "Praguejar",
-            "tipo_observabilidade": "Observ\u00e1vel"
-        },
-        {
-            "id_acao": "AC12",
-            "descricao_topografica": "Devorar os filhotes da \u00c1guia",
-            "tipo_observabilidade": "Observ\u00e1vel"
-        },
-        {
-            "id_acao": "AC13",
-            "descricao_topografica": "Assar uma cabra",
-            "tipo_observabilidade": "Observ\u00e1vel"
+            "raciocinio": "A raposa devora os filhotes da \u00e1guia, consumando sua vingan\u00e7a.",
+            "descricao_topografica": "A raposa se apressou e devorou todos eles na frente da \u00c1guia."
         }
     ],
     "emissoes_comportamentais": [
@@ -93,151 +73,176 @@
             "id_aresta": "EM1",
             "id_origem_no": "S1",
             "id_destino_no": "AC1",
+            "raciocinio": "A \u00e1guia (S1) emite o comportamento de construir um ninho (AC1).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM2",
             "id_origem_no": "S1",
             "id_destino_no": "AC2",
+            "raciocinio": "A \u00e1guia (S1) emite o comportamento de descer do ninho (AC2).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM3",
             "id_origem_no": "S1",
             "id_destino_no": "AC3",
+            "raciocinio": "A \u00e1guia (S1) emite o comportamento de raptar os filhotes da raposa (AC3).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM4",
             "id_origem_no": "S1",
             "id_destino_no": "AC4",
+            "raciocinio": "A \u00e1guia (S1) emite o comportamento de devorar os filhotes da raposa (AC4).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM5",
             "id_origem_no": "S1",
             "id_destino_no": "AC5",
+            "raciocinio": "A \u00e1guia (S1) emite o comportamento de dividir a ca\u00e7a com seus filhotes (AC5).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM6",
             "id_origem_no": "S1",
             "id_destino_no": "AC6",
+            "raciocinio": "A \u00e1guia (S1) emite o comportamento de pegar um peda\u00e7o de carne (AC6).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM7",
-            "id_origem_no": "S3",
+            "id_origem_no": "S2",
             "id_destino_no": "AC7",
+            "raciocinio": "A raposa (S2) emite o comportamento de entrar numa moita e dar cria (AC7).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM8",
             "id_origem_no": "S2",
             "id_destino_no": "AC8",
+            "raciocinio": "A raposa (S2) emite o comportamento de sair para ca\u00e7ar (AC8).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM9",
             "id_origem_no": "S2",
             "id_destino_no": "AC9",
+            "raciocinio": "A raposa (S2) emite o comportamento de ficar aflita (AC9).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM10",
             "id_origem_no": "S2",
             "id_destino_no": "AC10",
+            "raciocinio": "A raposa (S2) emite o comportamento de praguejar (AC10).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id_aresta": "EM11",
             "id_origem_no": "S2",
             "id_destino_no": "AC11",
-            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-        },
-        {
-            "id_aresta": "EM12",
-            "id_origem_no": "S2",
-            "id_destino_no": "AC12",
-            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-        },
-        {
-            "id_aresta": "EM13",
-            "id_origem_no": "S5",
-            "id_destino_no": "AC13",
+            "raciocinio": "A raposa (S2) emite o comportamento de devorar os filhotes da \u00e1guia (AC11).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         }
     ],
     "estimulos_eventos": [
         {
             "id_estimulo_evento": "E1",
-            "descricao": "A Raposa sai para ca\u00e7ar",
+            "raciocinio": "A decis\u00e3o de serem vizinhas precede a constru\u00e7\u00e3o do ninho pela \u00e1guia.",
+            "descricao": "\u00c1guia e Raposa decidem ser vizinhas.",
             "tipo_fisico": "Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Moita"
+            "modalidade_sensorial_primaria": "Auditivo",
+            "localizacao": "Indeterminado"
         },
         {
             "id_estimulo_evento": "E2",
-            "descricao": "A \u00c1guia est\u00e1 precisando de comida",
+            "raciocinio": "A necessidade de comida pela \u00e1guia precede sua a\u00e7\u00e3o de descer do ninho.",
+            "descricao": "\u00c1guia est\u00e1 precisando de comida.",
             "tipo_fisico": "Interoceptivo",
             "modalidade_sensorial_primaria": "Interoceptivo",
-            "localizacao": "Ninho"
+            "localizacao": "Corpo da \u00c1guia"
         },
         {
             "id_estimulo_evento": "E3",
-            "descricao": "Filhotes da Raposa",
+            "raciocinio": "A aus\u00eancia da raposa precede o rapto dos filhotes pela \u00e1guia.",
+            "descricao": "Raposa sai para ca\u00e7ar.",
             "tipo_fisico": "Social",
             "modalidade_sensorial_primaria": "Visual",
             "localizacao": "Moita"
         },
         {
             "id_estimulo_evento": "E4",
-            "descricao": "A ca\u00e7a \u00e9 dividida com os filhotes da \u00c1guia",
-            "tipo_fisico": "Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Ninho"
-        },
-        {
-            "id_estimulo_evento": "E5",
-            "descricao": "Homens assando uma cabra",
-            "tipo_fisico": "Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Ch\u00e3o"
-        },
-        {
-            "id_estimulo_evento": "E6",
-            "descricao": "Peda\u00e7o de carne com brasa",
-            "tipo_fisico": "N\u00e3o-Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Ch\u00e3o"
-        },
-        {
-            "id_estimulo_evento": "E7",
-            "descricao": "Fogo no ninho da \u00c1guia",
-            "tipo_fisico": "N\u00e3o-Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Ninho"
-        },
-        {
-            "id_estimulo_evento": "E8",
-            "descricao": "Filhotes da \u00c1guia caem queimados no ch\u00e3o",
-            "tipo_fisico": "Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Ch\u00e3o"
-        },
-        {
-            "id_estimulo_evento": "E9",
-            "descricao": "A Raposa volta",
+            "raciocinio": "O ato de raptar os filhotes precede o ato de devor\u00e1-los.",
+            "descricao": "\u00c1guia rapta os filhotes da Raposa.",
             "tipo_fisico": "Social",
             "modalidade_sensorial_primaria": "Visual",
             "localizacao": "Moita"
+        },
+        {
+            "id_estimulo_evento": "E5",
+            "raciocinio": "O ato de devorar os filhotes precede o ato de dividir a ca\u00e7a com os filhotes da \u00e1guia.",
+            "descricao": "\u00c1guia devora os filhotes da Raposa.",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Gustativo",
+            "localizacao": "Ninho da \u00c1guia"
+        },
+        {
+            "id_estimulo_evento": "E6",
+            "raciocinio": "A presen\u00e7a de uma cabra sendo assada precede a a\u00e7\u00e3o da \u00e1guia de pegar um peda\u00e7o de carne.",
+            "descricao": "Homens est\u00e3o assando uma cabra.",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Pr\u00f3ximo ao ninho da \u00c1guia"
+        },
+        {
+            "id_estimulo_evento": "E7",
+            "raciocinio": "O fogo no ninho da \u00e1guia precede a queda dos filhotes.",
+            "descricao": "Fogo atinge o ninho da \u00c1guia.",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Ninho da \u00c1guia"
+        },
+        {
+            "id_estimulo_evento": "E8",
+            "raciocinio": "A vis\u00e3o dos filhotes caindo precede a a\u00e7\u00e3o da raposa de devor\u00e1-los.",
+            "descricao": "Filhotes da \u00c1guia caem queimados no ch\u00e3o.",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Ch\u00e3o, em frente \u00e0 \u00c1guia"
+        },
+        {
+            "id_estimulo_evento": "E9",
+            "raciocinio": "A decis\u00e3o de ser vizinha precede a a\u00e7\u00e3o da raposa de entrar na moita e dar cria.",
+            "descricao": "\u00c1guia e Raposa decidem ser vizinhas.",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Auditivo",
+            "localizacao": "Indeterminado"
+        },
+        {
+            "id_estimulo_evento": "E10",
+            "raciocinio": "A perda dos filhotes precede a afli\u00e7\u00e3o da raposa.",
+            "descricao": "Raposa perde seus filhotes.",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Moita"
+        },
+        {
+            "id_estimulo_evento": "E11",
+            "raciocinio": "A afli\u00e7\u00e3o e a impossibilidade de se vingar precedem o praguejo da raposa.",
+            "descricao": "Raposa se sente aflita e impotente.",
+            "tipo_fisico": "Interoceptivo",
+            "modalidade_sensorial_primaria": "Interoceptivo",
+            "localizacao": "Corpo da Raposa"
         }
     ],
     "relacoes_temporais": [
         {
             "id_aresta": "RT1",
             "id_origem_no": "E1",
-            "id_destino_no": "AC3",
+            "id_destino_no": "AC1",
+            "raciocinio": "A decis\u00e3o de serem vizinhas precede a constru\u00e7\u00e3o do ninho.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
@@ -245,63 +250,71 @@
         {
             "id_aresta": "RT2",
             "id_origem_no": "E2",
-            "id_destino_no": "AC3",
+            "id_destino_no": "AC2",
+            "raciocinio": "A necessidade de comida precede a descida da \u00e1guia do ninho.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id_aresta": "RT3",
-            "id_origem_no": "AC3",
+            "id_origem_no": "AC2",
             "id_destino_no": "E3",
+            "raciocinio": "A descida da \u00e1guia do ninho precede a sa\u00edda da raposa para ca\u00e7ar.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id_aresta": "RT4",
-            "id_origem_no": "AC3",
-            "id_destino_no": "AC4",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC3",
+            "raciocinio": "A aus\u00eancia da raposa precede o rapto dos filhotes.",
             "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id_aresta": "RT5",
-            "id_origem_no": "AC4",
-            "id_destino_no": "AC5",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E4",
+            "raciocinio": "O rapto dos filhotes precede o ato de devor\u00e1-los.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id_aresta": "RT6",
-            "id_origem_no": "AC5",
-            "id_destino_no": "E4",
-            "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-            "contiguidade_percebida": "Alta"
-        },
-        {
-            "id_aresta": "RT7",
-            "id_origem_no": "E5",
-            "id_destino_no": "AC6",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC4",
+            "raciocinio": "O rapto dos filhotes precede o ato de devor\u00e1-los.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT8",
-            "id_origem_no": "AC6",
-            "id_destino_no": "E6",
+            "id_aresta": "RT7",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E5",
+            "raciocinio": "O ato de devorar os filhotes precede o ato de dividir a ca\u00e7a.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT9",
+            "id_aresta": "RT8",
             "id_origem_no": "E6",
+            "id_destino_no": "AC6",
+            "raciocinio": "A presen\u00e7a da carne assada precede a a\u00e7\u00e3o da \u00e1guia de peg\u00e1-la.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT9",
+            "id_origem_no": "AC6",
             "id_destino_no": "E7",
+            "raciocinio": "A \u00e1guia pegar a carne com brasa precede o fogo no ninho.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
@@ -309,23 +322,26 @@
         {
             "id_aresta": "RT10",
             "id_origem_no": "E7",
-            "id_destino_no": "AC7",
+            "id_destino_no": "AC2",
+            "raciocinio": "O fogo no ninho precede a queda dos filhotes.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id_aresta": "RT11",
-            "id_origem_no": "AC7",
+            "id_origem_no": "E7",
             "id_destino_no": "E8",
+            "raciocinio": "O fogo no ninho precede a queda dos filhotes.",
             "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id_aresta": "RT12",
             "id_origem_no": "E8",
-            "id_destino_no": "AC12",
+            "id_destino_no": "AC11",
+            "raciocinio": "A vis\u00e3o dos filhotes caindo precede a a\u00e7\u00e3o da raposa de devor\u00e1-los.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
@@ -333,7 +349,53 @@
         {
             "id_aresta": "RT13",
             "id_origem_no": "E9",
+            "id_destino_no": "AC7",
+            "raciocinio": "A decis\u00e3o de ser vizinha precede a a\u00e7\u00e3o da raposa de entrar na moita e dar cria.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT14",
+            "id_origem_no": "AC7",
+            "id_destino_no": "E3",
+            "raciocinio": "A raposa entrar na moita e dar cria precede a sa\u00edda para ca\u00e7ar.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT15",
+            "id_origem_no": "AC8",
+            "id_destino_no": "E10",
+            "raciocinio": "A raposa sair para ca\u00e7ar precede a perda dos filhotes.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT16",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC9",
+            "raciocinio": "A perda dos filhotes precede a afli\u00e7\u00e3o da raposa.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT17",
+            "id_origem_no": "AC9",
+            "id_destino_no": "E11",
+            "raciocinio": "A afli\u00e7\u00e3o da raposa precede o praguejo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT18",
+            "id_origem_no": "E11",
             "id_destino_no": "AC10",
+            "raciocinio": "A afli\u00e7\u00e3o e a impossibilidade de se vingar precedem o praguejo da raposa.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
@@ -344,89 +406,132 @@
         {
             "id_aresta": "RFA1",
             "id_origem_no": "E1",
-            "id_destino_no": "AC3",
+            "id_destino_no": "AC1",
+            "raciocinio": "A decis\u00e3o de serem vizinhas (E1) estabelece o contexto para a \u00e1guia construir seu ninho (AC1). A decis\u00e3o serve como um sinal de que a constru\u00e7\u00e3o do ninho \u00e9 apropriada e esperada dentro do acordo de vizinhan\u00e7a.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id_aresta": "RFA2",
             "id_origem_no": "E2",
-            "id_destino_no": "AC3",
+            "id_destino_no": "AC2",
+            "raciocinio": "A necessidade de comida (E2) funciona como um est\u00edmulo motivacional que leva a \u00e1guia a descer do ninho (AC2) em busca de alimento. A necessidade de comida sinaliza a disponibilidade de refor\u00e7amento (alimento) caso a \u00e1guia procure por ele.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US"
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id_aresta": "RFA3",
-            "id_origem_no": "E5",
-            "id_destino_no": "AC6",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC3",
+            "raciocinio": "A aus\u00eancia da raposa (E3) sinaliza a oportunidade para a \u00e1guia raptar os filhotes (AC3) sem enfrentar resist\u00eancia imediata. A aus\u00eancia da raposa discrimina a situa\u00e7\u00e3o em que o rapto \u00e9 mais prov\u00e1vel de ser bem-sucedido.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id_aresta": "RFA4",
-            "id_origem_no": "E8",
-            "id_destino_no": "AC12",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC4",
+            "raciocinio": "O ato de raptar os filhotes (E4) cria a condi\u00e7\u00e3o imediata para a \u00e1guia devor\u00e1-los (AC4). O rapto \u00e9 um passo necess\u00e1rio para que a \u00e1guia possa se alimentar dos filhotes.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id_aresta": "RFA5",
-            "id_origem_no": "E9",
-            "id_destino_no": "AC10",
+            "id_origem_no": "E6",
+            "id_destino_no": "AC6",
+            "raciocinio": "A presen\u00e7a da cabra sendo assada (E6) atua como um est\u00edmulo discriminativo, sinalizando a disponibilidade de alimento e incentivando a \u00e1guia a pegar um peda\u00e7o de carne (AC6).",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US"
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id_aresta": "RFA6",
+            "id_origem_no": "E8",
+            "id_destino_no": "AC11",
+            "raciocinio": "A vis\u00e3o dos filhotes da \u00e1guia caindo (E8) funciona como um est\u00edmulo discriminativo para a raposa, sinalizando a oportunidade de vingan\u00e7a ao devor\u00e1-los (AC11).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id_aresta": "RFA7",
+            "id_origem_no": "E9",
+            "id_destino_no": "AC7",
+            "raciocinio": "A decis\u00e3o de ser vizinha (E9) estabelece o contexto para a raposa entrar na moita e dar cria (AC7). A decis\u00e3o serve como um sinal de que a moita \u00e9 um local apropriado e esperado dentro do acordo de vizinhan\u00e7a.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id_aresta": "RFA8",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC9",
+            "raciocinio": "A perda dos filhotes (E10) elicia a afli\u00e7\u00e3o da raposa (AC9). A perda \u00e9 um evento aversivo que provoca uma resposta emocional na raposa.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_CONDICIONADO_CS"
+        },
+        {
+            "id_aresta": "RFA9",
+            "id_origem_no": "E11",
+            "id_destino_no": "AC10",
+            "raciocinio": "A afli\u00e7\u00e3o e a impossibilidade de se vingar (E11) funcionam como um est\u00edmulo que elicia o praguejo da raposa (AC10). A frustra\u00e7\u00e3o e a impot\u00eancia levam a raposa a expressar sua raiva verbalmente.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_CONDICIONADO_CS"
         }
     ],
     "relacoes_funcionais_consequentes": [
         {
             "id_aresta": "RFC1",
-            "id_origem_no": "AC3",
+            "id_origem_no": "AC2",
             "id_destino_no": "E3",
+            "raciocinio": "A \u00e1guia descer do ninho \u00e9 seguida pela raposa saindo para ca\u00e7ar. A sa\u00edda da raposa para ca\u00e7ar pode ser vista como uma oportunidade para a \u00e1guia obter alimento (filhotes da raposa). Portanto, a sa\u00edda da raposa funciona como um refor\u00e7o positivo para a \u00e1guia descer do ninho.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
             "imediatismo_consequencia": "Imediata",
             "magnitude_consequencia": "Alta"
         },
         {
             "id_aresta": "RFC2",
             "id_origem_no": "AC3",
-            "id_destino_no": "AC4",
-            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
-            "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "M\u00e9dia"
-        },
-        {
-            "id_aresta": "RFC3",
-            "id_origem_no": "AC4",
-            "id_destino_no": "AC5",
-            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
-            "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "M\u00e9dia"
-        },
-        {
-            "id_aresta": "RFC4",
-            "id_origem_no": "AC5",
             "id_destino_no": "E4",
+            "raciocinio": "O rapto dos filhotes da raposa \u00e9 seguido pelo ato de devor\u00e1-los. O ato de devorar os filhotes refor\u00e7a positivamente o rapto, pois satisfaz a necessidade de alimento da \u00e1guia.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
             "imediatismo_consequencia": "Imediata",
             "magnitude_consequencia": "Alta"
         },
         {
-            "id_aresta": "RFC5",
-            "id_origem_no": "AC6",
-            "id_destino_no": "E6",
+            "id_aresta": "RFC3",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E5",
+            "raciocinio": "Devorar os filhotes da raposa \u00e9 seguido por dividir a ca\u00e7a com os filhotes da \u00e1guia. Dividir a ca\u00e7a refor\u00e7a positivamente o ato de devorar, pois garante a sobreviv\u00eancia dos filhotes da \u00e1guia.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
             "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "M\u00e9dia"
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id_aresta": "RFC4",
+            "id_origem_no": "AC6",
+            "id_destino_no": "E7",
+            "raciocinio": "A \u00e1guia pegar um peda\u00e7o de carne com brasa \u00e9 seguido pelo fogo no ninho. O fogo no ninho \u00e9 uma consequ\u00eancia aversiva, indicando uma puni\u00e7\u00e3o para o comportamento de pegar a carne, pois leva \u00e0 destrui\u00e7\u00e3o do ninho e \u00e0 morte dos filhotes.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id_aresta": "RFC5",
+            "id_origem_no": "AC7",
+            "id_destino_no": "E3",
+            "raciocinio": "A raposa entrar na moita e dar cria \u00e9 seguido pela sa\u00edda para ca\u00e7ar. A sa\u00edda para ca\u00e7ar \u00e9 refor\u00e7ada pela necessidade de alimentar os filhotes, o que torna a a\u00e7\u00e3o de dar cria um antecedente para a busca por alimento.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
         },
         {
             "id_aresta": "RFC6",
-            "id_origem_no": "E6",
-            "id_destino_no": "E7",
+            "id_origem_no": "AC8",
+            "id_destino_no": "E10",
+            "raciocinio": "A raposa sair para ca\u00e7ar \u00e9 seguida pela perda dos filhotes. A perda dos filhotes \u00e9 uma consequ\u00eancia aversiva, indicando uma puni\u00e7\u00e3o para o comportamento de sair para ca\u00e7ar, pois resulta na perda da prole.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
             "imediatismo_consequencia": "Imediata",
@@ -434,44 +539,36 @@
         },
         {
             "id_aresta": "RFC7",
-            "id_origem_no": "E7",
-            "id_destino_no": "AC7",
+            "id_origem_no": "AC9",
+            "id_destino_no": "E11",
+            "raciocinio": "A afli\u00e7\u00e3o da raposa \u00e9 seguida pelo praguejo. O praguejo pode ser visto como uma forma de expressar a frustra\u00e7\u00e3o e a impot\u00eancia, mas n\u00e3o altera a situa\u00e7\u00e3o. Portanto, n\u00e3o h\u00e1 uma consequ\u00eancia programada ou identificada.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
             "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "Alta"
-        },
-        {
-            "id_aresta": "RFC8",
-            "id_origem_no": "AC7",
-            "id_destino_no": "E8",
-            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
-            "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "Alta"
+            "magnitude_consequencia": "Baixa"
         }
     ],
     "relacoes_moduladoras_estado": [],
     "hipoteses_analiticas": [
         {
             "id_hipotese": "H1",
-            "descricao_hipotese": "O comportamento da \u00c1guia de raptar os filhotes da Raposa (AC3) \u00e9 mantido por refor\u00e7amento positivo (SR+) atrav\u00e9s da obten\u00e7\u00e3o de alimento (E4) para si e seus filhotes.",
+            "descricao_hipotese": "O comportamento da \u00e1guia de raptar e devorar os filhotes da raposa (AC3 e AC4) \u00e9 mantido por refor\u00e7amento positivo (SR+) na forma de obten\u00e7\u00e3o de alimento (E5) para si e seus filhotes, especialmente em um contexto de necessidade de comida (E2).",
             "nivel_confianca": "M\u00e9dio",
-            "data_formulacao": "2025-05-29T15:38:09.648925Z",
+            "data_formulacao": "2025-05-29T16:35:43.162676Z",
             "status_hipotese": "Aguardando teste"
         },
         {
             "id_hipotese": "H2",
-            "descricao_hipotese": "O comportamento da \u00c1guia de pegar um peda\u00e7o de carne com brasa (AC6) \u00e9 mantido por refor\u00e7amento positivo (SR+) atrav\u00e9s da obten\u00e7\u00e3o de alimento (E6).",
+            "descricao_hipotese": "O comportamento da raposa de devorar os filhotes da \u00e1guia (AC11) \u00e9 mantido por refor\u00e7amento negativo (SR-) na forma de remo\u00e7\u00e3o de um est\u00edmulo aversivo (vingan\u00e7a pela perda dos seus filhotes - E10), ap\u00f3s ter sido prejudicada pela \u00e1guia.",
             "nivel_confianca": "M\u00e9dio",
-            "data_formulacao": "2025-05-29T15:38:09.648925Z",
+            "data_formulacao": "2025-05-29T16:35:43.162676Z",
             "status_hipotese": "Aguardando teste"
         },
         {
             "id_hipotese": "H3",
-            "descricao_hipotese": "O comportamento da Raposa de devorar os filhotes da \u00c1guia (AC12) \u00e9 mantido por refor\u00e7amento negativo (SR-) atrav\u00e9s da remo\u00e7\u00e3o de um est\u00edmulo aversivo (E8), no caso, a perda dos seus pr\u00f3prios filhotes.",
+            "descricao_hipotese": "O comportamento da \u00e1guia de pegar um peda\u00e7o de carne (AC6) \u00e9 punido positivamente (SP+) pelo fogo no ninho (E7), o que pode levar \u00e0 diminui\u00e7\u00e3o da frequ\u00eancia desse comportamento em situa\u00e7\u00f5es futuras.",
             "nivel_confianca": "M\u00e9dio",
-            "data_formulacao": "2025-05-29T15:38:09.648925Z",
+            "data_formulacao": "2025-05-29T16:35:43.162676Z",
             "status_hipotese": "Aguardando teste"
         }
     ],
@@ -480,58 +577,43 @@
             "id_aresta": "EH1",
             "id_origem_no": "AC3",
             "id_destino_no": "H1",
+            "raciocinio": "A a\u00e7\u00e3o da \u00e1guia de raptar os filhotes (AC3) \u00e9 central para a hip\u00f3tese de refor\u00e7amento positivo por obten\u00e7\u00e3o de alimento. A aresta conecta o comportamento \u00e0 hip\u00f3tese, indicando que o rapto \u00e9 um meio para atingir o objetivo de se alimentar.",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
-                "E1",
-                "E2",
-                "AC3",
-                "E3",
                 "AC4",
-                "AC5",
-                "E4",
-                "RT1",
-                "RT2",
-                "RT3",
-                "RT4",
-                "RT5",
-                "RT6",
-                "RFA1",
-                "RFA2",
-                "RFC1",
+                "E2",
+                "E5",
                 "RFC2",
-                "RFC3",
-                "RFC4"
+                "RFA3"
             ],
             "tipo_evidencia": "SUPORTE_DIRETO",
             "fonte_dados": "Narrativa Textual"
         },
         {
             "id_aresta": "EH2",
-            "id_origem_no": "AC6",
+            "id_origem_no": "AC11",
             "id_destino_no": "H2",
+            "raciocinio": "A a\u00e7\u00e3o da raposa de devorar os filhotes da \u00e1guia (AC11) \u00e9 central para a hip\u00f3tese de refor\u00e7amento negativo por vingan\u00e7a. A aresta conecta o comportamento \u00e0 hip\u00f3tese, indicando que o ato de devorar \u00e9 uma forma de retalia\u00e7\u00e3o pela perda dos seus filhotes.",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
-                "E5",
-                "AC6",
-                "E6",
-                "RT7",
-                "RT8",
-                "RFA3",
-                "RFC5"
+                "E8",
+                "E10",
+                "RFA6"
             ],
             "tipo_evidencia": "SUPORTE_DIRETO",
             "fonte_dados": "Narrativa Textual"
         },
         {
             "id_aresta": "EH3",
-            "id_origem_no": "AC12",
+            "id_origem_no": "AC6",
             "id_destino_no": "H3",
+            "raciocinio": "A a\u00e7\u00e3o da \u00e1guia de pegar um peda\u00e7o de carne (AC6) \u00e9 central para a hip\u00f3tese de puni\u00e7\u00e3o positiva pelo fogo no ninho. A aresta conecta o comportamento \u00e0 hip\u00f3tese, indicando que o ato de pegar a carne leva a uma consequ\u00eancia aversiva (fogo) que pode diminuir a frequ\u00eancia desse comportamento.",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
-                "E8",
-                "AC12",
-                "RT12",
-                "RFA4"
+                "E6",
+                "E7",
+                "RFC4",
+                "RFA5"
             ],
             "tipo_evidencia": "SUPORTE_DIRETO",
             "fonte_dados": "Narrativa Textual"
