@@ -161,9 +161,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> Início</a>
                     </li>
-                    <li class="nav-item me-2"> <!-- Added margin-end for spacing -->
-                        <button class="btn btn-primary" type="submit" form="updateForm"><i class="fas fa-sync-alt"></i> Atualizar Gráfico</button>
-                    </li>
                     <li class="nav-item">
                         <button class="btn btn-info" id="downloadNetworkImage" style="display: none;"><i class="fas fa-download"></i> Baixar Imagem</button>
                     </li>
@@ -178,7 +175,7 @@
         </button>
         <div class="sidebar bg-light p-3 shadow-sm d-flex flex-column" id="sidebar">
             <h3 class="text-center text-primary mb-3">Texto para Análise</h3>
-            <form action="/" method="post" class="d-flex flex-column flex-grow-1" id="updateForm">
+            <form action="/analise" method="post" class="d-flex flex-column flex-grow-1" id="updateForm">
                 <textarea id="analysisTextarea" name="texto_entrada" rows="15" class="form-control flex-grow-1 mb-3">{{ texto_original|e }}</textarea>
                 <button type="submit" class="btn btn-success" id="updateGraphButton">
                     <i class="fas fa-sync-alt"></i> Atualizar Gráfico

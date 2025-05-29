@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Comportamental Automatizada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h1 {
+            font-size: 2.5em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 35px;
+            color: #34495e;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        .call-to-action {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .call-to-action form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            min-height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .nav-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Análise Comportamental Automatizada: Transformando Texto em Redes de Contingência</h1>
+
+        <p>Bem-vindo à ferramenta de Análise Comportamental Automatizada. Este protótipo inovador foi desenvolvido para auxiliar na compreensão de narrativas e descrições de comportamento, transformando texto livre em uma representação estruturada e visualmente clara: a Rede de Contingência.</p>
+
+        <p>Baseada nos princípios da Análise Funcional do Comportamento (AFC), a ferramenta processa o texto fornecido e identifica automaticamente os elementos chave presentes na narrativa, tais como:</p>
+        <ul>
+            <li><strong>Sujeitos:</strong> Os indivíduos ou organismos envolvidos.</li>
+            <li><strong>Ações/Comportamentos:</strong> As respostas emitidas pelos sujeitos.</li>
+            <li><strong>Estímulos/Eventos:</strong> Os acontecimentos no ambiente que precedem ou sucedem os comportamentos.</li>
+            <li><strong>Condições/Estados:</strong> Contextos mais amplos, estados internos ou operações motivadoras que influenciam as relações.</li>
+            <li><strong>Hipóteses Analíticas:</strong> Formulações sobre as possíveis funções dos comportamentos observados.</li>
+        </ul>
+
+        <p>Além de identificar esses elementos (representados como "Nós" na rede), a ferramenta também extrai e mapeia as **relações** entre eles (representadas como "Arestas"). Isso inclui:</p>
+        <ul>
+            <li>Relações temporais (o que acontece antes ou depois).</li>
+            <li>Relações funcionais (como antecedentes e consequentes influenciam a probabilidade do comportamento).</li>
+            <li>Relações moduladoras (como condições mais amplas afetam as contingências).</li>
+            <li>Evidências que suportam as hipóteses formuladas.</li>
+        </ul>
+
+        <p>O resultado desse processamento é uma **rede visual interativa**, exibida em uma página dedicada. Esta visualização permite explorar as complexas interconexões entre os elementos comportamentais e ambientais descritos no texto original, facilitando a identificação de padrões e a formulação de análises funcionais.</p>
+
+        <h2>Como Usar:</h2>
+        <p>Para utilizar, basta inserir o texto narrativo ou descritivo na área abaixo e a ferramenta fará o restante, apresentando a rede de contingência resultante para sua análise.</p>
+
+        <div class="call-to-action">
+            <form action="/analise" method="post">
+                <textarea name="texto_entrada" placeholder="Cole seu texto narrativo aqui para análise..."></textarea>
+                <button type="submit">Analisar Texto</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
