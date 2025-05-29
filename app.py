@@ -32,11 +32,12 @@ def analise():
         json_analisado['texto_original'] = texto_entrada
         json.dump(json_analisado, f, indent=4)
 
-    # Renderiza a página da rede, passando os dados dos nós e arestas
+    # Renderiza a página da rede, passando os dados dos nós, arestas e timeline
     return render_template('network.html', 
                             nodes_data=json.dumps(nodes), 
                             edges_data=json.dumps(edges),
-                            texto_original=texto_entrada)
+                            texto_original=texto_entrada,
+                            timeline_data=json.dumps(json_analisado.get('timeline', [])))
 
 
 @app.route('/explanation')
@@ -88,7 +89,8 @@ def load_example(example_filename):
         return render_template('network.html',
                                nodes_data=json.dumps(nodes),
                                edges_data=json.dumps(edges),
-                               texto_original=json_data['texto_original'])
+                               texto_original=json_data['texto_original'],
+                               timeline_data=json.dumps(json_data.get('timeline', [])))
 
     except Exception as e:
         # TODO: Implement flash messaging for "Error loading example"

@@ -169,6 +169,9 @@ class OutputEtapaRelacoesModuladoras(BaseEtapa):
 class OutputEtapaHipoteses(BaseEtapa):
     hipoteses_analiticas: List[NoHipoteseAnalitica] = Field(default_factory=list)
     evidencias_para_hipoteses: List[ArestaEvidenciaParaHipotese] = Field(default_factory=list)
+    
+class OutputEtapaTimeline(BaseEtapa):
+    timeline: List[str] = Field(description='Lista das IDs de todos os Nós por ordem de aparição no texto narrativo.' ,default_factory=list)
 
 # --- Funções Auxiliares ---
 
@@ -220,7 +223,6 @@ def _merge_element_list(
 
     return updated_elements
 
-
 def _make_api_call(
     client: genai.Client, # Alterado para usar o objeto modelo diretamente
     prompt_content: str,
@@ -237,7 +239,7 @@ def _make_api_call(
     generation_config = genai_types.GenerateContentConfig(
         response_mime_type="application/json",
         response_schema=output_schema,
-        temperature=0
+        temperature=0.2
     )
 
     retries = 0
@@ -670,6 +672,42 @@ def formular_hipoteses_analiticas_e_evidencias(
             logger.error(f"Erro ao processar dados da Etapa 8: {e}", exc_info=True)
     return rede_atual
 
+def ordenar_timeline(
+    texto_narrativo: str,
+    rede_atual: RedeContingencialOutput,
+    client_model: genai.Client,
+) -> RedeContingencialOutput:
+    logger.info("Iniciando Etapa 9: Ordenação da Timeline")
+    foco_da_etapa = (
+        "FOCO DESTA ETAPA: Ordenar todos os Nós da rede de acordo com sua aparição no texto narrativo."
+        "Cada nó deve ser identificado pelo seu ID e aparecer na lista apenas uma vez."
+        "Todos os nós devem estar na lista final."
+    )
+    contexto_json = {
+        "sujeitos" : [s.model_dump(exclude_none=True) for s in rede_atual.sujeitos],
+        "acoes_comportamentos" : [ac.model_dump(exclude_none=True) for ac in rede_atual.acoes_comportamentos],
+        "estimulos_eventos" : [e.model_dump(exclude_none=True) for e in rede_atual.estimulos_eventos],
+    }
+    prompt = (
+        f"{SYSTEM_PROMPT}\n\n{PROCEDIMENTO_COMPLETO_AFC}\n\n{foco_da_etapa}\n\n"
+        f"Texto narrativo para análise:\n```\n{texto_narrativo}\n```\n\n"
+        "Contexto da rede atual:\n"
+        f"```json\n{json.dumps(contexto_json, indent=2)}\n```"
+    )
+
+    json_data = _make_api_call(client_model, prompt, OutputEtapaTimeline)
+    if json_data:
+        try:
+            timeline_data = json_data.get("timeline")
+            if timeline_data is not None:
+                # Assuming timeline_data is already a list of IDs (int or str)
+                rede_atual.timeline = [str(item) for item in timeline_data] # Ensure all IDs are strings for consistency
+            logger.info(f"Etapa 9 concluída. Nós na timeline: {len(rede_atual.timeline)}")
+        except Exception as e:
+            logger.error(f"Erro ao processar dados da Etapa 9: {e}", exc_info=True)
+            logger.error(f"Resposta do modelo: {json_data}")
+    return rede_atual
+
 # --- Função Orquestradora Principal ---
 
 def analisar(
@@ -708,6 +746,7 @@ def analisar(
         #identificar_condicoes_estado,
         #estabelecer_relacoes_moduladoras_estado,
         formular_hipoteses_analiticas_e_evidencias,
+        ordenar_timeline
     ]
 
     for i, etapa_func in enumerate(etapas_de_extracao):

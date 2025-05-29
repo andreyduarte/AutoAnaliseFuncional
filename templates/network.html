@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body>  
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Análise de Rede Comportamental</a>
@@ -35,12 +35,19 @@
         </div>
     </nav>
 
-    <div class="main-content d-flex position-relative">
-        <button class="btn btn-primary btn-sm toggle-sidebar-btn" id="sidebarToggle">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="sidebar d-flex flex-column" id="sidebar">
-            <h3 class="text-center mb-3">Texto Analisado</h3>
+    <div class="main-content position-relative">
+        <div id="mynetwork" class="flex-grow-1"></div>
+        <div id="timeline-slider">
+            <input type="range" min="0" max="0" value="0" class="slider" id="timelineRange">
+            <div id="timelineLabel">0</div>
+        </div>
+
+        <!-- Sidebar como overlay -->
+        <div class="sidebar-overlay visible" id="sidebar">
+            <div class="sidebar-header">
+                <h3 class="text-end mb-3">Texto Analisado</h3>
+                <!-- O botão de fechar será o mesmo de abrir/fechar -->
+            </div>
             <form action="/analise" method="post" class="d-flex flex-column flex-grow-1" id="updateForm">
                 <textarea id="analysisTextarea" name="texto_entrada" rows="15" class="form-control flex-grow-1 mb-3">{{ texto_original|e }}</textarea>
                 <button type="submit" class="btn btn-success" id="updateGraphButton">
@@ -48,7 +55,11 @@
                 </button>
             </form>
         </div>
-        <div id="mynetwork" class="flex-grow-1"></div>
+
+        <!-- Botão para abrir/fechar a sidebar -->
+        <button class="btn btn-primary btn-sm toggle-sidebar-btn" id="sidebarToggle">
+            <i class="fas fa-times"></i> <!-- Inicia com ícone de fechar, pois a sidebar começa aberta -->
+        </button>
     </div>
 
     <div class="info-box">
@@ -78,8 +89,9 @@
         });
 
         // Os dados dos nós e arestas são injetados aqui pelo Flask
-        var nodesArray = {{nodes_data|safe}}
-        var edgesArray = {{edges_data|safe}}
+        var nodesArray = {{nodes_data|safe}};
+        var edgesArray = {{edges_data|safe}};
+        var timelineOrder = {{timeline_data|safe}};
 
         // Cria os datasets para o Vis.js
         var nodes = new vis.DataSet(nodesArray);
@@ -193,24 +205,77 @@
             if (network.getPositions().length > 0) {
                 document.getElementById('loadingOverlay').classList.remove('visible');
             }
+            initializeTimeline();
         });
 
-        // JavaScript para o botão de abrir/fechar a sidebar
+        // JavaScript para o botão de abrir/fechar a sidebar como overlay
         document.getElementById('sidebarToggle').addEventListener('click', function() {
             var sidebar = document.getElementById('sidebar');
-            var mainContent = document.querySelector('.main-content');
             var icon = this.querySelector('i');
 
             sidebar.classList.toggle('collapsed');
-            mainContent.classList.toggle('sidebar-collapsed');
-
             if (sidebar.classList.contains('collapsed')) {
-                icon.classList.remove('fa-chevron-left');
-                icon.classList.add('fa-chevron-right');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             } else {
-                icon.classList.remove('fa-chevron-right');
-                icon.classList.add('fa-chevron-left');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             }
+        });
+
+        // Lógica do Slider da Timeline
+        var timelineRange = document.getElementById('timelineRange');
+        var timelineLabel = document.getElementById('timelineLabel');
+
+        function initializeTimeline() {
+            if (timelineOrder && timelineOrder.length > 0) {
+                timelineRange.min = 0;
+                timelineRange.max = timelineOrder.length - 1;
+                timelineRange.value = timelineOrder.length - 1; // Inicia com todos os nós visíveis
+                timelineLabel.innerText = timelineOrder.length;
+                updateNodeVisibility(timelineOrder.length - 1);
+            } else {
+                timelineRange.min = 0;
+                timelineRange.max = 0;
+                timelineRange.value = 0;
+                timelineLabel.innerText = 0;
+                // Se não houver timeline, todos os nós devem estar visíveis por padrão
+                nodes.forEach(function(node) {
+                    if (node.hidden) {
+                        nodes.update({id: node.id, hidden: false});
+                    }
+                });
+            }
+        }
+
+        function updateNodeVisibility(sliderValue) {
+            var visibleNodeIds = new Set();
+            for (var i = 0; i <= sliderValue; i++) {
+                visibleNodeIds.add(timelineOrder[i]);
+            }
+
+            var updates = [];
+            nodes.forEach(function(node) {
+                var isVisible = visibleNodeIds.has(node.id);
+                if (node.hidden !== !isVisible) { // Only update if visibility state changes
+                    updates.push({id: node.id, hidden: !isVisible});
+                }
+            });
+            nodes.update(updates);
+            network.fit(); // Ajusta a visualização para os nós visíveis
+        }
+
+        timelineRange.addEventListener('input', function() {
+            var sliderValue = parseInt(this.value);
+            timelineLabel.innerText = sliderValue + 1; // +1 para mostrar a contagem de nós
+            updateNodeVisibility(sliderValue);
+        });
+
+        // Inicializa a timeline quando a rede estiver pronta
+        network.on("stabilizationIterationsDone", function () {
+            network.fit();
+            document.getElementById('loadingOverlay').classList.remove('visible');
+            initializeTimeline(); // Garante que a timeline seja inicializada após a estabilização
         });
 
      </script>

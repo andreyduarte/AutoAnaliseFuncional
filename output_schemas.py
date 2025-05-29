@@ -122,15 +122,17 @@ class FonteDadosEvidencia(str, Enum):
 
 # --- Modelos de Nós ---
 
+class NoBase(BaseModel):
+    raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
+    frase_de_origem:str = Field(..., description="A frase do texto que originou esse nó.")
+
 class NoSujeito(BaseModel):
     id_sujeito: str = Field(..., description="Identificador único do sujeito (e.g., S1, S2).")
-    raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
     nome_descritivo: Optional[str] = Field(None, description="Nome ou descrição curta do sujeito (e.g., 'João', 'Criança A').")
     historico_relevante: Optional[str] = Field(None, description="Breve resumo de informações contextuais importantes.")
 
 class NoEstimuloEvento(BaseModel):
     id_estimulo_evento: str = Field(..., description="Identificador único do estímulo/evento (e.g., E1, E2).")
-    raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
     descricao: str = Field(..., description="Descrição textual objetiva do estímulo/evento.")
     tipo_fisico: Optional[TipoEstimuloEventoFisico] = None
     modalidade_sensorial_primaria: Optional[TipoModalidadeSensorial] = None
@@ -138,7 +140,6 @@ class NoEstimuloEvento(BaseModel):
 
 class NoAcaoComportamento(BaseModel):
     id_acao: str = Field(..., description="Identificador único da ação/comportamento (e.g., AC1, AC2).")
-    raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
     descricao_topografica: str = Field(..., description="Descrição objetiva e mensurável da forma da ação.")
     tipo_observabilidade: Optional[TipoObservabilidadeAcao] = None
     classe_funcional_hipotetica: Optional[List[str]] = Field(None, description="Possíveis funções inferidas (e.g., ['Busca de atenção', 'Fuga de tarefa']).")
@@ -232,5 +233,7 @@ class RedeContingencialOutput(BaseModel):
     relacoes_moduladoras_estado: List[ArestaRelacaoModuladoraEstado] = Field(default_factory=list)
     hipoteses_analiticas: List[NoHipoteseAnalitica] = Field(default_factory=list)
     evidencias_para_hipoteses: List[ArestaEvidenciaParaHipotese] = Field(default_factory=list)
+
+    timeline:List[str] = Field(default_factory=str)
     # analise_metadados: Optional[Dict[str, Any]] = Field(None, description="Metadados sobre a análise, e.g., ID da análise, data, nome do analista (LLM).")
 

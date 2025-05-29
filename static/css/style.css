@@ -212,68 +212,6 @@ textarea.form-control:focus {
 }
 
 /* Network Page Specific Styles (network.html) */
-.main-content {
-    display: flex;
-    height: calc(100vh - 68px); /* Adjust for navbar height */
-    width: 100vw;
-    position: relative; /* For toggle button positioning */
-}
-
-.sidebar {
-    width: 320px; /* Slightly wider sidebar */
-    background-color: #ffffff;
-    padding: 25px;
-    box-shadow: 2px 0 15px rgba(0,0,0,0.08);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: auto;
-    transition: width 0.3s ease, transform 0.3s ease, padding 0.3s ease;
-}
-
-.sidebar.collapsed {
-    width: 0;
-    padding: 0;
-    overflow: hidden;
-    transform: translateX(-320px);
-}
-
-.sidebar h3 {
-    margin-top: 0;
-    color: #007bff; /* Primary blue for sidebar heading */
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.toggle-sidebar-btn {
-    position: absolute; /* Changed to absolute for better control within main-content */
-    top: 20px; /* Adjusted position */
-    left: 305px; /* Closer to the right edge of the sidebar */
-    z-index: 100;
-    transition: left 0.3s ease, background-color 0.3s ease;
-    background-color: #007bff;
-    color: white;
-    border-radius: 50%; /* Circular button */
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border: none;
-}
-
-.toggle-sidebar-btn:hover {
-    background-color: #0056b3;
-}
-
-.main-content.sidebar-collapsed .toggle-sidebar-btn {
-    left: 15px; /* Move to the left edge when sidebar is collapsed */
-}
-
 #mynetwork {
     flex-grow: 1; /* Occupy remaining space */
     height: 100%;
@@ -385,29 +323,6 @@ textarea.form-control:focus {
         height: auto; /* Allow content to dictate height */
     }
 
-    .sidebar {
-        width: 100%;
-        max-height: 50vh; /* Limit height on small screens */
-        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        transform: translateX(0) !important; /* Override collapsed state for mobile */
-        padding: 20px;
-    }
-
-    .sidebar.collapsed {
-        max-height: 0;
-        padding: 0;
-    }
-
-    .toggle-sidebar-btn {
-        position: static; /* Allow it to flow with content */
-        margin: 10px auto; /* Center it */
-        transform: none !important;
-        left: auto;
-    }
-
-    .main-content.sidebar-collapsed .toggle-sidebar-btn {
-        left: auto;
-    }
 
     #mynetwork {
         width: 100%;
@@ -419,4 +334,138 @@ textarea.form-control:focus {
         margin: 20px auto;
         max-width: 90%;
     }
+}
+
+/* Sidebar Overlay Styles */
+.sidebar-overlay {
+    position: absolute;
+    top: 20px; /* Same as info-box and timeline-slider */
+    left: 20px; /* Same as info-box */
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 20px; /* Same as info-box */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 10;
+    max-width: 350px; /* Adjust as needed */
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjust height to fit within viewport, considering top/bottom padding */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    transform: translateX(0); /* Start on-screen */
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar-overlay.collapsed {
+    transform: translateX(-120%); /* Slide off-screen to the left when collapsed */
+    visibility: hidden;
+    opacity: 0;
+}
+
+.sidebar-overlay .sidebar-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-overlay h3 {
+    margin-top: 0;
+    margin-bottom: 0; /* Reset margin for h3 inside header */
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.sidebar-overlay textarea {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.sidebar-overlay .btn-success {
+    width: 100%;
+}
+
+/* Adjust toggle button for overlay */
+.toggle-sidebar-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Positioned at the top-left, similar to info-box */
+    z-index: 100;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 40px; /* Slightly larger button */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.toggle-sidebar-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Main content adjustments for overlay */
+.main-content {
+    display: flex;
+    height: calc(100vh - 68px); /* Adjust for navbar height */
+    width: 100vw;
+    position: relative;
+}
+
+/* Timeline Slider Styles */
+#timeline-slider {
+    position: absolute;
+    bottom: 20px; /* Same as info-box */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 30%; /* Occupy 30% of screen width */
+    z-index: 11; /* Overlap mynetwork and info-box */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#timeline-slider .slider {
+    -webkit-appearance: none; /* Override default look */
+    width: 100%; /* Full width of its container */
+    height: 8px; /* Slider height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+#timeline-slider .slider:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
+
+#timeline-slider .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: #007bff; /* Blue background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Round slider handle */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#timeline-slider .slider::-moz-range-thumb {
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: #007bff; /* Blue background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Round slider handle */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }

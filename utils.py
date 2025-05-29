@@ -13,7 +13,7 @@ def transformar_para_vis(json_data: dict):
         'sujeito': '#FFD700',    # Gold
         'acao': '#ADD8E6',       # LightBlue
         'estimulo': '#90EE90',   # LightGreen
-        'condicao': '#FFA07A',   # LightSalmon
+        #'condicao': '#FFA07A',   # LightSalmon
     }
 
     # Processar Sujeitos
