@@ -725,6 +725,7 @@ if __name__ == "__main__":
     if resultado_analise_modular:
         print(f"\n--- Análise da Rede Contingencial (JSON Final Agregado Modular para {args.input_filepath}) ---")
         # O resultado já é um dict
+        resultado_analise_modular['texto_original'] = texto_para_analise
         output_json_string = json.dumps(resultado_analise_modular, indent=2, ensure_ascii=False)
         print(output_json_string) # Imprime no stdout também
         

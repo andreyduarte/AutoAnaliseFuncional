@@ -46,16 +46,17 @@
                 </section>
                 <section id="methodology" class="mb-4">
                     <h2><i class="fas fa-cogs"></i> Como Funciona (Metodologia)</h2>
-                    <p>O texto narrativo que você fornece é processado por um modelo de Inteligência Artificial sofisticado (Gemini do Google) que foi treinado para identificar componentes comportamentais chave dentro do texto. O modelo varre o texto em busca de elementos específicos que são cruciais para a compreensão do comportamento sob um ponto de vista científico.</p>
-                    <p>Os componentes centrais identificados são:</p>
+                    <p>O texto narrativo que você fornece é processado por um modelo de Inteligência Artificial sofisticado (Gemini do Google) que aplica um procedimento modular de Análise Funcional do Comportamento (AFC) para identificar e estruturar componentes comportamentais chave e suas inter-relações.</p>
+                    <p>O processo de análise envolve várias etapas, focando na extração de diferentes tipos de elementos e relações:</p>
                     <ul>
-                        <li><strong>Sujeitos:</strong> Os indivíduos ou entidades que realizam ações.</li>
-                        <li><strong>Ações/Comportamentos:</strong> As ações ou comportamentos específicos exibidos.</li>
-                        <li><strong>Estímulos/Eventos:</strong> Eventos ou estímulos ambientais que podem influenciar o comportamento, incluindo antecedentes e consequentes.</li>
-                        <li><strong>Condições/Estados:</strong> Fatores contextuais mais amplos, eventos estabelecedores ou estados que influenciam o comportamento.</li>
-                        <li><strong>Hipóteses:</strong> Hipóteses analíticas ou interpretações derivadas pela IA com base no texto de entrada, frequentemente sugerindo relações funcionais potenciais ou classificações do comportamento.</li>
+                        <li><strong>Identificação de Sujeitos:</strong> Os indivíduos ou entidades que realizam ações.</li>
+                        <li><strong>Identificação de Ações/Comportamentos:</strong> As ações ou comportamentos específicos exibidos pelos sujeitos.</li>
+                        <li><strong>Mapeamento de Estímulos/Eventos:</strong> Eventos ou estímulos ambientais que ocorrem imediatamente antes (antecedentes) e depois (consequentes) das ações.</li>
+                        <li><strong>Inferência de Relações Funcionais:</strong> Análise das relações entre antecedentes, comportamentos e consequentes para inferir funções comportamentais (reforço, punição, etc.).</li>
+                        <li><strong>Formulação de Hipóteses:</strong> Geração de hipóteses analíticas sobre as funções do comportamento com base nos elementos e relações identificados.</li>
+                        <!-- Condições/Estados e Relações Moduladoras são etapas futuras ou opcionais -->
                     </ul>
-                    <p>Uma vez que esses componentes são extraídos, eles são visualizados como um diagrama de rede interativo usando a biblioteca Vis.js. Isso permite uma exploração dinâmica das contingências comportamentais presentes na narrativa.</p>
+                    <p>Uma vez que esses componentes e relações são extraídos, eles são visualizados como um diagrama de rede interativo usando a biblioteca Vis.js. Isso permite uma exploração dinâmica das contingências comportamentais presentes na narrativa.</p>
                 </section>
                 <section id="visualization" class="mb-4">
                     <h2><i class="fas fa-project-diagram"></i> Interpretando a Visualização</h2>
@@ -64,25 +65,21 @@
                     <h5>Nós (Representando Componentes Comportamentais):</h5>
                     <p>Nós são os elementos distintos extraídos do texto. Sua aparência (cor e forma) indica seu tipo, de acordo com a legenda fornecida na página de análise:</p>
                     <ul>
-                        <li><strong>Sujeito:</strong> Representado por um <span style="color:gold;">●</span> círculo Dourado. Estes são os indivíduos na narrativa.</li>
-                        <li><strong>Ação/Comportamento:</strong> Representado por uma <span style="color:lightblue;">■</span> caixa Azul Claro. Estas são as ações realizadas pelos sujeitos.</li>
-                        <li><strong>Estímulo/Evento:</strong> Representado por uma <span style="color:lightgreen;">⬬</span> elipse Verde Claro. Estes são eventos ou estímulos ambientais.</li>
-                        <li><strong>Condição/Estado:</strong> Representado por um <span style="color:lightsalmon;">◆</span> diamante Salmão Claro. Estes representam fatores contextuais mais amplos ou estados.</li>
-                        <li><strong>Hipótese:</strong> Representado por uma <span style="color:purple;">■</span> caixa Roxa. Estas são hipóteses analíticas derivadas do texto.</li>
+                        <li><strong>Sujeito:</strong> Representado por um <span style="color:#FFD700;">●</span> círculo Dourado. Estes são os indivíduos na narrativa.</li>
+                        <li><strong>Ação/Comportamento:</strong> Representado por uma <span style="color:#ADD8E6;">■</span> caixa Azul Claro. Estas são as ações realizadas pelos sujeitos.</li>
+                        <li><strong>Estímulo/Evento:</strong> Representado por uma <span style="color:#90EE90;">⬬</span> elipse Verde Claro. Estes são eventos ou estímulos ambientais (antecedentes ou consequentes).</li>
+                        <li><strong>Hipótese:</strong> Representado por uma <span style="color:#a753f5;">■</span> caixa Roxa. Estas são hipóteses analíticas derivadas do texto.</li>
+                        <!-- Condições/Estados não estão na legenda atual -->
                     </ul>
 
                     <h5>Arestas (Linhas Representando Relações):</h5>
                     <p>Arestas são as linhas que conectam os nós, indicando relações entre eles:</p>
                     <ul>
                         <li><strong>Emite:</strong> Uma seta padrão <i class="fas fa-long-arrow-alt-right"></i>, tipicamente conectando um Sujeito a uma Ação que ele realiza.</li>
-                        <li><strong>Relações Temporais:</strong> Uma seta tracejada, frequentemente colorida (ex: <span style="color:green;">Verde</span>), indicando uma sequência no tempo (ex: um evento precede ou sucede outro).</li>
-                        <li><strong>Relações Funcionais:</strong> Setas contínuas, com cores específicas indicando o tipo de ligação funcional:
-                            <ul>
-                                <li><em>Antecedente:</em> Frequentemente representada por uma seta <span style="color:blue;">Azul</span> apontando para um comportamento que precede e pode influenciar.</li>
-                                <li><em>Consequente:</em> Frequentemente representada por uma seta <span style="color:red;">Vermelha</span> originando de um comportamento e apontando para um estímulo/evento que o segue e pode ser sua consequência.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Evidência para Hipótese:</strong> Uma seta, possivelmente colorida (ex: <span style="color:brown;">Marrom</span>), ligando vários elementos (Sujeitos, Ações, Estímulos) a uma Hipótese que eles suportam.</li>
+                        <li><strong>Relações Temporais:</strong> Uma seta tracejada, indicando uma sequência no tempo (ex: um evento precede ou sucede outro).</li>
+                        <li><strong>Relações Funcionais:</strong> Setas contínuas, indicando o tipo de ligação funcional (Antecedente -> Comportamento ou Comportamento -> Consequente).</li>
+                        <li><strong>Evidência para Hipótese:</strong> Uma seta ligando elementos da contingência (Ações, Estímulos) a uma Hipótese que eles suportam.</li>
+                        <!-- Relações Moduladoras não estão na legenda atual -->
                     </ul>
                     <p>Você frequentemente pode interagir com a rede. Passar o mouse sobre ou clicar em nós e arestas no gráfico Vis.js pode revelar informações mais detalhadas ou destacar conexões.</p>
                 </section>
