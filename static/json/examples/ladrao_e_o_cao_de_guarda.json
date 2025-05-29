@@ -1,0 +1,253 @@
+{
+    "sujeitos": [
+        {
+            "id_sujeito": "S1",
+            "nome_descritivo": "Ladr\u00e3o"
+        },
+        {
+            "id_sujeito": "S2",
+            "nome_descritivo": "C\u00e3o de Guarda"
+        }
+    ],
+    "acoes_comportamentos": [
+        {
+            "id_acao": "AC1",
+            "descricao_topografica": "Desejar entrar \u00e0 noite em uma casa para roubar",
+            "tipo_observabilidade": "Encoberto",
+            "classe_funcional_hipotetica": [
+                "Obten\u00e7\u00e3o de recursos"
+            ]
+        },
+        {
+            "id_acao": "AC2",
+            "descricao_topografica": "Trazer consigo um peda\u00e7o de sandu\u00edche",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Manipula\u00e7\u00e3o de est\u00edmulos",
+                "Tentativa de suborno"
+            ]
+        },
+        {
+            "id_acao": "AC3",
+            "descricao_topografica": "Lan\u00e7ar o naco de sandu\u00edche ao solo",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Oferta",
+                "Tentativa de distra\u00e7\u00e3o",
+                "Esquiva de latido"
+            ]
+        },
+        {
+            "id_acao": "AC4",
+            "descricao_topografica": "Dizer que n\u00e3o vai deixar de latir",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Comunica\u00e7\u00e3o",
+                "Defesa de territ\u00f3rio"
+            ]
+        },
+        {
+            "id_acao": "AC5",
+            "descricao_topografica": "Latir enquanto o ladr\u00e3o n\u00e3o for embora",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Alerta",
+                "Defesa de territ\u00f3rio",
+                "Prote\u00e7\u00e3o do dono"
+            ]
+        }
+    ],
+    "emissoes_comportamentais": [
+        {
+            "id_aresta": "EM1",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC1",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM2",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC2",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM3",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM4",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM5",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        }
+    ],
+    "estimulos_eventos": [
+        {
+            "id_estimulo_evento": "E1",
+            "descricao": "O ladr\u00e3o traz consigo um peda\u00e7o de sandu\u00edche",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Pr\u00f3ximo ao ladr\u00e3o"
+        },
+        {
+            "id_estimulo_evento": "E2",
+            "descricao": "O ladr\u00e3o lan\u00e7a o naco de sandu\u00edche ao solo",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "No ch\u00e3o, pr\u00f3ximo ao c\u00e3o"
+        },
+        {
+            "id_estimulo_evento": "E3",
+            "descricao": "O c\u00e3o diz que n\u00e3o vai deixar de latir e explica o porqu\u00ea",
+            "tipo_fisico": "Verbal",
+            "modalidade_sensorial_primaria": "Auditivo",
+            "localizacao": "Pr\u00f3ximo ao ladr\u00e3o"
+        },
+        {
+            "id_estimulo_evento": "E4",
+            "descricao": "O c\u00e3o late",
+            "tipo_fisico": "N\u00e3o-Verbal",
+            "modalidade_sensorial_primaria": "Auditivo",
+            "localizacao": "Na casa"
+        }
+    ],
+    "relacoes_temporais": [
+        {
+            "id_aresta": "RT1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT2",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT3",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT4",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E4",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        }
+    ],
+    "condicoes_estados": [],
+    "relacoes_funcionais_antecedentes": [
+        {
+            "id_aresta": "RFA1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD",
+            "prob_resposta_na_presenca": 0.9,
+            "prob_resposta_na_ausencia": 0.1
+        },
+        {
+            "id_aresta": "RFA2",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD",
+            "prob_resposta_na_presenca": 0.95,
+            "prob_resposta_na_ausencia": 0.05
+        }
+    ],
+    "relacoes_funcionais_consequentes": [
+        {
+            "id_aresta": "RFC1",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_NEGATIVA_SP-",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Baixa"
+        },
+        {
+            "id_aresta": "RFC2",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E4",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
+        }
+    ],
+    "relacoes_moduladoras_estado": [],
+    "hipoteses_analiticas": [
+        {
+            "id_hipotese": "H1",
+            "descricao_hipotese": "O comportamento do Ladr\u00e3o de lan\u00e7ar o sandu\u00edche (AC3) \u00e9 mantido pela expectativa de que o C\u00e3o pare de latir (E4), facilitando o roubo (AC1).",
+            "nivel_confianca": "M\u00e9dio",
+            "data_formulacao": "2025-05-29T14:41:36.936108Z",
+            "status_hipotese": "Aguardando teste"
+        },
+        {
+            "id_hipotese": "H2",
+            "descricao_hipotese": "O comportamento do C\u00e3o de latir (AC5) \u00e9 mantido pela esquiva da perda de refor\u00e7adores (comida e abrigo) providos pelo dono da casa.",
+            "nivel_confianca": "Alto",
+            "data_formulacao": "2025-05-29T14:41:36.936108Z",
+            "status_hipotese": "Suportada por dados"
+        }
+    ],
+    "evidencias_para_hipoteses": [
+        {
+            "id_aresta": "EH1",
+            "id_origem_no": "AC3",
+            "id_destino_no": "H1",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S1",
+                "AC1",
+                "AC3",
+                "E1",
+                "E4",
+                "RT1",
+                "RFC1",
+                "RFA1"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        },
+        {
+            "id_aresta": "EH2",
+            "id_origem_no": "AC5",
+            "id_destino_no": "H2",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC5",
+                "E3",
+                "E4",
+                "RT3",
+                "RT4",
+                "RFA2",
+                "RFC2"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        }
+    ],
+    "texto_original": "O Ladr\u00e3o e o C\u00e3o de Guarda\r\nUm ladr\u00e3o, desejando entrar \u00e0 noite em uma casa para roubar, trazia consigo um peda\u00e7o de sandu\u00edche para tentar distrair o C\u00e3o de Guarda que vigiava a casa.\r\nPor\u00e9m, assim que o Ladr\u00e3o lan\u00e7ou o naco ao solo, o C\u00e3o disse:\r\n\u2014 Voc\u00ea s\u00f3 est\u00e1 me dando este peda\u00e7o de p\u00e3o para que eu fique quietinho e deixe voc\u00ea roubar a casa. Mas, j\u00e1 que \u00e9 o dono da casa que me sustenta a vida, n\u00e3o vou deixar de latir enquanto voc\u00ea n\u00e3o for embora ou at\u00e9 que ele acorde e venha te enxotar. N\u00e3o quero que este peda\u00e7o de p\u00e3o me custe morrer de fome o resto da vida. "
+}
