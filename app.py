@@ -1,10 +1,15 @@
 # app.py
 import os
-from flask import Flask, render_template, request, jsonify
+import glob # For finding files
+from flask import Flask, render_template, request, jsonify, redirect, url_for # Added redirect, url_for
 import json # Import json para serializar para o template
 from analysis import analisar # Importa a função do arquivo analysis.py
 
 app = Flask(__name__)
+
+# Create static/json/examples directory if it doesn't exist
+examples_dir = os.path.join('static', 'json', 'examples')
+os.makedirs(examples_dir, exist_ok=True)
 
 def transformar_para_vis(json_data: dict):
     """
@@ -238,11 +243,67 @@ def analise():
         # Se o arquivo não existir, mostra a página inicial com o formulário
         return render_template('index.html')
 
+def explanation_page():
+    """Renders the explanation page."""
+    return render_template('explanation.html')
+
+@app.route('/new', methods=['GET', 'POST'])
+def new():
+    # Limpa o arquivo output.json
+    output_file = os.path.join('static', 'json', 'output.json')
+    if os.path.exists(output_file):
+        os.remove(output_file)
+    
+    # Renderiza a página inicial com o formulário
+    return render_template('index.html')
+
 @app.route('/download')
 def download():
     # Faz o download do arquivo output.json
     output_file = os.path.join('static', 'json', 'output.json')
     return render_template('download.html', output_file=output_file)
+
+@app.route('/examples')
+def show_examples():
+    """Lists available example JSON files."""
+    current_examples_dir = os.path.join('static', 'json', 'examples') # Use the global or redefine for clarity
+    if not os.path.exists(current_examples_dir):
+        os.makedirs(current_examples_dir) # Ensure it exists if somehow deleted after app start
+        
+    example_file_paths = glob.glob(os.path.join(current_examples_dir, '*.json'))
+    example_filenames = sorted([os.path.basename(p) for p in example_file_paths])
+    return render_template('examples.html', example_files=example_filenames)
+
+@app.route('/load_example/<path:example_filename>')
+def load_example(example_filename):
+    """Loads a selected example JSON into the main output.json and redirects to index."""
+    example_file_path = os.path.join('static', 'json', 'examples', example_filename)
+    output_file_path = os.path.join('static', 'json', 'output.json')
+
+    if not os.path.exists(example_file_path):
+        # TODO: Implement flash messaging for "Example not found"
+        print(f"Error: Example file not found at {example_file_path}")
+        return redirect(url_for('show_examples'))
+
+    try:
+        with open(example_file_path, 'r', encoding='utf-8') as f_example:
+            example_data = json.load(f_example)
+        
+        # Ensure 'texto_original' key exists for consistency
+        if 'texto_original' not in example_data:
+            example_data['texto_original'] = f"Análise carregada do exemplo: {example_filename.replace('_', ' ').replace('.json', '')}. O texto original não está armazenado neste exemplo."
+
+        # Ensure the main 'static/json' directory exists for output.json
+        os.makedirs(os.path.join('static', 'json'), exist_ok=True)
+        
+        with open(output_file_path, 'w', encoding='utf-8') as f_output:
+            json.dump(example_data, f_output, indent=4, ensure_ascii=False)
+        
+        return redirect(url_for('index'))
+    except Exception as e:
+        # TODO: Implement flash messaging for "Error loading example"
+        print(f"Error loading example {example_filename}: {e}")
+        return redirect(url_for('show_examples'))
 
 if __name__ == '__main__':
     app.run(debug=True)

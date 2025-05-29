@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rede Comportamental Visualizada</title>
+    <title>Visualização de Rede Comportamental</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -152,14 +152,26 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Rede Comportamental</a>
+            <a class="navbar-brand" href="#">Análise de Rede Comportamental</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> Início</a>
+                        <a class="nav-link" href="/new"><i class="fas fa-file-alt"></i> Nova Análise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/explanation"><i class="fas fa-info-circle"></i> Explicação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/examples"><i class="fas fa-th-list"></i> Exemplos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-project-diagram"></i> Ver Análise Atual</a>
+                    </li>
+                     <li class="nav-item ms-2 me-2">
+                        <button class="btn btn-primary" type="submit" form="updateForm"><i class="fas fa-sync-alt"></i> Atualizar Gráfico</button>
                     </li>
                     <li class="nav-item">
                         <button class="btn btn-info" id="downloadNetworkImage" style="display: none;"><i class="fas fa-download"></i> Baixar Imagem</button>
@@ -190,11 +202,11 @@
             <i class="fas fa-eye-slash"></i>
         </button></h3>
         <ul  id="legendInfoBox"  class="list-unstyled">
-            <li><span class="legend-color-box" style="background-color: #FFD700;"></span><span class="fw-semibold">Sujeito:</span> Indivíduos</li>
-            <li><span class="legend-color-box" style="background-color: #ADD8E6; width:15px; height:10px; display:inline-block; border-radius:2px;"></span><span class="fw-semibold">Ação:</span> Comportamentos</li>
-            <li><span class="legend-color-box" style="background-color: #90EE90; border-radius:50%;"></span><span class="fw-semibold">Estímulo:</span> Eventos</li>
-            <li><span class="legend-color-box" style="background-color: #FFA07A; transform: rotate(45deg);"></span><span class="fw-semibold">Condição:</span> Estados</li>
-            <li><span class="legend-color-box" style="background-color: #8A2BE2; border-radius: 3px;"></span><span class="fw-semibold">Hipótese:</span> Hipóteses Analíticas</li>
+            <li><span class="legend-color-box" style="background-color: #FFD700;"></span><span class="fw-semibold">Sujeito:</span> Representa os indivíduos na narrativa.</li>
+            <li><span class="legend-color-box" style="background-color: #ADD8E6; width:15px; height:10px; display:inline-block; border-radius:2px;"></span><span class="fw-semibold">Ação/Comportamento:</span> Representa as ações ou comportamentos exibidos.</li>
+            <li><span class="legend-color-box" style="background-color: #90EE90; border-radius:50%;"></span><span class="fw-semibold">Estímulo/Evento:</span> Representa eventos ou estímulos ambientais.</li>
+            <li><span class="legend-color-box" style="background-color: #FFA07A; transform: rotate(45deg);"></span><span class="fw-semibold">Condição/Estado:</span> Representa fatores contextuais ou estados que influenciam o comportamento.</li>
+            <li><span class="legend-color-box" style="background-color: #a753f5; border-radius: 3px;"></span><span class="fw-semibold">Hipótese:</span> Representa hipóteses analíticas derivadas do texto.</li>
         </ul>
     </div>
 
