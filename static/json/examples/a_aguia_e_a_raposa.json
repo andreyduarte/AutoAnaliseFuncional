@@ -1,0 +1,541 @@
+{
+    "sujeitos": [
+        {
+            "id_sujeito": "S1",
+            "nome_descritivo": "\u00c1guia"
+        },
+        {
+            "id_sujeito": "S2",
+            "nome_descritivo": "Raposa"
+        },
+        {
+            "id_sujeito": "S3",
+            "nome_descritivo": "Filhotes da \u00c1guia"
+        },
+        {
+            "id_sujeito": "S4",
+            "nome_descritivo": "Filhotes da Raposa"
+        },
+        {
+            "id_sujeito": "S5",
+            "nome_descritivo": "Homens"
+        }
+    ],
+    "acoes_comportamentos": [
+        {
+            "id_acao": "AC1",
+            "descricao_topografica": "Fazer ninho no alto de uma \u00e1rvore",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC2",
+            "descricao_topografica": "Descer do ninho",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC3",
+            "descricao_topografica": "Raptar os filhotes da Raposa",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC4",
+            "descricao_topografica": "Devorar os filhotes da Raposa",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC5",
+            "descricao_topografica": "Dividir a ca\u00e7a com os filhotes",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC6",
+            "descricao_topografica": "Pegar um peda\u00e7o de carne com brasa",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC7",
+            "descricao_topografica": "Cair queimado no ch\u00e3o (filhotes)",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC8",
+            "descricao_topografica": "Entrar numa moita e dar cria",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC9",
+            "descricao_topografica": "Sair para ca\u00e7ar",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC10",
+            "descricao_topografica": "Ficar aflita",
+            "tipo_observabilidade": "Encoberto"
+        },
+        {
+            "id_acao": "AC11",
+            "descricao_topografica": "Praguejar",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC12",
+            "descricao_topografica": "Devorar os filhotes da \u00c1guia",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id_acao": "AC13",
+            "descricao_topografica": "Assar uma cabra",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        }
+    ],
+    "emissoes_comportamentais": [
+        {
+            "id_aresta": "EM1",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC1",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM2",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC2",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM3",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM4",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM5",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM6",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC6",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM7",
+            "id_origem_no": "S3",
+            "id_destino_no": "AC7",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM8",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC8",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM9",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC9",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM10",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC10",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM11",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC11",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM12",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC12",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id_aresta": "EM13",
+            "id_origem_no": "S5",
+            "id_destino_no": "AC13",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        }
+    ],
+    "estimulos_eventos": [
+        {
+            "id_estimulo_evento": "E1",
+            "descricao": "A Raposa sai para ca\u00e7ar",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Moita"
+        },
+        {
+            "id_estimulo_evento": "E2",
+            "descricao": "A \u00c1guia est\u00e1 precisando de comida",
+            "tipo_fisico": "Interoceptivo",
+            "modalidade_sensorial_primaria": "Interoceptivo",
+            "localizacao": "Ninho"
+        },
+        {
+            "id_estimulo_evento": "E3",
+            "descricao": "Filhotes da Raposa",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Moita"
+        },
+        {
+            "id_estimulo_evento": "E4",
+            "descricao": "A ca\u00e7a \u00e9 dividida com os filhotes da \u00c1guia",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Ninho"
+        },
+        {
+            "id_estimulo_evento": "E5",
+            "descricao": "Homens assando uma cabra",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Ch\u00e3o"
+        },
+        {
+            "id_estimulo_evento": "E6",
+            "descricao": "Peda\u00e7o de carne com brasa",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Ch\u00e3o"
+        },
+        {
+            "id_estimulo_evento": "E7",
+            "descricao": "Fogo no ninho da \u00c1guia",
+            "tipo_fisico": "N\u00e3o-Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Ninho"
+        },
+        {
+            "id_estimulo_evento": "E8",
+            "descricao": "Filhotes da \u00c1guia caem queimados no ch\u00e3o",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Ch\u00e3o"
+        },
+        {
+            "id_estimulo_evento": "E9",
+            "descricao": "A Raposa volta",
+            "tipo_fisico": "Social",
+            "modalidade_sensorial_primaria": "Visual",
+            "localizacao": "Moita"
+        }
+    ],
+    "relacoes_temporais": [
+        {
+            "id_aresta": "RT1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT2",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT3",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT4",
+            "id_origem_no": "AC3",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT5",
+            "id_origem_no": "AC4",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT6",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E4",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT7",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC6",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT8",
+            "id_origem_no": "AC6",
+            "id_destino_no": "E6",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT9",
+            "id_origem_no": "E6",
+            "id_destino_no": "E7",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT10",
+            "id_origem_no": "E7",
+            "id_destino_no": "AC7",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT11",
+            "id_origem_no": "AC7",
+            "id_destino_no": "E8",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT12",
+            "id_origem_no": "E8",
+            "id_destino_no": "AC12",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id_aresta": "RT13",
+            "id_origem_no": "E9",
+            "id_destino_no": "AC10",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        }
+    ],
+    "condicoes_estados": [],
+    "relacoes_funcionais_antecedentes": [
+        {
+            "id_aresta": "RFA1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id_aresta": "RFA2",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC3",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US"
+        },
+        {
+            "id_aresta": "RFA3",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC6",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id_aresta": "RFA4",
+            "id_origem_no": "E8",
+            "id_destino_no": "AC12",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id_aresta": "RFA5",
+            "id_origem_no": "E9",
+            "id_destino_no": "AC10",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US"
+        }
+    ],
+    "relacoes_funcionais_consequentes": [
+        {
+            "id_aresta": "RFC1",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E3",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id_aresta": "RFC2",
+            "id_origem_no": "AC3",
+            "id_destino_no": "AC4",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
+        },
+        {
+            "id_aresta": "RFC3",
+            "id_origem_no": "AC4",
+            "id_destino_no": "AC5",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
+        },
+        {
+            "id_aresta": "RFC4",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E4",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id_aresta": "RFC5",
+            "id_origem_no": "AC6",
+            "id_destino_no": "E6",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
+        },
+        {
+            "id_aresta": "RFC6",
+            "id_origem_no": "E6",
+            "id_destino_no": "E7",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id_aresta": "RFC7",
+            "id_origem_no": "E7",
+            "id_destino_no": "AC7",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id_aresta": "RFC8",
+            "id_origem_no": "AC7",
+            "id_destino_no": "E8",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        }
+    ],
+    "relacoes_moduladoras_estado": [],
+    "hipoteses_analiticas": [
+        {
+            "id_hipotese": "H1",
+            "descricao_hipotese": "O comportamento da \u00c1guia de raptar os filhotes da Raposa (AC3) \u00e9 mantido por refor\u00e7amento positivo (SR+) atrav\u00e9s da obten\u00e7\u00e3o de alimento (E4) para si e seus filhotes.",
+            "nivel_confianca": "M\u00e9dio",
+            "data_formulacao": "2025-05-29T15:38:09.648925Z",
+            "status_hipotese": "Aguardando teste"
+        },
+        {
+            "id_hipotese": "H2",
+            "descricao_hipotese": "O comportamento da \u00c1guia de pegar um peda\u00e7o de carne com brasa (AC6) \u00e9 mantido por refor\u00e7amento positivo (SR+) atrav\u00e9s da obten\u00e7\u00e3o de alimento (E6).",
+            "nivel_confianca": "M\u00e9dio",
+            "data_formulacao": "2025-05-29T15:38:09.648925Z",
+            "status_hipotese": "Aguardando teste"
+        },
+        {
+            "id_hipotese": "H3",
+            "descricao_hipotese": "O comportamento da Raposa de devorar os filhotes da \u00c1guia (AC12) \u00e9 mantido por refor\u00e7amento negativo (SR-) atrav\u00e9s da remo\u00e7\u00e3o de um est\u00edmulo aversivo (E8), no caso, a perda dos seus pr\u00f3prios filhotes.",
+            "nivel_confianca": "M\u00e9dio",
+            "data_formulacao": "2025-05-29T15:38:09.648925Z",
+            "status_hipotese": "Aguardando teste"
+        }
+    ],
+    "evidencias_para_hipoteses": [
+        {
+            "id_aresta": "EH1",
+            "id_origem_no": "AC3",
+            "id_destino_no": "H1",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "E1",
+                "E2",
+                "AC3",
+                "E3",
+                "AC4",
+                "AC5",
+                "E4",
+                "RT1",
+                "RT2",
+                "RT3",
+                "RT4",
+                "RT5",
+                "RT6",
+                "RFA1",
+                "RFA2",
+                "RFC1",
+                "RFC2",
+                "RFC3",
+                "RFC4"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        },
+        {
+            "id_aresta": "EH2",
+            "id_origem_no": "AC6",
+            "id_destino_no": "H2",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "E5",
+                "AC6",
+                "E6",
+                "RT7",
+                "RT8",
+                "RFA3",
+                "RFC5"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        },
+        {
+            "id_aresta": "EH3",
+            "id_origem_no": "AC12",
+            "id_destino_no": "H3",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "E8",
+                "AC12",
+                "RT12",
+                "RFA4"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO",
+            "fonte_dados": "Narrativa Textual"
+        }
+    ],
+    "texto_original": "A \u00c1guia e a Raposa\r\nUma \u00c1guia e uma Raposa ficaram amigas e resolveram ser vizinhas. Elas pensaram que a conviv\u00eancia faria com que a amizade delas fosse verdadeira.\r\nA \u00c1guia fez o seu ninho bem no alto de uma \u00e1rvore, enquanto a Raposa entrou numa moita e deu cria ali. Por\u00e9m, uma vez a \u00c1guia estava precisando de comida e, aproveitando que a Raposa havia sa\u00eddo para ca\u00e7ar, desceu do seu ninho, foi at\u00e9 a moita, raptou os filhotes da Raposa e os devorou, dividindo a ca\u00e7a com seus filhotes.\r\nA Raposa voltou e ficou muita aflita. Primeiro porque perdera os seus filhotes, mas ainda mais pelo fato de que, por n\u00e3o poder voar, seria muito dif\u00edcil se vingar da \u00c1guia.\r\nPor esse motivo, ficou praguejando, sem poder fazer nada. Mas n\u00e3o demorou muito tempo at\u00e9 que o destino se revoltasse contra a \u00c1guia traidora.\r\nCerto dia, alguns homens estavam assando uma cabra quando a \u00c1guia desceu do ninho e pegou um peda\u00e7o de carne para ela. Por\u00e9m, havia uma pequena brasa na carne, o que foi suficiente para atear fogo no ninho da \u00c1guia.\r\nA \u00c1guia sabia voar, mas os seus filhotes n\u00e3o. N\u00e3o demorou muito para que o fogo os atingisse e eles ca\u00edssem queimados no ch\u00e3o. Vendo isso, a raposa se apressou e devorou todos eles na frente da \u00c1guia."
+}
