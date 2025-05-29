@@ -1,0 +1,826 @@
+{
+  "sujeitos": [
+    {
+      "id_sujeito": "S1",
+      "nome_descritivo": "Rato da Cidade",
+      "historico_relevante": "Morava na cidade, convidou o Rato do Campo para morar na cidade, desfrutava da fartura mas também da correria e perigos."
+    },
+    {
+      "id_sujeito": "S2",
+      "nome_descritivo": "Rato do Campo",
+      "historico_relevante": "Vivia no campo, aceitou o convite para a cidade, mas retornou ao campo devido aos perigos e à falta de tranquilidade."
+    },
+    {
+      "id_sujeito": "S3",
+      "nome_descritivo": "Homem",
+      "historico_relevante": "Entrou na despensa com dois gatos, causando a fuga dos ratos."
+    },
+    {
+      "id_sujeito": "S4",
+      "nome_descritivo": "Gatos",
+      "historico_relevante": "Entraram na despensa com o homem, perseguindo os ratos."
+    },
+    {
+      "id_sujeito": "S5",
+      "nome_descritivo": "Rapaz",
+      "historico_relevante": "Entrou na despensa e instalou ratoeiras, aumentando o perigo para os ratos."
+    }
+  ],
+  "acoes_comportamentos": [
+    {
+      "id_acao": "AC1",
+      "descricao_topografica": "Convidar verbalmente ou por gestos para uma refeição.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Busca de interação social"
+      ]
+    },
+    {
+      "id_acao": "AC2",
+      "descricao_topografica": "Concordar com uma proposta ou convite.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Busca de alimento",
+        "Busca de interação social"
+      ]
+    },
+    {
+      "id_acao": "AC3",
+      "descricao_topografica": "Ingerir alimentos vegetais como raízes, ervas e frutos.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Obtenção de alimento"
+      ]
+    },
+    {
+      "id_acao": "AC4",
+      "descricao_topografica": "Emitir sons articulados com significado, formando frases para convidar alguém.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Influência social",
+        "Busca de atenção",
+        "Oferecer ajuda"
+      ]
+    },
+    {
+      "id_acao": "AC5",
+      "descricao_topografica": "Chegar a um acordo mútuo sobre um plano de ação.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Cooperação",
+        "Busca de benefício mútuo"
+      ]
+    },
+    {
+      "id_acao": "AC6",
+      "descricao_topografica": "Locomover-se de um local para outro com o propósito de residir.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Busca de recursos",
+        "Busca de estimulação"
+      ]
+    },
+    {
+      "id_acao": "AC7",
+      "descricao_topografica": "Ingerir alimentos com prazer, apreciando o sabor.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Obtenção de alimento",
+        "Busca de estimulação sensorial"
+      ]
+    },
+    {
+      "id_acao": "AC8",
+      "descricao_topografica": "Locomover-se rapidamente para longe de uma ameaça.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Fuga de estímulo aversivo"
+      ]
+    },
+    {
+      "id_acao": "AC9",
+      "descricao_topografica": "Ocultar-se para evitar ser visto ou detectado.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Fuga de estímulo aversivo",
+        "Evitação de punição"
+      ]
+    },
+    {
+      "id_acao": "AC10",
+      "descricao_topografica": "Sair de um local onde estava oculto.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Busca de recursos",
+        "Retorno à atividade"
+      ]
+    },
+    {
+      "id_acao": "AC11",
+      "descricao_topografica": "Posicionar e armar dispositivos para capturar ratos.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Controle de pragas"
+      ]
+    },
+    {
+      "id_acao": "AC12",
+      "descricao_topografica": "Expressar aversão ou desinteresse em relação a uma situação estressante.",
+      "tipo_observabilidade": "Encoberto",
+      "classe_funcional_hipotetica": [
+        "Fuga de estimulação aversiva",
+        "Evitação de aversivos futuros"
+      ]
+    },
+    {
+      "id_acao": "AC13",
+      "descricao_topografica": "Despedir-se de alguém, geralmente com palavras ou gestos.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Fuga de situação aversiva",
+        "Comunicação de intenção"
+      ]
+    },
+    {
+      "id_acao": "AC14",
+      "descricao_topografica": "Emitir sons articulados com significado, formando frases, expressando uma decisão ou preferência.",
+      "tipo_observabilidade": "Observável",
+      "classe_funcional_hipotetica": [
+        "Comunicação de intenção",
+        "Justificativa de comportamento",
+        "Fuga de estimulação aversiva"
+      ]
+    }
+  ],
+  "emissoes_comportamentais": [
+    {
+      "id_aresta": "EM1",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC1",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM2",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC2",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM3",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC3",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM4",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC3",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM5",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC4",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM6",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC5",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM7",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC5",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM8",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC6",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM9",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC6",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM10",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM11",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM12",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC8",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM13",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC8",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM14",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC9",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM15",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC9",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM16",
+      "id_origem_no": "S1",
+      "id_destino_no": "AC10",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM17",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC10",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM18",
+      "id_origem_no": "S5",
+      "id_destino_no": "AC11",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM19",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC12",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM20",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC13",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    },
+    {
+      "id_aresta": "EM21",
+      "id_origem_no": "S2",
+      "id_destino_no": "AC14",
+      "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+    }
+  ],
+  "estimulos_eventos": [
+    {
+      "id_estimulo_evento": "E1",
+      "descricao": "Convite para jantar na casa do Rato do Campo",
+      "tipo_fisico": "Verbal",
+      "modalidade_sensorial_primaria": "Auditivo",
+      "localizacao": "Campo"
+    },
+    {
+      "id_estimulo_evento": "E2",
+      "descricao": "Buraco do Rato do Campo com raízes, ervas e frutos disponíveis",
+      "tipo_fisico": "Não-Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Buraco no Campo"
+    },
+    {
+      "id_estimulo_evento": "E3",
+      "descricao": "Chegada ao buraco do Rato do Campo",
+      "tipo_fisico": "Não-Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Buraco no Campo"
+    },
+    {
+      "id_estimulo_evento": "E4",
+      "descricao": "Percepção da miséria do Rato do Campo",
+      "tipo_fisico": "Não-Social",
+      "modalidade_sensorial_primaria": "Visual",
+      "localizacao": "Buraco no Campo"
+    },
+    {
+      "id_estimulo_evento": "E5",
+      "descricao": "Sentimento de pena (do Rato da Cidade)",
+      "tipo_fisico": "Interoceptivo",
+      "modalidade_sensorial_primaria": "Interoceptivo",
+      "localizacao": "Interno ao Rato da Cidade"
+    },
+    {
+      "id_estimulo_evento": "E6",
+      "descricao": "Proposta de mudança para a cidade (verbal)",
+      "tipo_fisico": "Verbal",
+      "modalidade_sensorial_primaria": "Auditivo",
+      "localizacao": "Buraco no Campo"
+    },
+    {
+      "id_estimulo_evento": "E7",
+      "descricao": "Casa grande e cheia de comida (na Cidade)",
+      "tipo_fisico": "Não-Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Cidade"
+    },
+    {
+      "id_estimulo_evento": "E8",
+      "descricao": "Estar na despensa da casa",
+      "tipo_fisico": "Não-Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Despensa na Cidade"
+    },
+    {
+      "id_estimulo_evento": "E9",
+      "descricao": "Disponibilidade de comidas sofisticadas",
+      "tipo_fisico": "Não-Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Despensa na Cidade"
+    },
+    {
+      "id_estimulo_evento": "E10",
+      "descricao": "Entrada de um homem com dois gatos",
+      "tipo_fisico": "Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Despensa na Cidade"
+    },
+    {
+      "id_estimulo_evento": "E11",
+      "descricao": "Saída do homem e dos gatos",
+      "tipo_fisico": "Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Despensa na Cidade"
+    },
+    {
+      "id_estimulo_evento": "E12",
+      "descricao": "Preparação para comer novamente",
+      "tipo_fisico": "Proprioceptivo",
+      "modalidade_sensorial_primaria": "Nenhuma Aplicável",
+      "localizacao": "Despensa na Cidade"
+    },
+    {
+      "id_estimulo_evento": "E13",
+      "descricao": "Entrada de um rapaz na despensa",
+      "tipo_fisico": "Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Despensa na Cidade"
+    },
+    {
+      "id_estimulo_evento": "E14",
+      "descricao": "Presença de ratoeiras instaladas",
+      "tipo_fisico": "Não-Social",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Despensa na Cidade"
+    },
+    {
+      "id_estimulo_evento": "E15",
+      "descricao": "Experiência de correria e perigo na cidade",
+      "tipo_fisico": "Misto",
+      "modalidade_sensorial_primaria": "Misto",
+      "localizacao": "Cidade"
+    },
+    {
+      "id_estimulo_evento": "E16",
+      "descricao": "Declaração de preferência do Rato do Campo pela vida no campo",
+      "tipo_fisico": "Verbal",
+      "modalidade_sensorial_primaria": "Auditivo",
+      "localizacao": "Despensa na Cidade"
+    }
+  ],
+  "relacoes_temporais": [
+    {
+      "id_aresta": "RT1",
+      "id_origem_no": "AC1",
+      "id_destino_no": "E1",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT2",
+      "id_origem_no": "E1",
+      "id_destino_no": "AC2",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT3",
+      "id_origem_no": "E3",
+      "id_destino_no": "AC3",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT4",
+      "id_origem_no": "E2",
+      "id_destino_no": "AC3",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT5",
+      "id_origem_no": "E4",
+      "id_destino_no": "AC4",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT6",
+      "id_origem_no": "E5",
+      "id_destino_no": "AC4",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT7",
+      "id_origem_no": "AC4",
+      "id_destino_no": "E6",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT8",
+      "id_origem_no": "E6",
+      "id_destino_no": "AC5",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT9",
+      "id_origem_no": "AC5",
+      "id_destino_no": "AC6",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT10",
+      "id_origem_no": "AC6",
+      "id_destino_no": "E7",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT11",
+      "id_origem_no": "E7",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT12",
+      "id_origem_no": "E8",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT13",
+      "id_origem_no": "E9",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT14",
+      "id_origem_no": "AC7",
+      "id_destino_no": "E10",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT15",
+      "id_origem_no": "E10",
+      "id_destino_no": "AC8",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT16",
+      "id_origem_no": "AC8",
+      "id_destino_no": "AC9",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT17",
+      "id_origem_no": "AC9",
+      "id_destino_no": "E11",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT18",
+      "id_origem_no": "E11",
+      "id_destino_no": "AC10",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT19",
+      "id_origem_no": "AC10",
+      "id_destino_no": "E12",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT20",
+      "id_origem_no": "E12",
+      "id_destino_no": "E13",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT21",
+      "id_origem_no": "E13",
+      "id_destino_no": "AC9",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT22",
+      "id_origem_no": "E13",
+      "id_destino_no": "AC11",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT23",
+      "id_origem_no": "AC11",
+      "id_destino_no": "E14",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT24",
+      "id_origem_no": "E15",
+      "id_destino_no": "AC12",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT25",
+      "id_origem_no": "E14",
+      "id_destino_no": "AC12",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT26",
+      "id_origem_no": "AC12",
+      "id_destino_no": "AC13",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT27",
+      "id_origem_no": "AC13",
+      "id_destino_no": "AC14",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    },
+    {
+      "id_aresta": "RT28",
+      "id_origem_no": "AC14",
+      "id_destino_no": "E16",
+      "tipo_aresta": "RELACAO_TEMPORAL",
+      "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+      "contiguidade_percebida": "Alta"
+    }
+  ],
+  "condicoes_estados": [],
+  "relacoes_funcionais_antecedentes": [
+    {
+      "id_aresta": "RFA1",
+      "id_origem_no": "E1",
+      "id_destino_no": "AC2",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA2",
+      "id_origem_no": "E3",
+      "id_destino_no": "AC3",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA3",
+      "id_origem_no": "E2",
+      "id_destino_no": "AC3",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA4",
+      "id_origem_no": "E4",
+      "id_destino_no": "AC4",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA5",
+      "id_origem_no": "E5",
+      "id_destino_no": "AC4",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA6",
+      "id_origem_no": "E6",
+      "id_destino_no": "AC5",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA7",
+      "id_origem_no": "AC5",
+      "id_destino_no": "AC6",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA8",
+      "id_origem_no": "E7",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA9",
+      "id_origem_no": "E8",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA10",
+      "id_origem_no": "E9",
+      "id_destino_no": "AC7",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA11",
+      "id_origem_no": "E10",
+      "id_destino_no": "AC8",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_ELICIADOR_CONDICIONADO_CS"
+    },
+    {
+      "id_aresta": "RFA12",
+      "id_origem_no": "E13",
+      "id_destino_no": "AC9",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_ELICIADOR_CONDICIONADO_CS"
+    },
+    {
+      "id_aresta": "RFA13",
+      "id_origem_no": "E13",
+      "id_destino_no": "AC11",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    },
+    {
+      "id_aresta": "RFA14",
+      "id_origem_no": "E15",
+      "id_destino_no": "AC12",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_ELICIADOR_CONDICIONADO_CS"
+    },
+    {
+      "id_aresta": "RFA15",
+      "id_origem_no": "E14",
+      "id_destino_no": "AC12",
+      "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+      "funcao_antecedente": "ESTÍMULO_DISCRIMINATIVO_SD"
+    }
+  ],
+  "relacoes_funcionais_consequentes": [
+    {
+      "id_aresta": "RFC1",
+      "id_origem_no": "AC1",
+      "id_destino_no": "E1",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_POSITIVO_SR+",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Média"
+    },
+    {
+      "id_aresta": "RFC2",
+      "id_origem_no": "AC4",
+      "id_destino_no": "E6",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_POSITIVO_SR+",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Alta"
+    },
+    {
+      "id_aresta": "RFC3",
+      "id_origem_no": "AC6",
+      "id_destino_no": "E7",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_POSITIVO_SR+",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Alta"
+    },
+    {
+      "id_aresta": "RFC4",
+      "id_origem_no": "AC8",
+      "id_destino_no": "AC9",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_NEGATIVO_SR-",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Alta"
+    },
+    {
+      "id_aresta": "RFC5",
+      "id_origem_no": "AC9",
+      "id_destino_no": "E11",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_NEGATIVO_SR-",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Alta"
+    },
+    {
+      "id_aresta": "RFC6",
+      "id_origem_no": "AC10",
+      "id_destino_no": "E12",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_POSITIVO_SR+",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Média"
+    },
+    {
+      "id_aresta": "RFC7",
+      "id_origem_no": "AC11",
+      "id_destino_no": "E14",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_POSITIVO_SR+",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Média"
+    },
+    {
+      "id_aresta": "RFC8",
+      "id_origem_no": "AC12",
+      "id_destino_no": "AC13",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_NEGATIVO_SR-",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Média"
+    },
+    {
+      "id_aresta": "RFC9",
+      "id_origem_no": "AC13",
+      "id_destino_no": "AC14",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_NEGATIVO_SR-",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Média"
+    },
+    {
+      "id_aresta": "RFC10",
+      "id_origem_no": "AC14",
+      "id_destino_no": "E16",
+      "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+      "funcao_consequente": "REFORÇO_NEGATIVO_SR-",
+      "imediatismo_consequencia": "Imediata",
+      "magnitude_consequencia": "Alta"
+    }
+  ],
+  "relacoes_moduladoras_estado": [],
+  "hipoteses_analiticas": [],
+  "evidencias_para_hipoteses": []
+}
