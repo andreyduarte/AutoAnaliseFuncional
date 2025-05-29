@@ -315,25 +315,7 @@
         };
 
         var network = new vis.Network(container, data, options);
-
-        network.on("stabilizationIterationsDone", function () {
-            //network.setOptions( { physics: false } ); // Desabilitar física após estabilização
-            network.fit(); // Ajusta o zoom para caber todos os nós
-            // Show the download button once the network is stable
-            document.getElementById('downloadNetworkImage').style.display = 'inline-block';
-        });
-        
-        // Exemplo de como adicionar um listener para clique
-        network.on("click", function(params) {
-            params.event = "[original event]";
-            console.log("Click event:", params);
-            // if (params.nodes.length > 0) {
-            //     var nodeId = params.nodes[0];
-            //     var nodeData = nodes.get(nodeId);
-            //     alert("Nó clicado: " + nodeData.label);
-            // }
-        });
-
+      
         // Lógica para mostrar o overlay de carregamento
         document.getElementById('updateForm').addEventListener('submit', function() {
             document.getElementById('loadingOverlay').classList.add('visible');
@@ -372,31 +354,7 @@
             // Removido para que a rede ocupe sempre a largura total e a barra lateral a sobreponha.
         });
 
-        // JavaScript para o botão de download da imagem
-        document.getElementById('downloadNetworkImage').addEventListener('click', function() {
-                var canvas = document.querySelector('#mynetwork > div > canvas');
-
-                // Create a temporary canvas to draw the network at a higher resolution
-                var tempCanvas = document.createElement('canvas');
-                tempCanvas.width = canvas.width;
-                tempCanvas.height = canvas.height;
-                var tempCtx = tempCanvas.getContext('2d');
-
-                // Scale the context and draw the original canvas content
-                tempCtx.drawImage(canvas, 0, 0);
-
-                // Convert the temporary canvas to a data URL
-                var imageData = tempCanvas.toDataURL('image/png', quality=1.0);
-
-                // Create a temporary link element
-                var a = document.createElement('a');
-                a.href = imageData;
-                a.download = 'rede_comportamental.png'; // Filename for the downloaded image
-                document.body.appendChild(a); // Append to body to make it clickable
-                a.click(); // Programmatically click the link to trigger download
-                document.body.removeChild(a); // Clean up the temporary link
-            });
-    </script>
+     </script>
 
     <div id="loadingOverlay" class="loading-overlay">
         <div class="spinner"></div>
