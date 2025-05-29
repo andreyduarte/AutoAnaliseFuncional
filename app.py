@@ -202,8 +202,12 @@ def transformar_para_vis(json_data: dict):
         
     return filtered_nodes, edges
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/analise', methods=['GET', 'POST'])
+def analise():
     if request.method == 'POST':
         texto_entrada = request.form.get('texto_entrada', '')
         print(texto_entrada) # Para depuração, imprime o texto de entrada no console
@@ -239,7 +243,6 @@ def index():
         # Se o arquivo não existir, mostra a página inicial com o formulário
         return render_template('index.html')
 
-@app.route('/explanation')
 def explanation_page():
     """Renders the explanation page."""
     return render_template('explanation.html')
