@@ -1,778 +1,930 @@
 {
-  "sujeitos": [
-      {
-          "id_sujeito": "S1",
-          "raciocinio": "O 'Rato da Cidade' \u00e9 um dos sujeitos principais da narrativa, influenciando os eventos e as decis\u00f5es tomadas. Sua identifica\u00e7\u00e3o \u00e9 crucial para entender as intera\u00e7\u00f5es e as conting\u00eancias descritas no texto.",
-          "nome_descritivo": "Rato da Cidade"
-      },
-      {
-          "id_sujeito": "S2",
-          "raciocinio": "O 'Rato do Campo' \u00e9 o outro sujeito principal, contrastando com o Rato da Cidade em termos de estilo de vida e prefer\u00eancias. Sua identifica\u00e7\u00e3o \u00e9 essencial para analisar as escolhas e as consequ\u00eancias apresentadas na hist\u00f3ria.",
-          "nome_descritivo": "Rato do Campo"
-      }
-  ],
-  "acoes_comportamentos": [
-      {
-          "id_acao": "AC1",
-          "raciocinio": "O 'Rato da Cidade' convida o 'Rato do Campo' para jantar, demonstrando um comportamento social e de intera\u00e7\u00e3o.",
-          "descricao_topografica": "Convidar para jantar",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Busca de companhia",
-              "Oferta de recurso"
-          ]
-      },
-      {
-          "id_acao": "AC2",
-          "raciocinio": "O 'Rato da Cidade' expressa pena pela condi\u00e7\u00e3o do 'Rato do Campo', indicando uma avalia\u00e7\u00e3o da situa\u00e7\u00e3o alheia.",
-          "descricao_topografica": "Expressar pena",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Empatia",
-              "Julgamento social"
-          ]
-      },
-      {
-          "id_acao": "AC3",
-          "raciocinio": "O 'Rato da Cidade' prop\u00f5e ao 'Rato do Campo' mudar para a cidade, demonstrando um comportamento de persuas\u00e3o e influ\u00eancia.",
-          "descricao_topografica": "Propor mudan\u00e7a para a cidade",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Persuas\u00e3o",
-              "Influ\u00eancia social"
-          ]
-      },
-      {
-          "id_acao": "AC4",
-          "raciocinio": "O 'Rato da Cidade' saboreia comidas sofisticadas na despensa, indicando um comportamento de consumo e aprecia\u00e7\u00e3o.",
-          "descricao_topografica": "Saborear comidas sofisticadas",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Aprecia\u00e7\u00e3o sensorial",
-              "Consumo"
-          ]
-      },
-      {
-          "id_acao": "AC5",
-          "raciocinio": "O 'Rato da Cidade' foge dos perigos na casa, demonstrando um comportamento de autopreserva\u00e7\u00e3o.",
-          "descricao_topografica": "Fugir de perigos",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Autopreserva\u00e7\u00e3o",
-              "Fuga"
-          ]
-      },
-      {
-          "id_acao": "AC6",
-          "raciocinio": "O 'Rato do Campo' aceita o convite para jantar na casa do 'Rato da Cidade', demonstrando um comportamento social e de intera\u00e7\u00e3o.",
-          "descricao_topografica": "Aceitar convite para jantar",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Busca de companhia",
-              "Aceita\u00e7\u00e3o social"
-          ]
-      },
-      {
-          "id_acao": "AC7",
-          "raciocinio": "O 'Rato do Campo' come ra\u00edzes, ervas e frutos, demonstrando um comportamento de alimenta\u00e7\u00e3o.",
-          "descricao_topografica": "Comer ra\u00edzes, ervas e frutos",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Alimenta\u00e7\u00e3o",
-              "Consumo"
-          ]
-      },
-      {
-          "id_acao": "AC8",
-          "raciocinio": "O 'Rato do Campo' concorda em mudar para a cidade, demonstrando um comportamento de aceita\u00e7\u00e3o e mudan\u00e7a.",
-          "descricao_topografica": "Concordar em mudar para a cidade",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Aceita\u00e7\u00e3o",
-              "Mudan\u00e7a de ambiente"
-          ]
-      },
-      {
-          "id_acao": "AC9",
-          "raciocinio": "O 'Rato do Campo' saboreia comidas sofisticadas na despensa, indicando um comportamento de consumo e aprecia\u00e7\u00e3o.",
-          "descricao_topografica": "Saborear comidas sofisticadas",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Aprecia\u00e7\u00e3o sensorial",
-              "Consumo"
-          ]
-      },
-      {
-          "id_acao": "AC10",
-          "raciocinio": "O 'Rato do Campo' foge dos perigos na casa, demonstrando um comportamento de autopreserva\u00e7\u00e3o.",
-          "descricao_topografica": "Fugir de perigos",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Autopreserva\u00e7\u00e3o",
-              "Fuga"
-          ]
-      },
-      {
-          "id_acao": "AC11",
-          "raciocinio": "O 'Rato do Campo' decide voltar para o campo, demonstrando um comportamento de tomada de decis\u00e3o e prefer\u00eancia.",
-          "descricao_topografica": "Decidir voltar para o campo",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Tomada de decis\u00e3o",
-              "Prefer\u00eancia"
-          ]
-      },
-      {
-          "id_acao": "AC12",
-          "raciocinio": "O 'Rato do Campo' expressa sua prefer\u00eancia por viver no campo, demonstrando um comportamento de comunica\u00e7\u00e3o e valoriza\u00e7\u00e3o.",
-          "descricao_topografica": "Expressar prefer\u00eancia por viver no campo",
-          "tipo_observabilidade": "Observ\u00e1vel",
-          "classe_funcional_hipotetica": [
-              "Comunica\u00e7\u00e3o",
-              "Valoriza\u00e7\u00e3o"
-          ]
-      }
-  ],
-  "emissoes_comportamentais": [
-      {
-          "id_aresta": "EM1",
-          "id_origem_no": "S1",
-          "id_destino_no": "AC1",
-          "raciocinio": "Conecta o 'Rato da Cidade' ao comportamento de 'Convidar para jantar'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM2",
-          "id_origem_no": "S1",
-          "id_destino_no": "AC2",
-          "raciocinio": "Conecta o 'Rato da Cidade' ao comportamento de 'Expressar pena'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM3",
-          "id_origem_no": "S1",
-          "id_destino_no": "AC3",
-          "raciocinio": "Conecta o 'Rato da Cidade' ao comportamento de 'Propor mudan\u00e7a para a cidade'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM4",
-          "id_origem_no": "S1",
-          "id_destino_no": "AC4",
-          "raciocinio": "Conecta o 'Rato da Cidade' ao comportamento de 'Saborear comidas sofisticadas'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM5",
-          "id_origem_no": "S1",
-          "id_destino_no": "AC5",
-          "raciocinio": "Conecta o 'Rato da Cidade' ao comportamento de 'Fugir de perigos'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM6",
-          "id_origem_no": "S2",
-          "id_destino_no": "AC6",
-          "raciocinio": "Conecta o 'Rato do Campo' ao comportamento de 'Aceitar convite para jantar'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM7",
-          "id_origem_no": "S2",
-          "id_destino_no": "AC7",
-          "raciocinio": "Conecta o 'Rato do Campo' ao comportamento de 'Comer ra\u00edzes, ervas e frutos'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM8",
-          "id_origem_no": "S2",
-          "id_destino_no": "AC8",
-          "raciocinio": "Conecta o 'Rato do Campo' ao comportamento de 'Concordar em mudar para a cidade'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM9",
-          "id_origem_no": "S2",
-          "id_destino_no": "AC9",
-          "raciocinio": "Conecta o 'Rato do Campo' ao comportamento de 'Saborear comidas sofisticadas'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM10",
-          "id_origem_no": "S2",
-          "id_destino_no": "AC10",
-          "raciocinio": "Conecta o 'Rato do Campo' ao comportamento de 'Fugir de perigos'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM11",
-          "id_origem_no": "S2",
-          "id_destino_no": "AC11",
-          "raciocinio": "Conecta o 'Rato do Campo' ao comportamento de 'Decidir voltar para o campo'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      },
-      {
-          "id_aresta": "EM12",
-          "id_origem_no": "S2",
-          "id_destino_no": "AC12",
-          "raciocinio": "Conecta o 'Rato do Campo' ao comportamento de 'Expressar prefer\u00eancia por viver no campo'.",
-          "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-      }
-  ],
-  "estimulos_eventos": [
-      {
-          "id_estimulo_evento": "E1",
-          "raciocinio": "O convite do Rato da Cidade \u00e9 um est\u00edmulo antecedente \u00e0 aceita\u00e7\u00e3o do Rato do Campo.",
-          "descricao": "Rato da Cidade convida Rato do Campo para jantar",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Auditivo",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E2",
-          "raciocinio": "A aceita\u00e7\u00e3o do convite pelo Rato do Campo \u00e9 uma consequ\u00eancia do convite do Rato da Cidade.",
-          "descricao": "Rato do Campo aceita convite para jantar",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Auditivo",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E3",
-          "raciocinio": "A vida na mis\u00e9ria do Rato do Campo \u00e9 um est\u00edmulo antecedente \u00e0 express\u00e3o de pena do Rato da Cidade.",
-          "descricao": "Rato do Campo vive na mis\u00e9ria",
-          "tipo_fisico": "N\u00e3o-Social",
-          "modalidade_sensorial_primaria": "Visual",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E4",
-          "raciocinio": "A express\u00e3o de pena do Rato da Cidade pode levar o Rato do Campo a aceitar a proposta de mudan\u00e7a.",
-          "descricao": "Rato da Cidade expressa pena pela mis\u00e9ria do Rato do Campo",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Auditivo",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E5",
-          "raciocinio": "A proposta do Rato da Cidade \u00e9 um est\u00edmulo antecedente \u00e0 concord\u00e2ncia do Rato do Campo em mudar para a cidade.",
-          "descricao": "Rato da Cidade prop\u00f5e mudan\u00e7a para a cidade",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Auditivo",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E6",
-          "raciocinio": "A concord\u00e2ncia do Rato do Campo em mudar para a cidade \u00e9 uma consequ\u00eancia da proposta do Rato da Cidade.",
-          "descricao": "Rato do Campo concorda em mudar para a cidade",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Auditivo",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E7",
-          "raciocinio": "A chegada na despensa \u00e9 um antecedente para o comportamento de saborear comidas sofisticadas.",
-          "descricao": "Chegada na despensa da casa",
-          "tipo_fisico": "N\u00e3o-Social",
-          "modalidade_sensorial_primaria": "Visual",
-          "localizacao": "Cidade"
-      },
-      {
-          "id_estimulo_evento": "E8",
-          "raciocinio": "O ato de saborear comidas sofisticadas leva \u00e0 entrada de um homem com gatos.",
-          "descricao": "Saborear comidas sofisticadas",
-          "tipo_fisico": "N\u00e3o-Social",
-          "modalidade_sensorial_primaria": "Gustativo",
-          "localizacao": "Cidade"
-      },
-      {
-          "id_estimulo_evento": "E9",
-          "raciocinio": "A entrada do homem com gatos \u00e9 um antecedente para o comportamento de fuga dos ratos.",
-          "descricao": "Entrada de um homem com gatos na despensa",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Visual",
-          "localizacao": "Cidade"
-      },
-      {
-          "id_estimulo_evento": "E10",
-          "raciocinio": "A fuga dos ratos leva ao abandono dos esconderijos.",
-          "descricao": "Ratos fogem do homem e dos gatos",
-          "tipo_fisico": "N\u00e3o-Social",
-          "modalidade_sensorial_primaria": "Visual",
-          "localizacao": "Cidade"
-      },
-      {
-          "id_estimulo_evento": "E11",
-          "raciocinio": "A oferta de ra\u00edzes, ervas e frutos \u00e9 um antecedente para o comportamento de comer do Rato do Campo.",
-          "descricao": "Oferta de ra\u00edzes, ervas e frutos",
-          "tipo_fisico": "N\u00e3o-Social",
-          "modalidade_sensorial_primaria": "Visual",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E12",
-          "raciocinio": "O comportamento de comer do Rato do Campo leva \u00e0 express\u00e3o de pena do Rato da Cidade.",
-          "descricao": "Rato do Campo come ra\u00edzes, ervas e frutos",
-          "tipo_fisico": "N\u00e3o-Social",
-          "modalidade_sensorial_primaria": "Gustativo",
-          "localizacao": "Campo"
-      },
-      {
-          "id_estimulo_evento": "E13",
-          "raciocinio": "A frequ\u00eancia de perigos na cidade \u00e9 um antecedente para a decis\u00e3o do Rato do Campo de voltar para o campo.",
-          "descricao": "Perigos frequentes na cidade (homens, gatos, ratoeiras)",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Visual",
-          "localizacao": "Cidade"
-      },
-      {
-          "id_estimulo_evento": "E14",
-          "raciocinio": "A decis\u00e3o de voltar para o campo leva \u00e0 express\u00e3o da prefer\u00eancia por viver no campo.",
-          "descricao": "Rato do Campo decide voltar para o campo",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Nenhuma Aplic\u00e1vel",
-          "localizacao": "Cidade"
-      },
-      {
-          "id_estimulo_evento": "E15",
-          "raciocinio": "O comportamento de expressar prefer\u00eancia por viver no campo leva ao fim da estadia na cidade.",
-          "descricao": "Rato do Campo expressa prefer\u00eancia por viver no campo",
-          "tipo_fisico": "Social",
-          "modalidade_sensorial_primaria": "Auditivo",
-          "localizacao": "Cidade"
-      }
-  ],
-  "relacoes_temporais": [
-      {
-          "id_aresta": "RT1",
-          "id_origem_no": "E1",
-          "id_destino_no": "AC6",
-          "raciocinio": "O convite do Rato da Cidade precede imediatamente a aceita\u00e7\u00e3o do Rato do Campo.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT2",
-          "id_origem_no": "AC6",
-          "id_destino_no": "E2",
-          "raciocinio": "A aceita\u00e7\u00e3o do convite pelo Rato do Campo sucede imediatamente ao convite do Rato da Cidade.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT3",
-          "id_origem_no": "E3",
-          "id_destino_no": "AC2",
-          "raciocinio": "A vida na mis\u00e9ria do Rato do Campo precede imediatamente a express\u00e3o de pena do Rato da Cidade.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT4",
-          "id_origem_no": "AC2",
-          "id_destino_no": "E4",
-          "raciocinio": "A express\u00e3o de pena do Rato da Cidade precede imediatamente a proposta de mudan\u00e7a para a cidade.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT5",
-          "id_origem_no": "E5",
-          "id_destino_no": "AC8",
-          "raciocinio": "A proposta do Rato da Cidade precede imediatamente a concord\u00e2ncia do Rato do Campo em mudar para a cidade.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT6",
-          "id_origem_no": "AC8",
-          "id_destino_no": "E6",
-          "raciocinio": "A concord\u00e2ncia do Rato do Campo em mudar para a cidade sucede imediatamente \u00e0 proposta do Rato da Cidade.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT7",
-          "id_origem_no": "E7",
-          "id_destino_no": "AC4",
-          "raciocinio": "A chegada na despensa precede imediatamente o comportamento de saborear comidas sofisticadas.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT8",
-          "id_origem_no": "AC4",
-          "id_destino_no": "E8",
-          "raciocinio": "O ato de saborear comidas sofisticadas precede imediatamente a entrada de um homem com gatos.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT9",
-          "id_origem_no": "E9",
-          "id_destino_no": "AC5",
-          "raciocinio": "A entrada do homem com gatos precede imediatamente o comportamento de fuga dos ratos.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT10",
-          "id_origem_no": "AC5",
-          "id_destino_no": "E10",
-          "raciocinio": "A fuga dos ratos precede imediatamente o abandono dos esconderijos.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT11",
-          "id_origem_no": "E11",
-          "id_destino_no": "AC7",
-          "raciocinio": "A oferta de ra\u00edzes, ervas e frutos precede imediatamente o comportamento de comer do Rato do Campo.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT12",
-          "id_origem_no": "AC7",
-          "id_destino_no": "E12",
-          "raciocinio": "O comportamento de comer do Rato do Campo precede imediatamente a express\u00e3o de pena do Rato da Cidade.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT13",
-          "id_origem_no": "E13",
-          "id_destino_no": "AC11",
-          "raciocinio": "A frequ\u00eancia de perigos na cidade precede imediatamente a decis\u00e3o do Rato do Campo de voltar para o campo.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT14",
-          "id_origem_no": "AC11",
-          "id_destino_no": "E14",
-          "raciocinio": "A decis\u00e3o de voltar para o campo precede imediatamente a express\u00e3o da prefer\u00eancia por viver no campo.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT15",
-          "id_origem_no": "E14",
-          "id_destino_no": "AC12",
-          "raciocinio": "A decis\u00e3o de voltar para o campo precede imediatamente a express\u00e3o da prefer\u00eancia por viver no campo.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT16",
-          "id_origem_no": "AC12",
-          "id_destino_no": "E15",
-          "raciocinio": "O comportamento de expressar prefer\u00eancia por viver no campo precede imediatamente o fim da estadia na cidade.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT17",
-          "id_origem_no": "E7",
-          "id_destino_no": "AC9",
-          "raciocinio": "A chegada na despensa precede imediatamente o comportamento de saborear comidas sofisticadas.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT18",
-          "id_origem_no": "AC9",
-          "id_destino_no": "E9",
-          "raciocinio": "O ato de saborear comidas sofisticadas precede imediatamente a entrada de um homem com gatos.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT19",
-          "id_origem_no": "E9",
-          "id_destino_no": "AC10",
-          "raciocinio": "A entrada do homem com gatos precede imediatamente o comportamento de fuga dos ratos.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      },
-      {
-          "id_aresta": "RT20",
-          "id_origem_no": "AC10",
-          "id_destino_no": "E10",
-          "raciocinio": "A fuga dos ratos precede imediatamente o abandono dos esconderijos.",
-          "tipo_aresta": "RELACAO_TEMPORAL",
-          "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-          "contiguidade_percebida": "Alta"
-      }
-  ],
-  "condicoes_estados": [],
-  "relacoes_funcionais_antecedentes": [
-      {
-          "id_aresta": "RFA1",
-          "id_origem_no": "E1",
-          "id_destino_no": "AC6",
-          "raciocinio": "O convite do Rato da Cidade (E1) sinaliza a oportunidade de intera\u00e7\u00e3o social e poss\u00edvel acesso a recursos, funcionando como um est\u00edmulo discriminativo (SD) para o Rato do Campo aceitar o convite (AC6).",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
-      },
-      {
-          "id_aresta": "RFA2",
-          "id_origem_no": "E3",
-          "id_destino_no": "AC2",
-          "raciocinio": "A percep\u00e7\u00e3o da mis\u00e9ria do Rato do Campo (E3) elicia uma resposta emocional de pena no Rato da Cidade (AC2). Dada a natureza emocional e aparentemente inata da resposta, pode ser considerada um est\u00edmulo eliciador condicionado (CS), assumindo um hist\u00f3rico de pareamento com est\u00edmulos aversivos.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_CONDICIONADO_CS"
-      },
-      {
-          "id_aresta": "RFA3",
-          "id_origem_no": "E5",
-          "id_destino_no": "AC8",
-          "raciocinio": "A proposta do Rato da Cidade (E5) sinaliza a oportunidade de melhorar as condi\u00e7\u00f5es de vida, funcionando como um est\u00edmulo discriminativo (SD) para o Rato do Campo concordar em mudar para a cidade (AC8).",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
-      },
-      {
-          "id_aresta": "RFA4",
-          "id_origem_no": "E7",
-          "id_destino_no": "AC4",
-          "raciocinio": "A chegada na despensa (E7) sinaliza a disponibilidade de comidas sofisticadas, funcionando como um est\u00edmulo discriminativo (SD) para o Rato da Cidade sabore\u00e1-las (AC4).",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
-      },
-      {
-          "id_aresta": "RFA5",
-          "id_origem_no": "E9",
-          "id_destino_no": "AC5",
-          "raciocinio": "A entrada do homem com gatos (E9) elicia uma resposta de fuga (AC5). Dada a natureza aversiva do est\u00edmulo e a resposta de fuga, pode ser considerado um est\u00edmulo eliciador condicionado (CS), assumindo um hist\u00f3rico de pareamento com est\u00edmulos aversivos.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_CONDICIONADO_CS"
-      },
-      {
-          "id_aresta": "RFA6",
-          "id_origem_no": "E11",
-          "id_destino_no": "AC7",
-          "raciocinio": "A oferta de ra\u00edzes, ervas e frutos (E11) sinaliza a disponibilidade de comida, funcionando como um est\u00edmulo discriminativo (SD) para o Rato do Campo comer (AC7).",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
-      },
-      {
-          "id_aresta": "RFA7",
-          "id_origem_no": "E13",
-          "id_destino_no": "AC11",
-          "raciocinio": "A frequ\u00eancia de perigos na cidade (E13) sinaliza a probabilidade de eventos aversivos, funcionando como um est\u00edmulo discriminativo (SD) para o Rato do Campo decidir voltar para o campo (AC11).",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
-      },
-      {
-          "id_aresta": "RFA8",
-          "id_origem_no": "E14",
-          "id_destino_no": "AC12",
-          "raciocinio": "A decis\u00e3o de voltar para o campo (E14) serve como um est\u00edmulo discriminativo interno (SD) para o Rato do Campo expressar sua prefer\u00eancia por viver no campo (AC12).",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
-      },
-      {
-          "id_aresta": "RFA9",
-          "id_origem_no": "E7",
-          "id_destino_no": "AC9",
-          "raciocinio": "A chegada na despensa (E7) sinaliza a disponibilidade de comidas sofisticadas, funcionando como um est\u00edmulo discriminativo (SD) para o Rato do Campo sabore\u00e1-las (AC9).",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
-      },
-      {
-          "id_aresta": "RFA10",
-          "id_origem_no": "E9",
-          "id_destino_no": "AC10",
-          "raciocinio": "A entrada do homem com gatos (E9) elicia uma resposta de fuga (AC10). Dada a natureza aversiva do est\u00edmulo e a resposta de fuga, pode ser considerado um est\u00edmulo eliciador condicionado (CS), assumindo um hist\u00f3rico de pareamento com est\u00edmulos aversivos.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-          "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_CONDICIONADO_CS"
-      }
-  ],
-  "relacoes_funcionais_consequentes": [
-      {
-          "id_aresta": "RFC1",
-          "id_origem_no": "AC6",
-          "id_destino_no": "E2",
-          "raciocinio": "O Rato do Campo aceitar o convite para jantar (E2) \u00e9 consequ\u00eancia de aceitar o convite (AC6). A aceita\u00e7\u00e3o do convite pode ser vista como um refor\u00e7o positivo para o comportamento de convidar do Rato da Cidade.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+"
-      },
-      {
-          "id_aresta": "RFC2",
-          "id_origem_no": "AC2",
-          "id_destino_no": "E4",
-          "raciocinio": "O Rato da Cidade expressar pena pela mis\u00e9ria do Rato do Campo (E4) \u00e9 consequ\u00eancia de expressar pena (AC2). A expressao de pena pode ser vista como um refor\u00e7o positivo para o comportamento de expressar pena do Rato da Cidade.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+"
-      },
-      {
-          "id_aresta": "RFC3",
-          "id_origem_no": "AC8",
-          "id_destino_no": "E6",
-          "raciocinio": "O Rato do Campo concordar em mudar para a cidade (E6) \u00e9 consequ\u00eancia de concordar em mudar (AC8). A concord\u00e2ncia pode ser vista como um refor\u00e7o positivo para o comportamento de propor a mudan\u00e7a do Rato da Cidade.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+"
-      },
-      {
-          "id_aresta": "RFC4",
-          "id_origem_no": "AC4",
-          "id_destino_no": "E8",
-          "raciocinio": "O ato de saborear comidas sofisticadas (E8) \u00e9 consequ\u00eancia de saborear comidas sofisticadas (AC4). A entrada do homem com gatos pode ser vista como uma puni\u00e7\u00e3o positiva para o comportamento de saborear comidas sofisticadas.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+"
-      },
-      {
-          "id_aresta": "RFC5",
-          "id_origem_no": "AC5",
-          "id_destino_no": "E10",
-          "raciocinio": "A fuga dos ratos (E10) \u00e9 consequ\u00eancia de fugir de perigos (AC5). O abandono dos esconderijos pode ser visto como uma puni\u00e7\u00e3o negativa para o comportamento de fuga, pois eles perdem o abrigo.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "PUNI\u00c7\u00c3O_NEGATIVA_SP-"
-      },
-      {
-          "id_aresta": "RFC6",
-          "id_origem_no": "AC7",
-          "id_destino_no": "E12",
-          "raciocinio": "O Rato do Campo comer ra\u00edzes, ervas e frutos (E12) \u00e9 consequ\u00eancia de comer ra\u00edzes, ervas e frutos (AC7). A expressao de pena pode ser vista como uma puni\u00e7\u00e3o positiva para o comportamento de comer raizes, ervas e frutos.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+"
-      },
-      {
-          "id_aresta": "RFC7",
-          "id_origem_no": "AC9",
-          "id_destino_no": "E9",
-          "raciocinio": "O ato de saborear comidas sofisticadas (E9) \u00e9 consequ\u00eancia de saborear comidas sofisticadas (AC9). A entrada do homem com gatos pode ser vista como uma puni\u00e7\u00e3o positiva para o comportamento de saborear comidas sofisticadas.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+"
-      },
-      {
-          "id_aresta": "RFC8",
-          "id_origem_no": "AC10",
-          "id_destino_no": "E10",
-          "raciocinio": "A fuga dos ratos (E10) \u00e9 consequ\u00eancia de fugir de perigos (AC10). O abandono dos esconderijos pode ser visto como uma puni\u00e7\u00e3o negativa para o comportamento de fuga, pois eles perdem o abrigo.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "PUNI\u00c7\u00c3O_NEGATIVA_SP-"
-      },
-      {
-          "id_aresta": "RFC9",
-          "id_origem_no": "AC11",
-          "id_destino_no": "E14",
-          "raciocinio": "O Rato do Campo decidir voltar para o campo (E14) \u00e9 consequ\u00eancia de decidir voltar para o campo (AC11). A expressao da prefer\u00eancia pode ser vista como um refor\u00e7o positivo para o comportamento de decidir voltar para o campo.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+"
-      },
-      {
-          "id_aresta": "RFC10",
-          "id_origem_no": "AC12",
-          "id_destino_no": "E15",
-          "raciocinio": "O Rato do Campo expressar prefer\u00eancia por viver no campo (E15) \u00e9 consequ\u00eancia de expressar prefer\u00eancia por viver no campo (AC12). O fim da estadia na cidade pode ser visto como um refor\u00e7o positivo para o comportamento de expressar prefer\u00eancia por viver no campo.",
-          "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-          "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+"
-      }
-  ],
-  "relacoes_moduladoras_estado": [],
-  "hipoteses_analiticas": [
-      {
-          "id_hipotese": "H1",
-          "descricao_hipotese": "O comportamento do Rato da Cidade de convidar o Rato do Campo para jantar (AC1) \u00e9 mantido por refor\u00e7amento positivo, onde a aceita\u00e7\u00e3o do convite (E2) serve como refor\u00e7ador, validando seu status social e proporcionando companhia.",
-          "nivel_confianca": "M\u00e9dio",
-          "data_formulacao": "2025-05-29T16:40:40.447804Z",
-          "status_hipotese": "Aguardando teste"
-      },
-      {
-          "id_hipotese": "H2",
-          "descricao_hipotese": "O comportamento do Rato da Cidade de expressar pena pela condi\u00e7\u00e3o do Rato do Campo (AC2) \u00e9 mantido por refor\u00e7amento positivo, onde a demonstra\u00e7\u00e3o de superioridade e a valida\u00e7\u00e3o de seu pr\u00f3prio estilo de vida servem como refor\u00e7adores.",
-          "nivel_confianca": "M\u00e9dio",
-          "data_formulacao": "2025-05-29T16:40:40.447804Z",
-          "status_hipotese": "Aguardando teste"
-      },
-      {
-          "id_hipotese": "H3",
-          "descricao_hipotese": "O comportamento do Rato do Campo de decidir voltar para o campo (AC11) \u00e9 mantido por refor\u00e7amento negativo, onde a remo\u00e7\u00e3o dos est\u00edmulos aversivos (E13) associados aos perigos da cidade serve como refor\u00e7ador, promovendo seguran\u00e7a e tranquilidade.",
-          "nivel_confianca": "Alto",
-          "data_formulacao": "2025-05-29T16:40:40.447804Z",
-          "status_hipotese": "Aguardando teste"
-      }
-  ],
-  "evidencias_para_hipoteses": [
-      {
-          "id_aresta": "EH1",
-          "id_origem_no": "AC1",
-          "id_destino_no": "H1",
-          "raciocinio": "A aceita\u00e7\u00e3o do convite (E2) pelo Rato do Campo refor\u00e7a o comportamento do Rato da Cidade de convidar (AC1), indicando uma fun\u00e7\u00e3o de busca por companhia e valida\u00e7\u00e3o social.",
-          "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
-          "ids_elementos_contingencia_suporte": [
-              "S1",
-              "AC1",
-              "E1",
-              "E2",
-              "AC6",
-              "RT1",
-              "RT2",
-              "RFA1",
-              "RFC1"
-          ],
-          "tipo_evidencia": "SUPORTE_DIRETO",
-          "fonte_dados": "Narrativa Textual"
-      },
-      {
-          "id_aresta": "EH2",
-          "id_origem_no": "AC2",
-          "id_destino_no": "H2",
-          "raciocinio": "A express\u00e3o de pena (AC2) pelo Rato da Cidade \u00e9 refor\u00e7ada pela valida\u00e7\u00e3o de seu pr\u00f3prio estilo de vida, indicando uma fun\u00e7\u00e3o de demonstra\u00e7\u00e3o de superioridade.",
-          "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
-          "ids_elementos_contingencia_suporte": [
-              "S1",
-              "AC2",
-              "E3",
-              "E4",
-              "RT3",
-              "RT4",
-              "RFA2",
-              "RFC2"
-          ],
-          "tipo_evidencia": "SUPORTE_DIRETO",
-          "fonte_dados": "Narrativa Textual"
-      },
-      {
-          "id_aresta": "EH3",
-          "id_origem_no": "AC11",
-          "id_destino_no": "H3",
-          "raciocinio": "A decis\u00e3o de voltar para o campo (AC11) pelo Rato do Campo \u00e9 refor\u00e7ada pela remo\u00e7\u00e3o dos perigos da cidade (E13), indicando uma fun\u00e7\u00e3o de busca por seguran\u00e7a e tranquilidade.",
-          "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
-          "ids_elementos_contingencia_suporte": [
-              "S2",
-              "AC11",
-              "E13",
-              "E14",
-              "AC12",
-              "RT13",
-              "RT14",
-              "RT15",
-              "RFA7",
-              "RFC9"
-          ],
-          "tipo_evidencia": "SUPORTE_DIRETO",
-          "fonte_dados": "Narrativa Textual"
-      }
-  ],
-  "texto_original": "O Rato da Cidade e o Rato do Campo\r\nUm Rato que morava na cidade aceitou o convite para jantar na casa de um Rato que vivia no Campo. Chegando l\u00e1, no buraco em que vivia o Rato do campo, comeram ra\u00edzes, ervas e frutos. At\u00e9 que o Rato da Cidade disse: \u2014 Amigo, notei que voc\u00ea vive na mis\u00e9ria. Isso me d\u00e1 muita pena.\r\nVamos morar na Cidade, onde voc\u00ea ver\u00e1 a riqueza e a fartura que l\u00e1 desfrutamos.\r\nOs dois combinaram e foram para a Cidade. Foram viver numa casa grande e cheia de comida.\r\nUm dia, estavam na despensa da casa, saboreando comidas sofisticadas quando, de repente, entra um homem com dois gatos. Foi a maior correria, com os Ratos fugindo por todos os lados. Ent\u00e3o eles se esconderam at\u00e9 que o homem e os gatos fossem embora. Quando j\u00e1 haviam abandonado os seus esconderijos e estavam prestes a comer novamente, um rapaz entrou na despensa, obrigando todos a se esconder mais uma vez. Ainda por cima, o rapaz instalou algumas ratoeiras.\r\nO Rato do Campo n\u00e3o quis mais saber de tanta correria e deu adeus ao Rato da Cidade, dizendo: \u2014 Voc\u00eas que fiquem com toda essa fartura, que eu quero mesmo \u00e9 viver comendo os frutos da terra sem medo de homens, gatos e ratoeiras. L\u00e1 no Campo tenho um prazer inigual\u00e1vel que \u00e9 a liberdade e a tranquilidade."
+    "sujeitos": [
+        {
+            "id": "S1",
+            "raciocinio": "Este sujeito \u00e9 um dos dois protagonistas da f\u00e1bula, cujas a\u00e7\u00f5es (convidar, morar na cidade) e experi\u00eancias (fartura, perigo) s\u00e3o centrais para a narrativa e para a compara\u00e7\u00e3o de estilos de vida. Ele representa o estilo de vida urbano.",
+            "descricao": "Rato da Cidade",
+            "historico_relevante": "Morava na cidade, convidou o Rato do Campo para morar com ele, desfrutava de fartura mas tamb\u00e9m de perigos constantes."
+        },
+        {
+            "id": "S2",
+            "raciocinio": "Este sujeito \u00e9 o outro protagonista da f\u00e1bula, cujas a\u00e7\u00f5es (aceitar convite, fugir, retornar ao campo) e experi\u00eancias (mis\u00e9ria inicial, fartura e perigo na cidade, busca por liberdade) s\u00e3o centrais para a narrativa e para a decis\u00e3o final. Ele representa o estilo de vida rural.",
+            "descricao": "Rato do Campo",
+            "historico_relevante": "Morava no campo, foi convidado para a cidade, experimentou a fartura e os perigos da vida urbana, e decidiu retornar ao campo em busca de tranquilidade e liberdade."
+        }
+    ],
+    "acoes_comportamentos": [
+        {
+            "id": "AC1",
+            "raciocinio": "A a\u00e7\u00e3o de convidar \u00e9 inferida a partir da aceita\u00e7\u00e3o do Rato da Cidade, sendo um comportamento inicial do Rato do Campo.",
+            "descricao": "Convidar para jantar no campo",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id": "AC2",
+            "raciocinio": "A\u00e7\u00e3o expl\u00edcita do Rato da Cidade, que aceita o convite para jantar na casa do Rato do Campo.",
+            "descricao": "Aceitar convite para jantar no campo",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id": "AC3",
+            "raciocinio": "A\u00e7\u00e3o expl\u00edcita de ambos os ratos, descrevendo o consumo de alimentos no ambiente rural.",
+            "descricao": "Comer ra\u00edzes, ervas e frutos",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Acesso a tang\u00edveis"
+            ]
+        },
+        {
+            "id": "AC4",
+            "raciocinio": "A\u00e7\u00e3o verbal expl\u00edcita do Rato da Cidade, propondo uma mudan\u00e7a de ambiente ao Rato do Campo.",
+            "descricao": "Propor mudan\u00e7a para a cidade",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Influ\u00eancia social"
+            ]
+        },
+        {
+            "id": "AC5",
+            "raciocinio": "A\u00e7\u00e3o conjunta de ambos os ratos, que decidem e executam a mudan\u00e7a para a cidade.",
+            "descricao": "Combinar e ir para a cidade",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id": "AC6",
+            "raciocinio": "Descri\u00e7\u00e3o do novo comportamento de moradia de ambos os ratos no ambiente urbano.",
+            "descricao": "Viver em casa grande na cidade",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id": "AC7",
+            "raciocinio": "A\u00e7\u00e3o expl\u00edcita de ambos os ratos, descrevendo o consumo de alimentos no ambiente urbano.",
+            "descricao": "Saborear comidas sofisticadas",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Acesso a tang\u00edveis",
+                "Estimula\u00e7\u00e3o sensorial"
+            ]
+        },
+        {
+            "id": "AC8",
+            "raciocinio": "A\u00e7\u00e3o de esquiva/fuga de ambos os ratos diante da presen\u00e7a de amea\u00e7as (homem, gatos, rapaz).",
+            "descricao": "Fugir de perigo",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Fuga/Esquiva"
+            ]
+        },
+        {
+            "id": "AC9",
+            "raciocinio": "A\u00e7\u00e3o de prote\u00e7\u00e3o de ambos os ratos, buscando ref\u00fagio para evitar o perigo.",
+            "descricao": "Esconder-se",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Fuga/Esquiva"
+            ]
+        },
+        {
+            "id": "AC10",
+            "raciocinio": "A\u00e7\u00e3o de ambos os ratos de sair do local seguro ap\u00f3s a aparente cessa\u00e7\u00e3o do perigo.",
+            "descricao": "Abandonar esconderijo",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id": "AC11",
+            "raciocinio": "A\u00e7\u00e3o expl\u00edcita do Rato do Campo de despedida e decis\u00e3o de retornar ao seu ambiente original.",
+            "descricao": "Dar adeus e retornar ao campo",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Fuga/Esquiva"
+            ]
+        }
+    ],
+    "emissoes_comportamentais": [
+        {
+            "id": "AR1",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC1",
+            "raciocinio": "O Rato do Campo \u00e9 o sujeito que emite o comportamento de convidar o Rato da Cidade.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR2",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC2",
+            "raciocinio": "O Rato da Cidade \u00e9 o sujeito que emite o comportamento de aceitar o convite.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR3",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC3",
+            "raciocinio": "O Rato da Cidade participa do comportamento de comer ra\u00edzes, ervas e frutos no campo.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR4",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC3",
+            "raciocinio": "O Rato do Campo participa do comportamento de comer ra\u00edzes, ervas e frutos em seu ambiente.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR5",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC4",
+            "raciocinio": "O Rato da Cidade \u00e9 o sujeito que emite o comportamento de propor a mudan\u00e7a para a cidade.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR6",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC5",
+            "raciocinio": "O Rato da Cidade participa do comportamento conjunto de combinar e ir para a cidade.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR7",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC5",
+            "raciocinio": "O Rato do Campo participa do comportamento conjunto de combinar e ir para a cidade.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR8",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC6",
+            "raciocinio": "O Rato da Cidade emite o comportamento de viver na casa grande na cidade.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR9",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC6",
+            "raciocinio": "O Rato do Campo emite o comportamento de viver na casa grande na cidade.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR10",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC7",
+            "raciocinio": "O Rato da Cidade participa do comportamento de saborear comidas sofisticadas.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR11",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC7",
+            "raciocinio": "O Rato do Campo participa do comportamento de saborear comidas sofisticadas.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR12",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC8",
+            "raciocinio": "O Rato da Cidade emite o comportamento de fugir do perigo.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR13",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC8",
+            "raciocinio": "O Rato do Campo emite o comportamento de fugir do perigo.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR14",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC9",
+            "raciocinio": "O Rato da Cidade emite o comportamento de esconder-se.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR15",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC9",
+            "raciocinio": "O Rato do Campo emite o comportamento de esconder-se.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR16",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC10",
+            "raciocinio": "O Rato da Cidade emite o comportamento de abandonar o esconderijo.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR17",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC10",
+            "raciocinio": "O Rato do Campo emite o comportamento de abandonar o esconderijo.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR18",
+            "id_origem_no": "S2",
+            "id_destino_no": "AC11",
+            "raciocinio": "O Rato do Campo \u00e9 o sujeito que emite o comportamento de dar adeus e retornar ao campo.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        }
+    ],
+    "estimulos_eventos": [
+        {
+            "id": "E1",
+            "raciocinio": "Inferido como o contexto inicial que precede o convite do Rato do Campo, estabelecendo a ocasi\u00e3o para a intera\u00e7\u00e3o.",
+            "descricao": "Presen\u00e7a do Rato da Cidade no campo"
+        },
+        {
+            "id": "E2",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de convidar, representando a resposta do Rato da Cidade.",
+            "descricao": "Aceita\u00e7\u00e3o do convite pelo Rato da Cidade"
+        },
+        {
+            "id": "E3",
+            "raciocinio": "Evento que precede a a\u00e7\u00e3o de aceitar, sendo a materializa\u00e7\u00e3o do convite.",
+            "descricao": "Convite feito pelo Rato do Campo"
+        },
+        {
+            "id": "E4",
+            "raciocinio": "Evento que sucede a aceita\u00e7\u00e3o do convite e precede a a\u00e7\u00e3o de comer, marcando o in\u00edcio da refei\u00e7\u00e3o no campo.",
+            "descricao": "Chegada dos ratos ao buraco do Rato do Campo"
+        },
+        {
+            "id": "E5",
+            "raciocinio": "Est\u00edmulo antecedente que torna poss\u00edvel a a\u00e7\u00e3o de comer, representando os recursos alimentares dispon\u00edveis.",
+            "descricao": "Disponibilidade de ra\u00edzes, ervas e frutos no campo"
+        },
+        {
+            "id": "E6",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de comer e precede a proposta de mudan\u00e7a, sendo a verbaliza\u00e7\u00e3o da percep\u00e7\u00e3o do Rato da Cidade.",
+            "descricao": "Declara\u00e7\u00e3o do Rato da Cidade sobre a mis\u00e9ria"
+        },
+        {
+            "id": "E7",
+            "raciocinio": "Est\u00edmulo antecedente inferido que motiva a proposta de mudan\u00e7a, representando a observa\u00e7\u00e3o das condi\u00e7\u00f5es de vida do Rato do Campo.",
+            "descricao": "Percep\u00e7\u00e3o da mis\u00e9ria do Rato do Campo"
+        },
+        {
+            "id": "E8",
+            "raciocinio": "Evento que sucede a proposta de mudan\u00e7a, representando a concretiza\u00e7\u00e3o da decis\u00e3o de ir para a cidade.",
+            "descricao": "Acordo e partida dos ratos para a cidade"
+        },
+        {
+            "id": "E9",
+            "raciocinio": "Evento que precede a a\u00e7\u00e3o de combinar e ir para a cidade, sendo a proposta em si.",
+            "descricao": "Proposta de mudan\u00e7a para a cidade"
+        },
+        {
+            "id": "E10",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de ir para a cidade e precede a a\u00e7\u00e3o de viver na casa grande, marcando o estabelecimento da nova moradia.",
+            "descricao": "In\u00edcio da moradia em casa grande na cidade"
+        },
+        {
+            "id": "E11",
+            "raciocinio": "Est\u00edmulo antecedente que estabelece o local para a a\u00e7\u00e3o de saborear comidas sofisticadas.",
+            "descricao": "Estar na despensa da casa"
+        },
+        {
+            "id": "E12",
+            "raciocinio": "Est\u00edmulo antecedente que torna poss\u00edvel a a\u00e7\u00e3o de saborear, representando os alimentos dispon\u00edveis na cidade.",
+            "descricao": "Disponibilidade de comidas sofisticadas"
+        },
+        {
+            "id": "E13",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de saborear e precede as a\u00e7\u00f5es de fuga e esconder-se, representando a apari\u00e7\u00e3o da amea\u00e7a.",
+            "descricao": "Entrada de homem com dois gatos na despensa"
+        },
+        {
+            "id": "E14",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de fugir, representando a concretiza\u00e7\u00e3o da esquiva.",
+            "descricao": "Ratos se escondendo"
+        },
+        {
+            "id": "E15",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de esconder-se e precede a a\u00e7\u00e3o de abandonar o esconderijo, indicando a aparente cessa\u00e7\u00e3o do perigo.",
+            "descricao": "Sa\u00edda do homem e dos gatos"
+        },
+        {
+            "id": "E16",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de abandonar o esconderijo e precede a decis\u00e3o de retornar ao campo, representando uma nova amea\u00e7a.",
+            "descricao": "Entrada de rapaz na despensa"
+        },
+        {
+            "id": "E17",
+            "raciocinio": "Est\u00edmulo antecedente que contribui para a decis\u00e3o do Rato do Campo de retornar, representando um novo perigo no ambiente urbano.",
+            "descricao": "Instala\u00e7\u00e3o de ratoeiras"
+        },
+        {
+            "id": "E18",
+            "raciocinio": "Est\u00edmulo antecedente inferido que consolida a decis\u00e3o do Rato do Campo de retornar, representando o ac\u00famulo de experi\u00eancias aversivas.",
+            "descricao": "Percep\u00e7\u00e3o de perigo constante e correria"
+        },
+        {
+            "id": "E19",
+            "raciocinio": "Evento que sucede a a\u00e7\u00e3o de dar adeus e retornar ao campo, representando o estado final desejado pelo Rato do Campo.",
+            "descricao": "Rato do Campo vivendo com liberdade e tranquilidade no campo"
+        }
+    ],
+    "relacoes_temporais": [
+        {
+            "id": "RT1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC1",
+            "raciocinio": "A presen\u00e7a do Rato da Cidade no campo precede o convite do Rato do Campo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT2",
+            "id_origem_no": "AC1",
+            "id_destino_no": "E2",
+            "raciocinio": "A a\u00e7\u00e3o de convidar \u00e9 imediatamente seguida pela aceita\u00e7\u00e3o do convite.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT3",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC2",
+            "raciocinio": "O convite feito pelo Rato do Campo precede a a\u00e7\u00e3o do Rato da Cidade de aceitar.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT4",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E4",
+            "raciocinio": "A aceita\u00e7\u00e3o do convite \u00e9 imediatamente seguida pela chegada dos ratos ao buraco do Rato do Campo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT5",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC3",
+            "raciocinio": "A chegada dos ratos ao buraco do Rato do Campo precede a a\u00e7\u00e3o de comer.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT6",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC3",
+            "raciocinio": "A disponibilidade de alimentos no campo precede a a\u00e7\u00e3o de comer.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT7",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E6",
+            "raciocinio": "A a\u00e7\u00e3o de comer \u00e9 imediatamente seguida pela declara\u00e7\u00e3o do Rato da Cidade sobre a mis\u00e9ria.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT8",
+            "id_origem_no": "E7",
+            "id_destino_no": "AC4",
+            "raciocinio": "A percep\u00e7\u00e3o da mis\u00e9ria do Rato do Campo precede a proposta de mudan\u00e7a para a cidade.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT9",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E8",
+            "raciocinio": "A proposta de mudan\u00e7a \u00e9 imediatamente seguida pelo acordo e partida dos ratos para a cidade.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT10",
+            "id_origem_no": "E9",
+            "id_destino_no": "AC5",
+            "raciocinio": "A proposta de mudan\u00e7a para a cidade precede a a\u00e7\u00e3o de combinar e ir para a cidade.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT11",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E10",
+            "raciocinio": "A a\u00e7\u00e3o de combinar e ir para a cidade \u00e9 imediatamente seguida pelo in\u00edcio da moradia na casa grande.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT12",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC6",
+            "raciocinio": "O in\u00edcio da moradia na casa grande precede a a\u00e7\u00e3o de viver nela.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT13",
+            "id_origem_no": "AC6",
+            "id_destino_no": "E11",
+            "raciocinio": "A a\u00e7\u00e3o de viver na casa grande \u00e9 imediatamente seguida pelo evento de estar na despensa.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT14",
+            "id_origem_no": "E11",
+            "id_destino_no": "AC7",
+            "raciocinio": "Estar na despensa da casa precede a a\u00e7\u00e3o de saborear comidas sofisticadas.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT15",
+            "id_origem_no": "E12",
+            "id_destino_no": "AC7",
+            "raciocinio": "A disponibilidade de comidas sofisticadas precede a a\u00e7\u00e3o de sabore\u00e1-las.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT16",
+            "id_origem_no": "AC7",
+            "id_destino_no": "E13",
+            "raciocinio": "A a\u00e7\u00e3o de saborear comidas sofisticadas \u00e9 imediatamente seguida pela entrada do homem com os gatos.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT17",
+            "id_origem_no": "E13",
+            "id_destino_no": "AC8",
+            "raciocinio": "A entrada do homem com os gatos precede a a\u00e7\u00e3o de fugir de perigo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT18",
+            "id_origem_no": "AC8",
+            "id_destino_no": "E14",
+            "raciocinio": "A a\u00e7\u00e3o de fugir de perigo \u00e9 imediatamente seguida pelos ratos se escondendo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT19",
+            "id_origem_no": "E13",
+            "id_destino_no": "AC9",
+            "raciocinio": "A entrada do homem com os gatos precede a a\u00e7\u00e3o de esconder-se.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT20",
+            "id_origem_no": "AC9",
+            "id_destino_no": "E15",
+            "raciocinio": "A a\u00e7\u00e3o de esconder-se \u00e9 imediatamente seguida pela sa\u00edda do homem e dos gatos.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT21",
+            "id_origem_no": "E15",
+            "id_destino_no": "AC10",
+            "raciocinio": "A sa\u00edda do homem e dos gatos precede a a\u00e7\u00e3o de abandonar o esconderijo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT22",
+            "id_origem_no": "AC10",
+            "id_destino_no": "E16",
+            "raciocinio": "A a\u00e7\u00e3o de abandonar o esconderijo \u00e9 imediatamente seguida pela entrada do rapaz na despensa.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT23",
+            "id_origem_no": "E16",
+            "id_destino_no": "AC11",
+            "raciocinio": "A entrada do rapaz na despensa precede a decis\u00e3o do Rato do Campo de retornar ao campo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT24",
+            "id_origem_no": "E17",
+            "id_destino_no": "AC11",
+            "raciocinio": "A instala\u00e7\u00e3o de ratoeiras precede a decis\u00e3o do Rato do Campo de retornar ao campo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT25",
+            "id_origem_no": "E18",
+            "id_destino_no": "AC11",
+            "raciocinio": "A percep\u00e7\u00e3o de perigo constante e correria precede a decis\u00e3o do Rato do Campo de retornar ao campo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT26",
+            "id_origem_no": "AC11",
+            "id_destino_no": "E19",
+            "raciocinio": "A a\u00e7\u00e3o de dar adeus e retornar ao campo \u00e9 imediatamente seguida pelo Rato do Campo vivendo com liberdade e tranquilidade.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        }
+    ],
+    "condicoes_estados": [],
+    "relacoes_funcionais_antecedentes": [
+        {
+            "id": "RFA1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC1",
+            "raciocinio": "A presen\u00e7a do Rato da Cidade no campo estabelece a ocasi\u00e3o para o Rato do Campo emitir o comportamento de convidar para jantar, pois sinaliza a disponibilidade de um ouvinte e a oportunidade de intera\u00e7\u00e3o social.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA2",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC2",
+            "raciocinio": "O convite feito pelo Rato do Campo funciona como um est\u00edmulo discriminativo para o Rato da Cidade aceitar, pois sinaliza a oportunidade de uma refei\u00e7\u00e3o e intera\u00e7\u00e3o social.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA3",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC3",
+            "raciocinio": "A chegada dos ratos ao buraco do Rato do Campo estabelece o contexto e a ocasi\u00e3o para o comportamento de comer, sinalizando que o ambiente \u00e9 prop\u00edcio para a refei\u00e7\u00e3o.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA4",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC3",
+            "raciocinio": "A disponibilidade de ra\u00edzes, ervas e frutos no campo \u00e9 o est\u00edmulo discriminativo direto que sinaliza a oportunidade de refor\u00e7amento (acesso a alimento) para o comportamento de comer.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA5",
+            "id_origem_no": "E7",
+            "id_destino_no": "AC4",
+            "raciocinio": "A percep\u00e7\u00e3o da mis\u00e9ria do Rato do Campo pelo Rato da Cidade funciona como um est\u00edmulo discriminativo que evoca a proposta de mudan\u00e7a, sinalizando uma situa\u00e7\u00e3o que ele acredita poder melhorar.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA6",
+            "id_origem_no": "E9",
+            "id_destino_no": "AC5",
+            "raciocinio": "A proposta de mudan\u00e7a para a cidade, uma vez feita, atua como um est\u00edmulo discriminativo para que os ratos combinem e executem a ida para a cidade, sinalizando a oportunidade de uma nova vida.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA7",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC6",
+            "raciocinio": "O in\u00edcio da moradia em uma casa grande na cidade estabelece o novo contexto e a ocasi\u00e3o para o comportamento de 'viver' nesse ambiente, sinalizando a concretiza\u00e7\u00e3o da mudan\u00e7a.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA8",
+            "id_origem_no": "E11",
+            "id_destino_no": "AC7",
+            "raciocinio": "Estar na despensa da casa funciona como um est\u00edmulo discriminativo, sinalizando o local onde comidas sofisticadas est\u00e3o dispon\u00edveis e o comportamento de sabore\u00e1-las \u00e9 prov\u00e1vel de ser refor\u00e7ado.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA9",
+            "id_origem_no": "E12",
+            "id_destino_no": "AC7",
+            "raciocinio": "A disponibilidade de comidas sofisticadas \u00e9 o est\u00edmulo discriminativo direto que sinaliza a oportunidade de refor\u00e7amento (acesso a alimento) para o comportamento de saborear.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA10",
+            "id_origem_no": "E13",
+            "id_destino_no": "AC8",
+            "raciocinio": "A entrada do homem com dois gatos na despensa \u00e9 um est\u00edmulo aversivo que elicia diretamente a resposta de fugir de perigo, sendo uma rea\u00e7\u00e3o incondicionada \u00e0 amea\u00e7a.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US"
+        },
+        {
+            "id": "RFA11",
+            "id_origem_no": "E13",
+            "id_destino_no": "AC9",
+            "raciocinio": "A entrada do homem com dois gatos na despensa \u00e9 um est\u00edmulo aversivo que elicia diretamente a resposta de esconder-se, sendo uma rea\u00e7\u00e3o incondicionada \u00e0 amea\u00e7a.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_ELICIADOR_INCONDICIONADO_US"
+        },
+        {
+            "id": "RFA12",
+            "id_origem_no": "E15",
+            "id_destino_no": "AC10",
+            "raciocinio": "A sa\u00edda do homem e dos gatos funciona como um est\u00edmulo discriminativo, sinalizando a aus\u00eancia de perigo e a ocasi\u00e3o para o comportamento de abandonar o esconderijo, que \u00e9 refor\u00e7ado pela remo\u00e7\u00e3o da aversividade do confinamento.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA13",
+            "id_origem_no": "E16",
+            "id_destino_no": "AC11",
+            "raciocinio": "A entrada do rapaz na despensa, sendo uma nova amea\u00e7a, atua como um est\u00edmulo discriminativo que contribui para a decis\u00e3o do Rato do Campo de retornar ao campo, sinalizando a persist\u00eancia do perigo na cidade.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA14",
+            "id_origem_no": "E17",
+            "id_destino_no": "AC11",
+            "raciocinio": "A instala\u00e7\u00e3o de ratoeiras \u00e9 um est\u00edmulo aversivo que funciona como um est\u00edmulo discriminativo, sinalizando um aumento significativo do perigo e a ocasi\u00e3o para o comportamento de fuga (retornar ao campo).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA15",
+            "id_origem_no": "E18",
+            "id_destino_no": "AC11",
+            "raciocinio": "A percep\u00e7\u00e3o de perigo constante e correria, resultante da acumula\u00e7\u00e3o de eventos aversivos, funciona como um est\u00edmulo discriminativo geral que sinaliza a aversividade do ambiente urbano e a ocasi\u00e3o para o comportamento de fuga (retornar ao campo).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        }
+    ],
+    "relacoes_funcionais_consequentes": [
+        {
+            "id": "RFC1",
+            "id_origem_no": "AC1",
+            "id_destino_no": "E2",
+            "raciocinio": "A aceita\u00e7\u00e3o do convite pelo Rato da Cidade \u00e9 um resultado positivo para o Rato do Campo que convidou, aumentando a probabilidade de ele convidar novamente em situa\u00e7\u00f5es semelhantes.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
+        },
+        {
+            "id": "RFC2",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E4",
+            "raciocinio": "A chegada ao buraco do Rato do Campo \u00e9 a concretiza\u00e7\u00e3o do ato de aceitar o convite e ir, permitindo o acesso a novas experi\u00eancias e alimentos. Para o Rato da Cidade, isso representa a obten\u00e7\u00e3o do que foi aceito, funcionando como um refor\u00e7ador.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
+        },
+        {
+            "id": "RFC3",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E6",
+            "raciocinio": "A declara\u00e7\u00e3o do Rato da Cidade sobre a mis\u00e9ria do Rato do Campo n\u00e3o \u00e9 uma consequ\u00eancia direta que reforce ou puna o comportamento de 'comer ra\u00edzes, ervas e frutos'. \u00c9 mais uma intera\u00e7\u00e3o social que sucede o ato de comer, sem alterar sua probabilidade futura de forma programada.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Baixa"
+        },
+        {
+            "id": "RFC4",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E8",
+            "raciocinio": "O acordo e a partida para a cidade s\u00e3o o resultado direto e positivo da proposta do Rato da Cidade, indicando que sua proposta foi aceita e ser\u00e1 concretizada, o que refor\u00e7a o comportamento de propor.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC5",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E10",
+            "raciocinio": "O in\u00edcio da moradia na casa grande \u00e9 a concretiza\u00e7\u00e3o do comportamento de 'combinar e ir para a cidade', representando o acesso a um novo ambiente com 'riqueza e fartura', o que \u00e9 um refor\u00e7ador positivo para ambos os ratos naquele momento.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC6",
+            "id_origem_no": "AC6",
+            "id_destino_no": "E11",
+            "raciocinio": "Estar na despensa \u00e9 uma condi\u00e7\u00e3o que surge do comportamento de 'viver em casa grande na cidade'. Embora a despensa seja um local de acesso a refor\u00e7adores (comida), o ato de 'viver na casa' n\u00e3o \u00e9 diretamente refor\u00e7ado ou punido por 'estar na despensa'. \u00c9 mais uma condi\u00e7\u00e3o ambiental que se segue, sem uma fun\u00e7\u00e3o consequente programada para o comportamento de viver.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Baixa"
+        },
+        {
+            "id": "RFC7",
+            "id_origem_no": "AC7",
+            "id_destino_no": "E13",
+            "raciocinio": "A entrada do homem com dois gatos \u00e9 um est\u00edmulo aversivo adicionado imediatamente ap\u00f3s os ratos estarem 'saboreando comidas sofisticadas'. Isso interrompe o comportamento e gera uma resposta de fuga, caracterizando uma puni\u00e7\u00e3o positiva para o comportamento de saborear naquele contexto.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC8",
+            "id_origem_no": "AC8",
+            "id_destino_no": "E14",
+            "raciocinio": "Os ratos se esconderem \u00e9 o resultado direto da fuga, que remove a exposi\u00e7\u00e3o imediata ao perigo (homem e gatos). A remo\u00e7\u00e3o de um est\u00edmulo aversivo (perigo) ap\u00f3s o comportamento de fugir caracteriza um refor\u00e7o negativo.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC9",
+            "id_origem_no": "AC9",
+            "id_destino_no": "E15",
+            "raciocinio": "A sa\u00edda do homem e dos gatos \u00e9 a remo\u00e7\u00e3o do est\u00edmulo aversivo que motivou o comportamento de 'esconder-se'. A remo\u00e7\u00e3o do perigo refor\u00e7a negativamente o comportamento de esconder-se.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC10",
+            "id_origem_no": "AC10",
+            "id_destino_no": "E16",
+            "raciocinio": "A entrada de um rapaz na despensa \u00e9 a adi\u00e7\u00e3o de um novo est\u00edmulo aversivo imediatamente ap\u00f3s os ratos 'abandonarem o esconderijo'. Isso leva a uma nova fuga e esconderijo, caracterizando uma puni\u00e7\u00e3o positiva para o comportamento de abandonar o esconderijo.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC11",
+            "id_origem_no": "AC11",
+            "id_destino_no": "E19",
+            "raciocinio": "O Rato do Campo vivendo com liberdade e tranquilidade \u00e9 o resultado direto e altamente desejado do comportamento de 'dar adeus e retornar ao campo'. A obten\u00e7\u00e3o dessa condi\u00e7\u00e3o positiva refor\u00e7a o comportamento de retornar ao campo.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        }
+    ],
+    "relacoes_moduladoras_estado": [],
+    "hipoteses_analiticas": [
+        {
+            "id": "H1",
+            "raciocinio": "O Rato do Campo, ao ser exposto repetidamente a est\u00edmulos aversivos (homem, gatos, ratoeiras) na cidade, emite comportamentos de fuga e esquiva (fugir, esconder-se, e finalmente retornar ao campo) que s\u00e3o refor\u00e7ados pela remo\u00e7\u00e3o ou evita\u00e7\u00e3o desses est\u00edmulos aversivos, resultando na busca por um ambiente seguro.",
+            "descricao": "O comportamento de fuga e esquiva do Rato do Campo (fugir, esconder-se e, por fim, retornar ao campo) \u00e9 mantido por refor\u00e7o negativo, devido \u00e0 remo\u00e7\u00e3o ou evita\u00e7\u00e3o de est\u00edmulos aversivos como a presen\u00e7a de predadores e a amea\u00e7a de ratoeiras na cidade.",
+            "nivel_confianca": "Alto"
+        },
+        {
+            "id": "H2",
+            "raciocinio": "A decis\u00e3o final do Rato do Campo de retornar ao campo \u00e9 motivada pela busca por um ambiente onde a liberdade e a tranquilidade s\u00e3o refor\u00e7adores positivos, em contraste com a aversividade e o perigo constantes da cidade.",
+            "descricao": "O comportamento de retornar ao campo do Rato do Campo \u00e9 mantido por refor\u00e7o positivo, devido ao acesso a condi\u00e7\u00f5es de liberdade e tranquilidade, que s\u00e3o mais valorizadas do que a fartura material da cidade, especialmente na aus\u00eancia de perigos.",
+            "nivel_confianca": "Alto"
+        },
+        {
+            "id": "H3",
+            "raciocinio": "O Rato da Cidade demonstra comportamentos (propor mudan\u00e7a, saborear comidas sofisticadas) que s\u00e3o inicialmente mantidos por refor\u00e7o positivo relacionado ao acesso a recursos materiais (fartura) e \u00e0 influ\u00eancia sobre o comportamento de outros (convidar o Rato do Campo).",
+            "descricao": "Os comportamentos do Rato da Cidade, como propor a mudan\u00e7a para a cidade e saborear comidas sofisticadas, s\u00e3o mantidos por refor\u00e7o positivo, seja pelo acesso a recursos materiais abundantes ou pela obten\u00e7\u00e3o de influ\u00eancia social.",
+            "nivel_confianca": "M\u00e9dio"
+        }
+    ],
+    "evidencias_para_hipoteses": [
+        {
+            "id": "EH1",
+            "id_origem_no": "AC11",
+            "id_destino_no": "H1",
+            "raciocinio": "A hip\u00f3tese \u00e9 suportada pela sequ\u00eancia de eventos onde a presen\u00e7a de amea\u00e7as (E13, E16, E17) elicia comportamentos de fuga (AC8, AC9) e, finalmente, a decis\u00e3o de retornar ao campo (AC11), que resulta na remo\u00e7\u00e3o do perigo (E19).",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC8",
+                "AC9",
+                "AC11",
+                "E13",
+                "E14",
+                "E15",
+                "E16",
+                "E17",
+                "E18",
+                "E19",
+                "RFA10",
+                "RFA11",
+                "RFA13",
+                "RFA14",
+                "RFA15",
+                "RFC8",
+                "RFC9",
+                "RFC10",
+                "RFC11"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO"
+        },
+        {
+            "id": "EH2",
+            "id_origem_no": "AC11",
+            "id_destino_no": "H2",
+            "raciocinio": "A hip\u00f3tese \u00e9 suportada pela declara\u00e7\u00e3o expl\u00edcita do Rato do Campo sobre seu desejo por liberdade e tranquilidade (E19) como consequ\u00eancia de seu retorno, e pela compara\u00e7\u00e3o impl\u00edcita com a vida na cidade (E13, E16, E17) que carece desses refor\u00e7adores.",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC11",
+                "E19",
+                "RFC11",
+                "E18",
+                "E13",
+                "E16",
+                "E17",
+                "AC3",
+                "E5"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO"
+        },
+        {
+            "id": "EH3",
+            "id_origem_no": "AC4",
+            "id_destino_no": "H3",
+            "raciocinio": "A hip\u00f3tese \u00e9 suportada pela proposta do Rato da Cidade (AC4) ap\u00f3s observar a 'mis\u00e9ria' (E7), que resulta no acordo e partida (E8), e pelo comportamento de saborear comidas sofisticadas (AC7) na cidade, indicando a busca por fartura.",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S1",
+                "AC4",
+                "AC7",
+                "E7",
+                "E8",
+                "E11",
+                "E12",
+                "RFA5",
+                "RFA8",
+                "RFA9",
+                "RFC4",
+                "RFC7"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO"
+        }
+    ],
+    "timeline": [
+        "S1",
+        "S2",
+        "AC2",
+        "E3",
+        "AC1",
+        "E4",
+        "AC3",
+        "E5",
+        "E7",
+        "E6",
+        "AC4",
+        "E9",
+        "AC5",
+        "E8",
+        "AC6",
+        "E10",
+        "E11",
+        "AC7",
+        "E12",
+        "E13",
+        "AC8",
+        "AC9",
+        "E14",
+        "E15",
+        "AC10",
+        "E16",
+        "E17",
+        "E18",
+        "AC11",
+        "E19",
+        "H1",
+        "H2",
+        "H3"
+    ],
+    "texto_original": "O Rato da Cidade e o Rato do Campo\r\nUm Rato que morava na cidade aceitou o convite para jantar na casa de um Rato que vivia no Campo. Chegando l\u00e1, no buraco em que vivia o Rato do campo, comeram ra\u00edzes, ervas e frutos. At\u00e9 que o Rato da Cidade disse: \u2014 Amigo, notei que voc\u00ea vive na mis\u00e9ria. Isso me d\u00e1 muita pena.\r\nVamos morar na Cidade, onde voc\u00ea ver\u00e1 a riqueza e a fartura que l\u00e1 desfrutamos.\r\nOs dois combinaram e foram para a Cidade. Foram viver numa casa grande e cheia de comida.\r\nUm dia, estavam na despensa da casa, saboreando comidas sofisticadas quando, de repente, entra um homem com dois gatos. Foi a maior correria, com os Ratos fugindo por todos os lados. Ent\u00e3o eles se esconderam at\u00e9 que o homem e os gatos fossem embora. Quando j\u00e1 haviam abandonado os seus esconderijos e estavam prestes a comer novamente, um rapaz entrou na despensa, obrigando todos a se esconder mais uma vez. Ainda por cima, o rapaz instalou algumas ratoeiras.\r\nO Rato do Campo n\u00e3o quis mais saber de tanta correria e deu adeus ao Rato da Cidade, dizendo: \u2014 Voc\u00eas que fiquem com toda essa fartura, que eu quero mesmo \u00e9 viver comendo os frutos da terra sem medo de homens, gatos e ratoeiras. L\u00e1 no Campo tenho um prazer inigual\u00e1vel que \u00e9 a liberdade e a tranquilidade."
 }

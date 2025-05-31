@@ -1,153 +1,328 @@
 {
     "sujeitos": [
         {
-            "id_sujeito": "S1",
-            "nome_descritivo": "Ladr\u00e3o"
+            "id": "S1",
+            "raciocinio": "O 'Ladr\u00e3o' \u00e9 claramente um agente ativo na narrativa, com inten\u00e7\u00f5es e comportamentos expl\u00edcitos (desejar roubar, trazer sandu\u00edche, lan\u00e7ar o naco).",
+            "descricao": "Ladr\u00e3o",
+            "historico_relevante": "Indiv\u00edduo com inten\u00e7\u00e3o de roubar a casa."
         },
         {
-            "id_sujeito": "S2",
-            "nome_descritivo": "C\u00e3o de Guarda"
+            "id": "S2",
+            "raciocinio": "O 'C\u00e3o de Guarda' \u00e9 outro agente central, com comportamentos e fala atribu\u00eddos a ele (vigiar, dizer, latir, n\u00e3o querer morrer de fome).",
+            "descricao": "C\u00e3o de Guarda",
+            "historico_relevante": "Animal respons\u00e1vel pela vigil\u00e2ncia da casa, sustentado pelo dono."
+        },
+        {
+            "id": "S3",
+            "raciocinio": "O 'dono da casa' \u00e9 mencionado como uma figura relevante para o C\u00e3o de Guarda (quem o sustenta) e como algu\u00e9m que pode intervir (acordar e enxotar o ladr\u00e3o), indicando sua import\u00e2ncia no contexto da conting\u00eancia, mesmo que n\u00e3o emita um comportamento direto na cena descrita.",
+            "descricao": "Dono da casa",
+            "historico_relevante": "Pessoa que sustenta o C\u00e3o de Guarda e propriet\u00e1rio da casa."
         }
     ],
     "acoes_comportamentos": [
         {
-            "id_acao": "AC1",
-            "descricao_topografica": "Desejar entrar \u00e0 noite em uma casa para roubar",
-            "tipo_observabilidade": "Encoberto",
-            "classe_funcional_hipotetica": [
-                "Obten\u00e7\u00e3o de recursos"
-            ]
-        },
-        {
-            "id_acao": "AC2",
-            "descricao_topografica": "Trazer consigo um peda\u00e7o de sandu\u00edche",
+            "id": "AC1",
+            "raciocinio": "O ladr\u00e3o 'trazia consigo um peda\u00e7o de sandu\u00edche' \u00e9 uma a\u00e7\u00e3o observ\u00e1vel e intencional, parte de seu plano para roubar.",
+            "descricao": "Trazer consigo um peda\u00e7o de sandu\u00edche",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Manipula\u00e7\u00e3o de est\u00edmulos",
-                "Tentativa de suborno"
+                "Preparat\u00f3ria",
+                "Instrumental"
             ]
         },
         {
-            "id_acao": "AC3",
-            "descricao_topografica": "Lan\u00e7ar o naco de sandu\u00edche ao solo",
+            "id": "AC2",
+            "raciocinio": "O ladr\u00e3o 'lan\u00e7ou o naco ao solo' \u00e9 uma a\u00e7\u00e3o f\u00edsica direta e observ\u00e1vel, com o objetivo de distrair o c\u00e3o.",
+            "descricao": "Lan\u00e7ar o naco de sandu\u00edche ao solo",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Oferta",
-                "Tentativa de distra\u00e7\u00e3o",
-                "Esquiva de latido"
+                "Distra\u00e7\u00e3o",
+                "Suborno"
             ]
         },
         {
-            "id_acao": "AC4",
-            "descricao_topografica": "Dizer que n\u00e3o vai deixar de latir",
+            "id": "AC3",
+            "raciocinio": "O c\u00e3o 'vigiara a casa' \u00e9 uma descri\u00e7\u00e3o de seu comportamento cont\u00ednuo e fun\u00e7\u00e3o, que \u00e9 observ\u00e1vel atrav\u00e9s de sua postura e aten\u00e7\u00e3o.",
+            "descricao": "Vigiar a casa",
+            "tipo_observabilidade": "Observ\u00e1vel",
+            "classe_funcional_hipotetica": [
+                "Prote\u00e7\u00e3o",
+                "Cumprimento de fun\u00e7\u00e3o"
+            ]
+        },
+        {
+            "id": "AC4",
+            "raciocinio": "O c\u00e3o 'disse' \u00e9 uma vocaliza\u00e7\u00e3o, uma forma de comunica\u00e7\u00e3o verbal (no contexto da f\u00e1bula), que \u00e9 um comportamento observ\u00e1vel.",
+            "descricao": "Dizer/Falar (comunica\u00e7\u00e3o verbal)",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
                 "Comunica\u00e7\u00e3o",
-                "Defesa de territ\u00f3rio"
+                "Recusa",
+                "Estabelecimento de conting\u00eancia"
             ]
         },
         {
-            "id_acao": "AC5",
-            "descricao_topografica": "Latir enquanto o ladr\u00e3o n\u00e3o for embora",
+            "id": "AC5",
+            "raciocinio": "O c\u00e3o afirma 'n\u00e3o vou deixar de latir', indicando que 'latir' \u00e9 o comportamento que ele pretende emitir e manter. \u00c9 uma vocaliza\u00e7\u00e3o observ\u00e1vel.",
+            "descricao": "Latir",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Alerta",
-                "Defesa de territ\u00f3rio",
-                "Prote\u00e7\u00e3o do dono"
+                "Fuga/Esquiva (do ladr\u00e3o)",
+                "Sinaliza\u00e7\u00e3o (para o dono)",
+                "Manuten\u00e7\u00e3o da seguran\u00e7a"
             ]
         }
     ],
     "emissoes_comportamentais": [
         {
-            "id_aresta": "EM1",
+            "id": "AR1",
             "id_origem_no": "S1",
             "id_destino_no": "AC1",
+            "raciocinio": "A a\u00e7\u00e3o 'Trazer consigo um peda\u00e7o de sandu\u00edche' \u00e9 emitida pelo 'Ladr\u00e3o' (S1).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM2",
+            "id": "AR2",
             "id_origem_no": "S1",
             "id_destino_no": "AC2",
+            "raciocinio": "A a\u00e7\u00e3o 'Lan\u00e7ar o naco de sandu\u00edche ao solo' \u00e9 emitida pelo 'Ladr\u00e3o' (S1).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM3",
-            "id_origem_no": "S1",
+            "id": "AR3",
+            "id_origem_no": "S2",
             "id_destino_no": "AC3",
+            "raciocinio": "A a\u00e7\u00e3o 'Vigiar a casa' \u00e9 uma fun\u00e7\u00e3o e comportamento cont\u00ednuo do 'C\u00e3o de Guarda' (S2).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM4",
+            "id": "AR4",
             "id_origem_no": "S2",
             "id_destino_no": "AC4",
+            "raciocinio": "A a\u00e7\u00e3o 'Dizer/Falar' \u00e9 emitida pelo 'C\u00e3o de Guarda' (S2) quando ele se comunica com o ladr\u00e3o.",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM5",
+            "id": "AR5",
             "id_origem_no": "S2",
             "id_destino_no": "AC5",
+            "raciocinio": "A a\u00e7\u00e3o 'Latir' \u00e9 um comportamento que o 'C\u00e3o de Guarda' (S2) afirma que ir\u00e1 emitir e manter.",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         }
     ],
     "estimulos_eventos": [
         {
-            "id_estimulo_evento": "E1",
-            "descricao": "O ladr\u00e3o traz consigo um peda\u00e7o de sandu\u00edche",
-            "tipo_fisico": "N\u00e3o-Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Pr\u00f3ximo ao ladr\u00e3o"
+            "id": "E1",
+            "raciocinio": "Inferido como o motivo subjacente e antecedente para o ladr\u00e3o trazer o sandu\u00edche, estabelecendo a ocasi\u00e3o para a a\u00e7\u00e3o.",
+            "descricao": "Inten\u00e7\u00e3o do Ladr\u00e3o de roubar a casa"
         },
         {
-            "id_estimulo_evento": "E2",
-            "descricao": "O ladr\u00e3o lan\u00e7a o naco de sandu\u00edche ao solo",
-            "tipo_fisico": "N\u00e3o-Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "No ch\u00e3o, pr\u00f3ximo ao c\u00e3o"
+            "id": "E2",
+            "raciocinio": "Consequ\u00eancia direta de 'trazer consigo' e antecedente necess\u00e1rio para 'lan\u00e7ar o naco'.",
+            "descricao": "Ladr\u00e3o ter o sandu\u00edche consigo"
         },
         {
-            "id_estimulo_evento": "E3",
-            "descricao": "O c\u00e3o diz que n\u00e3o vai deixar de latir e explica o porqu\u00ea",
-            "tipo_fisico": "Verbal",
-            "modalidade_sensorial_primaria": "Auditivo",
-            "localizacao": "Pr\u00f3ximo ao ladr\u00e3o"
+            "id": "E3",
+            "raciocinio": "A presen\u00e7a do c\u00e3o \u00e9 um est\u00edmulo antecedente para a a\u00e7\u00e3o do ladr\u00e3o de lan\u00e7ar o sandu\u00edche, pois o objetivo \u00e9 distra\u00ed-lo.",
+            "descricao": "Presen\u00e7a do C\u00e3o de Guarda"
         },
         {
-            "id_estimulo_evento": "E4",
-            "descricao": "O c\u00e3o late",
-            "tipo_fisico": "N\u00e3o-Verbal",
-            "modalidade_sensorial_primaria": "Auditivo",
-            "localizacao": "Na casa"
+            "id": "E4",
+            "raciocinio": "Consequ\u00eancia direta de 'lan\u00e7ar o naco' e o est\u00edmulo que elicia a fala do c\u00e3o.",
+            "descricao": "Naco de sandu\u00edche no solo"
+        },
+        {
+            "id": "E5",
+            "raciocinio": "Inferido como o contexto e o objeto da vigil\u00e2ncia do c\u00e3o, um antecedente cont\u00ednuo para a a\u00e7\u00e3o de 'vigiar'.",
+            "descricao": "Presen\u00e7a da casa a ser vigiada"
+        },
+        {
+            "id": "E6",
+            "raciocinio": "A chegada do ladr\u00e3o \u00e9 um evento que ativa ou intensifica a vigil\u00e2ncia do c\u00e3o e serve como antecedente para o latido.",
+            "descricao": "Chegada do Ladr\u00e3o"
+        },
+        {
+            "id": "E7",
+            "raciocinio": "Inferido como um estado interno resultante da a\u00e7\u00e3o de 'vigiar', que prepara o c\u00e3o para responder a amea\u00e7as.",
+            "descricao": "C\u00e3o estar alerta/atento"
+        },
+        {
+            "id": "E8",
+            "raciocinio": "Consequ\u00eancia imediata da fala do c\u00e3o, essencial para a intera\u00e7\u00e3o subsequente.",
+            "descricao": "Ladr\u00e3o ouvir a fala do C\u00e3o"
+        },
+        {
+            "id": "E9",
+            "raciocinio": "Inferido da fala do c\u00e3o ('enquanto voc\u00ea n\u00e3o for embora'), indicando que a perman\u00eancia do ladr\u00e3o \u00e9 um antecedente para o latido cont\u00ednuo.",
+            "descricao": "Ladr\u00e3o n\u00e3o ir embora"
+        },
+        {
+            "id": "E10",
+            "raciocinio": "Inferido do contexto da situa\u00e7\u00e3o, a amea\u00e7a de roubo \u00e9 um antecedente para o comportamento protetor do c\u00e3o, incluindo o latido.",
+            "descricao": "Amea\u00e7a de roubo \u00e0 casa"
+        },
+        {
+            "id": "E11",
+            "raciocinio": "Mencionado pelo c\u00e3o como um objetivo do latido, embora seja uma consequ\u00eancia mais distante e n\u00e3o imediata de um \u00fanico latido.",
+            "descricao": "Ladr\u00e3o ir embora"
+        },
+        {
+            "id": "E12",
+            "raciocinio": "Mencionado pelo c\u00e3o como um objetivo do latido, uma consequ\u00eancia mais distante e n\u00e3o imediata de um \u00fanico latido.",
+            "descricao": "Dono da casa acordar e enxotar o Ladr\u00e3o"
+        },
+        {
+            "id": "E13",
+            "raciocinio": "Consequ\u00eancia f\u00edsica direta e imediata da a\u00e7\u00e3o de 'latir'.",
+            "descricao": "Som do latido"
+        },
+        {
+            "id": "E14",
+            "raciocinio": "Inferido como o efeito imediato do latido sobre o ladr\u00e3o, que \u00e9 o objetivo do c\u00e3o.",
+            "descricao": "Ladr\u00e3o ser dissuadido/incomodado"
         }
     ],
     "relacoes_temporais": [
         {
-            "id_aresta": "RT1",
+            "id": "RT1",
             "id_origem_no": "E1",
-            "id_destino_no": "AC3",
+            "id_destino_no": "AC1",
+            "raciocinio": "A inten\u00e7\u00e3o de roubar precede a a\u00e7\u00e3o de trazer o sandu\u00edche como parte do plano.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT2",
-            "id_origem_no": "AC3",
-            "id_destino_no": "E3",
+            "id": "RT2",
+            "id_origem_no": "AC1",
+            "id_destino_no": "E2",
+            "raciocinio": "A a\u00e7\u00e3o de trazer o sandu\u00edche resulta imediatamente em t\u00ea-lo consigo.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT3",
-            "id_origem_no": "E3",
-            "id_destino_no": "AC5",
+            "id": "RT3",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC2",
+            "raciocinio": "Ter o sandu\u00edche consigo \u00e9 um pr\u00e9-requisito imediato para lan\u00e7\u00e1-lo.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT4",
-            "id_origem_no": "AC5",
+            "id": "RT4",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC2",
+            "raciocinio": "A presen\u00e7a do c\u00e3o \u00e9 o est\u00edmulo que elicia a a\u00e7\u00e3o de lan\u00e7ar o sandu\u00edche para distra\u00ed-lo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT5",
+            "id_origem_no": "AC2",
             "id_destino_no": "E4",
+            "raciocinio": "Lan\u00e7ar o naco resulta imediatamente no naco estar no solo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT6",
+            "id_origem_no": "AC2",
+            "id_destino_no": "AC4",
+            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de lan\u00e7ar o naco \u00e9 imediatamente seguida pela fala do c\u00e3o.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT7",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC3",
+            "raciocinio": "A presen\u00e7a da casa \u00e9 o contexto e o objeto da vigil\u00e2ncia do c\u00e3o.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT8",
+            "id_origem_no": "E6",
+            "id_destino_no": "AC3",
+            "raciocinio": "A chegada do ladr\u00e3o \u00e9 um evento que ativa a vigil\u00e2ncia do c\u00e3o.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT9",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E7",
+            "raciocinio": "A vigil\u00e2ncia do c\u00e3o resulta em seu estado de alerta.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT10",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC4",
+            "raciocinio": "O naco no solo \u00e9 o est\u00edmulo imediato que provoca a fala do c\u00e3o.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT11",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E8",
+            "raciocinio": "A fala do c\u00e3o resulta imediatamente no ladr\u00e3o ouvi-la.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT12",
+            "id_origem_no": "E6",
+            "id_destino_no": "AC5",
+            "raciocinio": "A presen\u00e7a do ladr\u00e3o \u00e9 o est\u00edmulo que elicia o latido do c\u00e3o.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT13",
+            "id_origem_no": "E9",
+            "id_destino_no": "AC5",
+            "raciocinio": "A perman\u00eancia do ladr\u00e3o \u00e9 a condi\u00e7\u00e3o que mant\u00e9m o latido do c\u00e3o.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT14",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC5",
+            "raciocinio": "A amea\u00e7a de roubo \u00e9 o est\u00edmulo subjacente que motiva o c\u00e3o a latir para proteger a casa.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT15",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E13",
+            "raciocinio": "A a\u00e7\u00e3o de latir resulta imediatamente na emiss\u00e3o do som do latido.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT16",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E14",
+            "raciocinio": "O latido do c\u00e3o tem o efeito imediato de dissuadir ou incomodar o ladr\u00e3o.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
@@ -156,98 +331,267 @@
     "condicoes_estados": [],
     "relacoes_funcionais_antecedentes": [
         {
-            "id_aresta": "RFA1",
+            "id": "RFA1",
             "id_origem_no": "E1",
-            "id_destino_no": "AC3",
+            "id_destino_no": "AC1",
+            "raciocinio": "A inten\u00e7\u00e3o de roubar a casa (E1) funciona como um est\u00edmulo discriminativo para o ladr\u00e3o, sinalizando que a a\u00e7\u00e3o de trazer o sandu\u00edche (AC1) \u00e9 apropriada e instrumental para o objetivo final do roubo.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD",
-            "prob_resposta_na_presenca": 0.9,
-            "prob_resposta_na_ausencia": 0.1
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
-            "id_aresta": "RFA2",
-            "id_origem_no": "E3",
-            "id_destino_no": "AC5",
+            "id": "RFA2",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC2",
+            "raciocinio": "A posse do sandu\u00edche (E2) \u00e9 um est\u00edmulo discriminativo que estabelece a ocasi\u00e3o para a a\u00e7\u00e3o de lan\u00e7\u00e1-lo (AC2), pois sem o sandu\u00edche, a a\u00e7\u00e3o n\u00e3o seria poss\u00edvel.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD",
-            "prob_resposta_na_presenca": 0.95,
-            "prob_resposta_na_ausencia": 0.05
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA3",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC2",
+            "raciocinio": "A presen\u00e7a do C\u00e3o de Guarda (E3) atua como um est\u00edmulo discriminativo para o ladr\u00e3o, sinalizando a ocasi\u00e3o para lan\u00e7ar o sandu\u00edche (AC2) com o objetivo de distra\u00ed-lo.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA4",
+            "id_origem_no": "E5",
+            "id_destino_no": "AC3",
+            "raciocinio": "A presen\u00e7a da casa (E5) funciona como um est\u00edmulo discriminativo cont\u00ednuo para o C\u00e3o de Guarda, sinalizando o ambiente e o objeto de sua fun\u00e7\u00e3o de vigiar (AC3).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA5",
+            "id_origem_no": "E6",
+            "id_destino_no": "AC3",
+            "raciocinio": "A chegada do Ladr\u00e3o (E6) atua como um est\u00edmulo discriminativo para o C\u00e3o de Guarda, sinalizando uma amea\u00e7a potencial e a necessidade de intensificar ou ativar o comportamento de vigiar a casa (AC3).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA6",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC4",
+            "raciocinio": "O naco de sandu\u00edche no solo (E4) funciona como um est\u00edmulo discriminativo para o C\u00e3o, sinalizando a tentativa de suborno do ladr\u00e3o e eliciando sua resposta verbal (AC4) de recusa.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA7",
+            "id_origem_no": "E6",
+            "id_destino_no": "AC5",
+            "raciocinio": "A chegada do Ladr\u00e3o (E6) atua como um est\u00edmulo discriminativo para o C\u00e3o, sinalizando uma amea\u00e7a e a ocasi\u00e3o para emitir o comportamento de latir (AC5) como forma de prote\u00e7\u00e3o e alerta.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA8",
+            "id_origem_no": "E9",
+            "id_destino_no": "AC5",
+            "raciocinio": "A perman\u00eancia do Ladr\u00e3o (E9) funciona como um est\u00edmulo discriminativo para o C\u00e3o, sinalizando que a amea\u00e7a persiste e que o comportamento de latir (AC5) deve ser mantido at\u00e9 que o ladr\u00e3o se retire ou o dono acorde.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA9",
+            "id_origem_no": "E10",
+            "id_destino_no": "AC5",
+            "raciocinio": "A amea\u00e7a de roubo \u00e0 casa (E10) atua como um est\u00edmulo discriminativo geral para o C\u00e3o, estabelecendo a ocasi\u00e3o para o comportamento de latir (AC5) como uma resposta protetora.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         }
     ],
     "relacoes_funcionais_consequentes": [
         {
-            "id_aresta": "RFC1",
-            "id_origem_no": "AC3",
-            "id_destino_no": "E3",
+            "id": "RFC1",
+            "id_origem_no": "AC1",
+            "id_destino_no": "E2",
+            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de 'trazer consigo um peda\u00e7o de sandu\u00edche' (AC1) resulta em 'ter o sandu\u00edche consigo' (E2). Para o ladr\u00e3o, ter o sandu\u00edche \u00e9 um estado desej\u00e1vel e necess\u00e1rio para seu plano, funcionando como um refor\u00e7o positivo para a a\u00e7\u00e3o preparat\u00f3ria.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "PUNI\u00c7\u00c3O_NEGATIVA_SP-",
-            "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "Baixa"
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata"
         },
         {
-            "id_aresta": "RFC2",
-            "id_origem_no": "AC5",
+            "id": "RFC2",
+            "id_origem_no": "AC2",
             "id_destino_no": "E4",
+            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) resulta no 'naco de sandu\u00edche no solo' (E4). Para o ladr\u00e3o, a presen\u00e7a do sandu\u00edche no solo \u00e9 o objetivo imediato para distrair o c\u00e3o, configurando um refor\u00e7o positivo para a a\u00e7\u00e3o de lan\u00e7ar.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata"
+        },
+        {
+            "id": "RFC3",
+            "id_origem_no": "AC2",
+            "id_destino_no": "AC4",
+            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) \u00e9 seguida pela fala do c\u00e3o (AC4), que rejeita a oferta e amea\u00e7a latir. Para o ladr\u00e3o, a fala do c\u00e3o \u00e9 um est\u00edmulo aversivo que frustra seu plano, funcionando como uma puni\u00e7\u00e3o positiva (adi\u00e7\u00e3o de algo aversivo) para a a\u00e7\u00e3o de lan\u00e7ar o sandu\u00edche.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
+            "imediatismo_consequencia": "Imediata"
+        },
+        {
+            "id": "RFC4",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E7",
+            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'vigiar a casa' (AC3) resulta em 'estar alerta/atento' (E7). Embora 'estar alerta' seja um estado importante para a fun\u00e7\u00e3o do c\u00e3o, o texto n\u00e3o descreve E7 como uma consequ\u00eancia operante que diretamente refor\u00e7a ou pune a vigil\u00e2ncia em si, mas sim um resultado direto da a\u00e7\u00e3o. A manuten\u00e7\u00e3o da vigil\u00e2ncia \u00e9 mais provavelmente refor\u00e7ada por consequ\u00eancias mais amplas (e.g., sustento do dono, seguran\u00e7a da casa) n\u00e3o diretamente representadas por E7.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
-            "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "M\u00e9dia"
+            "imediatismo_consequencia": "Imediata"
+        },
+        {
+            "id": "RFC5",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E8",
+            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'dizer/falar' (AC4) tem como consequ\u00eancia o 'ladr\u00e3o ouvir a fala do C\u00e3o' (E8). Para o c\u00e3o, ser ouvido pelo ladr\u00e3o \u00e9 o objetivo imediato de sua comunica\u00e7\u00e3o, funcionando como um refor\u00e7o positivo para sua fala, pois a comunica\u00e7\u00e3o foi efetiva.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata"
+        },
+        {
+            "id": "RFC6",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E13",
+            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'latir' (AC5) resulta no 'som do latido' (E13). A produ\u00e7\u00e3o do som \u00e9 uma consequ\u00eancia autom\u00e1tica e inerente ao latido. O feedback sensorial (auditivo) de produzir o som pode ser um refor\u00e7ador positivo autom\u00e1tico para o comportamento de latir.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata"
+        },
+        {
+            "id": "RFC7",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E14",
+            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'latir' (AC5) tem como consequ\u00eancia o 'ladr\u00e3o ser dissuadido/incomodado' (E14). Para o c\u00e3o, o latido visa afastar o ladr\u00e3o ou alertar o dono, removendo a amea\u00e7a. O ladr\u00e3o ser dissuadido \u00e9 um passo para a remo\u00e7\u00e3o do est\u00edmulo aversivo (presen\u00e7a do ladr\u00e3o), funcionando como um refor\u00e7o negativo para o comportamento de latir.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Imediata"
         }
     ],
     "relacoes_moduladoras_estado": [],
     "hipoteses_analiticas": [
         {
-            "id_hipotese": "H1",
-            "descricao_hipotese": "O comportamento do Ladr\u00e3o de lan\u00e7ar o sandu\u00edche (AC3) \u00e9 mantido pela expectativa de que o C\u00e3o pare de latir (E4), facilitando o roubo (AC1).",
-            "nivel_confianca": "M\u00e9dio",
-            "data_formulacao": "2025-05-29T14:41:36.936108Z",
-            "status_hipotese": "Aguardando teste"
+            "id": "H1",
+            "raciocinio": "A a\u00e7\u00e3o do Ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) \u00e9 claramente descrita como uma tentativa de 'distrair o C\u00e3o de Guarda', o que implica uma fun\u00e7\u00e3o de suborno ou manipula\u00e7\u00e3o para obter acesso \u00e0 casa. Esta hip\u00f3tese \u00e9 diretamente suportada pela inten\u00e7\u00e3o inicial do ladr\u00e3o (E1) e pela sequ\u00eancia de eventos que levam a essa a\u00e7\u00e3o e suas consequ\u00eancias imediatas (E4).",
+            "descricao": "A a\u00e7\u00e3o do Ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) tem a fun\u00e7\u00e3o de subornar ou distrair o C\u00e3o de Guarda (S2) para que ele n\u00e3o impe\u00e7a o roubo, buscando acesso \u00e0 casa.",
+            "nivel_confianca": "Alto"
         },
         {
-            "id_hipotese": "H2",
-            "descricao_hipotese": "O comportamento do C\u00e3o de latir (AC5) \u00e9 mantido pela esquiva da perda de refor\u00e7adores (comida e abrigo) providos pelo dono da casa.",
-            "nivel_confianca": "Alto",
-            "data_formulacao": "2025-05-29T14:41:36.936108Z",
-            "status_hipotese": "Suportada por dados"
+            "id": "H2",
+            "raciocinio": "A fala do C\u00e3o de Guarda (AC4) \u00e9 uma resposta direta ao suborno do ladr\u00e3o, onde o c\u00e3o verbaliza sua recusa e sua lealdade ao dono. A fun\u00e7\u00e3o \u00e9 comunicar sua posi\u00e7\u00e3o e deter o ladr\u00e3o verbalmente. A fala \u00e9 um comportamento operante que visa uma consequ\u00eancia no ambiente social (o ladr\u00e3o ouvir e, idealmente, desistir).",
+            "descricao": "A fala do C\u00e3o de Guarda (AC4) tem a fun\u00e7\u00e3o de comunicar sua recusa ao suborno e alertar o Ladr\u00e3o sobre sua inten\u00e7\u00e3o de proteger a casa, servindo como uma forma de controle aversivo verbal.",
+            "nivel_confianca": "Alto"
+        },
+        {
+            "id": "H3",
+            "raciocinio": "O comportamento de 'latir' (AC5) \u00e9 explicitamente declarado pelo C\u00e3o como uma a\u00e7\u00e3o que ele manter\u00e1 'enquanto voc\u00ea n\u00e3o for embora ou at\u00e9 que ele acorde e venha te enxotar'. Isso indica uma fun\u00e7\u00e3o de fuga/esquiva da presen\u00e7a aversiva do ladr\u00e3o e de sinaliza\u00e7\u00e3o para o dono, visando a remo\u00e7\u00e3o da amea\u00e7a e a prote\u00e7\u00e3o de seu sustento e da casa.",
+            "descricao": "O comportamento de 'latir' (AC5) do C\u00e3o de Guarda tem a fun\u00e7\u00e3o de fuga/esquiva da presen\u00e7a do Ladr\u00e3o (S1) e de sinaliza\u00e7\u00e3o para o Dono da casa (S3), visando a remo\u00e7\u00e3o da amea\u00e7a de roubo e a prote\u00e7\u00e3o de seu sustento.",
+            "nivel_confianca": "Alto"
         }
     ],
     "evidencias_para_hipoteses": [
         {
-            "id_aresta": "EH1",
-            "id_origem_no": "AC3",
+            "id": "EH1",
+            "id_origem_no": "AC2",
             "id_destino_no": "H1",
+            "raciocinio": "Esta aresta conecta a a\u00e7\u00e3o de 'lan\u00e7ar o naco' (AC2) \u00e0 hip\u00f3tese de que sua fun\u00e7\u00e3o \u00e9 subornar/distrair. Os elementos de suporte incluem a inten\u00e7\u00e3o do ladr\u00e3o, a posse do sandu\u00edche, a presen\u00e7a do c\u00e3o e as consequ\u00eancias imediatas de ter o naco no solo, que s\u00e3o instrumentais para o objetivo de distra\u00e7\u00e3o.",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
                 "S1",
                 "AC1",
-                "AC3",
+                "AC2",
                 "E1",
+                "E2",
+                "E3",
                 "E4",
                 "RT1",
+                "RT2",
+                "RT3",
+                "RT4",
+                "RT5",
+                "RFA1",
+                "RFA2",
+                "RFA3",
                 "RFC1",
-                "RFA1"
+                "RFC2"
             ],
-            "tipo_evidencia": "SUPORTE_DIRETO",
-            "fonte_dados": "Narrativa Textual"
+            "tipo_evidencia": "SUPORTE_DIRETO"
         },
         {
-            "id_aresta": "EH2",
-            "id_origem_no": "AC5",
+            "id": "EH2",
+            "id_origem_no": "AC4",
             "id_destino_no": "H2",
+            "raciocinio": "Esta aresta conecta a a\u00e7\u00e3o de 'dizer/falar' (AC4) \u00e0 hip\u00f3tese de que sua fun\u00e7\u00e3o \u00e9 comunicar recusa e alertar. Os elementos de suporte incluem o naco no solo como antecedente, o ladr\u00e3o ouvir a fala como consequ\u00eancia, e as rela\u00e7\u00f5es temporais e funcionais que ligam esses eventos.",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S2",
+                "AC4",
+                "E4",
+                "E8",
+                "RT6",
+                "RT10",
+                "RT11",
+                "RFA6",
+                "RFC5"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO"
+        },
+        {
+            "id": "EH3",
+            "id_origem_no": "AC5",
+            "id_destino_no": "H3",
+            "raciocinio": "Esta aresta conecta a a\u00e7\u00e3o de 'latir' (AC5) \u00e0 hip\u00f3tese de que sua fun\u00e7\u00e3o \u00e9 fuga/esquiva e sinaliza\u00e7\u00e3o. Os elementos de suporte incluem a presen\u00e7a e perman\u00eancia do ladr\u00e3o, a amea\u00e7a de roubo como antecedentes, e as consequ\u00eancias de produzir o som do latido e dissuadir o ladr\u00e3o, que s\u00e3o consistentes com a fun\u00e7\u00e3o de prote\u00e7\u00e3o e alerta.",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
                 "S2",
                 "AC5",
-                "E3",
-                "E4",
-                "RT3",
-                "RT4",
-                "RFA2",
-                "RFC2"
+                "E6",
+                "E9",
+                "E10",
+                "E11",
+                "E12",
+                "E13",
+                "E14",
+                "RT12",
+                "RT13",
+                "RT14",
+                "RT15",
+                "RT16",
+                "RFA7",
+                "RFA8",
+                "RFA9",
+                "RFC6",
+                "RFC7"
             ],
-            "tipo_evidencia": "SUPORTE_DIRETO",
-            "fonte_dados": "Narrativa Textual"
+            "tipo_evidencia": "SUPORTE_DIRETO"
         }
+    ],
+    "timeline": [
+        "S1",
+        "E1",
+        "AC1",
+        "E2",
+        "S2",
+        "AC3",
+        "E5",
+        "E3",
+        "E6",
+        "E7",
+        "E10",
+        "AC2",
+        "E4",
+        "AC4",
+        "E8",
+        "S3",
+        "AC5",
+        "E9",
+        "E12",
+        "E11",
+        "E13",
+        "E14",
+        "H1",
+        "H2",
+        "H3"
     ],
     "texto_original": "O Ladr\u00e3o e o C\u00e3o de Guarda\r\nUm ladr\u00e3o, desejando entrar \u00e0 noite em uma casa para roubar, trazia consigo um peda\u00e7o de sandu\u00edche para tentar distrair o C\u00e3o de Guarda que vigiava a casa.\r\nPor\u00e9m, assim que o Ladr\u00e3o lan\u00e7ou o naco ao solo, o C\u00e3o disse:\r\n\u2014 Voc\u00ea s\u00f3 est\u00e1 me dando este peda\u00e7o de p\u00e3o para que eu fique quietinho e deixe voc\u00ea roubar a casa. Mas, j\u00e1 que \u00e9 o dono da casa que me sustenta a vida, n\u00e3o vou deixar de latir enquanto voc\u00ea n\u00e3o for embora ou at\u00e9 que ele acorde e venha te enxotar. N\u00e3o quero que este peda\u00e7o de p\u00e3o me custe morrer de fome o resto da vida. "
 }

@@ -55,31 +55,31 @@
     ],
     "emissoes_comportamentais": [
         {
-            "id_aresta": "EM1",
+            "id": "EM1",
             "id_origem_no": "S1",
             "id_destino_no": "AC1",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM2",
+            "id": "EM2",
             "id_origem_no": "S1",
             "id_destino_no": "AC2",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM3",
+            "id": "EM3",
             "id_origem_no": "S3",
             "id_destino_no": "AC3",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM4",
+            "id": "EM4",
             "id_origem_no": "S2",
             "id_destino_no": "AC4",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id_aresta": "EM5",
+            "id": "EM5",
             "id_origem_no": "S1",
             "id_destino_no": "AC5",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
@@ -124,7 +124,7 @@
     ],
     "relacoes_temporais": [
         {
-            "id_aresta": "RT1",
+            "id": "RT1",
             "id_origem_no": "E1",
             "id_destino_no": "AC1",
             "tipo_aresta": "RELACAO_TEMPORAL",
@@ -132,7 +132,7 @@
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT2",
+            "id": "RT2",
             "id_origem_no": "AC1",
             "id_destino_no": "E2",
             "tipo_aresta": "RELACAO_TEMPORAL",
@@ -140,7 +140,7 @@
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT3",
+            "id": "RT3",
             "id_origem_no": "E3",
             "id_destino_no": "AC2",
             "tipo_aresta": "RELACAO_TEMPORAL",
@@ -148,7 +148,7 @@
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT4",
+            "id": "RT4",
             "id_origem_no": "E4",
             "id_destino_no": "AC3",
             "tipo_aresta": "RELACAO_TEMPORAL",
@@ -156,7 +156,7 @@
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT5",
+            "id": "RT5",
             "id_origem_no": "AC3",
             "id_destino_no": "AC5",
             "tipo_aresta": "RELACAO_TEMPORAL",
@@ -164,7 +164,7 @@
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT6",
+            "id": "RT6",
             "id_origem_no": "AC4",
             "id_destino_no": "E2",
             "tipo_aresta": "RELACAO_TEMPORAL",
@@ -172,7 +172,7 @@
             "contiguidade_percebida": "Alta"
         },
         {
-            "id_aresta": "RT7",
+            "id": "RT7",
             "id_origem_no": "AC5",
             "id_destino_no": "E5",
             "tipo_aresta": "RELACAO_TEMPORAL",
@@ -183,21 +183,21 @@
     "condicoes_estados": [],
     "relacoes_funcionais_antecedentes": [
         {
-            "id_aresta": "RFA1",
+            "id": "RFA1",
             "id_origem_no": "E1",
             "id_destino_no": "AC1",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
-            "id_aresta": "RFA3",
+            "id": "RFA3",
             "id_origem_no": "E3",
             "id_destino_no": "AC2",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DELTA_SDELTA"
         },
         {
-            "id_aresta": "RFA4",
+            "id": "RFA4",
             "id_origem_no": "E4",
             "id_destino_no": "AC3",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
@@ -206,7 +206,7 @@
     ],
     "relacoes_funcionais_consequentes": [
         {
-            "id_aresta": "RFC1",
+            "id": "RFC1",
             "id_origem_no": "AC1",
             "id_destino_no": "E2",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
@@ -215,7 +215,7 @@
             "magnitude_consequencia": "Alta"
         },
         {
-            "id_aresta": "RFC2",
+            "id": "RFC2",
             "id_origem_no": "AC4",
             "id_destino_no": "E2",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
@@ -224,7 +224,7 @@
             "magnitude_consequencia": "Alta"
         },
         {
-            "id_aresta": "RFC3",
+            "id": "RFC3",
             "id_origem_no": "AC5",
             "id_destino_no": "E5",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
@@ -252,7 +252,7 @@
     ],
     "evidencias_para_hipoteses": [
         {
-            "id_aresta": "EH1",
+            "id": "EH1",
             "id_origem_no": "AC2",
             "id_destino_no": "H1",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
@@ -267,7 +267,7 @@
             "fonte_dados": "Narrativa Textual"
         },
         {
-            "id_aresta": "EH2",
+            "id": "EH2",
             "id_origem_no": "AC5",
             "id_destino_no": "H2",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
