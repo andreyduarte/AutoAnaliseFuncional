@@ -1,6 +1,4 @@
 .env
-__pycache__/analysis.cpython-313.pyc
-__pycache__/app.cpython-313.pyc
-__pycache__/output_schemas.cpython-313.pyc
 analise_modular_output.json
 static/json/output.json
+__pycache__

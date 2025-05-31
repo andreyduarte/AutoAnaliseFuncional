@@ -43,7 +43,7 @@ Certifique-se de que o JSON de saída para cada chamada seja um objeto único co
 """
 
 PROCEDIMENTO_COMPLETO_AFC = """
-### Conceitos Fundamentais da Análise Funcional do Comportamento (AFC) 🧐
+### Conceitos Fundamentais da Análise Funcional do Comportamento (AFC)
 
 A **Análise Funcional do Comportamento (AFC)** é uma abordagem da psicologia comportamental que busca entender o comportamento identificando as relações funcionais entre ele e as variáveis ambientais. O foco está em como os eventos **antecedentes** (o que acontece antes do comportamento) e os eventos **consequentes** (o que acontece depois do comportamento) influenciam a probabilidade de um comportamento ocorrer novamente.
 
@@ -65,7 +65,7 @@ Componentes chave incluem:
 
 A **tríplice contingência** (Antecedente-Comportamento-Consequência, ou A-B-C) é a unidade básica de análise.
 
-### Procedimento de Extração de Nós e Arestas (Até Etapa 6) 📝
+### Procedimento de Extração de Nós e Arestas
 
 Com base no texto narrativo fornecido, siga as etapas abaixo para construir a rede contingencial.
 
@@ -77,24 +77,24 @@ Com base no texto narrativo fornecido, siga as etapas abaixo para construir a re
 * **1.2: Identificar `Acao_Comportamento(s)` Principais:**
     * Liste as ações ou comportamentos emitidos pelo(s) `Sujeito(s)`.
     * Para cada ação, crie um **Nó `Acao_Comportamento`** e preencha seus atributos (`id_acao`, `descricao_topografica`, `tipo_observabilidade`, `frequencia_base_periodo`, `duracao_media_seg`, `intensidade_media`, `latencia_tipica_resposta_seg`, `classe_funcional_hipotetica`, `observacoes_adicionais`).
-    * Crie uma **Aresta `Emissao_Comportamental`** (com `id_aresta`, `id_origem_no` = ID do Sujeito, `id_destino_no` = ID da Acao_Comportamento, `data_hora_especifica_emissao`, `observacoes_adicionais`).
+    * Crie uma **Aresta `Emissao_Comportamental`** (com `id`, `id_origem_no` = ID do Sujeito, `id_destino_no` = ID da Acao_Comportamento, `data_hora_especifica_emissao`, `observacoes_adicionais`).
 
 **Etapa 2: Mapeamento de `Estímulos_Evento` Imediatamente Associados às `Acoes_Comportamento`**
 * **Objetivo:** Identificar eventos que ocorrem imediatamente antes e depois das ações.
 * **2.1: Identificar Antecedentes Imediatos:**
     * Para cada `Acao_Comportamento`, identifique eventos/objetos/ações de outros que ocorreram logo antes.
     * Crie **Nós `Estímulo_Evento`** para esses antecedentes e preencha seus atributos (`id_estimulo_evento`, `descricao`, `tipo_fisico`, `modalidade_sensorial_primaria`, `intensidade_percebida_inicial`, `duracao_estimulo_evento_seg`, `localizacao`, `data_hora_ocorrencia`, `observacoes_adicionais`).
-    * Crie uma **Aresta `Relacao_Temporal`** (com `id_aresta`, `id_origem_no` = ID do Estímulo_Evento antecedente, `id_destino_no` = ID da Acao_Comportamento, `tipo_temporalidade = "PRECEDE_IMEDIATAMENTE"`, `intervalo_atraso_seg`, `contiguidade_percebida`, `observacoes_adicionais`).
+    * Crie uma **Aresta `Relacao_Temporal`** (com `id`, `id_origem_no` = ID do Estímulo_Evento antecedente, `id_destino_no` = ID da Acao_Comportamento, `tipo_temporalidade = "PRECEDE_IMEDIATAMENTE"`, `intervalo_atraso_seg`, `contiguidade_percebida`, `observacoes_adicionais`).
 * **2.2: Identificar Consequências Imediatas:**
     * Para cada `Acao_Comportamento`, identifique eventos/objetos/ações de outros que ocorreram logo depois.
     * Crie **Nós `Estímulo_Evento`** para essas consequências e preencha seus atributos.
-    * Crie uma **Aresta `Relacao_Temporal`** (com `id_aresta`, `id_origem_no` = ID da Acao_Comportamento, `id_destino_no` = ID do Estímulo_Evento consequente, `tipo_temporalidade = "SUCEDE_IMEDIATAMENTE"`, `intervalo_atraso_seg`, `contiguidade_percebida`, `observacoes_adicionais`).
+    * Crie uma **Aresta `Relacao_Temporal`** (com `id`, `id_origem_no` = ID da Acao_Comportamento, `id_destino_no` = ID do Estímulo_Evento consequente, `tipo_temporalidade = "SUCEDE_IMEDIATAMENTE"`, `intervalo_atraso_seg`, `contiguidade_percebida`, `observacoes_adicionais`).
 
 **Etapa 3: Estabelecimento de Sequências Contingenciais Básicas (Cadeias A-B-C)**
 * **Objetivo:** Formar as unidades básicas da análise (Antecedente-Comportamento-Consequência).
 * **3.1: Formar Tríades A-B-C:**
-    * Crie **Arestas `Relacao_Funcional_Antecedente`** (com `id_aresta`, `id_origem_no` = ID do Estímulo_Evento antecedente, `id_destino_no` = ID da Acao_Comportamento, `funcao_antecedente` - pode ser "A_DEFINIR" inicialmente, `prob_resposta_na_presenca`, `prob_resposta_na_ausencia`, `historico_pareamento`, `observacoes_adicionais`).
-    * Crie **Arestas `Relacao_Funcional_Consequente`** (com `id_aresta`, `id_origem_no` = ID da Acao_Comportamento, `id_destino_no` = ID do Estímulo_Evento consequente, `funcao_consequente` - pode ser "A_DEFINIR" inicialmente, `imediatismo_consequencia`, `magnitude_consequencia`, `esquema_de_entrega`, `parametro_esquema`, `efeito_observado_na_frequencia_futura`, `observacoes_adicionais`).
+    * Crie **Arestas `Relacao_Funcional_Antecedente`** (com `id`, `id_origem_no` = ID do Estímulo_Evento antecedente, `id_destino_no` = ID da Acao_Comportamento, `funcao_antecedente` - pode ser "A_DEFINIR" inicialmente, `prob_resposta_na_presenca`, `prob_resposta_na_ausencia`, `historico_pareamento`, `observacoes_adicionais`).
+    * Crie **Arestas `Relacao_Funcional_Consequente`** (com `id`, `id_origem_no` = ID da Acao_Comportamento, `id_destino_no` = ID do Estímulo_Evento consequente, `funcao_consequente` - pode ser "A_DEFINIR" inicialmente, `imediatismo_consequencia`, `magnitude_consequencia`, `esquema_de_entrega`, `parametro_esquema`, `efeito_observado_na_frequencia_futura`, `observacoes_adicionais`).
 * **3.2: Identificar Cadeias Comportamentais:**
     * Observe se a consequência de uma A-B-C serve como antecedente para a próxima.
 
@@ -117,7 +117,7 @@ Com base no texto narrativo fornecido, siga as etapas abaixo para construir a re
 * **5.2: Detalhar Arestas `Relacao_Funcional_Consequente`:**
     * Com base no texto, inferir e preencher `funcao_consequente` e outros atributos relevantes.
 * **5.3: Conectar e Detalhar `Relacoes_Moduladoras_Estado`:**
-    * Crie **Arestas `Relacao_Moduladora_Estado`** (com `id_aresta`, `id_origem_no` = ID da Condicao_Estado, `id_destino_no` = ID do Nó modulado) entre as `Condicoes_Estado` e os `Estímulos_Evento` ou `Acoes_Comportamento` que elas modulam.
+    * Crie **Arestas `Relacao_Moduladora_Estado`** (com `id`, `id_origem_no` = ID da Condicao_Estado, `id_destino_no` = ID do Nó modulado) entre as `Condicoes_Estado` e os `Estímulos_Evento` ou `Acoes_Comportamento` que elas modulam.
     * Preencha os atributos da aresta (`tipo_modulacao_estado`, `alvo_da_modulacao_valor_ref_id_estimulo`, `descricao_efeito_modulatorio_valor`, `alvo_da_modulacao_frequencia_ref_id_acao`, `descricao_efeito_modulatorio_frequencia`, `observacoes_adicionais`).
 
 **Etapa 6: Formulação e Adição de Nós `Hipotese_Analitica`**
@@ -125,7 +125,7 @@ Com base no texto narrativo fornecido, siga as etapas abaixo para construir a re
 * **Como:** Para cada função comportamental principal inferida ou conjunto significativo de relações A-B-C-OM, formule uma declaração de hipótese.
 * **Saída:**
     * Crie **Nós `Hipotese_Analitica`** e preencha seus atributos (`id_hipotese`, `descricao_hipotese`, `nivel_confianca`, `data_formulacao` - use a data e hora atuais no formato ISO, `status_hipotese`, `observacoes_adicionais`).
-    * Crie **Arestas `Evidencia_Para_Hipotese`** (com `id_aresta`, `id_origem_no` - pode ser o ID da Acao_Comportamento central da hipótese, `id_destino_no` = ID da Hipotese_Analitica, `ids_elementos_contingencia_suporte` - lista de IDs de Nós e Arestas que suportam a hipótese, `tipo_evidencia`, `fonte_dados = "Narrativa Textual"`, `observacoes_adicionais`).
+    * Crie **Arestas `Evidencia_Para_Hipotese`** (com `id`, `id_origem_no` - pode ser o ID da Acao_Comportamento central da hipótese, `id_destino_no` = ID da Hipotese_Analitica, `ids_elementos_contingencia_suporte` - lista de IDs de Nós e Arestas que suportam a hipótese, `tipo_evidencia`, `fonte_dados = "Narrativa Textual"`, `observacoes_adicionais`).
 """
 
 # --- Pydantic Schemas para Saídas de Etapas Específicas ---
@@ -177,7 +177,7 @@ class OutputEtapaTimeline(BaseEtapa):
 
 def _get_id(element: BaseModel) -> Optional[str]:
     """Retorna o valor do campo ID do elemento Pydantic, se existir."""
-    for field_name in ["id_sujeito", "id_acao", "id_estimulo_evento", "id_condicao_estado", "id_hipotese", "id_aresta"]:
+    for field_name in ["id_sujeito", "id_acao", "id_estimulo_evento", "id_condicao_estado", "id_hipotese", "id"]:
         if hasattr(element, field_name):
             return getattr(element, field_name)
     return None
@@ -239,7 +239,7 @@ def _make_api_call(
     generation_config = genai_types.GenerateContentConfig(
         response_mime_type="application/json",
         response_schema=output_schema,
-        temperature=0.2
+        temperature=0.01
     )
 
     retries = 0
@@ -254,7 +254,7 @@ def _make_api_call(
         full_response_text = ""
         try:
             response = client.models.generate_content(
-                model='gemini-2.0-flash-exp',
+                model='gemini-2.5-flash-preview-05-20',#'gemini-2.0-flash-exp',
                 contents=cast(List[genai_types.Content], contents), # type: ignore
                 config=generation_config,
             )
@@ -330,8 +330,9 @@ def extrair_sujeitos(
     logger.info("Iniciando Etapa 1: Extração de Sujeitos")
     foco_da_etapa = (
         "FOCO DESTA ETAPA: Identifique os sujeitos (indivíduos, animais) principais na narrativa. "
-        "Para cada sujeito, gere um objeto com `id_sujeito` (S1, S2...) e `nome_descritivo`. "
-        "Outros campos como `idade`, `historico_relevante` são opcionais com base no texto."
+        "Para cada sujeito, gere um objeto com `id` (S1, S2...) e `descricao` (ambos obrigatórios). "
+        "A saída JSON DEVE ser um objeto com a chave principal 'sujeitos' contendo uma lista de objetos `NoSujeito`. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa."
         "\nReferência no Procedimento: Etapa 1.1."
     )
     prompt = (
@@ -359,8 +360,11 @@ def extrair_acoes_comportamentos(
     logger.info("Iniciando Etapa 2: Extração de Ações e Emissões Comportamentais")
     foco_da_etapa = (
         "FOCO DESTA ETAPA: Para cada sujeito identificado no contexto, liste as principais ações ou comportamentos que eles emitem. "
-        "Gere um Nó `Acao_Comportamento` para cada ação (com `id_acao` AC1, AC2..., `descricao_topografica`). "
-        "Crie também uma Aresta `Emissao_Comportamental` (com `id_aresta` EM1, EM2...) ligando o `id_sujeito` (origem) ao `id_acao` (destino)."
+        "Gere um Nó `Acao_Comportamento` para cada ação (com `id` e `descricao` obrigatórios). "
+        "Crie também uma Aresta `Emissao_Comportamental` (com `id`, `id_origem_no` = ID do Sujeito, `id_destino_no` = ID da Acao_Comportamento, todos obrigatórios). "
+        "A saída JSON DEVE ser um objeto com as chaves principais 'acoes_comportamentos' e 'emissoes_comportamentais' contendo listas de objetos `NoAcaoComportamento` e `ArestaEmissaoComportamental` respectivamente. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
         "\nReferência no Procedimento: Etapa 1.2."
     )
     contexto_json = {
@@ -398,6 +402,11 @@ def extrair_eventos_ambientais_e_relacoes_temporais(
         "FOCO DESTA ETAPA: Para cada `Acao_Comportamento` identificada no contexto, identifique `Estímulos_Evento` (E1, E2...) e outros `Acao_Comportamento` que *precedem* (antecedentes) e que *procedem* (consequentes) a tal `Acao_Comportamento`. "
         "Nenhum `Acao_Comportamento` deve ser deixado sem pelo menos um `Estímulos_Evento` antecedente e um consequente. Busque associá-los primeiro com os nós, mas caso não sejam suficientes extraia ou deduza novos."
         "Comece descrevendo `Estímulos_Evento` antecedentes e consequentes para cada `Acao_Comportamento`. A seguir, crie `ArestasRelacaoTemporal` (RT1, RT2...) indicando se o estímulo `PRECEDE_IMEDIATAMENTE` a ação ou se a ação `SUCEDE_IMEDIATAMENTE` o estímulo. "
+        "Para cada `NoEstimuloEvento`, forneça `id` e `descricao` (ambos obrigatórios). "
+        "Para cada `ArestaRelacaoTemporal`, forneça `id`, `id_origem_no`, `id_destino_no`, e `tipo_temporalidade` (todos obrigatórios). "
+        "A saída JSON DEVE ser um objeto com as chaves principais 'estimulos_eventos' e 'relacoes_temporais' contendo listas de objetos `NoEstimuloEvento` e `ArestaRelacaoTemporal` respectivamente. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
         "Use os IDs das ações do contexto."
         "\nReferência no Procedimento: Etapas 2.1 e 2.2."
     )
@@ -435,7 +444,12 @@ def inferir_relacoes_funcionais_antecedentes(
     foco_da_etapa = (
         "FOCO DESTA ETAPA: Considerando os `Estímulos_Evento` que, de acordo com as `Relacoes_Temporais`, precedem imediatamente as `Acoes_Comportamento` (ambos fornecidos no contexto), "
         "infira a `funcao_antecedente` (e.g., ESTÍMULO_DISCRIMINATIVO_SD, ESTÍMULO_ELICIADOR_CONDICIONADO_CS) de cada estímulo em relação à ação que ele precede. "
-        "Crie `ArestasRelacaoFuncionalAntecedente` (RFA1, RFA2...). Use os IDs dos estímulos e ações do contexto."
+        "Crie `ArestasRelacaoFuncionalAntecedente` (RFA1, RFA2...). "
+        "Para cada `ArestaRelacaoFuncionalAntecedente`, forneça `id`, `id_origem_no`, `id_destino_no`, e `funcao_antecedente` (todos obrigatórios). "
+        "A saída JSON DEVE ser um objeto com a chave principal 'relacoes_funcionais_antecedentes' contendo uma lista de objetos `ArestaRelacaoFuncionalAntecedente`. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+        "Use os IDs dos estímulos e ações do contexto."
         "\nReferência no Procedimento: Etapa 3.1 (parte antecedente)."
     )
     # Filtrar estímulos que são antecedentes e ações relacionadas
@@ -488,7 +502,12 @@ def inferir_relacoes_funcionais_consequentes(
     foco_da_etapa = (
         "FOCO DESTA ETAPA: Considerando as `Acoes_Comportamento` e os `Estímulos_Evento` que, de acordo com as `Relacoes_Temporais`, as sucedem imediatamente (ambos fornecidos no contexto), "
         "infira a `funcao_consequente` (e.g., REFORÇO_POSITIVO_SR+, PUNIÇÃO_NEGATIVA_SP-) de cada estímulo em relação à ação que ele sucede. "
-        "Crie `ArestasRelacaoFuncionalConsequente` (RFC1, RFC2...). Use os IDs das ações e estímulos do contexto."
+        "Crie `ArestasRelacaoFuncionalConsequente` (RFC1, RFC2...). "
+        "Para cada `ArestaRelacaoFuncionalConsequente`, forneça `id`, `id_origem_no`, `id_destino_no`, e `funcao_consequente` (todos obrigatórios). "
+        "A saída JSON DEVE ser um objeto com a chave principal 'relacoes_funcionais_consequentes' contendo uma lista de objetos `ArestaRelacaoFuncionalConsequente`. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+        "Use os IDs das ações e estímulos do contexto."
         "\nReferência no Procedimento: Etapa 3.1 (parte consequente)."
     )
     
@@ -540,7 +559,10 @@ def identificar_condicoes_estado(
     foco_da_etapa = (
         "FOCO DESTA ETAPA: Identifique `Condicoes_Estado` (CE1, CE2...) descritas na narrativa que podem estar influenciando os comportamentos e suas relações com antecedentes e consequentes. "
         "Classifique-as conforme o `tipo_condicao` (e.g., OPERACAO_MOTIVADORA, CONTEXTO_AMBIENTAL_GERAL, ESTADO_FISIOLOGICO). "
-        "Forneça `id_condicao_estado`, `descricao` e `tipo_condicao`."
+        "Forneça `id` (obrigatório), `descricao` (obrigatório) e `tipo_condicao` (obrigatório). "
+        "A saída JSON DEVE ser um objeto com a chave principal 'condicoes_estados' contendo uma lista de objetos `NoCondicaoEstado`. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
         "\nReferência no Procedimento: Etapa 4."
     )
     contexto_json = {
@@ -581,6 +603,10 @@ def estabelecer_relacoes_moduladoras_estado(
         "Ela altera o valor de um `Estímulo_Evento` consequente (referência `alvo_da_modulacao_valor_ref_id_estimulo`)? "
         "Ela altera a frequência de uma `Acao_Comportamento` (referência `alvo_da_modulacao_frequencia_ref_id_acao`)? "
         "Descreva o `tipo_modulacao_estado` e crie `ArestasRelacaoModuladoraEstado` (RME1, RME2...). "
+        "Para cada `ArestaRelacaoModuladoraEstado`, forneça `id`, `id_origem_no`, `id_destino_no`, e `tipo_modulacao_estado` (todos obrigatórios). "
+        "A saída JSON DEVE ser um objeto com a chave principal 'relacoes_moduladoras_estado' contendo uma lista de objetos `ArestaRelacaoModuladoraEstado`. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
         "Use os IDs dos elementos do contexto."
         "\nReferência no Procedimento: Etapa 5.3."
     )
@@ -630,9 +656,13 @@ def formular_hipoteses_analiticas_e_evidencias(
     logger.info("Iniciando Etapa 8: Formulação de Hipóteses Analíticas e Evidências")
     foco_da_etapa = (
         "FOCO DESTA ETAPA: Com base na análise completa da rede fornecida no contexto, formule `Hipoteses_Analiticas` (H1, H2...) sobre as principais funções dos comportamentos identificados. "
-        "Para cada hipótese, forneça `id_hipotese`, `descricao_hipotese`, `nivel_confianca` e `data_formulacao` (use a data e hora atuais no formato ISO: YYYY-MM-DDTHH:MM:SS.ffffff). "
+        "Para cada hipótese, forneça `id` (obrigatório), `descricao` (obrigatório) e `nivel_confianca` (obrigatório). "
         "Crie também uma `ArestaEvidenciaParaHipotese` (EH1, EH2...) que a ligue ao `Acao_Comportamento` central da hipótese (origem da aresta = ID da Ação) e à Hipótese (destino da aresta = ID da Hipótese). "
+        "Para cada `ArestaEvidenciaParaHipotese`, forneça `id`, `id_origem_no`, `id_destino_no`, `ids_elementos_contingencia_suporte`, e `tipo_evidencia` (todos obrigatórios). "
         "Liste os `ids_elementos_contingencia_suporte` (outros nós e arestas da rede que evidenciam essa hipótese)."
+        "A saída JSON DEVE ser um objeto com as chaves principais 'hipoteses_analiticas' e 'evidencias_para_hipoteses' contendo listas de objetos `NoHipoteseAnalitica` e `ArestaEvidenciaParaHipotese` respectivamente. "
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
         "\nReferência no Procedimento: Etapa 6."
     )
     # Gerar data_formulacao no momento da chamada
@@ -648,7 +678,6 @@ def formular_hipoteses_analiticas_e_evidencias(
     prompt = (
         f"{SYSTEM_PROMPT}\n\n{PROCEDIMENTO_COMPLETO_AFC}\n\n{foco_da_etapa}\n\n"
         f"Texto narrativo para análise:\n```\n{texto_narrativo}\n```\n\n"
-        f"Data atual para `data_formulacao` das hipóteses: {data_formulacao_atual}\n\n"
         "Contexto da rede atual (rede completa para embasar as hipóteses):\n"
         f"```json\n{json.dumps(contexto_json, indent=2)}\n```"
     )
@@ -657,12 +686,6 @@ def formular_hipoteses_analiticas_e_evidencias(
     if json_data:
         try:
             novas_hipoteses_data = json_data.get("hipoteses_analiticas")
-            # Assegurar que data_formulacao está correta se a API não a preencheu ou preencheu errado
-            if novas_hipoteses_data:
-                for h_data in novas_hipoteses_data:
-                    if not h_data.get("data_formulacao"):
-                        h_data["data_formulacao"] = data_formulacao_atual
-            
             novas_evidencias_data = json_data.get("evidencias_para_hipoteses")
 
             rede_atual.hipoteses_analiticas = _merge_element_list(rede_atual.hipoteses_analiticas, novas_hipoteses_data, NoHipoteseAnalitica)
@@ -679,14 +702,19 @@ def ordenar_timeline(
 ) -> RedeContingencialOutput:
     logger.info("Iniciando Etapa 9: Ordenação da Timeline")
     foco_da_etapa = (
-        "FOCO DESTA ETAPA: Ordenar todos os Nós da rede de acordo com sua aparição no texto narrativo."
-        "Cada nó deve ser identificado pelo seu ID e aparecer na lista apenas uma vez."
+        "FOCO DESTA ETAPA: Ordenar todos os objetos no CONTEXTO DA REDE de acordo com sua aparição no texto narrativo."
+        "Cada objeto deve ser identificado pelo seu ID e aparecer na lista apenas uma vez."
         "Todos os nós devem estar na lista final."
+        "A saída JSON DEVE ser um objeto com a chave principal 'timeline' contendo uma lista de strings (IDs dos nós)."
+        "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
+        "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     )
+    name_id = lambda key : [(item['id'], item['descricao']) for item in rede_atual.model_dump()[key]]
     contexto_json = {
-        "sujeitos" : [s.model_dump(exclude_none=True) for s in rede_atual.sujeitos],
-        "acoes_comportamentos" : [ac.model_dump(exclude_none=True) for ac in rede_atual.acoes_comportamentos],
-        "estimulos_eventos" : [e.model_dump(exclude_none=True) for e in rede_atual.estimulos_eventos],
+        "sujeitos" : name_id('sujeitos'),
+        "acoes_comportamentos" : name_id('acoes_comportamentos'),
+        "estimulos_eventos" : name_id('estimulos_eventos'),
+        "hipoteses_analiticas" : name_id('hipoteses_analiticas')
     }
     prompt = (
         f"{SYSTEM_PROMPT}\n\n{PROCEDIMENTO_COMPLETO_AFC}\n\n{foco_da_etapa}\n\n"
@@ -700,8 +728,18 @@ def ordenar_timeline(
         try:
             timeline_data = json_data.get("timeline")
             if timeline_data is not None:
-                # Assuming timeline_data is already a list of IDs (int or str)
-                rede_atual.timeline = [str(item) for item in timeline_data] # Ensure all IDs are strings for consistency
+                # Ensure all IDs are strings for consistency
+                rede_atual.timeline = [str(item) for item in timeline_data]
+
+            # Add Hipotesis_Analiticas nodes to the end of the timeline if not already included
+            hipoteses_ids = {_get_id(h) for h in rede_atual.hipoteses_analiticas if _get_id(h) is not None}
+            current_timeline_ids = set(rede_atual.timeline)
+
+            for h_id in hipoteses_ids:
+                if h_id not in current_timeline_ids:
+                    rede_atual.timeline.append(h_id)
+                    logger.debug(f"Adicionado Hipotese_Analitica '{h_id}' ao final da timeline.")
+
             logger.info(f"Etapa 9 concluída. Nós na timeline: {len(rede_atual.timeline)}")
         except Exception as e:
             logger.error(f"Erro ao processar dados da Etapa 9: {e}", exc_info=True)

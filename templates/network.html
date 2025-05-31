@@ -94,9 +94,21 @@
         var edgesArray = {{edges_data|safe}};
         var timelineOrder = {{timeline_data|safe}};
 
+        console.log(nodesArray)
+        console.log(edgesArray)
+        console.log(timelineOrder)
+
         // Cria os datasets para o Vis.js
         var nodes = new vis.DataSet(nodesArray);
         var edges = new vis.DataSet(edgesArray);
+
+        // Define as cores dos nós com base na legenda
+        var nodeColors = {
+            "sujeito": '#FFD700', // Gold
+            "acao": '#ADD8E6', // Light Blue
+            "estimulo": '#90EE90', // Light Green
+            "hipotese": '#a753f5' // Purple
+        };
 
         // Pega o container da rede
         var container = document.getElementById('mynetwork');
@@ -129,8 +141,8 @@
                 width: 1.5,
                 smooth: {
                     enabled: true,
-                    type: "continuous",
-                    roundness: 0.1
+                    type: "horizontal",
+                    roundness: 1
                 },
                 arrows: {
                   to: { enabled: true, scaleFactor: 0.8, type: 'arrow' }
@@ -162,7 +174,7 @@
                     speed: {x: 10, y: 10, zoom: 0.05},
                     bindToWindow: true
                 },
-                tooltipDelay: 150,
+                tooltipDelay: 250,
                 dragNodes: true,
                 zoomView: true,
                 dragView: true
@@ -232,7 +244,7 @@
             if (timelineOrder && timelineOrder.length > 0) {
                 timelineRange.min = 0;
                 timelineRange.max = timelineOrder.length - 1;
-                timelineRange.value = timelineOrder.length - 1; // Inicia com todos os nós visíveis
+                timelineRange.value = timelineOrder.length - 1;
                 timelineLabel.innerText = timelineOrder.length;
                 updateNodeVisibility(timelineOrder.length - 1);
             } else {
@@ -258,12 +270,22 @@
             var updates = [];
             nodes.forEach(function(node) {
                 var isVisible = visibleNodeIds.has(node.id);
-                if (node.hidden !== !isVisible) { // Only update if visibility state changes
-                    updates.push({id: node.id, hidden: !isVisible});
-                }
+                var nodeType = node.group;
+                var targetColor = nodeColors[nodeType];
+
+                var needsUpdate = false;
+                var updateObject = {id: node.id};
+
+                updateObject.hidden = !isVisible;
+                updateObject.color = {
+                    background: targetColor,
+                    border: targetColor // Define a cor da borda igual à cor de fundo
+                };
+                updates.push(updateObject);
+
             });
             nodes.update(updates);
-            network.fit(); // Ajusta a visualização para os nós visíveis
+            //network.fit(); // Ajusta a visualização para os nós visíveis
         }
 
         timelineRange.addEventListener('input', function() {

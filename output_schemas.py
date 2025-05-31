@@ -123,44 +123,38 @@ class FonteDadosEvidencia(str, Enum):
 # --- Modelos de Nós ---
 
 class NoBase(BaseModel):
+    id: str
     raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
-    frase_de_origem:str = Field(..., description="A frase do texto que originou esse nó.")
 
-class NoSujeito(BaseModel):
-    id_sujeito: str = Field(..., description="Identificador único do sujeito (e.g., S1, S2).")
-    nome_descritivo: Optional[str] = Field(None, description="Nome ou descrição curta do sujeito (e.g., 'João', 'Criança A').")
+class NoSujeito(NoBase):
+    id: str = Field(..., description="Identificador único do sujeito (e.g., S1, S2).")
+    descricao: str = Field(None, description="Nome ou descrição curta do sujeito (e.g., 'João', 'Criança A').")
     historico_relevante: Optional[str] = Field(None, description="Breve resumo de informações contextuais importantes.")
 
-class NoEstimuloEvento(BaseModel):
-    id_estimulo_evento: str = Field(..., description="Identificador único do estímulo/evento (e.g., E1, E2).")
+class NoEstimuloEvento(NoBase):
+    id: str = Field(..., description="Identificador único do estímulo/evento (e.g., E1, E2).")
     descricao: str = Field(..., description="Descrição textual objetiva do estímulo/evento.")
-    tipo_fisico: Optional[TipoEstimuloEventoFisico] = None
-    modalidade_sensorial_primaria: Optional[TipoModalidadeSensorial] = None
-    localizacao: Optional[str] = Field(None, description="Onde o estímulo/evento ocorre.")
 
-class NoAcaoComportamento(BaseModel):
-    id_acao: str = Field(..., description="Identificador único da ação/comportamento (e.g., AC1, AC2).")
-    descricao_topografica: str = Field(..., description="Descrição objetiva e mensurável da forma da ação.")
+class NoAcaoComportamento(NoBase):
+    id: str = Field(..., description="Identificador único da ação/comportamento (e.g., AC1, AC2).")
+    descricao: str = Field(..., description="Descrição objetiva e mensurável da forma da ação.")
     tipo_observabilidade: Optional[TipoObservabilidadeAcao] = None
     classe_funcional_hipotetica: Optional[List[str]] = Field(None, description="Possíveis funções inferidas (e.g., ['Busca de atenção', 'Fuga de tarefa']).")
 
-class NoCondicaoEstado(BaseModel):
-    id_condicao_estado: str = Field(..., description="Identificador único da condição/estado (e.g., CE1, CE2).")
+class NoCondicaoEstado(NoBase):
+    id: str = Field(..., description="Identificador único da condição/estado (e.g., CE1, CE2).")
     descricao: str = Field(..., description="Descrição da condição/estado.")
     tipo_condicao: Optional[TipoCondicao] = None
     duracao_condicao_desc: Optional[str] = Field(None, description="Descrição da duração, e.g., 'aproximadamente 2 horas', 'durante a aula'.")
 
-class NoHipoteseAnalitica(BaseModel):
-    id_hipotese: str = Field(..., description="Identificador único da hipótese (e.g., H1, H2).")
-    descricao_hipotese: str = Field(..., description="Texto da hipótese funcional.")
+class NoHipoteseAnalitica(NoBase):
+    id: str = Field(..., description="Identificador único da hipótese (e.g., H1, H2).")
+    descricao: str = Field(..., description="Texto da hipótese funcional.")
     nivel_confianca: Optional[NivelConfiancaHipotese] = NivelConfiancaHipotese.BAIXO
-    data_formulacao: datetime.datetime
-    status_hipotese: Optional[StatusHipotese] = StatusHipotese.AGUARDANDO_TESTE
 
 # --- Modelos de Arestas ---
-
 class ArestaBase(BaseModel):
-    id_aresta: str = Field(..., description="Identificador único da aresta (e.g., AR1, AR2).")
+    id: str = Field(..., description="Identificador único da aresta (e.g., AR1, AR2).")
     id_origem_no: str = Field(..., description="ID do nó de origem.")
     id_destino_no: str = Field(..., description="ID do nó de destino.")
     raciocinio:str = Field(..., description="A lógica que justifica a inserção da aresta e sua relevância pra análise.")
@@ -198,7 +192,6 @@ class ArestaEvidenciaParaHipotese(ArestaBase):
     tipo_aresta: Literal["EVIDENCIA_PARA_HIPOTESE"] = "EVIDENCIA_PARA_HIPOTESE"
     ids_elementos_contingencia_suporte: List[str] = Field(..., description="Lista de IDs de Nós e Arestas que formam a contingência que suporta/refuta a hipótese.")
     tipo_evidencia: TipoEvidenciaHipotese
-    fonte_dados: FonteDadosEvidencia = FonteDadosEvidencia.NARRATIVA_TEXTUAL
 
 # --- Modelo de Resposta Final ---
 class Step1Output(BaseModel):
