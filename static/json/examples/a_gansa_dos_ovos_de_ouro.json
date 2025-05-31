@@ -1,180 +1,200 @@
 {
     "sujeitos": [
         {
-            "id_sujeito": "S1",
-            "nome_descritivo": "Fazendeiro"
+            "id": "S1",
+            "raciocinio": "O 'fazendeiro' \u00e9 o protagonista da hist\u00f3ria, sendo o benefici\u00e1rio inicial da gansa e o tomador de decis\u00f5es cruciais que impulsionam a narrativa. Ele \u00e9 o sujeito principal cujas a\u00e7\u00f5es e rea\u00e7\u00f5es s\u00e3o descritas.",
+            "descricao": "Fazendeiro",
+            "historico_relevante": "Foi gratificado com uma gansa que botava ovos de ouro uma vez ao dia. Ficou impaciente com o ritmo dos lucros e, influenciado pela esposa, decidiu matar a gansa."
         },
         {
-            "id_sujeito": "S2",
-            "nome_descritivo": "Gansa"
+            "id": "S2",
+            "raciocinio": "A 'gansa' \u00e9 o objeto central em torno do qual a trama se desenvolve. Embora n\u00e3o seja um sujeito humano, ela possui uma caracter\u00edstica \u00fanica (botar ovos de ouro) que a torna um ator fundamental na hist\u00f3ria, sendo o foco das a\u00e7\u00f5es do fazendeiro.",
+            "descricao": "Gansa",
+            "historico_relevante": "Possu\u00eda a habilidade de botar um ovo de ouro por dia. Foi morta pelo fazendeiro na esperan\u00e7a de encontrar mais ouro, mas n\u00e3o havia nada al\u00e9m de carne e v\u00edsceras."
         },
         {
-            "id_sujeito": "S3",
-            "nome_descritivo": "Esposa do fazendeiro"
+            "id": "S3",
+            "raciocinio": "A 'esposa do fazendeiro' \u00e9 um sujeito que, embora n\u00e3o seja o protagonista, desempenha um papel crucial ao influenciar diretamente a decis\u00e3o do fazendeiro de matar a gansa, alterando o curso da narrativa.",
+            "descricao": "Esposa do fazendeiro",
+            "historico_relevante": "Sugeriu ao fazendeiro que matasse a gansa para obter todo o ouro de uma vez."
         }
     ],
     "acoes_comportamentos": [
         {
-            "id_acao": "AC1",
-            "descricao_topografica": "Ser gratificado com uma gansa",
+            "id": "AC1",
+            "raciocinio": "O fazendeiro 'resolveu matar a gansa' \u00e9 uma a\u00e7\u00e3o encoberta (decis\u00e3o) que precede a a\u00e7\u00e3o observ\u00e1vel de matar. \u00c9 crucial para entender a cadeia de eventos que levou \u00e0 a\u00e7\u00e3o final.",
+            "descricao": "Resolver matar a gansa",
+            "tipo_observabilidade": "Encoberto",
             "classe_funcional_hipotetica": [
-                "Receber refor\u00e7o positivo"
+                "Obten\u00e7\u00e3o de tang\u00edvel",
+                "Fuga de estimula\u00e7\u00e3o aversiva"
             ]
         },
         {
-            "id_acao": "AC2",
-            "descricao_topografica": "Ficar impaciente",
+            "id": "AC2",
+            "raciocinio": "A a\u00e7\u00e3o de 'matar a gansa' \u00e9 o comportamento central e observ\u00e1vel do fazendeiro que leva \u00e0 consequ\u00eancia negativa da hist\u00f3ria. \u00c9 uma a\u00e7\u00e3o expl\u00edcita no texto.",
+            "descricao": "Matar a gansa",
+            "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Express\u00e3o emocional",
-                "Rea\u00e7\u00e3o \u00e0 demora na obten\u00e7\u00e3o de refor\u00e7o"
+                "Obten\u00e7\u00e3o de tang\u00edvel"
             ]
         },
         {
-            "id_acao": "AC3",
-            "descricao_topografica": "Dizer para matar a gansa",
-            "classe_funcional_hipotetica": [
-                "Influenciar o comportamento do fazendeiro",
-                "Sugest\u00e3o para ganho r\u00e1pido"
-            ]
+            "id": "AC3",
+            "raciocinio": "'Botar ovos de ouro' \u00e9 a habilidade e o comportamento definidor da gansa, que inicia toda a sequ\u00eancia de eventos e a motiva\u00e7\u00e3o do fazendeiro. \u00c9 uma a\u00e7\u00e3o observ\u00e1vel e repetitiva.",
+            "descricao": "Botar ovos de ouro",
+            "tipo_observabilidade": "Observ\u00e1vel"
         },
         {
-            "id_acao": "AC4",
-            "descricao_topografica": "Botar ovos de ouro",
+            "id": "AC4",
+            "raciocinio": "A esposa 'disse' ao fazendeiro para matar a gansa, o que \u00e9 um comportamento verbal observ\u00e1vel que atua como um antecedente crucial para a decis\u00e3o e a\u00e7\u00e3o do fazendeiro.",
+            "descricao": "Sugerir/dizer para matar a gansa",
+            "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Produzir refor\u00e7o positivo para o fazendeiro"
-            ]
-        },
-        {
-            "id_acao": "AC5",
-            "descricao_topografica": "Matar a gansa",
-            "classe_funcional_hipotetica": [
-                "A\u00e7\u00e3o sob controle verbal",
-                "A\u00e7\u00e3o para obter ganho imediato"
+                "Obten\u00e7\u00e3o de tang\u00edvel"
             ]
         }
     ],
     "emissoes_comportamentais": [
         {
-            "id": "EM1",
+            "id": "AR1",
             "id_origem_no": "S1",
             "id_destino_no": "AC1",
+            "raciocinio": "O fazendeiro (S1) \u00e9 o sujeito que emite o comportamento encoberto de 'resolver matar a gansa' (AC1).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id": "EM2",
+            "id": "AR2",
             "id_origem_no": "S1",
             "id_destino_no": "AC2",
+            "raciocinio": "O fazendeiro (S1) \u00e9 o sujeito que emite o comportamento observ\u00e1vel de 'matar a gansa' (AC2).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id": "EM3",
-            "id_origem_no": "S3",
-            "id_destino_no": "AC3",
-            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
-        },
-        {
-            "id": "EM4",
+            "id": "AR3",
             "id_origem_no": "S2",
-            "id_destino_no": "AC4",
+            "id_destino_no": "AC3",
+            "raciocinio": "A gansa (S2) \u00e9 o sujeito que emite o comportamento de 'botar ovos de ouro' (AC3).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
-            "id": "EM5",
-            "id_origem_no": "S1",
-            "id_destino_no": "AC5",
+            "id": "AR4",
+            "id_origem_no": "S3",
+            "id_destino_no": "AC4",
+            "raciocinio": "A esposa do fazendeiro (S3) \u00e9 o sujeito que emite o comportamento verbal de 'sugerir/dizer para matar a gansa' (AC4).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         }
     ],
     "estimulos_eventos": [
         {
-            "id_estimulo_evento": "E1",
-            "descricao": "Ser presenteado com a gansa",
-            "tipo_fisico": "Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Fazenda"
+            "id": "E1",
+            "raciocinio": "Este est\u00edmulo-evento \u00e9 a consequ\u00eancia direta e observ\u00e1vel da a\u00e7\u00e3o da gansa de botar ovos de ouro, conforme descrito no texto.",
+            "descricao": "Ovo de ouro posto"
         },
         {
-            "id_estimulo_evento": "E2",
-            "descricao": "Gansa botar um ovo de ouro",
-            "tipo_fisico": "N\u00e3o-Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Fazenda"
+            "id": "E2",
+            "raciocinio": "Este est\u00edmulo-evento representa a rea\u00e7\u00e3o inicial do fazendeiro \u00e0 posse da gansa e aos ovos de ouro, sendo uma consequ\u00eancia da a\u00e7\u00e3o da gansa e um antecedente para o estado de impaci\u00eancia.",
+            "descricao": "Fazendeiro gratificado com a gansa"
         },
         {
-            "id_estimulo_evento": "E3",
-            "descricao": "Demora para gansa botar outro ovo de ouro",
-            "tipo_fisico": "N\u00e3o-Social",
-            "modalidade_sensorial_primaria": "Nenhuma Aplic\u00e1vel",
-            "localizacao": "Fazenda"
+            "id": "E3",
+            "raciocinio": "Este est\u00edmulo-evento descreve o estado emocional/cognitivo do fazendeiro, que \u00e9 um antecedente crucial para a sugest\u00e3o da esposa e para a pr\u00f3pria decis\u00e3o do fazendeiro de matar a gansa. \u00c9 inferido da frase 'j\u00e1 estava ficando impaciente'.",
+            "descricao": "Impaci\u00eancia do fazendeiro com a frequ\u00eancia dos ovos"
         },
         {
-            "id_estimulo_evento": "E4",
-            "descricao": "Esposa dizer para matar a gansa",
-            "tipo_fisico": "Verbal",
-            "modalidade_sensorial_primaria": "Auditivo",
-            "localizacao": "Fazenda"
+            "id": "E4",
+            "raciocinio": "Este est\u00edmulo-evento \u00e9 a consequ\u00eancia f\u00edsica imediata da a\u00e7\u00e3o do fazendeiro de matar a gansa.",
+            "descricao": "Gansa morta"
         },
         {
-            "id_estimulo_evento": "E5",
-            "descricao": "Nenhum ouro encontrado dentro da gansa",
-            "tipo_fisico": "N\u00e3o-Social",
-            "modalidade_sensorial_primaria": "Visual",
-            "localizacao": "Interior da gansa"
+            "id": "E5",
+            "raciocinio": "Este est\u00edmulo-evento \u00e9 a descoberta do fazendeiro ap\u00f3s matar a gansa, revelando o resultado inesperado e negativo da sua a\u00e7\u00e3o.",
+            "descricao": "Gansa com carne e v\u00edsceras (sem ouro)"
+        },
+        {
+            "id": "E6",
+            "raciocinio": "Este est\u00edmulo-evento \u00e9 inferido como o antecedente temporal para a gansa botar o ovo, dado que o texto menciona que 'isso acontecia apenas uma vez no dia'.",
+            "descricao": "Passagem do tempo (um dia)"
         }
     ],
     "relacoes_temporais": [
         {
             "id": "RT1",
-            "id_origem_no": "E1",
-            "id_destino_no": "AC1",
+            "id_origem_no": "E6",
+            "id_destino_no": "AC3",
+            "raciocinio": "A passagem de um dia \u00e9 o antecedente temporal para a gansa botar o ovo, conforme a descri\u00e7\u00e3o de que isso ocorria 'apenas uma vez no dia'.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id": "RT2",
-            "id_origem_no": "AC1",
-            "id_destino_no": "E2",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E1",
+            "raciocinio": "A a\u00e7\u00e3o da gansa de botar ovos de ouro resulta diretamente na exist\u00eancia de um ovo de ouro.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id": "RT3",
-            "id_origem_no": "E3",
-            "id_destino_no": "AC2",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E2",
+            "raciocinio": "A a\u00e7\u00e3o da gansa de botar ovos de ouro \u00e9 o que inicialmente gratifica o fazendeiro, levando aos lucros.",
             "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id": "RT4",
-            "id_origem_no": "E4",
-            "id_destino_no": "AC3",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC4",
+            "raciocinio": "A impaci\u00eancia do fazendeiro com a frequ\u00eancia dos ovos \u00e9 o contexto que precede e motiva a esposa a sugerir matar a gansa.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id": "RT5",
-            "id_origem_no": "AC3",
-            "id_destino_no": "AC5",
+            "id_origem_no": "AC4",
+            "id_destino_no": "AC1",
+            "raciocinio": "A sugest\u00e3o verbal da esposa ('Por que n\u00e3o matamos a gansa...') precede imediatamente a decis\u00e3o do fazendeiro de mat\u00e1-la.",
             "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
             "id": "RT6",
-            "id_origem_no": "AC4",
-            "id_destino_no": "E2",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC1",
+            "raciocinio": "A impaci\u00eancia do fazendeiro \u00e9 um antecedente direto para sua decis\u00e3o de matar a gansa, al\u00e9m da sugest\u00e3o da esposa.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "M\u00e9dia"
+        },
+        {
+            "id": "RT7",
+            "id_origem_no": "AC1",
+            "id_destino_no": "AC2",
+            "raciocinio": "A decis\u00e3o encoberta do fazendeiro de matar a gansa precede imediatamente a a\u00e7\u00e3o observ\u00e1vel de mat\u00e1-la.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT8",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E4",
+            "raciocinio": "A a\u00e7\u00e3o de matar a gansa resulta imediatamente na gansa estar morta.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT7",
-            "id_origem_no": "AC5",
+            "id": "RT9",
+            "id_origem_no": "AC2",
             "id_destino_no": "E5",
+            "raciocinio": "Ap\u00f3s a a\u00e7\u00e3o de matar a gansa, o fazendeiro descobre que ela cont\u00e9m apenas carne e v\u00edsceras, sem ouro.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
@@ -184,22 +204,41 @@
     "relacoes_funcionais_antecedentes": [
         {
             "id": "RFA1",
-            "id_origem_no": "E1",
-            "id_destino_no": "AC1",
+            "id_origem_no": "E6",
+            "id_destino_no": "AC3",
+            "raciocinio": "A 'Passagem do tempo (um dia)' (E6) atua como um est\u00edmulo discriminativo para a gansa 'Botar ovos de ouro' (AC3), sinalizando que as condi\u00e7\u00f5es para a emiss\u00e3o do comportamento e a consequente produ\u00e7\u00e3o do ovo est\u00e3o presentes, conforme a descri\u00e7\u00e3o 'apenas uma vez no dia'.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA2",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC4",
+            "raciocinio": "A 'Impaci\u00eancia do fazendeiro' (E3) \u00e9 um estado percebido pela esposa que atua como um est\u00edmulo discriminativo para ela 'Sugerir/dizer para matar a gansa' (AC4). A impaci\u00eancia do fazendeiro sinaliza que uma sugest\u00e3o para resolver o problema da lentid\u00e3o dos lucros pode ser bem recebida ou relevante.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA3",
-            "id_origem_no": "E3",
-            "id_destino_no": "AC2",
+            "id_origem_no": "AC4",
+            "id_destino_no": "AC1",
+            "raciocinio": "A 'Sugest\u00e3o/dizer para matar a gansa' (AC4) da esposa atua como um est\u00edmulo discriminativo para o fazendeiro 'Resolver matar a gansa' (AC1). A sugest\u00e3o verbal estabelece a ocasi\u00e3o para a decis\u00e3o do fazendeiro, indicando uma poss\u00edvel via para obter mais ouro.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
-            "funcao_antecedente": "EST\u00cdMULO_DELTA_SDELTA"
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA4",
-            "id_origem_no": "E4",
-            "id_destino_no": "AC3",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC1",
+            "raciocinio": "A 'Impaci\u00eancia do fazendeiro' (E3) tamb\u00e9m atua como um est\u00edmulo discriminativo direto para sua pr\u00f3pria decis\u00e3o de 'Resolver matar a gansa' (AC1). A impaci\u00eancia sinaliza a necessidade de uma a\u00e7\u00e3o mais dr\u00e1stica para acelerar o processo de obten\u00e7\u00e3o de riqueza.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA5",
+            "id_origem_no": "AC1",
+            "id_destino_no": "AC2",
+            "raciocinio": "A decis\u00e3o encoberta do fazendeiro de 'Resolver matar a gansa' (AC1) atua como um est\u00edmulo discriminativo para a execu\u00e7\u00e3o da a\u00e7\u00e3o observ\u00e1vel de 'Matar a gansa' (AC2). A decis\u00e3o interna estabelece a ocasi\u00e3o para a a\u00e7\u00e3o f\u00edsica.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         }
@@ -207,26 +246,40 @@
     "relacoes_funcionais_consequentes": [
         {
             "id": "RFC1",
-            "id_origem_no": "AC1",
-            "id_destino_no": "E2",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E1",
+            "raciocinio": "A gansa continua a botar ovos diariamente, indicando que a adi\u00e7\u00e3o do ovo de ouro (um recurso valioso) serve como um refor\u00e7ador positivo para o comportamento de botar ovos.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
             "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "Alta"
+            "magnitude_consequencia": "Alta",
+            "parametro_esquema": "1"
         },
         {
             "id": "RFC2",
-            "id_origem_no": "AC4",
+            "id_origem_no": "AC3",
             "id_destino_no": "E2",
+            "raciocinio": "A gratifica\u00e7\u00e3o do fazendeiro e os lucros subsequentes (impl\u00edcitos) s\u00e3o consequ\u00eancias positivas da gansa botar ovos, o que mant\u00e9m o comportamento da gansa (do ponto de vista do sistema de conting\u00eancias).",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
             "imediatismo_consequencia": "Imediata",
-            "magnitude_consequencia": "Alta"
+            "magnitude_consequencia": "M\u00e9dia",
+            "parametro_esquema": "1"
         },
         {
             "id": "RFC3",
-            "id_origem_no": "AC5",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E4",
+            "raciocinio": "A gansa morta \u00e9 uma consequ\u00eancia f\u00edsica direta da a\u00e7\u00e3o, mas o texto n\u00e3o indica que este evento por si s\u00f3 alterou a probabilidade futura do comportamento do fazendeiro. A verdadeira consequ\u00eancia funcional est\u00e1 na descoberta do que havia dentro da gansa (E5).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
+            "imediatismo_consequencia": "Imediata"
+        },
+        {
+            "id": "RFC4",
+            "id_origem_no": "AC2",
             "id_destino_no": "E5",
+            "raciocinio": "O fazendeiro matou a gansa com a expectativa de obter 'v\u00e1rios quilos de ouro'. A descoberta de que a gansa continha apenas 'carne e v\u00edsceras' e que 'n\u00e3o trouxe nenhum bem' representa a remo\u00e7\u00e3o do refor\u00e7ador esperado (o ouro) e a perda da fonte de ovos de ouro futuros. Isso diminui a probabilidade de o fazendeiro repetir a a\u00e7\u00e3o de matar a gansa para obter ouro.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "PUNI\u00c7\u00c3O_NEGATIVA_SP-",
             "imediatismo_consequencia": "Imediata",
@@ -236,18 +289,22 @@
     "relacoes_moduladoras_estado": [],
     "hipoteses_analiticas": [
         {
-            "id_hipotese": "H1",
-            "descricao_hipotese": "O comportamento de 'ficar impaciente' (AC2) do fazendeiro \u00e9 mantido pela expectativa de refor\u00e7o positivo (E2 - ovos de ouro), mas a demora na entrega desse refor\u00e7o (E3) funciona como um est\u00edmulo delta, evocando a impaci\u00eancia.",
-            "nivel_confianca": "M\u00e9dio",
-            "data_formulacao": "2025-05-26T13:16:13.333322Z",
-            "status_hipotese": "Aguardando teste"
+            "id": "H1",
+            "raciocinio": "A hip\u00f3tese \u00e9 formulada para explicar a fun\u00e7\u00e3o do comportamento do fazendeiro de matar a gansa. Com base na narrativa, a a\u00e7\u00e3o foi motivada pela busca de uma quantidade maior e mais imediata de ouro, e pela tentativa de aliviar a impaci\u00eancia com os lucros di\u00e1rios, caracterizando uma fun\u00e7\u00e3o de obten\u00e7\u00e3o de tang\u00edvel e fuga de estimula\u00e7\u00e3o aversiva.",
+            "descricao": "O comportamento do fazendeiro de 'resolver matar a gansa' (AC1) e 'matar a gansa' (AC2) tem a fun\u00e7\u00e3o de obter refor\u00e7amento positivo (maior quantidade de ouro) e/ou de fuga/esquiva de uma condi\u00e7\u00e3o aversiva (impaci\u00eancia com a lentid\u00e3o dos lucros).",
+            "nivel_confianca": "Alto"
         },
         {
-            "id_hipotese": "H2",
-            "descricao_hipotese": "O comportamento de 'matar a gansa' (AC5) do fazendeiro \u00e9 influenciado pelo controle verbal da esposa (E4), que atua como um est\u00edmulo discriminativo para obter uma grande quantidade de ouro de uma s\u00f3 vez, embora essa a\u00e7\u00e3o resulte em puni\u00e7\u00e3o negativa (E5 - perda da fonte de ouro).",
-            "nivel_confianca": "M\u00e9dio",
-            "data_formulacao": "2025-05-26T13:16:13.333322Z",
-            "status_hipotese": "Aguardando teste"
+            "id": "H2",
+            "raciocinio": "Esta hip\u00f3tese foca na fun\u00e7\u00e3o do comportamento da gansa. Embora a narrativa seja centrada no fazendeiro, o comportamento da gansa de botar ovos de ouro \u00e9 mantido pela produ\u00e7\u00e3o do pr\u00f3prio ovo, que \u00e9 um refor\u00e7ador autom\u00e1tico para o comportamento de postura, garantindo sua continuidade di\u00e1ria.",
+            "descricao": "O comportamento da gansa de 'botar ovos de ouro' (AC3) \u00e9 mantido por refor\u00e7amento positivo autom\u00e1tico, onde a produ\u00e7\u00e3o do ovo de ouro atua como uma consequ\u00eancia refor\u00e7adora intr\u00ednseca ao comportamento.",
+            "nivel_confianca": "M\u00e9dio"
+        },
+        {
+            "id": "H3",
+            "raciocinio": "A hip\u00f3tese busca explicar a fun\u00e7\u00e3o do comportamento da esposa. Sua sugest\u00e3o \u00e9 claramente motivada pela expectativa de obter uma quantidade substancial de ouro de uma vez, o que se alinha com a fun\u00e7\u00e3o de obten\u00e7\u00e3o de tang\u00edvel.",
+            "descricao": "O comportamento da esposa de 'sugerir/dizer para matar a gansa' (AC4) tem a fun\u00e7\u00e3o de obter refor\u00e7amento positivo (maior quantidade de ouro) para o casal.",
+            "nivel_confianca": "Alto"
         }
     ],
     "evidencias_para_hipoteses": [
@@ -255,34 +312,73 @@
             "id": "EH1",
             "id_origem_no": "AC2",
             "id_destino_no": "H1",
+            "raciocinio": "A hip\u00f3tese H1 \u00e9 suportada pela sequ\u00eancia de eventos que levam o fazendeiro a matar a gansa. A impaci\u00eancia (E3) atua como uma opera\u00e7\u00e3o motivadora e est\u00edmulo discriminativo, e a sugest\u00e3o da esposa (AC4) refor\u00e7a a ideia de obter mais ouro. A expectativa de 'v\u00e1rios quilos de ouro' \u00e9 o refor\u00e7ador positivo buscado, mesmo que a consequ\u00eancia real (E5) seja punitiva.",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
+                "S1",
+                "AC1",
                 "AC2",
-                "E2",
                 "E3",
-                "RT3",
-                "RFA3"
+                "AC4",
+                "RFA3",
+                "RFA4",
+                "RFA5",
+                "E5",
+                "RFC4"
             ],
-            "tipo_evidencia": "SUPORTE_DIRETO",
-            "fonte_dados": "Narrativa Textual"
+            "tipo_evidencia": "SUPORTE_DIRETO"
         },
         {
             "id": "EH2",
-            "id_origem_no": "AC5",
+            "id_origem_no": "AC3",
             "id_destino_no": "H2",
+            "raciocinio": "A hip\u00f3tese H2 \u00e9 suportada pela descri\u00e7\u00e3o da gansa botando ovos diariamente. A ocorr\u00eancia regular do comportamento e a produ\u00e7\u00e3o do ovo de ouro (E1) como consequ\u00eancia imediata e valiosa indicam um refor\u00e7amento positivo que mant\u00e9m o comportamento.",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
-                "AC5",
-                "E4",
-                "E5",
+                "S2",
                 "AC3",
-                "RT4",
-                "RT5",
-                "RFC3"
+                "E6",
+                "RFA1",
+                "E1",
+                "RFC1",
+                "E2",
+                "RFC2"
             ],
-            "tipo_evidencia": "SUPORTE_DIRETO",
-            "fonte_dados": "Narrativa Textual"
+            "tipo_evidencia": "SUPORTE_DIRETO"
+        },
+        {
+            "id": "EH3",
+            "id_origem_no": "AC4",
+            "id_destino_no": "H3",
+            "raciocinio": "A hip\u00f3tese H3 \u00e9 suportada pela fala expl\u00edcita da esposa, que revela sua motiva\u00e7\u00e3o para obter 'v\u00e1rios quilos de ouro'. A impaci\u00eancia do fazendeiro (E3) serve como um antecedente que estabelece a ocasi\u00e3o para essa sugest\u00e3o, visando um ganho tang\u00edvel.",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S3",
+                "AC4",
+                "E3",
+                "RT4",
+                "RFA2"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO"
         }
+    ],
+    "timeline": [
+        "S1",
+        "S2",
+        "AC3",
+        "E1",
+        "E2",
+        "E6",
+        "E3",
+        "S3",
+        "AC4",
+        "AC2",
+        "AC1",
+        "E4",
+        "E5",
+        "H1",
+        "H2",
+        "H3"
     ],
     "texto_original": "Certa vez, um fazendeiro foi gratificado com uma gansa que possu\u00eda a incr\u00edvel habilidade de botar ovos de ouro. Contudo, isso acontecia apenas uma vez no dia e o homem, acostumado com os lucros obtidos, j\u00e1 estava ficando impaciente. At\u00e9 que um dia a esposa do fazendeiro lhe disse: \u2014 Por que n\u00e3o matamos a gansa de uma vez e lucramos com isso. Pois, com certeza, por baixo das penas ela deve ser feita toda de ouro. Ent\u00e3o teremos v\u00e1rios quilos de ouro. Ent\u00e3o o fazendeiro resolveu matar a gansa, mas isso n\u00e3o trouxe nenhum bem, pois dentro da gansa s\u00f3 havia carne e v\u00edsceras, como em qualquer animal comum. "
 }
