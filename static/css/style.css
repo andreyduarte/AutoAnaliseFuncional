@@ -265,16 +265,6 @@ textarea.form-control:focus {
     flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Specific legend shapes */
-.legend-color-box[style*="border-radius:2px"] { border-radius: 3px; } /* For square/rectangle */
-.legend-color-box[style*="border-radius:50%"] { border-radius: 50%; } /* For circle/ellipse */
-.legend-color-box[style*="transform: rotate(45deg)"] {
-    transform: rotate(45deg);
-    width: 16px;
-    height: 16px;
-    border-radius: 2px; /* Keep it square before rotation */
-}
-
 /* Vis.js network styles */
 #mynetwork canvas {
     border-radius: 12px; /* Match container border-radius */
@@ -469,3 +459,32 @@ textarea.form-control:focus {
     border-radius: 50%; /* Round slider handle */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
+.navbar-icon-style {
+    color: #ffffff;
+    margin-right: 5px;
+    vertical-align: middle; /* Optional: better alignment with text */
+}
+
+/* Legend Color Boxes - Refactored */
+.info-box .legend-color-box.legend-sujeito {
+    background-color: #FFD700;
+    /* Default is square, no border-radius needed unless specified */
+}
+
+.info-box .legend-color-box.legend-acao {
+    background-color: #ADD8E6;
+    border-radius: 3px;
+}
+
+.info-box .legend-color-box.legend-estimulo {
+    background-color: #90EE90;
+    border-radius: 50%;
+}
+
+.info-box .legend-color-box.legend-hipotese {
+    background-color: #a753f5; /* Corrected from light purple to the actual purple used */
+    border-radius: 3px;
+}
+
+/* Old style attribute selectors for legend have been removed. */
