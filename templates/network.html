@@ -15,7 +15,7 @@
 <body>  
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <i class="fas fa-project-diagram" style="color: #ffffff; margin-right:5px"></i><a class="navbar-brand" href="#">Análise de Rede Comportamental</a>
+            <i class="fas fa-project-diagram navbar-icon-style"></i><a class="navbar-brand" href="#">Análise de Rede Comportamental</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -69,256 +69,23 @@
             <i class="fas fa-eye-slash"></i>
         </button></h3>
         <ul  id="legendInfoBox"  class="list-unstyled">
-            <li><span class="legend-color-box" style="background-color: #FFD700;"></span><span class="fw-semibold">Sujeito</span></li>
-            <li><span class="legend-color-box" style="background-color: #ADD8E6; border-radius:3px;"></span><span class="fw-semibold">Ação/Comportamento</span></li>
-            <li><span class="legend-color-box" style="background-color: #90EE90; border-radius:50%;"></span><span class="fw-semibold">Estímulo/Evento</span></li>
-            <li><span class="legend-color-box" style="background-color: #a753f5; border-radius: 3px;"></span><span class="fw-semibold">Hipótese</span></li>
+            <li><span class="legend-color-box legend-sujeito"></span><span class="fw-semibold">Sujeito</span></li>
+            <li><span class="legend-color-box legend-acao"></span><span class="fw-semibold">Ação/Comportamento</span></li>
+            <li><span class="legend-color-box legend-estimulo"></span><span class="fw-semibold">Estímulo/Evento</span></li>
+            <li><span class="legend-color-box legend-hipotese"></span><span class="fw-semibold">Hipótese</span></li>
         </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        // JavaScript para o botão de ocultar/mostrar legenda
-        document.getElementById('toggleLegendButton').addEventListener('click', function() {
-            var legend = document.getElementById('legendInfoBox');
-            if (legend.style.display === 'none') {
-                legend.style.display = 'block';
-                this.innerHTML = '<i class="fas fa-eye"></i>';
-            } else {
-                legend.style.display = 'none';
-                this.innerHTML = '<i class="fas fa-eye-slash"></i>';
-            }
-        });
-
-        // Inicializa o contador ao carregar a página e adiciona event listeners
-        document.addEventListener('DOMContentLoaded', function() {
-            // Lógica para o contador de caracteres no textarea
-            const analysisTextarea = document.getElementById('analysisTextarea');
-            const charCountNetwork = document.getElementById('charCountNetwork');
-            const maxLengthNetwork = analysisTextarea.getAttribute('maxlength');
-
-            function updateCharCountNetwork() {
-                const currentLength = analysisTextarea.value.length;
-                charCountNetwork.innerText = `${currentLength}/${maxLengthNetwork} caracteres`;
-            }
-
-            analysisTextarea.addEventListener('input', updateCharCountNetwork);
-            updateCharCountNetwork(); // Initial call to set the count
-        });
-
-        // Os dados dos nós e arestas são injetados aqui pelo Flask
-        var nodesArray = {{nodes_data|safe}};
-        var edgesArray = {{edges_data|safe}};
-        var timelineOrder = {{timeline_data|safe}};
-
-        console.log(nodesArray)
-        console.log(edgesArray)
-        console.log(timelineOrder)
-
-        // Cria os datasets para o Vis.js
-        var nodes = new vis.DataSet(nodesArray);
-        var edges = new vis.DataSet(edgesArray);
-
-        // Define as cores dos nós com base na legenda
-        var nodeColors = {
-            "sujeito": '#FFD700', // Gold
-            "acao": '#ADD8E6', // Light Blue
-            "estimulo": '#90EE90', // Light Green
-            "hipotese": '#a753f5' // Purple
-        };
-
-        // Pega o container da rede
-        var container = document.getElementById('mynetwork');
-
-        // Provê os dados para a rede
-        var data = {
-            nodes: nodes,
-            edges: edges
-        };
-        var options = {
-            nodes: {
-                borderWidth: 2,
-                size: 20,
-                font: {
-                    size: 12,
-                    face: 'Inter, sans-serif',
-                    color: '#333333',
-                },
-                shadow: {
-                    enabled: true,
-                    size: 5,
-                    x: 2,
-                    y: 2
-                },
-                widthConstraint: {
-                    maximum: 150 
-                }
-            },
-            edges: {
-                width: 1.5,
-                smooth: {
-                    enabled: true,
-                    type: "horizontal",
-                    roundness: 1
-                },
-                arrows: {
-                  to: { enabled: true, scaleFactor: 0.8, type: 'arrow' }
-                },
-                font: {
-                    size: 10,
-                    face: 'Inter, sans-serif',
-                    align: 'horizontal',
-                    strokeWidth: 3,
-                    strokeColor: '#ffffff'
-                },
-                color: {
-                    inherit: 'from'
-                },
-                shadow: true,
-                widthConstraint: {
-                    maximum: 150 
-                }
-            },
-            layout: {
-                hierarchical: false,
-                improvedLayout: true,
-            },
-            interaction: {
-                hover: false,
-                navigationButtons: false,
-                keyboard: {
-                    enabled: true,
-                    speed: {x: 10, y: 10, zoom: 0.05},
-                    bindToWindow: true
-                },
-                tooltipDelay: 250,
-                dragNodes: true,
-                zoomView: true,
-                dragView: true
-            },
-            physics: {
-                enabled: true,
-                solver: 'barnesHut',
-                barnesHut: {
-                    gravitationalConstant: -5000,
-                    centralGravity: 0.20,
-                    springLength: 150,
-                    springConstant: 0.01,
-                    damping: 0.9,
-                    avoidOverlap: 0.5
-                },
-                stabilization: {
-                    enabled: true,
-                    iterations: 1000,
-                    updateInterval: 25,
-                    onlyDynamicEdges: false,
-                    fit: true
-                }
-            },
-        };
-
-        var network = new vis.Network(container, data, options);
-      
-        // Lógica para mostrar o overlay de carregamento
-        document.getElementById('updateForm').addEventListener('submit', function() {
-            document.getElementById('loadingOverlay').classList.add('visible');
-        });
-
-        // Esconder o overlay quando a rede estiver estabilizada
-        network.on("stabilizationIterationsDone", function () {
-            network.fit();
-            document.getElementById('loadingOverlay').classList.remove('visible');
-        });
-
-        // Esconder o overlay se a página for carregada e a rede já estiver pronta (ex: via cache do navegador)
-        window.addEventListener('load', function() {
-            if (network.getPositions().length > 0) {
-                document.getElementById('loadingOverlay').classList.remove('visible');
-            }
-            initializeTimeline();
-        });
-
-        // JavaScript para o botão de abrir/fechar a sidebar como overlay
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
-            var sidebar = document.getElementById('sidebar');
-            var icon = this.querySelector('i');
-
-            sidebar.classList.toggle('collapsed');
-            if (sidebar.classList.contains('collapsed')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
-
-        // Lógica do Slider da Timeline
-        var timelineRange = document.getElementById('timelineRange');
-        var timelineLabel = document.getElementById('timelineLabel');
-
-        function initializeTimeline() {
-            if (timelineOrder && timelineOrder.length > 0) {
-                timelineRange.min = 0;
-                timelineRange.max = timelineOrder.length - 1;
-                timelineRange.value = timelineOrder.length - 1;
-                timelineLabel.innerText = timelineOrder.length;
-                updateNodeVisibility(timelineOrder.length - 1);
-            } else {
-                timelineRange.min = 0;
-                timelineRange.max = 0;
-                timelineRange.value = 0;
-                timelineLabel.innerText = 0;
-                // Se não houver timeline, todos os nós devem estar visíveis por padrão
-                nodes.forEach(function(node) {
-                    if (node.hidden) {
-                        nodes.update({id: node.id, hidden: false});
-                    }
-                });
-            }
-        }
-
-        function updateNodeVisibility(sliderValue) {
-            var visibleNodeIds = new Set();
-            for (var i = 0; i <= sliderValue; i++) {
-                visibleNodeIds.add(timelineOrder[i]);
-            }
-
-            var updates = [];
-            nodes.forEach(function(node) {
-                var isVisible = visibleNodeIds.has(node.id);
-                var nodeType = node.group;
-                var targetColor = nodeColors[nodeType];
-
-                var needsUpdate = false;
-                var updateObject = {id: node.id};
-
-                updateObject.hidden = !isVisible;
-                updateObject.color = {
-                    background: targetColor,
-                    border: targetColor // Define a cor da borda igual à cor de fundo
-                };
-                updates.push(updateObject);
-
-            });
-            nodes.update(updates);
-            //network.fit(); // Ajusta a visualização para os nós visíveis
-        }
-
-        timelineRange.addEventListener('input', function() {
-            var sliderValue = parseInt(this.value);
-            timelineLabel.innerText = sliderValue + 1; // +1 para mostrar a contagem de nós
-            updateNodeVisibility(sliderValue);
-        });
-
-        // Inicializa a timeline quando a rede estiver pronta
-        network.on("stabilizationIterationsDone", function () {
-            network.fit();
-            document.getElementById('loadingOverlay').classList.remove('visible');
-            initializeTimeline(); // Garante que a timeline seja inicializada após a estabilização
-        });
-
-     </script>
+        window.nodesData = {{nodes_data|safe}};
+        window.edgesData = {{edges_data|safe}};
+        window.timelineData = {{timeline_data|safe}};
+        // texto_original is available in the textarea#analysisTextarea
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/network_graph.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/network_timeline.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/network_ui.js') }}"></script>
 
     <div id="loadingOverlay" class="loading-overlay">
         <div class="spinner"></div>
