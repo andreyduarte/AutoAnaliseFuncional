@@ -3,7 +3,6 @@ from pydantic import BaseModel, Field, ValidationError # type: ignore
 from enum import Enum # Corrigido de pydantic.types import Enum
 import datetime
 
-
 # --- Enumerações para Tipos (Pydantic Models) ---
 
 class TipoEstimuloEventoFisico(str, Enum):
@@ -194,24 +193,6 @@ class ArestaEvidenciaParaHipotese(ArestaBase):
     tipo_evidencia: TipoEvidenciaHipotese
 
 # --- Modelo de Resposta Final ---
-class Step1Output(BaseModel):
-    sujeitos: List[NoSujeito] = Field(default_factory=list)
-    acoes_comportamentos: List[NoAcaoComportamento] = Field(default_factory=list)
-    emissoes_comportamentais: List[ArestaEmissaoComportamental] = Field(default_factory=list)
-    estimulos_eventos: List[NoEstimuloEvento] = Field(default_factory=list)
-    relacoes_temporais: List[ArestaRelacaoTemporal] = Field(default_factory=list)
-
-class Step2Output(BaseModel):
-    estimulos_eventos: List[NoEstimuloEvento] = Field(default_factory=list)
-    condicoes_estados: List[NoCondicaoEstado] = Field(default_factory=list)
-    relacoes_funcionais_antecedentes: List[ArestaRelacaoFuncionalAntecedente] = Field(default_factory=list)
-    relacoes_funcionais_consequentes: List[ArestaRelacaoFuncionalConsequente] = Field(default_factory=list)
-
-class Step3Output(BaseModel):
-    relacoes_moduladoras_estado: List[ArestaRelacaoModuladoraEstado] = Field(default_factory=list)
-    hipoteses_analiticas: List[NoHipoteseAnalitica] = Field(default_factory=list)
-    evidencias_para_hipoteses: List[ArestaEvidenciaParaHipotese] = Field(default_factory=list)
-
 class RedeContingencialOutput(BaseModel):
     sujeitos: List[NoSujeito] = Field(default_factory=list)
     acoes_comportamentos: List[NoAcaoComportamento] = Field(default_factory=list)
@@ -229,4 +210,3 @@ class RedeContingencialOutput(BaseModel):
 
     timeline:List[str] = Field(default_factory=str)
     # analise_metadados: Optional[Dict[str, Any]] = Field(None, description="Metadados sobre a análise, e.g., ID da análise, data, nome do analista (LLM).")
-
