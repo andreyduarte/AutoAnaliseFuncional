@@ -2,28 +2,28 @@
     "sujeitos": [
         {
             "id": "S1",
-            "raciocinio": "O 'Ladr\u00e3o' \u00e9 claramente um agente ativo na narrativa, com inten\u00e7\u00f5es e comportamentos expl\u00edcitos (desejar roubar, trazer sandu\u00edche, lan\u00e7ar o naco).",
+            "raciocinio": "O 'Ladr\u00e3o' \u00e9 um dos personagens centrais da narrativa, sendo o agente principal da a\u00e7\u00e3o de tentar roubar a casa e interagir com o C\u00e3o de Guarda. Suas a\u00e7\u00f5es e inten\u00e7\u00f5es s\u00e3o cruciais para a trama.",
             "descricao": "Ladr\u00e3o",
-            "historico_relevante": "Indiv\u00edduo com inten\u00e7\u00e3o de roubar a casa."
+            "historico_relevante": "Deseja entrar \u00e0 noite em uma casa para roubar."
         },
         {
             "id": "S2",
-            "raciocinio": "O 'C\u00e3o de Guarda' \u00e9 outro agente central, com comportamentos e fala atribu\u00eddos a ele (vigiar, dizer, latir, n\u00e3o querer morrer de fome).",
+            "raciocinio": "O 'C\u00e3o de Guarda' \u00e9 o outro personagem central, respons\u00e1vel por vigiar a casa e interagir diretamente com o Ladr\u00e3o. Suas a\u00e7\u00f5es (latir) e verbaliza\u00e7\u00f5es s\u00e3o o foco da conting\u00eancia descrita.",
             "descricao": "C\u00e3o de Guarda",
-            "historico_relevante": "Animal respons\u00e1vel pela vigil\u00e2ncia da casa, sustentado pelo dono."
+            "historico_relevante": "Vigia a casa e \u00e9 sustentado pelo dono."
         },
         {
             "id": "S3",
-            "raciocinio": "O 'dono da casa' \u00e9 mencionado como uma figura relevante para o C\u00e3o de Guarda (quem o sustenta) e como algu\u00e9m que pode intervir (acordar e enxotar o ladr\u00e3o), indicando sua import\u00e2ncia no contexto da conting\u00eancia, mesmo que n\u00e3o emita um comportamento direto na cena descrita.",
+            "raciocinio": "O 'dono da casa' \u00e9 mencionado pelo C\u00e3o de Guarda como a pessoa que o sustenta e a quem ele \u00e9 leal, sendo o propriet\u00e1rio da casa que o Ladr\u00e3o tenta roubar. Embora n\u00e3o apare\u00e7a diretamente, sua exist\u00eancia e rela\u00e7\u00e3o com o C\u00e3o s\u00e3o fundamentais para a motiva\u00e7\u00e3o do comportamento do C\u00e3o.",
             "descricao": "Dono da casa",
-            "historico_relevante": "Pessoa que sustenta o C\u00e3o de Guarda e propriet\u00e1rio da casa."
+            "historico_relevante": "Sustenta o C\u00e3o de Guarda."
         }
     ],
     "acoes_comportamentos": [
         {
             "id": "AC1",
-            "raciocinio": "O ladr\u00e3o 'trazia consigo um peda\u00e7o de sandu\u00edche' \u00e9 uma a\u00e7\u00e3o observ\u00e1vel e intencional, parte de seu plano para roubar.",
-            "descricao": "Trazer consigo um peda\u00e7o de sandu\u00edche",
+            "raciocinio": "O Ladr\u00e3o 'trazia consigo um peda\u00e7o de sandu\u00edche' como parte de seu plano para distrair o C\u00e3o de Guarda. Esta \u00e9 uma a\u00e7\u00e3o preparat\u00f3ria e observ\u00e1vel.",
+            "descricao": "trazer consigo um peda\u00e7o de sandu\u00edche",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
                 "Preparat\u00f3ria",
@@ -32,44 +32,54 @@
         },
         {
             "id": "AC2",
-            "raciocinio": "O ladr\u00e3o 'lan\u00e7ou o naco ao solo' \u00e9 uma a\u00e7\u00e3o f\u00edsica direta e observ\u00e1vel, com o objetivo de distrair o c\u00e3o.",
-            "descricao": "Lan\u00e7ar o naco de sandu\u00edche ao solo",
+            "raciocinio": "O Ladr\u00e3o 'lan\u00e7ou o naco ao solo' como a tentativa direta de distra\u00e7\u00e3o. Esta \u00e9 uma a\u00e7\u00e3o observ\u00e1vel e instrumental para seu objetivo.",
+            "descricao": "lan\u00e7ar o naco ao solo",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Distra\u00e7\u00e3o",
-                "Suborno"
+                "Instrumental",
+                "Fuga/Esquiva"
             ]
         },
         {
             "id": "AC3",
-            "raciocinio": "O c\u00e3o 'vigiara a casa' \u00e9 uma descri\u00e7\u00e3o de seu comportamento cont\u00ednuo e fun\u00e7\u00e3o, que \u00e9 observ\u00e1vel atrav\u00e9s de sua postura e aten\u00e7\u00e3o.",
-            "descricao": "Vigiar a casa",
+            "raciocinio": "O C\u00e3o de Guarda 'vigiaba a casa', o que \u00e9 sua fun\u00e7\u00e3o principal e um comportamento cont\u00ednuo e observ\u00e1vel, embora n\u00e3o explicitamente descrito como um evento pontual na narrativa, mas como um estado de comportamento.",
+            "descricao": "vigiar a casa",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Prote\u00e7\u00e3o",
-                "Cumprimento de fun\u00e7\u00e3o"
+                "Manuten\u00e7\u00e3o de Conting\u00eancia",
+                "Prote\u00e7\u00e3o"
             ]
         },
         {
             "id": "AC4",
-            "raciocinio": "O c\u00e3o 'disse' \u00e9 uma vocaliza\u00e7\u00e3o, uma forma de comunica\u00e7\u00e3o verbal (no contexto da f\u00e1bula), que \u00e9 um comportamento observ\u00e1vel.",
-            "descricao": "Dizer/Falar (comunica\u00e7\u00e3o verbal)",
+            "raciocinio": "O C\u00e3o de Guarda 'disse' uma s\u00e9rie de frases ao Ladr\u00e3o. Esta \u00e9 uma emiss\u00e3o comportamental verbal, observ\u00e1vel, com a fun\u00e7\u00e3o de comunica\u00e7\u00e3o e recusa.",
+            "descricao": "dizer 'Voc\u00ea s\u00f3 est\u00e1 me dando este peda\u00e7o de p\u00e3o para que eu fique quietinho e deixe voc\u00ea roubar a casa. Mas, j\u00e1 que \u00e9 o dono da casa que me sustenta a vida, n\u00e3o vou deixar de latir enquanto voc\u00ea n\u00e3o for embora ou at\u00e9 que ele acorde e venha te enxotar. N\u00e3o quero que este peda\u00e7o de p\u00e3o me custe morrer de fome o resto da vida.'",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
                 "Comunica\u00e7\u00e3o",
                 "Recusa",
-                "Estabelecimento de conting\u00eancia"
+                "Aviso"
             ]
         },
         {
             "id": "AC5",
-            "raciocinio": "O c\u00e3o afirma 'n\u00e3o vou deixar de latir', indicando que 'latir' \u00e9 o comportamento que ele pretende emitir e manter. \u00c9 uma vocaliza\u00e7\u00e3o observ\u00e1vel.",
-            "descricao": "Latir",
+            "raciocinio": "O C\u00e3o de Guarda afirma 'n\u00e3o vou deixar de latir', indicando que 'latir' \u00e9 um comportamento que ele emitir\u00e1 ou continuar\u00e1 a emitir. \u00c9 um comportamento observ\u00e1vel com fun\u00e7\u00e3o de alerta e prote\u00e7\u00e3o.",
+            "descricao": "latir",
             "tipo_observabilidade": "Observ\u00e1vel",
             "classe_funcional_hipotetica": [
-                "Fuga/Esquiva (do ladr\u00e3o)",
-                "Sinaliza\u00e7\u00e3o (para o dono)",
-                "Manuten\u00e7\u00e3o da seguran\u00e7a"
+                "Fuga/Esquiva",
+                "Busca de Aten\u00e7\u00e3o",
+                "Prote\u00e7\u00e3o"
+            ]
+        },
+        {
+            "id": "AC6",
+            "raciocinio": "O C\u00e3o de Guarda menciona que 'o dono da casa que me sustenta a vida'. 'Sustentar o C\u00e3o de Guarda' \u00e9 uma a\u00e7\u00e3o do Dono da casa, embora n\u00e3o observada diretamente na cena, \u00e9 uma a\u00e7\u00e3o cont\u00ednua e relevante para a motiva\u00e7\u00e3o do C\u00e3o.",
+            "descricao": "sustentar o C\u00e3o de Guarda",
+            "tipo_observabilidade": "Encoberto",
+            "classe_funcional_hipotetica": [
+                "Manuten\u00e7\u00e3o",
+                "Cuidado"
             ]
         }
     ],
@@ -78,251 +88,284 @@
             "id": "AR1",
             "id_origem_no": "S1",
             "id_destino_no": "AC1",
-            "raciocinio": "A a\u00e7\u00e3o 'Trazer consigo um peda\u00e7o de sandu\u00edche' \u00e9 emitida pelo 'Ladr\u00e3o' (S1).",
+            "raciocinio": "A aresta representa a emiss\u00e3o do comportamento 'trazer consigo um peda\u00e7o de sandu\u00edche' pelo Ladr\u00e3o (S1).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id": "AR2",
             "id_origem_no": "S1",
             "id_destino_no": "AC2",
-            "raciocinio": "A a\u00e7\u00e3o 'Lan\u00e7ar o naco de sandu\u00edche ao solo' \u00e9 emitida pelo 'Ladr\u00e3o' (S1).",
+            "raciocinio": "A aresta representa a emiss\u00e3o do comportamento 'lan\u00e7ar o naco ao solo' pelo Ladr\u00e3o (S1).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id": "AR3",
             "id_origem_no": "S2",
             "id_destino_no": "AC3",
-            "raciocinio": "A a\u00e7\u00e3o 'Vigiar a casa' \u00e9 uma fun\u00e7\u00e3o e comportamento cont\u00ednuo do 'C\u00e3o de Guarda' (S2).",
+            "raciocinio": "A aresta representa a emiss\u00e3o do comportamento 'vigiar a casa' pelo C\u00e3o de Guarda (S2).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id": "AR4",
             "id_origem_no": "S2",
             "id_destino_no": "AC4",
-            "raciocinio": "A a\u00e7\u00e3o 'Dizer/Falar' \u00e9 emitida pelo 'C\u00e3o de Guarda' (S2) quando ele se comunica com o ladr\u00e3o.",
+            "raciocinio": "A aresta representa a emiss\u00e3o do comportamento verbal 'dizer...' pelo C\u00e3o de Guarda (S2).",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         },
         {
             "id": "AR5",
             "id_origem_no": "S2",
             "id_destino_no": "AC5",
-            "raciocinio": "A a\u00e7\u00e3o 'Latir' \u00e9 um comportamento que o 'C\u00e3o de Guarda' (S2) afirma que ir\u00e1 emitir e manter.",
+            "raciocinio": "A aresta representa a emiss\u00e3o do comportamento 'latir' pelo C\u00e3o de Guarda (S2), conforme sua declara\u00e7\u00e3o.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR6",
+            "id_origem_no": "S3",
+            "id_destino_no": "AC6",
+            "raciocinio": "A aresta representa a emiss\u00e3o do comportamento 'sustentar o C\u00e3o de Guarda' pelo Dono da casa (S3), inferido pela fala do C\u00e3o.",
             "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
         }
     ],
     "estimulos_eventos": [
         {
             "id": "E1",
-            "raciocinio": "Inferido como o motivo subjacente e antecedente para o ladr\u00e3o trazer o sandu\u00edche, estabelecendo a ocasi\u00e3o para a a\u00e7\u00e3o.",
-            "descricao": "Inten\u00e7\u00e3o do Ladr\u00e3o de roubar a casa"
+            "raciocinio": "Inferido como um estado interno do Ladr\u00e3o, explicitamente mencionado como a motiva\u00e7\u00e3o para a a\u00e7\u00e3o de roubar e, consequentemente, para a a\u00e7\u00e3o de trazer o sandu\u00edche (AC1). Tamb\u00e9m \u00e9 um antecedente geral para a vigil\u00e2ncia do C\u00e3o (AC3).",
+            "descricao": "Desejo do Ladr\u00e3o de roubar a casa"
         },
         {
             "id": "E2",
-            "raciocinio": "Consequ\u00eancia direta de 'trazer consigo' e antecedente necess\u00e1rio para 'lan\u00e7ar o naco'.",
-            "descricao": "Ladr\u00e3o ter o sandu\u00edche consigo"
+            "raciocinio": "Contexto ambiental explicitamente descrito na narrativa como o cen\u00e1rio para as a\u00e7\u00f5es do Ladr\u00e3o e a fun\u00e7\u00e3o de vigil\u00e2ncia do C\u00e3o.",
+            "descricao": "Contexto: noite, casa a ser roubada"
         },
         {
             "id": "E3",
-            "raciocinio": "A presen\u00e7a do c\u00e3o \u00e9 um est\u00edmulo antecedente para a a\u00e7\u00e3o do ladr\u00e3o de lan\u00e7ar o sandu\u00edche, pois o objetivo \u00e9 distra\u00ed-lo.",
+            "raciocinio": "Explicitamente mencionado como o alvo da tentativa de distra\u00e7\u00e3o do Ladr\u00e3o, tornando-o um antecedente direto para a a\u00e7\u00e3o de lan\u00e7ar o naco (AC2).",
             "descricao": "Presen\u00e7a do C\u00e3o de Guarda"
         },
         {
             "id": "E4",
-            "raciocinio": "Consequ\u00eancia direta de 'lan\u00e7ar o naco' e o est\u00edmulo que elicia a fala do c\u00e3o.",
-            "descricao": "Naco de sandu\u00edche no solo"
+            "raciocinio": "Representa a percep\u00e7\u00e3o do C\u00e3o sobre a a\u00e7\u00e3o do Ladr\u00e3o de lan\u00e7ar o naco (AC2), sendo o evento imediato que desencadeia a fala do C\u00e3o (AC4). \u00c9 uma consequ\u00eancia da vigil\u00e2ncia do C\u00e3o (AC3) e da a\u00e7\u00e3o do Ladr\u00e3o (AC2).",
+            "descricao": "Ladr\u00e3o lan\u00e7a o naco ao solo (percebido pelo C\u00e3o)"
         },
         {
             "id": "E5",
-            "raciocinio": "Inferido como o contexto e o objeto da vigil\u00e2ncia do c\u00e3o, um antecedente cont\u00ednuo para a a\u00e7\u00e3o de 'vigiar'.",
-            "descricao": "Presen\u00e7a da casa a ser vigiada"
-        },
-        {
-            "id": "E6",
-            "raciocinio": "A chegada do ladr\u00e3o \u00e9 um evento que ativa ou intensifica a vigil\u00e2ncia do c\u00e3o e serve como antecedente para o latido.",
-            "descricao": "Chegada do Ladr\u00e3o"
-        },
-        {
-            "id": "E7",
-            "raciocinio": "Inferido como um estado interno resultante da a\u00e7\u00e3o de 'vigiar', que prepara o c\u00e3o para responder a amea\u00e7as.",
-            "descricao": "C\u00e3o estar alerta/atento"
-        },
-        {
-            "id": "E8",
-            "raciocinio": "Consequ\u00eancia imediata da fala do c\u00e3o, essencial para a intera\u00e7\u00e3o subsequente.",
-            "descricao": "Ladr\u00e3o ouvir a fala do C\u00e3o"
-        },
-        {
-            "id": "E9",
-            "raciocinio": "Inferido da fala do c\u00e3o ('enquanto voc\u00ea n\u00e3o for embora'), indicando que a perman\u00eancia do ladr\u00e3o \u00e9 um antecedente para o latido cont\u00ednuo.",
-            "descricao": "Ladr\u00e3o n\u00e3o ir embora"
-        },
-        {
-            "id": "E10",
-            "raciocinio": "Inferido do contexto da situa\u00e7\u00e3o, a amea\u00e7a de roubo \u00e9 um antecedente para o comportamento protetor do c\u00e3o, incluindo o latido.",
-            "descricao": "Amea\u00e7a de roubo \u00e0 casa"
-        },
-        {
-            "id": "E11",
-            "raciocinio": "Mencionado pelo c\u00e3o como um objetivo do latido, embora seja uma consequ\u00eancia mais distante e n\u00e3o imediata de um \u00fanico latido.",
+            "raciocinio": "Um dos resultados desejados e declarados pelo C\u00e3o para suas a\u00e7\u00f5es de falar (AC4) e latir (AC5).",
             "descricao": "Ladr\u00e3o ir embora"
         },
         {
-            "id": "E12",
-            "raciocinio": "Mencionado pelo c\u00e3o como um objetivo do latido, uma consequ\u00eancia mais distante e n\u00e3o imediata de um \u00fanico latido.",
+            "id": "E6",
+            "raciocinio": "Um dos resultados desejados e declarados pelo C\u00e3o para suas a\u00e7\u00f5es de falar (AC4) e latir (AC5), como alternativa \u00e0 partida do Ladr\u00e3o.",
             "descricao": "Dono da casa acordar e enxotar o Ladr\u00e3o"
         },
         {
-            "id": "E13",
-            "raciocinio": "Consequ\u00eancia f\u00edsica direta e imediata da a\u00e7\u00e3o de 'latir'.",
-            "descricao": "Som do latido"
+            "id": "E7",
+            "raciocinio": "Inferido como a condi\u00e7\u00e3o que mant\u00e9m o comportamento de latir do C\u00e3o (AC5), conforme a declara\u00e7\u00e3o do C\u00e3o de que latir\u00e1 'enquanto voc\u00ea n\u00e3o for embora'.",
+            "descricao": "Ladr\u00e3o permanece na casa"
         },
         {
-            "id": "E14",
-            "raciocinio": "Inferido como o efeito imediato do latido sobre o ladr\u00e3o, que \u00e9 o objetivo do c\u00e3o.",
-            "descricao": "Ladr\u00e3o ser dissuadido/incomodado"
+            "id": "E8",
+            "raciocinio": "Inferido como uma necessidade cont\u00ednua do C\u00e3o, que serve como opera\u00e7\u00e3o motivadora para a a\u00e7\u00e3o do Dono de sustent\u00e1-lo (AC6) e para a lealdade do C\u00e3o.",
+            "descricao": "Necessidade do C\u00e3o de Guarda de alimento e abrigo"
+        },
+        {
+            "id": "E9",
+            "raciocinio": "Inferido como um estado ou resultado da a\u00e7\u00e3o do Dono de sustentar o C\u00e3o (AC6), que explica a motiva\u00e7\u00e3o do C\u00e3o para proteger a casa.",
+            "descricao": "Lealdade do C\u00e3o ao Dono"
+        },
+        {
+            "id": "E10",
+            "raciocinio": "Criado para representar o estado do sandu\u00edche ap\u00f3s ser trazido pelo Ladr\u00e3o (AC1), servindo como antecedente direto para a a\u00e7\u00e3o de lan\u00e7\u00e1-lo (AC2).",
+            "descricao": "Peda\u00e7o de sandu\u00edche em posse do Ladr\u00e3o"
+        },
+        {
+            "id": "E11",
+            "raciocinio": "Criado para representar o est\u00edmulo auditivo gerado pela fala do C\u00e3o (AC4), que serve como antecedente para o comportamento de latir (AC5), pois a fala expressa a inten\u00e7\u00e3o de latir.",
+            "descricao": "Fala do C\u00e3o de Guarda ('Voc\u00ea s\u00f3 est\u00e1 me dando este peda\u00e7o de p\u00e3o...')"
+        },
+        {
+            "id": "E12",
+            "raciocinio": "Criado para representar o resultado cont\u00ednuo da a\u00e7\u00e3o do Dono de sustentar o C\u00e3o (AC6), que por sua vez \u00e9 um antecedente para o comportamento de vigiar a casa (AC3).",
+            "descricao": "Sustento cont\u00ednuo do C\u00e3o pelo Dono"
         }
     ],
     "relacoes_temporais": [
         {
-            "id": "RT1",
+            "id": "AR1",
             "id_origem_no": "E1",
             "id_destino_no": "AC1",
-            "raciocinio": "A inten\u00e7\u00e3o de roubar precede a a\u00e7\u00e3o de trazer o sandu\u00edche como parte do plano.",
+            "raciocinio": "O desejo de roubar \u00e9 a motiva\u00e7\u00e3o e o evento mental que precede a a\u00e7\u00e3o do Ladr\u00e3o de trazer o sandu\u00edche.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT2",
+            "id": "AR2",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC1",
+            "raciocinio": "O contexto de noite e a casa a ser roubada estabelecem a ocasi\u00e3o para a a\u00e7\u00e3o do Ladr\u00e3o de trazer o sandu\u00edche.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR3",
             "id_origem_no": "AC1",
-            "id_destino_no": "E2",
-            "raciocinio": "A a\u00e7\u00e3o de trazer o sandu\u00edche resulta imediatamente em t\u00ea-lo consigo.",
+            "id_destino_no": "E10",
+            "raciocinio": "A a\u00e7\u00e3o de trazer o sandu\u00edche resulta imediatamente na posse do sandu\u00edche pelo Ladr\u00e3o.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT3",
-            "id_origem_no": "E2",
+            "id": "AR4",
+            "id_origem_no": "E10",
             "id_destino_no": "AC2",
-            "raciocinio": "Ter o sandu\u00edche consigo \u00e9 um pr\u00e9-requisito imediato para lan\u00e7\u00e1-lo.",
+            "raciocinio": "A posse do sandu\u00edche pelo Ladr\u00e3o \u00e9 o antecedente direto para a a\u00e7\u00e3o de lan\u00e7\u00e1-lo ao solo.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT4",
+            "id": "AR5",
             "id_origem_no": "E3",
             "id_destino_no": "AC2",
-            "raciocinio": "A presen\u00e7a do c\u00e3o \u00e9 o est\u00edmulo que elicia a a\u00e7\u00e3o de lan\u00e7ar o sandu\u00edche para distra\u00ed-lo.",
+            "raciocinio": "A presen\u00e7a do C\u00e3o de Guarda \u00e9 o est\u00edmulo discriminativo para o Ladr\u00e3o lan\u00e7ar o naco, visando distra\u00ed-lo.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT5",
+            "id": "AR6",
             "id_origem_no": "AC2",
             "id_destino_no": "E4",
-            "raciocinio": "Lan\u00e7ar o naco resulta imediatamente no naco estar no solo.",
+            "raciocinio": "A a\u00e7\u00e3o do Ladr\u00e3o de lan\u00e7ar o naco ao solo resulta imediatamente na percep\u00e7\u00e3o desse evento pelo C\u00e3o.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT6",
-            "id_origem_no": "AC2",
-            "id_destino_no": "AC4",
-            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de lan\u00e7ar o naco \u00e9 imediatamente seguida pela fala do c\u00e3o.",
-            "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
-            "contiguidade_percebida": "Alta"
-        },
-        {
-            "id": "RT7",
-            "id_origem_no": "E5",
+            "id": "AR7",
+            "id_origem_no": "E12",
             "id_destino_no": "AC3",
-            "raciocinio": "A presen\u00e7a da casa \u00e9 o contexto e o objeto da vigil\u00e2ncia do c\u00e3o.",
+            "raciocinio": "O sustento cont\u00ednuo do C\u00e3o pelo Dono \u00e9 uma condi\u00e7\u00e3o que precede e mant\u00e9m o comportamento de vigiar a casa.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT8",
-            "id_origem_no": "E6",
+            "id": "AR8",
+            "id_origem_no": "E1",
             "id_destino_no": "AC3",
-            "raciocinio": "A chegada do ladr\u00e3o \u00e9 um evento que ativa a vigil\u00e2ncia do c\u00e3o.",
+            "raciocinio": "O desejo do Ladr\u00e3o de roubar (e sua presen\u00e7a) \u00e9 o evento que torna a vigil\u00e2ncia do C\u00e3o relevante e ativada.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT9",
+            "id": "AR9",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC3",
+            "raciocinio": "O contexto de noite e a casa a ser roubada s\u00e3o as condi\u00e7\u00f5es ambientais que exigem a vigil\u00e2ncia do C\u00e3o.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR10",
             "id_origem_no": "AC3",
-            "id_destino_no": "E7",
-            "raciocinio": "A vigil\u00e2ncia do c\u00e3o resulta em seu estado de alerta.",
+            "id_destino_no": "E4",
+            "raciocinio": "A vigil\u00e2ncia do C\u00e3o \u00e9 o comportamento que permite que ele perceba o Ladr\u00e3o lan\u00e7ando o naco.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT10",
+            "id": "AR11",
             "id_origem_no": "E4",
             "id_destino_no": "AC4",
-            "raciocinio": "O naco no solo \u00e9 o est\u00edmulo imediato que provoca a fala do c\u00e3o.",
+            "raciocinio": "A percep\u00e7\u00e3o do C\u00e3o sobre o lan\u00e7amento do naco \u00e9 o evento imediato que elicia sua fala.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT11",
+            "id": "AR12",
             "id_origem_no": "AC4",
-            "id_destino_no": "E8",
-            "raciocinio": "A fala do c\u00e3o resulta imediatamente no ladr\u00e3o ouvi-la.",
+            "id_destino_no": "E11",
+            "raciocinio": "A a\u00e7\u00e3o de dizer do C\u00e3o resulta imediatamente na emiss\u00e3o de sua fala como um est\u00edmulo auditivo.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT12",
-            "id_origem_no": "E6",
-            "id_destino_no": "AC5",
-            "raciocinio": "A presen\u00e7a do ladr\u00e3o \u00e9 o est\u00edmulo que elicia o latido do c\u00e3o.",
-            "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-            "contiguidade_percebida": "Alta"
-        },
-        {
-            "id": "RT13",
-            "id_origem_no": "E9",
-            "id_destino_no": "AC5",
-            "raciocinio": "A perman\u00eancia do ladr\u00e3o \u00e9 a condi\u00e7\u00e3o que mant\u00e9m o latido do c\u00e3o.",
-            "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-            "contiguidade_percebida": "Alta"
-        },
-        {
-            "id": "RT14",
-            "id_origem_no": "E10",
-            "id_destino_no": "AC5",
-            "raciocinio": "A amea\u00e7a de roubo \u00e9 o est\u00edmulo subjacente que motiva o c\u00e3o a latir para proteger a casa.",
-            "tipo_aresta": "RELACAO_TEMPORAL",
-            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
-            "contiguidade_percebida": "Alta"
-        },
-        {
-            "id": "RT15",
-            "id_origem_no": "AC5",
-            "id_destino_no": "E13",
-            "raciocinio": "A a\u00e7\u00e3o de latir resulta imediatamente na emiss\u00e3o do som do latido.",
+            "id": "AR13",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E5",
+            "raciocinio": "A fala do C\u00e3o tem como objetivo que o Ladr\u00e3o v\u00e1 embora, sendo uma consequ\u00eancia potencial da fala.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
         },
         {
-            "id": "RT16",
+            "id": "AR14",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E6",
+            "raciocinio": "A fala do C\u00e3o tem como objetivo alternativo que o Dono acorde e enxote o Ladr\u00e3o, sendo uma consequ\u00eancia potencial da fala.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR15",
+            "id_origem_no": "E11",
+            "id_destino_no": "AC5",
+            "raciocinio": "A fala do C\u00e3o, que expressa a inten\u00e7\u00e3o de latir, precede diretamente o comportamento de latir.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR16",
+            "id_origem_no": "E7",
+            "id_destino_no": "AC5",
+            "raciocinio": "A perman\u00eancia do Ladr\u00e3o \u00e9 a condi\u00e7\u00e3o que mant\u00e9m o comportamento de latir do C\u00e3o, conforme declarado por ele.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR17",
             "id_origem_no": "AC5",
-            "id_destino_no": "E14",
-            "raciocinio": "O latido do c\u00e3o tem o efeito imediato de dissuadir ou incomodar o ladr\u00e3o.",
+            "id_destino_no": "E5",
+            "raciocinio": "O latir do C\u00e3o tem como objetivo que o Ladr\u00e3o v\u00e1 embora, sendo uma consequ\u00eancia potencial do latido.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR18",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E6",
+            "raciocinio": "O latir do C\u00e3o tem como objetivo alternativo que o Dono acorde e enxote o Ladr\u00e3o, sendo uma consequ\u00eancia potencial do latido.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR19",
+            "id_origem_no": "E8",
+            "id_destino_no": "AC6",
+            "raciocinio": "A necessidade de alimento e abrigo do C\u00e3o \u00e9 uma condi\u00e7\u00e3o que precede e motiva a a\u00e7\u00e3o do Dono de sustent\u00e1-lo.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "AR20",
+            "id_origem_no": "AC6",
+            "id_destino_no": "E12",
+            "raciocinio": "A a\u00e7\u00e3o do Dono de sustentar o C\u00e3o resulta no sustento cont\u00ednuo do C\u00e3o.",
             "tipo_aresta": "RELACAO_TEMPORAL",
             "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
             "contiguidade_percebida": "Alta"
@@ -334,71 +377,87 @@
             "id": "RFA1",
             "id_origem_no": "E1",
             "id_destino_no": "AC1",
-            "raciocinio": "A inten\u00e7\u00e3o de roubar a casa (E1) funciona como um est\u00edmulo discriminativo para o ladr\u00e3o, sinalizando que a a\u00e7\u00e3o de trazer o sandu\u00edche (AC1) \u00e9 apropriada e instrumental para o objetivo final do roubo.",
+            "raciocinio": "O desejo de roubar (E1) atua como um est\u00edmulo discriminativo interno para o Ladr\u00e3o iniciar a a\u00e7\u00e3o de trazer o sandu\u00edche (AC1), pois sinaliza a ocasi\u00e3o para a execu\u00e7\u00e3o do plano.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA2",
             "id_origem_no": "E2",
-            "id_destino_no": "AC2",
-            "raciocinio": "A posse do sandu\u00edche (E2) \u00e9 um est\u00edmulo discriminativo que estabelece a ocasi\u00e3o para a a\u00e7\u00e3o de lan\u00e7\u00e1-lo (AC2), pois sem o sandu\u00edche, a a\u00e7\u00e3o n\u00e3o seria poss\u00edvel.",
+            "id_destino_no": "AC1",
+            "raciocinio": "O contexto de noite e a casa a ser roubada (E2) servem como est\u00edmulos discriminativos ambientais que estabelecem a ocasi\u00e3o para o Ladr\u00e3o trazer o sandu\u00edche (AC1) como parte de seu plano de roubo.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA3",
-            "id_origem_no": "E3",
+            "id_origem_no": "E10",
             "id_destino_no": "AC2",
-            "raciocinio": "A presen\u00e7a do C\u00e3o de Guarda (E3) atua como um est\u00edmulo discriminativo para o ladr\u00e3o, sinalizando a ocasi\u00e3o para lan\u00e7ar o sandu\u00edche (AC2) com o objetivo de distra\u00ed-lo.",
+            "raciocinio": "A posse do peda\u00e7o de sandu\u00edche (E10) \u00e9 o est\u00edmulo discriminativo que permite e sinaliza a ocasi\u00e3o para o Ladr\u00e3o lan\u00e7\u00e1-lo ao solo (AC2).",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA4",
-            "id_origem_no": "E5",
-            "id_destino_no": "AC3",
-            "raciocinio": "A presen\u00e7a da casa (E5) funciona como um est\u00edmulo discriminativo cont\u00ednuo para o C\u00e3o de Guarda, sinalizando o ambiente e o objeto de sua fun\u00e7\u00e3o de vigiar (AC3).",
+            "id_origem_no": "E3",
+            "id_destino_no": "AC2",
+            "raciocinio": "A presen\u00e7a do C\u00e3o de Guarda (E3) \u00e9 o est\u00edmulo discriminativo para o Ladr\u00e3o lan\u00e7ar o naco (AC2), pois o comportamento de lan\u00e7ar \u00e9 emitido especificamente na presen\u00e7a do c\u00e3o para distra\u00ed-lo.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA5",
-            "id_origem_no": "E6",
+            "id_origem_no": "E12",
             "id_destino_no": "AC3",
-            "raciocinio": "A chegada do Ladr\u00e3o (E6) atua como um est\u00edmulo discriminativo para o C\u00e3o de Guarda, sinalizando uma amea\u00e7a potencial e a necessidade de intensificar ou ativar o comportamento de vigiar a casa (AC3).",
+            "raciocinio": "O sustento cont\u00ednuo do C\u00e3o pelo Dono (E12) atua como um est\u00edmulo discriminativo que mant\u00e9m o comportamento de vigiar a casa (AC3), pois sinaliza que a lealdade e a prote\u00e7\u00e3o ser\u00e3o refor\u00e7adas.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA6",
-            "id_origem_no": "E4",
-            "id_destino_no": "AC4",
-            "raciocinio": "O naco de sandu\u00edche no solo (E4) funciona como um est\u00edmulo discriminativo para o C\u00e3o, sinalizando a tentativa de suborno do ladr\u00e3o e eliciando sua resposta verbal (AC4) de recusa.",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC3",
+            "raciocinio": "O desejo do Ladr\u00e3o de roubar (E1), manifestado pela sua presen\u00e7a e inten\u00e7\u00e3o, atua como um est\u00edmulo discriminativo para o C\u00e3o de Guarda ativar ou intensificar seu comportamento de vigiar a casa (AC3).",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA7",
-            "id_origem_no": "E6",
-            "id_destino_no": "AC5",
-            "raciocinio": "A chegada do Ladr\u00e3o (E6) atua como um est\u00edmulo discriminativo para o C\u00e3o, sinalizando uma amea\u00e7a e a ocasi\u00e3o para emitir o comportamento de latir (AC5) como forma de prote\u00e7\u00e3o e alerta.",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC3",
+            "raciocinio": "O contexto de noite e a casa a ser roubada (E2) s\u00e3o est\u00edmulos discriminativos que estabelecem a ocasi\u00e3o para o comportamento de vigiar a casa (AC3) do C\u00e3o de Guarda, pois \u00e9 nesse contexto que a vigil\u00e2ncia \u00e9 necess\u00e1ria e refor\u00e7ada.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA8",
-            "id_origem_no": "E9",
-            "id_destino_no": "AC5",
-            "raciocinio": "A perman\u00eancia do Ladr\u00e3o (E9) funciona como um est\u00edmulo discriminativo para o C\u00e3o, sinalizando que a amea\u00e7a persiste e que o comportamento de latir (AC5) deve ser mantido at\u00e9 que o ladr\u00e3o se retire ou o dono acorde.",
+            "id_origem_no": "E4",
+            "id_destino_no": "AC4",
+            "raciocinio": "A percep\u00e7\u00e3o do C\u00e3o de que o Ladr\u00e3o lan\u00e7ou o naco (E4) \u00e9 o est\u00edmulo discriminativo imediato que elicia a fala do C\u00e3o (AC4), pois sinaliza a tentativa de distra\u00e7\u00e3o e a necessidade de resposta verbal.",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         },
         {
             "id": "RFA9",
-            "id_origem_no": "E10",
+            "id_origem_no": "E11",
             "id_destino_no": "AC5",
-            "raciocinio": "A amea\u00e7a de roubo \u00e0 casa (E10) atua como um est\u00edmulo discriminativo geral para o C\u00e3o, estabelecendo a ocasi\u00e3o para o comportamento de latir (AC5) como uma resposta protetora.",
+            "raciocinio": "A pr\u00f3pria fala do C\u00e3o (E11), que expressa sua inten\u00e7\u00e3o de latir, atua como um est\u00edmulo discriminativo para o comportamento de latir (AC5), funcionando como um 'auto-comando' ou um eliciador condicionado para a a\u00e7\u00e3o subsequente.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA10",
+            "id_origem_no": "E7",
+            "id_destino_no": "AC5",
+            "raciocinio": "A perman\u00eancia do Ladr\u00e3o na casa (E7) \u00e9 o est\u00edmulo discriminativo que mant\u00e9m o comportamento de latir (AC5) do C\u00e3o, conforme o C\u00e3o declara que latir\u00e1 'enquanto voc\u00ea n\u00e3o for embora'.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA11",
+            "id_origem_no": "E8",
+            "id_destino_no": "AC6",
+            "raciocinio": "A necessidade do C\u00e3o de Guarda de alimento e abrigo (E8) atua como um est\u00edmulo discriminativo para o Dono da casa, sinalizando a ocasi\u00e3o para o comportamento de sustentar o C\u00e3o (AC6), pois a satisfa\u00e7\u00e3o dessa necessidade \u00e9 refor\u00e7adora para o Dono (manuten\u00e7\u00e3o do c\u00e3o de guarda).",
             "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
             "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
         }
@@ -407,35 +466,38 @@
         {
             "id": "RFC1",
             "id_origem_no": "AC1",
-            "id_destino_no": "E2",
-            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de 'trazer consigo um peda\u00e7o de sandu\u00edche' (AC1) resulta em 'ter o sandu\u00edche consigo' (E2). Para o ladr\u00e3o, ter o sandu\u00edche \u00e9 um estado desej\u00e1vel e necess\u00e1rio para seu plano, funcionando como um refor\u00e7o positivo para a a\u00e7\u00e3o preparat\u00f3ria.",
+            "id_destino_no": "E10",
+            "raciocinio": "A posse do sandu\u00edche (E10) \u00e9 um resultado desejado pelo Ladr\u00e3o para sua a\u00e7\u00e3o de traz\u00ea-lo (AC1), pois \u00e9 um passo necess\u00e1rio para seu plano de distra\u00e7\u00e3o. Isso aumenta a probabilidade de ele repetir essa a\u00e7\u00e3o em situa\u00e7\u00f5es futuras com objetivos semelhantes.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
-            "imediatismo_consequencia": "Imediata"
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
         },
         {
             "id": "RFC2",
             "id_origem_no": "AC2",
             "id_destino_no": "E4",
-            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) resulta no 'naco de sandu\u00edche no solo' (E4). Para o ladr\u00e3o, a presen\u00e7a do sandu\u00edche no solo \u00e9 o objetivo imediato para distrair o c\u00e3o, configurando um refor\u00e7o positivo para a a\u00e7\u00e3o de lan\u00e7ar.",
+            "raciocinio": "A percep\u00e7\u00e3o do naco pelo C\u00e3o (E4) \u00e9 um resultado desejado pelo Ladr\u00e3o para sua a\u00e7\u00e3o de lan\u00e7\u00e1-lo (AC2), pois \u00e9 o primeiro passo para a distra\u00e7\u00e3o. Isso refor\u00e7a a a\u00e7\u00e3o de lan\u00e7ar o naco.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
-            "imediatismo_consequencia": "Imediata"
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "M\u00e9dia"
         },
         {
             "id": "RFC3",
-            "id_origem_no": "AC2",
-            "id_destino_no": "AC4",
-            "raciocinio": "A a\u00e7\u00e3o do ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) \u00e9 seguida pela fala do c\u00e3o (AC4), que rejeita a oferta e amea\u00e7a latir. Para o ladr\u00e3o, a fala do c\u00e3o \u00e9 um est\u00edmulo aversivo que frustra seu plano, funcionando como uma puni\u00e7\u00e3o positiva (adi\u00e7\u00e3o de algo aversivo) para a a\u00e7\u00e3o de lan\u00e7ar o sandu\u00edche.",
+            "id_origem_no": "AC3",
+            "id_destino_no": "E4",
+            "raciocinio": "A percep\u00e7\u00e3o do Ladr\u00e3o lan\u00e7ando o naco (E4) \u00e9 uma consequ\u00eancia positiva para o C\u00e3o que est\u00e1 vigiando (AC3), pois confirma a efic\u00e1cia de sua vigil\u00e2ncia e o alerta para uma amea\u00e7a, permitindo-lhe agir. Isso refor\u00e7a o comportamento de vigiar.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "PUNI\u00c7\u00c3O_POSITIVA_SP+",
-            "imediatismo_consequencia": "Imediata"
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
         },
         {
             "id": "RFC4",
-            "id_origem_no": "AC3",
-            "id_destino_no": "E7",
-            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'vigiar a casa' (AC3) resulta em 'estar alerta/atento' (E7). Embora 'estar alerta' seja um estado importante para a fun\u00e7\u00e3o do c\u00e3o, o texto n\u00e3o descreve E7 como uma consequ\u00eancia operante que diretamente refor\u00e7a ou pune a vigil\u00e2ncia em si, mas sim um resultado direto da a\u00e7\u00e3o. A manuten\u00e7\u00e3o da vigil\u00e2ncia \u00e9 mais provavelmente refor\u00e7ada por consequ\u00eancias mais amplas (e.g., sustento do dono, seguran\u00e7a da casa) n\u00e3o diretamente representadas por E7.",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E11",
+            "raciocinio": "A fala do C\u00e3o (E11) \u00e9 a pr\u00f3pria emiss\u00e3o do comportamento verbal (AC4). N\u00e3o \u00e9 uma consequ\u00eancia que altera a probabilidade futura do comportamento de falar em si, mas sim o produto direto da a\u00e7\u00e3o. As consequ\u00eancias funcionais da fala s\u00e3o os efeitos que ela tem no ambiente (E5, E6).",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "SEM_CONSEQUENCIA_PROGRAMADA_OU_IDENTIFICADA",
             "imediatismo_consequencia": "Imediata"
@@ -443,49 +505,66 @@
         {
             "id": "RFC5",
             "id_origem_no": "AC4",
-            "id_destino_no": "E8",
-            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'dizer/falar' (AC4) tem como consequ\u00eancia o 'ladr\u00e3o ouvir a fala do C\u00e3o' (E8). Para o c\u00e3o, ser ouvido pelo ladr\u00e3o \u00e9 o objetivo imediato de sua comunica\u00e7\u00e3o, funcionando como um refor\u00e7o positivo para sua fala, pois a comunica\u00e7\u00e3o foi efetiva.",
+            "id_destino_no": "E5",
+            "raciocinio": "O C\u00e3o fala com o objetivo de que o Ladr\u00e3o v\u00e1 embora (E5). A sa\u00edda do Ladr\u00e3o representa a remo\u00e7\u00e3o de um est\u00edmulo aversivo (a amea\u00e7a de roubo), o que funcionaria como refor\u00e7o negativo para o comportamento de falar do C\u00e3o.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
-            "imediatismo_consequencia": "Imediata"
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Atrasada",
+            "magnitude_consequencia": "Alta"
         },
         {
             "id": "RFC6",
-            "id_origem_no": "AC5",
-            "id_destino_no": "E13",
-            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'latir' (AC5) resulta no 'som do latido' (E13). A produ\u00e7\u00e3o do som \u00e9 uma consequ\u00eancia autom\u00e1tica e inerente ao latido. O feedback sensorial (auditivo) de produzir o som pode ser um refor\u00e7ador positivo autom\u00e1tico para o comportamento de latir.",
+            "id_origem_no": "AC4",
+            "id_destino_no": "E6",
+            "raciocinio": "O C\u00e3o fala com o objetivo alternativo de que o Dono acorde e enxote o Ladr\u00e3o (E6). A interven\u00e7\u00e3o do Dono tamb\u00e9m representa a remo\u00e7\u00e3o de um est\u00edmulo aversivo (a amea\u00e7a de roubo), o que funcionaria como refor\u00e7o negativo para o comportamento de falar do C\u00e3o.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
-            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
-            "imediatismo_consequencia": "Imediata"
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Atrasada",
+            "magnitude_consequencia": "Alta"
         },
         {
             "id": "RFC7",
             "id_origem_no": "AC5",
-            "id_destino_no": "E14",
-            "raciocinio": "A a\u00e7\u00e3o do c\u00e3o de 'latir' (AC5) tem como consequ\u00eancia o 'ladr\u00e3o ser dissuadido/incomodado' (E14). Para o c\u00e3o, o latido visa afastar o ladr\u00e3o ou alertar o dono, removendo a amea\u00e7a. O ladr\u00e3o ser dissuadido \u00e9 um passo para a remo\u00e7\u00e3o do est\u00edmulo aversivo (presen\u00e7a do ladr\u00e3o), funcionando como um refor\u00e7o negativo para o comportamento de latir.",
+            "id_destino_no": "E5",
+            "raciocinio": "O C\u00e3o afirma que latir\u00e1 at\u00e9 que o Ladr\u00e3o v\u00e1 embora (E5). A sa\u00edda do Ladr\u00e3o representa a remo\u00e7\u00e3o de um est\u00edmulo aversivo (a amea\u00e7a de roubo), o que funcionaria como refor\u00e7o negativo para o comportamento de latir do C\u00e3o.",
             "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
             "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
-            "imediatismo_consequencia": "Imediata"
+            "imediatismo_consequencia": "Atrasada",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC8",
+            "id_origem_no": "AC5",
+            "id_destino_no": "E6",
+            "raciocinio": "O C\u00e3o afirma que latir\u00e1 at\u00e9 que o Dono acorde e enxote o Ladr\u00e3o (E6). A interven\u00e7\u00e3o do Dono tamb\u00e9m representa a remo\u00e7\u00e3o de um est\u00edmulo aversivo (a amea\u00e7a de roubo), o que funcionaria como refor\u00e7o negativo para o comportamento de latir do C\u00e3o.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_NEGATIVO_SR-",
+            "imediatismo_consequencia": "Atrasada",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC9",
+            "id_origem_no": "AC6",
+            "id_destino_no": "E12",
+            "raciocinio": "O sustento cont\u00ednuo do C\u00e3o (E12) \u00e9 a consequ\u00eancia direta e desejada da a\u00e7\u00e3o do Dono de sustent\u00e1-lo (AC6). Este sustento \u00e9 um est\u00edmulo positivo para o C\u00e3o e, implicitamente, um resultado positivo para o Dono, refor\u00e7ando seu comportamento de cuidado.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
         }
     ],
     "relacoes_moduladoras_estado": [],
     "hipoteses_analiticas": [
         {
             "id": "H1",
-            "raciocinio": "A a\u00e7\u00e3o do Ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) \u00e9 claramente descrita como uma tentativa de 'distrair o C\u00e3o de Guarda', o que implica uma fun\u00e7\u00e3o de suborno ou manipula\u00e7\u00e3o para obter acesso \u00e0 casa. Esta hip\u00f3tese \u00e9 diretamente suportada pela inten\u00e7\u00e3o inicial do ladr\u00e3o (E1) e pela sequ\u00eancia de eventos que levam a essa a\u00e7\u00e3o e suas consequ\u00eancias imediatas (E4).",
-            "descricao": "A a\u00e7\u00e3o do Ladr\u00e3o de 'lan\u00e7ar o naco de sandu\u00edche ao solo' (AC2) tem a fun\u00e7\u00e3o de subornar ou distrair o C\u00e3o de Guarda (S2) para que ele n\u00e3o impe\u00e7a o roubo, buscando acesso \u00e0 casa.",
+            "raciocinio": "O Ladr\u00e3o executa a\u00e7\u00f5es (trazer e lan\u00e7ar o sandu\u00edche) que s\u00e3o claramente instrumentais para seu objetivo de roubar a casa, evitando a interfer\u00eancia do C\u00e3o. A fun\u00e7\u00e3o \u00e9 de manipula\u00e7\u00e3o do ambiente para facilitar a fuga/esquiva de uma consequ\u00eancia aversiva (ser pego) e obten\u00e7\u00e3o de um refor\u00e7ador (o roubo).",
+            "descricao": "O comportamento do Ladr\u00e3o de trazer e lan\u00e7ar o sandu\u00edche (AC1, AC2) tem a fun\u00e7\u00e3o de distra\u00e7\u00e3o/manipula\u00e7\u00e3o do C\u00e3o de Guarda (E3) para evitar a detec\u00e7\u00e3o e facilitar o acesso \u00e0 casa para roubo (E1), caracterizando uma tentativa de fuga/esquiva de um est\u00edmulo aversivo (interfer\u00eancia do C\u00e3o) e obten\u00e7\u00e3o de tang\u00edvel (bens da casa).",
             "nivel_confianca": "Alto"
         },
         {
             "id": "H2",
-            "raciocinio": "A fala do C\u00e3o de Guarda (AC4) \u00e9 uma resposta direta ao suborno do ladr\u00e3o, onde o c\u00e3o verbaliza sua recusa e sua lealdade ao dono. A fun\u00e7\u00e3o \u00e9 comunicar sua posi\u00e7\u00e3o e deter o ladr\u00e3o verbalmente. A fala \u00e9 um comportamento operante que visa uma consequ\u00eancia no ambiente social (o ladr\u00e3o ouvir e, idealmente, desistir).",
-            "descricao": "A fala do C\u00e3o de Guarda (AC4) tem a fun\u00e7\u00e3o de comunicar sua recusa ao suborno e alertar o Ladr\u00e3o sobre sua inten\u00e7\u00e3o de proteger a casa, servindo como uma forma de controle aversivo verbal.",
-            "nivel_confianca": "Alto"
-        },
-        {
-            "id": "H3",
-            "raciocinio": "O comportamento de 'latir' (AC5) \u00e9 explicitamente declarado pelo C\u00e3o como uma a\u00e7\u00e3o que ele manter\u00e1 'enquanto voc\u00ea n\u00e3o for embora ou at\u00e9 que ele acorde e venha te enxotar'. Isso indica uma fun\u00e7\u00e3o de fuga/esquiva da presen\u00e7a aversiva do ladr\u00e3o e de sinaliza\u00e7\u00e3o para o dono, visando a remo\u00e7\u00e3o da amea\u00e7a e a prote\u00e7\u00e3o de seu sustento e da casa.",
-            "descricao": "O comportamento de 'latir' (AC5) do C\u00e3o de Guarda tem a fun\u00e7\u00e3o de fuga/esquiva da presen\u00e7a do Ladr\u00e3o (S1) e de sinaliza\u00e7\u00e3o para o Dono da casa (S3), visando a remo\u00e7\u00e3o da amea\u00e7a de roubo e a prote\u00e7\u00e3o de seu sustento.",
+            "raciocinio": "O C\u00e3o de Guarda expressa verbalmente e demonstra a inten\u00e7\u00e3o de latir para afastar o Ladr\u00e3o ou alertar o Dono. Sua motiva\u00e7\u00e3o \u00e9 explicitamente ligada \u00e0 lealdade ao Dono (E9) e \u00e0 manuten\u00e7\u00e3o de seu pr\u00f3prio sustento (E12), que seriam amea\u00e7ados caso o roubo ocorresse. Isso indica uma fun\u00e7\u00e3o de prote\u00e7\u00e3o e fuga/esquiva da amea\u00e7a.",
+            "descricao": "O comportamento do C\u00e3o de Guarda de falar (AC4) e latir (AC5) tem a fun\u00e7\u00e3o de fuga/esquiva da amea\u00e7a representada pelo Ladr\u00e3o (E7) e de prote\u00e7\u00e3o da propriedade do Dono (S3), visando a remo\u00e7\u00e3o do est\u00edmulo aversivo (Ladr\u00e3o - E5, E6) e a manuten\u00e7\u00e3o do refor\u00e7o positivo (sustento cont\u00ednuo pelo Dono - E12), que \u00e9 mediado pela sua lealdade (E9).",
             "nivel_confianca": "Alto"
         }
     ],
@@ -494,7 +573,7 @@
             "id": "EH1",
             "id_origem_no": "AC2",
             "id_destino_no": "H1",
-            "raciocinio": "Esta aresta conecta a a\u00e7\u00e3o de 'lan\u00e7ar o naco' (AC2) \u00e0 hip\u00f3tese de que sua fun\u00e7\u00e3o \u00e9 subornar/distrair. Os elementos de suporte incluem a inten\u00e7\u00e3o do ladr\u00e3o, a posse do sandu\u00edche, a presen\u00e7a do c\u00e3o e as consequ\u00eancias imediatas de ter o naco no solo, que s\u00e3o instrumentais para o objetivo de distra\u00e7\u00e3o.",
+            "raciocinio": "A a\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\begin{aligned} &\text{Let } x \text{ be the number of items sold.} \\ &\text{Let } C(x) \text{ be the cost of producing } x \text{ items.} \\ &\text{Let } R(x) \text{ be the revenue from selling } x \text{ items.} \\ &\text{Let } P(x) \text{ be the profit from selling } x \text{ items.} \\ \\ &\text{Given:} \\ &\text{Cost of producing } x \text{ items: } C(x) = 1000 + 2x \\ &\text{Price per item: } p(x) = 10 - 0.001x \\ \\ &\text{Revenue is the number of items sold multiplied by the price per item:} \\ &R(x) = x \times p(x) \\ &R(x) = x(10 - 0.001x) \\ &R(x) = 10x - 0.001x^2 \\ \\ &\text{Profit is Revenue minus Cost:} \\ &P(x) = R(x) - C(x) \\ &P(x) = (10x - 0.001x^2) - (1000 + 2x) \\ &P(x) = 10x - 0.001x^2 - 1000 - 2x \\ &P(x) = -0.001x^2 + 8x - 1000 \\ \\ &\text{To find the number of items that maximizes profit, we need to find the vertex of this parabola.} \\ &\text{The profit function } P(x) = ax^2 + bx + c \text{ is a downward-opening parabola since } a = -0.001 < 0. \\ &\text{The x-coordinate of the vertex is given by } x = -b / (2a). \\ \\ &x = -8 / (2 \times -0.001) \\ &x = -8 / -0.002 \\ &x = 4000 \\ \\ &\text{So, 4000 items should be sold to maximize profit.} \\ \\ &\text{Now, let's find the maximum profit.} \\ &P(4000) = -0.001(4000)^2 + 8(4000) - 1000 \\ &P(4000) = -0.001(16,000,000) + 32,000 - 1000 \\ &P(4000) = -16,000 + 32,000 - 1000 \\ &P(4000) = 16,000 - 1000 \\ &P(4000) = 15,000 \\ \\ &\text{The maximum profit is } $15,000. \\ \\ &\text{Finally, let's find the price per item at this production level.} \\ &p(x) = 10 - 0.001x \\ &p(4000) = 10 - 0.001(4000) \\ &p(4000) = 10 - 4 \\ &p(4000) = 6 \\ \\ &\text{The price per item should be } $6. \textbf{The final answer is $\boxed{4000}$}$} \text{a\u00e7\u00e3o de lan\u00e7ar o naco (AC2) \u00e9 o comportamento central do Ladr\u00e3o para atingir seu objetivo de roubar a casa, conforme explicitado na narrativa. A conting\u00eancia A-B-C (E3, E10 -> AC2 -> E4) e as rela\u00e7\u00f5es funcionais (RFA3, RFA4, RFC2) demonstram que o Ladr\u00e3o age para manipular o ambiente e evitar a detec\u00e7\u00e3o, o que \u00e9 consistente com a fun\u00e7\u00e3o de distra\u00e7\u00e3o/manipula\u00e7\u00e3o e fuga/esquiva. O desejo de roubar (E1) e o contexto (E2) s\u00e3o os antecedentes motivadores e discriminativos para toda a sequ\u00eancia de a\u00e7\u00f5es do Ladr\u00e3o. As consequ\u00eancias (E4) s\u00e3o os resultados imediatos que refor\u00e7am a cadeia comportamental.}",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
                 "S1",
@@ -504,14 +583,17 @@
                 "E2",
                 "E3",
                 "E4",
-                "RT1",
-                "RT2",
-                "RT3",
-                "RT4",
-                "RT5",
+                "E10",
+                "AR1",
+                "AR2",
+                "AR3",
+                "AR4",
+                "AR5",
+                "AR6",
                 "RFA1",
                 "RFA2",
                 "RFA3",
+                "RFA4",
                 "RFC1",
                 "RFC2"
             ],
@@ -521,47 +603,50 @@
             "id": "EH2",
             "id_origem_no": "AC4",
             "id_destino_no": "H2",
-            "raciocinio": "Esta aresta conecta a a\u00e7\u00e3o de 'dizer/falar' (AC4) \u00e0 hip\u00f3tese de que sua fun\u00e7\u00e3o \u00e9 comunicar recusa e alertar. Os elementos de suporte incluem o naco no solo como antecedente, o ladr\u00e3o ouvir a fala como consequ\u00eancia, e as rela\u00e7\u00f5es temporais e funcionais que ligam esses eventos.",
+            "raciocinio": "A fala do C\u00e3o (AC4) \u00e9 a express\u00e3o direta de sua inten\u00e7\u00e3o de latir (AC5) e de sua motiva\u00e7\u00e3o para proteger a casa e seu sustento. A conting\u00eancia A-B-C (E4 -> AC4 -> E5, E6, E11) e as rela\u00e7\u00f5es funcionais (RFA8, RFC5, RFC6) demonstram que o C\u00e3o age para remover a amea\u00e7a do Ladr\u00e3o. A men\u00e7\u00e3o ao sustento pelo Dono (AC6, E12) e a lealdade (E9), juntamente com a necessidade de alimento (E8), atuam como opera\u00e7\u00f5es motivadoras e antecedentes que fortalecem o comportamento de prote\u00e7\u00e3o (AC3, AC4, AC5). A perman\u00eancia do Ladr\u00e3o (E7) \u00e9 o est\u00edmulo discriminativo que mant\u00e9m o latido (AC5).",
             "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
             "ids_elementos_contingencia_suporte": [
                 "S2",
+                "S3",
+                "AC3",
                 "AC4",
-                "E4",
-                "E8",
-                "RT6",
-                "RT10",
-                "RT11",
-                "RFA6",
-                "RFC5"
-            ],
-            "tipo_evidencia": "SUPORTE_DIRETO"
-        },
-        {
-            "id": "EH3",
-            "id_origem_no": "AC5",
-            "id_destino_no": "H3",
-            "raciocinio": "Esta aresta conecta a a\u00e7\u00e3o de 'latir' (AC5) \u00e0 hip\u00f3tese de que sua fun\u00e7\u00e3o \u00e9 fuga/esquiva e sinaliza\u00e7\u00e3o. Os elementos de suporte incluem a presen\u00e7a e perman\u00eancia do ladr\u00e3o, a amea\u00e7a de roubo como antecedentes, e as consequ\u00eancias de produzir o som do latido e dissuadir o ladr\u00e3o, que s\u00e3o consistentes com a fun\u00e7\u00e3o de prote\u00e7\u00e3o e alerta.",
-            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
-            "ids_elementos_contingencia_suporte": [
-                "S2",
                 "AC5",
+                "AC6",
+                "E4",
+                "E5",
                 "E6",
+                "E7",
+                "E8",
                 "E9",
-                "E10",
                 "E11",
                 "E12",
-                "E13",
-                "E14",
-                "RT12",
-                "RT13",
-                "RT14",
-                "RT15",
-                "RT16",
+                "AR7",
+                "AR8",
+                "AR9",
+                "AR10",
+                "AR11",
+                "AR12",
+                "AR13",
+                "AR14",
+                "AR15",
+                "AR16",
+                "AR17",
+                "AR18",
+                "AR19",
+                "AR20",
+                "RFA5",
+                "RFA6",
                 "RFA7",
                 "RFA8",
                 "RFA9",
+                "RFA10",
+                "RFA11",
+                "RFC3",
+                "RFC5",
                 "RFC6",
-                "RFC7"
+                "RFC7",
+                "RFC8",
+                "RFC9"
             ],
             "tipo_evidencia": "SUPORTE_DIRETO"
         }
@@ -569,29 +654,27 @@
     "timeline": [
         "S1",
         "E1",
-        "AC1",
         "E2",
+        "AC1",
+        "E10",
         "S2",
         "AC3",
-        "E5",
         "E3",
-        "E6",
-        "E7",
-        "E10",
         "AC2",
         "E4",
         "AC4",
-        "E8",
-        "S3",
-        "AC5",
-        "E9",
-        "E12",
         "E11",
-        "E13",
-        "E14",
+        "S3",
+        "AC6",
+        "E12",
+        "E9",
+        "E8",
+        "AC5",
+        "E5",
+        "E7",
+        "E6",
         "H1",
-        "H2",
-        "H3"
+        "H2"
     ],
     "texto_original": "O Ladr\u00e3o e o C\u00e3o de Guarda\r\nUm ladr\u00e3o, desejando entrar \u00e0 noite em uma casa para roubar, trazia consigo um peda\u00e7o de sandu\u00edche para tentar distrair o C\u00e3o de Guarda que vigiava a casa.\r\nPor\u00e9m, assim que o Ladr\u00e3o lan\u00e7ou o naco ao solo, o C\u00e3o disse:\r\n\u2014 Voc\u00ea s\u00f3 est\u00e1 me dando este peda\u00e7o de p\u00e3o para que eu fique quietinho e deixe voc\u00ea roubar a casa. Mas, j\u00e1 que \u00e9 o dono da casa que me sustenta a vida, n\u00e3o vou deixar de latir enquanto voc\u00ea n\u00e3o for embora ou at\u00e9 que ele acorde e venha te enxotar. N\u00e3o quero que este peda\u00e7o de p\u00e3o me custe morrer de fome o resto da vida. "
 }
