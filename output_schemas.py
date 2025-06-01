@@ -1,10 +1,8 @@
-from typing import List, Optional, Union, Literal, Dict, Any, cast
-from pydantic import BaseModel, Field, ValidationError # type: ignore
+from typing import List, Optional, Union, Literal
+from pydantic import BaseModel, Field  # type: ignore
 from enum import Enum # Corrigido de pydantic.types import Enum
-import datetime
 
 # --- Enumerações para Tipos (Pydantic Models) ---
-
 class TipoEstimuloEventoFisico(str, Enum):
     SOCIAL = "Social"
     NAO_SOCIAL = "Não-Social"
@@ -120,7 +118,6 @@ class FonteDadosEvidencia(str, Enum):
     ANALISE_FUNCIONAL_EXPERIMENTAL = "Análise Funcional Experimental"
 
 # --- Modelos de Nós ---
-
 class NoBase(BaseModel):
     id: str
     raciocinio:str = Field(..., description="A lógica que justifica a inserção do nó e sua relevância pra análise.")
@@ -210,3 +207,48 @@ class RedeContingencialOutput(BaseModel):
 
     timeline:List[str] = Field(default_factory=str)
     # analise_metadados: Optional[Dict[str, Any]] = Field(None, description="Metadados sobre a análise, e.g., ID da análise, data, nome do analista (LLM).")
+
+# --- Pydantic Schemas para Saídas de Etapas Específicas ---
+# Estes modelos definem o que esperamos que a API retorne para cada etapa modular.
+
+class BaseEtapa(BaseModel):
+    raciocinio: str = Field(..., description='Reflita sobre o que precisará fazer para completar essa etapa, frente ao contexto atual. Então descreva passo a passo seu raciocínio para executar a etapa da forma mais completa.')
+
+class OutputEtapaSujeitos(BaseEtapa):
+    sujeitos: List[NoSujeito] = Field(default_factory=list)
+
+class OutputEtapaAcoes(BaseEtapa):
+    acoes_comportamentos: List[NoAcaoComportamento] = Field(default_factory=list)
+    emissoes_comportamentais: List[ArestaEmissaoComportamental] = Field(default_factory=list)
+
+class OutputEtapaEventosTemporais(BaseEtapa):
+    estimulos_eventos: List[NoEstimuloEvento] = Field(default_factory=list)
+    relacoes_temporais: List[ArestaRelacaoTemporal] = Field(default_factory=list)
+
+class OutputEtapaFuncionaisAntecedentes(BaseEtapa):
+    relacoes_funcionais_antecedentes: List[ArestaRelacaoFuncionalAntecedente] = Field(default_factory=list)
+    # A API pode sugerir atualizações em nós existentes, mas a fusão é feita no Python
+    estimulos_eventos_atualizados: Optional[List[NoEstimuloEvento]] = Field(default_factory=list)
+    acoes_comportamentos_atualizados: Optional[List[NoAcaoComportamento]] = Field(default_factory=list)
+
+class OutputEtapaFuncionaisConsequentes(BaseEtapa):
+    relacoes_funcionais_consequentes: List[ArestaRelacaoFuncionalConsequente] = Field(default_factory=list)
+    estimulos_eventos_atualizados: Optional[List[NoEstimuloEvento]] = Field(default_factory=list)
+    acoes_comportamentos_atualizados: Optional[List[NoAcaoComportamento]] = Field(default_factory=list)
+
+class OutputEtapaCondicoesEstado(BaseEtapa):
+    condicoes_estados: List[NoCondicaoEstado] = Field(default_factory=list)
+
+class OutputEtapaRelacoesModuladoras(BaseEtapa):
+    relacoes_moduladoras_estado: List[ArestaRelacaoModuladoraEstado] = Field(default_factory=list)
+    # A API pode sugerir atualizações em nós existentes
+    condicoes_estados_atualizadas: Optional[List[NoCondicaoEstado]] = Field(default_factory=list)
+    estimulos_eventos_atualizados: Optional[List[NoEstimuloEvento]] = Field(default_factory=list)
+    acoes_comportamentos_atualizados: Optional[List[NoAcaoComportamento]] = Field(default_factory=list)
+
+class OutputEtapaHipoteses(BaseEtapa):
+    hipoteses_analiticas: List[NoHipoteseAnalitica] = Field(default_factory=list)
+    evidencias_para_hipoteses: List[ArestaEvidenciaParaHipotese] = Field(default_factory=list)
+    
+class OutputEtapaTimeline(BaseEtapa):
+    timeline: List[str] = Field(description='Lista das IDs de todos os Nós por ordem de aparição no texto narrativo.' ,default_factory=list)

@@ -1,3 +1,58 @@
+from typing import List, Optional, Dict, Any, Type
+from pydantic import BaseModel, ValidationError # Added ValidationError
+import logging
+
+logger = logging.getLogger(__name__)
+
+def _get_id(element: BaseModel) -> Optional[str]:
+    """Retorna o valor do campo ID do elemento Pydantic, se existir."""
+    for field_name in ["id_sujeito", "id_acao", "id_estimulo_evento", "id_condicao_estado", "id_hipotese", "id"]:
+        if hasattr(element, field_name):
+            return getattr(element, field_name)
+    return None
+
+def _merge_element_list(
+    existing_elements: List[BaseModel],
+    new_elements_data: Optional[List[Dict[str, Any]]],
+    element_model: Type[BaseModel]
+) -> List[BaseModel]:
+    """
+    Mescla uma lista de novos elementos (como dicts da API) em uma lista existente de elementos Pydantic.
+    Atualiza elementos existentes pelo ID ou adiciona novos.
+    """
+    if new_elements_data is None:
+        return existing_elements
+
+    updated_elements = list(existing_elements) # Trabalha com uma cópia
+    existing_ids_map = { _get_id(el): i for i, el in enumerate(updated_elements) if _get_id(el) is not None}
+
+    for data in new_elements_data:
+        try:
+            new_element = element_model(**data)
+            element_id = _get_id(new_element)
+
+            if element_id is not None and element_id in existing_ids_map:
+                # Atualiza o elemento existente
+                index = existing_ids_map[element_id]
+                updated_elements[index] = new_element
+                logger.debug(f"Elemento '{element_id}' ({element_model.__name__}) atualizado.")
+            elif element_id is not None:
+                # Adiciona novo elemento se o ID não existir (ou se não tiver ID, apenas adiciona)
+                updated_elements.append(new_element)
+                existing_ids_map[element_id] = len(updated_elements) -1 # Atualiza o mapa
+                logger.debug(f"Elemento '{element_id}' ({element_model.__name__}) adicionado.")
+            else: # Elemento sem ID, apenas adiciona (menos comum para nós principais)
+                updated_elements.append(new_element)
+                logger.debug(f"Elemento sem ID ({element_model.__name__}) adicionado.")
+        except ValidationError as e:
+            logger.warning(f"Erro de validação ao processar {element_model.__name__} com dados {data}: {e}")
+        except Exception as e:
+            logger.error(f"Erro inesperado ao mesclar {element_model.__name__} com dados {data}: {e}")
+
+
+    return updated_elements
+
+
 def transformar_para_vis(json_data: dict):
     """
     Transforma o JSON da análise em um formato compatível com Vis.js (nodes e edges).
