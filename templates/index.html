@@ -47,7 +47,8 @@
                 
                 <form action="/analise" method="POST">
                     <div class="mb-3">
-                        <textarea class="form-control mb-1" name="texto_entrada" rows="10" cols="80" placeholder="Insira aqui o texto que servirá de base para a análise funcional."></textarea>
+                        <textarea class="form-control mb-1" name="texto_entrada" rows="10" cols="80" placeholder="Insira aqui o texto que servirá de base para a análise funcional." maxlength="2000"></textarea>
+                        <div id="charCountIndex" class="text-end text-muted">0/2000 caracteres</div>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto mb-3 ">
                         <button type="submit" class="btn btn-primary">Analisar Texto</button>
@@ -79,6 +80,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Lógica para o contador de caracteres no textarea
+        const analysisTextareaIndex = document.querySelector('textarea[name="texto_entrada"]');
+        const charCountIndex = document.getElementById('charCountIndex');
+        const maxLengthIndex = analysisTextareaIndex.getAttribute('maxlength');
+
+        function updateCharCountIndex() {
+            const currentLength = analysisTextareaIndex.value.length;
+            charCountIndex.innerText = `${currentLength}/${maxLengthIndex} caracteres`;
+        }
+
+        analysisTextareaIndex.addEventListener('input', updateCharCountIndex);
+
+        // Inicializa o contador ao carregar a página
+        document.addEventListener('DOMContentLoaded', updateCharCountIndex);
+
         document.querySelector('form').addEventListener('submit', function() {
             document.getElementById('loadingOverlay').classList.add('visible');
         });
