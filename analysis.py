@@ -2,7 +2,7 @@
 from output_schemas import RedeContingencialOutput
 from typing import List, Optional, Dict, Any, Type, Union, cast
 from dotenv import load_dotenv
-from google import genai
+from google.genai import Client # NÃO MODIFICAR / DO NOT MODIFY
 import logging
 import json
 import os
@@ -56,7 +56,7 @@ from llm_inference import _make_api_call
 def extrair_sujeitos(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando Etapa: Extração de Sujeitos")
     foco_da_etapa = FOCO_ETAPA_SUJEITOS
@@ -80,7 +80,7 @@ def extrair_sujeitos(
 def extrair_acoes_comportamentos(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando Etapa: Extração de Ações e Emissões Comportamentais")
     foco_da_etapa = FOCO_ETAPA_ACOES
@@ -112,7 +112,7 @@ def extrair_acoes_comportamentos(
 def extrair_eventos_ambientais_e_relacoes_temporais(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando: Extração de Eventos Ambientais e Relações Temporais")
     foco_da_etapa = FOCO_ETAPA_EVENTOS_TEMPORAIS
@@ -144,7 +144,7 @@ def extrair_eventos_ambientais_e_relacoes_temporais(
 def inferir_relacoes_funcionais_antecedentes(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando: Inferência de Relações Funcionais Antecedentes")
     foco_da_etapa = FOCO_ETAPA_FUNCIONAIS_ANTECEDENTES
@@ -192,7 +192,7 @@ def inferir_relacoes_funcionais_antecedentes(
 def inferir_relacoes_funcionais_consequentes(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando: Inferência de Relações Funcionais Consequentes")
     foco_da_etapa = FOCO_ETAPA_FUNCIONAIS_CONSEQUENTES
@@ -239,7 +239,7 @@ def inferir_relacoes_funcionais_consequentes(
 def identificar_condicoes_estado(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando: Identificação de Condições/Estado")
     foco_da_etapa = FOCO_ETAPA_CONDICOES_ESTADO
@@ -273,7 +273,7 @@ def identificar_condicoes_estado(
 def estabelecer_relacoes_moduladoras_estado(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando: Estabelecimento de Relações Moduladoras de Estado")
     foco_da_etapa = FOCO_ETAPA_RELACOES_MODULADORAS
@@ -318,7 +318,7 @@ def estabelecer_relacoes_moduladoras_estado(
 def formular_hipoteses_analiticas_e_evidencias(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando: Formulação de Hipóteses Analíticas e Evidências")
     foco_da_etapa = FOCO_ETAPA_HIPOTESES
@@ -355,7 +355,7 @@ def formular_hipoteses_analiticas_e_evidencias(
 def ordenar_timeline(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client,
+    client_model: Client,
 ) -> RedeContingencialOutput:
     logger.info("Iniciando: Ordenação da Timeline")
     foco_da_etapa = FOCO_ETAPA_TIMELINE
@@ -416,7 +416,7 @@ def analisar(
         return None
 
     try:
-        client_model = genai.Client(api_key=api_key) # Modelo é instanciado aqui
+        client_model = Client(api_key=api_key) # Modelo é instanciado aqui
     except Exception as e:
         logger.error(f"Falha ao inicializar o modelo Gemini: {e}", exc_info=True)
         print(f"Erro ao inicializar o modelo Gemini: {e}")
