@@ -14,7 +14,24 @@ os.makedirs(examples_dir, exist_ok=True)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+
+    # Carrega visualização
+    main_example = os.path.join('static', 'json', 'usuário_da_ferramenta.json')
+    transformar_para_vis
+    with open(main_example, 'r', encoding='utf-8') as f:
+            json_data = json.load(f)
+    nodes, edges = transformar_para_vis(json_data)
+
+    # Carrega exemplos
+    if not os.path.exists(examples_dir):
+        os.makedirs(examples_dir) # Ensure it exists if somehow deleted after app start
+        
+    example_file_paths = glob.glob(os.path.join(examples_dir, '*.json'))
+    example_filenames = sorted([os.path.basename(p) for p in example_file_paths])
+    return render_template('index.html',
+                            nodes_data=json.dumps(nodes),
+                            edges_data=json.dumps(edges),
+                            example_files=example_filenames)
 
 @app.route('/analise', methods=['POST'])
 def analise():
@@ -44,16 +61,6 @@ def analise():
 def explanation_page():
     """Renders the explanation page."""
     return render_template('explanation.html')
-
-@app.route('/new', methods=['GET', 'POST'])
-def new():
-    # Limpa o arquivo output.json
-    output_file = os.path.join('static', 'json', 'output.json')
-    if os.path.exists(output_file):
-        os.remove(output_file)
-    
-    # Renderiza a página inicial com o formulário
-    return render_template('index.html')
 
 @app.route('/download')
 def download():

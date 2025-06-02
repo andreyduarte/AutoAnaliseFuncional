@@ -130,7 +130,7 @@ textarea.form-control:focus {
 /* Navbar */
 .navbar {
     background-color: #343a40 !important; /* Darker, more solid navbar */
-    padding: 0.8rem 1rem;
+    padding: 0.2rem 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 

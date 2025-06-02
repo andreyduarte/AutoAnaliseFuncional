@@ -35,13 +35,11 @@
     </nav>
 
     <div class="container mt-4">
-        <div class="alert alert-warning" role="alert">
-            <strong>Atenção:</strong> Os modelos de inteligência artificial são imprecisos e podem cometer erros em suas análises. Os resultados desta ferramenta não devem ser usados em situações reais. Além disso, evite inserir dados sigilosos, pois as informações são enviadas para os servidores do Google e podem ser utilizadas para o treinamento dos modelos de linguagem.
-        </div>
+
         <h1>Exemplos de Análises Salvas</h1>
 
         {% if example_files and example_files|length > 0 %}
-            <p>Os seguintes exemplos de análises foram encontrados em <code>static/json/examples/</code>. Clique em "Ver Análise" para carregar a visualização da rede correspondente.</p>
+            <p>Os seguintes exemplos de análises foram gerados a partir das Fábulas de Esopo. Clique em "Ver Análise" para carregar a visualização da rede correspondente.</p>
             <ul class="list-group mt-3">
                 {% for filename in example_files %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">

@@ -1,0 +1,201 @@
+{
+    "sujeitos": [
+        {
+            "id": "S1",
+            "raciocinio": "O 'usu\u00e1rio' \u00e9 o agente principal que interage com o prot\u00f3tipo e utiliza a an\u00e1lise gerada, sendo o foco das a\u00e7\u00f5es descritas na narrativa. Ele \u00e9 o organismo cujo comportamento est\u00e1 sendo descrito.",
+            "descricao": "Usu\u00e1rio"
+        }
+    ],
+    "acoes_comportamentos": [
+        {
+            "id": "AC1",
+            "raciocinio": "Esta a\u00e7\u00e3o \u00e9 uma emiss\u00e3o comportamental direta e observ\u00e1vel do sujeito 'Usu\u00e1rio' (S1), conforme descrito na narrativa ('O usu\u00e1rio insere o texto no prot\u00f3tipo').",
+            "descricao": "Inserir texto no prot\u00f3tipo",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        },
+        {
+            "id": "AC2",
+            "raciocinio": "Esta a\u00e7\u00e3o \u00e9 uma emiss\u00e3o comportamental direta e observ\u00e1vel do sujeito 'Usu\u00e1rio' (S1), conforme descrito na narrativa ('O usu\u00e1rio usa a an\u00e1lise').",
+            "descricao": "Usar a an\u00e1lise produzida",
+            "tipo_observabilidade": "Observ\u00e1vel"
+        }
+    ],
+    "emissoes_comportamentais": [
+        {
+            "id": "AR1",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC1",
+            "raciocinio": "A aresta representa que o sujeito 'Usu\u00e1rio' (S1) \u00e9 o emissor da a\u00e7\u00e3o 'Inserir texto no prot\u00f3tipo' (AC1), estabelecendo a rela\u00e7\u00e3o de emiss\u00e3o comportamental.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        },
+        {
+            "id": "AR2",
+            "id_origem_no": "S1",
+            "id_destino_no": "AC2",
+            "raciocinio": "A aresta representa que o sujeito 'Usu\u00e1rio' (S1) \u00e9 o emissor da a\u00e7\u00e3o 'Usar a an\u00e1lise produzida' (AC2), estabelecendo a rela\u00e7\u00e3o de emiss\u00e3o comportamental.",
+            "tipo_aresta": "EMISSAO_COMPORTAMENTAL"
+        }
+    ],
+    "estimulos_eventos": [
+        {
+            "id": "E1",
+            "raciocinio": "Inferido como o evento antecedente que estabelece a ocasi\u00e3o para o usu\u00e1rio iniciar a a\u00e7\u00e3o de inserir o texto no prot\u00f3tipo, mesmo n\u00e3o explicitamente mencionado no texto.",
+            "descricao": "Disponibilidade do prot\u00f3tipo para inser\u00e7\u00e3o de texto"
+        },
+        {
+            "id": "E2",
+            "raciocinio": "Extra\u00eddo diretamente da narrativa como o evento que ocorre imediatamente ap\u00f3s a a\u00e7\u00e3o 'AC1' (inserir texto) e que, por sua vez, serve como antecedente para a a\u00e7\u00e3o 'AC2' (usar a an\u00e1lise).",
+            "descricao": "Prot\u00f3tipo analisa o texto e produz An\u00e1lise Funcional do Comportamento"
+        },
+        {
+            "id": "E3",
+            "raciocinio": "Extra\u00eddo diretamente da narrativa como o resultado imediato da a\u00e7\u00e3o 'AC2' (usar a an\u00e1lise), descrevendo o prop\u00f3sito ou benef\u00edcio percebido pelo usu\u00e1rio.",
+            "descricao": "Aux\u00edlio em diversos contextos (sala de aula, pesquisa)"
+        }
+    ],
+    "relacoes_temporais": [
+        {
+            "id": "RT1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC1",
+            "raciocinio": "A disponibilidade do prot\u00f3tipo \u00e9 uma condi\u00e7\u00e3o que precede imediatamente a a\u00e7\u00e3o do usu\u00e1rio de inserir o texto.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT2",
+            "id_origem_no": "AC1",
+            "id_destino_no": "E2",
+            "raciocinio": "A an\u00e1lise e produ\u00e7\u00e3o da AFC pelo prot\u00f3tipo \u00e9 uma consequ\u00eancia imediata da a\u00e7\u00e3o do usu\u00e1rio de inserir o texto.",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT3",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC2",
+            "raciocinio": "A an\u00e1lise produzida pelo prot\u00f3tipo (E2) \u00e9 o evento que precede imediatamente e permite ao usu\u00e1rio utilizar essa an\u00e1lise (AC2).",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "PRECEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        },
+        {
+            "id": "RT4",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E3",
+            "raciocinio": "O aux\u00edlio em diversos contextos (E3) \u00e9 o resultado direto e imediato da a\u00e7\u00e3o do usu\u00e1rio de usar a an\u00e1lise (AC2).",
+            "tipo_aresta": "RELACAO_TEMPORAL",
+            "tipo_temporalidade": "SUCEDE_IMEDIATAMENTE",
+            "contiguidade_percebida": "Alta"
+        }
+    ],
+    "condicoes_estados": [],
+    "relacoes_funcionais_antecedentes": [
+        {
+            "id": "RFA1",
+            "id_origem_no": "E1",
+            "id_destino_no": "AC1",
+            "raciocinio": "A disponibilidade do prot\u00f3tipo (E1) atua como um est\u00edmulo discriminativo, sinalizando a ocasi\u00e3o em que o comportamento de 'Inserir texto no prot\u00f3tipo' (AC1) ser\u00e1 refor\u00e7ado (e.g., pela produ\u00e7\u00e3o da an\u00e1lise).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        },
+        {
+            "id": "RFA2",
+            "id_origem_no": "E2",
+            "id_destino_no": "AC2",
+            "raciocinio": "A produ\u00e7\u00e3o da An\u00e1lise Funcional do Comportamento pelo prot\u00f3tipo (E2) serve como um est\u00edmulo discriminativo para o comportamento de 'Usar a an\u00e1lise produzida' (AC2), indicando que a an\u00e1lise est\u00e1 dispon\u00edvel e que o uso ser\u00e1 refor\u00e7ado (e.g., por auxiliar em diversos contextos).",
+            "tipo_aresta": "RELACAO_FUNCIONAL_ANTECEDENTE",
+            "funcao_antecedente": "EST\u00cdMULO_DISCRIMINATIVO_SD"
+        }
+    ],
+    "relacoes_funcionais_consequentes": [
+        {
+            "id": "RFC1",
+            "id_origem_no": "AC1",
+            "id_destino_no": "E2",
+            "raciocinio": "A produ\u00e7\u00e3o da An\u00e1lise Funcional do Comportamento (E2) pelo prot\u00f3tipo \u00e9 o resultado direto e desejado da a\u00e7\u00e3o de inserir o texto (AC1). Este resultado positivo (a an\u00e1lise) serve como um refor\u00e7ador para o comportamento de inserir texto, aumentando a probabilidade de que o usu\u00e1rio o fa\u00e7a novamente no futuro.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        },
+        {
+            "id": "RFC2",
+            "id_origem_no": "AC2",
+            "id_destino_no": "E3",
+            "raciocinio": "O 'aux\u00edlio em diversos contextos' (E3) \u00e9 o benef\u00edcio direto e esperado de 'usar a an\u00e1lise produzida' (AC2). Este aux\u00edlio \u00e9 um resultado positivo que provavelmente aumenta a probabilidade de o usu\u00e1rio continuar a usar a an\u00e1lise em situa\u00e7\u00f5es futuras.",
+            "tipo_aresta": "RELACAO_FUNCIONAL_CONSEQUENTE",
+            "funcao_consequente": "REFOR\u00c7O_POSITIVO_SR+",
+            "imediatismo_consequencia": "Imediata",
+            "magnitude_consequencia": "Alta"
+        }
+    ],
+    "relacoes_moduladoras_estado": [],
+    "hipoteses_analiticas": [
+        {
+            "id": "H1",
+            "raciocinio": "Com base na cadeia funcional E1 (Disponibilidade do prot\u00f3tipo) -> AC1 (Inserir texto) -> E2 (Prot\u00f3tipo produz AFC), onde E2 atua como refor\u00e7ador positivo (RFC1), a hip\u00f3tese \u00e9 que o comportamento de inserir texto \u00e9 mantido pela obten\u00e7\u00e3o da an\u00e1lise funcional do comportamento.",
+            "descricao": "A fun\u00e7\u00e3o do comportamento de 'Inserir texto no prot\u00f3tipo' (AC1) \u00e9 obter a 'An\u00e1lise Funcional do Comportamento produzida pelo prot\u00f3tipo' (E2), que serve como um refor\u00e7ador positivo para o usu\u00e1rio.",
+            "nivel_confianca": "Alto"
+        },
+        {
+            "id": "H2",
+            "raciocinio": "Com base na cadeia funcional E2 (AFC produzida) -> AC2 (Usar a an\u00e1lise) -> E3 (Aux\u00edlio em contextos), onde E3 atua como refor\u00e7ador positivo (RFC2), a hip\u00f3tese \u00e9 que o comportamento de usar a an\u00e1lise \u00e9 mantido pela obten\u00e7\u00e3o de aux\u00edlio e utilidade em diversos contextos.",
+            "descricao": "A fun\u00e7\u00e3o do comportamento de 'Usar a an\u00e1lise produzida' (AC2) \u00e9 obter 'Aux\u00edlio em diversos contextos (sala de aula, pesquisa)' (E3), que serve como um refor\u00e7ador positivo para o usu\u00e1rio.",
+            "nivel_confianca": "Alto"
+        }
+    ],
+    "evidencias_para_hipoteses": [
+        {
+            "id": "EH1",
+            "id_origem_no": "AC1",
+            "id_destino_no": "H1",
+            "raciocinio": "Esta aresta conecta o comportamento 'Inserir texto no prot\u00f3tipo' (AC1) \u00e0 hip\u00f3tese H1, indicando que a conting\u00eancia completa que envolve AC1 (S1, E1, E2, e as rela\u00e7\u00f5es funcionais e temporais) serve como evid\u00eancia direta para a fun\u00e7\u00e3o proposta.",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S1",
+                "AC1",
+                "E1",
+                "E2",
+                "AR1",
+                "RT1",
+                "RT2",
+                "RFA1",
+                "RFC1"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO"
+        },
+        {
+            "id": "EH2",
+            "id_origem_no": "AC2",
+            "id_destino_no": "H2",
+            "raciocinio": "Esta aresta conecta o comportamento 'Usar a an\u00e1lise produzida' (AC2) \u00e0 hip\u00f3tese H2, indicando que a conting\u00eancia completa que envolve AC2 (S1, E2, E3, e as rela\u00e7\u00f5es funcionais e temporais) serve como evid\u00eancia direta para a fun\u00e7\u00e3o proposta.",
+            "tipo_aresta": "EVIDENCIA_PARA_HIPOTESE",
+            "ids_elementos_contingencia_suporte": [
+                "S1",
+                "AC2",
+                "E2",
+                "E3",
+                "AR2",
+                "RT3",
+                "RT4",
+                "RFA2",
+                "RFC2"
+            ],
+            "tipo_evidencia": "SUPORTE_DIRETO"
+        }
+    ],
+    "timeline": [
+        "S1",
+        "E1",
+        "AC1",
+        "E2",
+        "AC2",
+        "E3",
+        "H1",
+        "H2"
+    ],
+    "texto_original": "O usu\u00e1rio insere o texto no prot\u00f3tipo, que analisa o texto e produz uma An\u00e1lise Funcional do Comportamento dos personagens no texto. O usu\u00e1rio usa a an\u00e1lise pra auxiliar em diversos contextos como na sala de aula, ou na pesquisa. "
+}

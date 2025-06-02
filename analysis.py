@@ -126,7 +126,7 @@ def extrair_sujeitos(
 def extrair_acoes_comportamentos(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client, # Type hint kept as genai.Client for now
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
