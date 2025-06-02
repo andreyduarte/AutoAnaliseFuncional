@@ -2,7 +2,7 @@
 from output_schemas import RedeContingencialOutput
 from typing import List, Optional, Dict, Any, Type, Union, cast, Callable
 from dotenv import load_dotenv
-from google import genai
+from google.genai import Client # NÃO MODIFICAR / DO NOT MODIFY
 import logging
 import json
 import os
@@ -54,7 +54,7 @@ from llm_inference import _make_api_call
 def _processar_etapa(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client, # Type hint kept as genai.Client for now
     foco_etapa: str,
     output_schema: Type[Union[
         OutputEtapaSujeitos,
@@ -69,7 +69,7 @@ def _processar_etapa(
     ]],
     context_builder_func: callable,
     update_rede_func: callable, # Will now return a string
-    etapa_name: str,
+    etapa_name: str
 ) -> RedeContingencialOutput:
     logger.info(f"Iniciando Etapa: {etapa_name}")
 
@@ -100,7 +100,7 @@ def _processar_etapa(
 def extrair_sujeitos(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {'sujeitos': [s.model_dump(exclude_none=True) for s in rede.sujeitos]}
@@ -163,7 +163,7 @@ def extrair_acoes_comportamentos(
 def extrair_eventos_ambientais_e_relacoes_temporais(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
@@ -200,7 +200,7 @@ def extrair_eventos_ambientais_e_relacoes_temporais(
 def inferir_relacoes_funcionais_antecedentes(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         antecedentes_ids = set()
@@ -248,7 +248,7 @@ def inferir_relacoes_funcionais_antecedentes(
 def inferir_relacoes_funcionais_consequentes(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         consequentes_ids = set()
@@ -295,7 +295,7 @@ def inferir_relacoes_funcionais_consequentes(
 def identificar_condicoes_estado(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
@@ -330,7 +330,7 @@ def identificar_condicoes_estado(
 def estabelecer_relacoes_moduladoras_estado(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
@@ -376,7 +376,7 @@ def estabelecer_relacoes_moduladoras_estado(
 def formular_hipoteses_analiticas_e_evidencias(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         # Ensure datetime is available in this scope if not already imported globally
@@ -417,7 +417,7 @@ def formular_hipoteses_analiticas_e_evidencias(
 def ordenar_timeline(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
-    client_model: genai.Client, # Type hint kept as genai.Client for now
+    client_model: Client,
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         # Helper to extract id and descricao, ensuring items are dicts with these keys
@@ -493,7 +493,7 @@ def analisar(
         return None
 
     try:
-        client_model = genai.Client(api_key=api_key) # Modelo é instanciado aqui
+        client_model = Client(api_key=api_key) # Modelo é instanciado aqui
     except Exception as e:
         logger.error(f"Falha ao inicializar o modelo Gemini: {e}", exc_info=True)
         print(f"Erro ao inicializar o modelo Gemini: {e}")
