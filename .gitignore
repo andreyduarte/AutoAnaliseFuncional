@@ -1,5 +1,4 @@
 .env
-analise_modular_output.json
 static/json/output.json
 __pycache__/utils.cpython-313.pyc
 __pycache__
