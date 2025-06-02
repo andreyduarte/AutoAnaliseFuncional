@@ -42,17 +42,17 @@ Com base no texto narrativo fornecido, siga as etapas abaixo para construir a re
 * **Objetivo:** Identificar os atores principais e suas ações mais evidentes.
 * **1.1: Identificar `Sujeito(s)`:**
     * Localize os indivíduos centrais na narrativa.
-    * Para cada um, crie um **Nó `Sujeito`** e preencha seus atributos (`id_sujeito`, `nome_descritivo`, `idade`, `historico_relevante`, `especie`, `observacoes_adicionais`).
+    * Para cada um, crie um **Nó `Sujeito`** e preencha seus atributos (`id`, `nome_descritivo`, `idade`, `historico_relevante`, `especie`, `observacoes_adicionais`).
 * **1.2: Identificar `Acao_Comportamento(s)` Principais:**
     * Liste as ações ou comportamentos emitidos pelo(s) `Sujeito(s)`.
-    * Para cada ação, crie um **Nó `Acao_Comportamento`** e preencha seus atributos (`id_acao`, `descricao_topografica`, `tipo_observabilidade`, `frequencia_base_periodo`, `duracao_media_seg`, `intensidade_media`, `latencia_tipica_resposta_seg`, `classe_funcional_hipotetica`, `observacoes_adicionais`).
+    * Para cada ação, crie um **Nó `Acao_Comportamento`** e preencha seus atributos (`id`, `descricao_topografica`, `tipo_observabilidade`, `frequencia_base_periodo`, `duracao_media_seg`, `intensidade_media`, `latencia_tipica_resposta_seg`, `classe_funcional_hipotetica`, `observacoes_adicionais`).
     * Crie uma **Aresta `Emissao_Comportamental`** (com `id`, `id_origem_no` = ID do Sujeito, `id_destino_no` = ID da Acao_Comportamento, `data_hora_especifica_emissao`, `observacoes_adicionais`).
 
 **Etapa 2: Mapeamento de `Estímulos_Evento` Imediatamente Associados às `Acoes_Comportamento`**
 * **Objetivo:** Identificar eventos que ocorrem imediatamente antes e depois das ações.
 * **2.1: Identificar Antecedentes Imediatos:**
     * Para cada `Acao_Comportamento`, identifique eventos/objetos/ações de outros que ocorreram logo antes.
-    * Crie **Nós `Estímulo_Evento`** para esses antecedentes e preencha seus atributos (`id_estimulo_evento`, `descricao`, `tipo_fisico`, `modalidade_sensorial_primaria`, `intensidade_percebida_inicial`, `duracao_estimulo_evento_seg`, `localizacao`, `data_hora_ocorrencia`, `observacoes_adicionais`).
+    * Crie **Nós `Estímulo_Evento`** para esses antecedentes e preencha seus atributos (`id`, `descricao`, `tipo_fisico`, `modalidade_sensorial_primaria`, `intensidade_percebida_inicial`, `duracao_estimulo_evento_seg`, `localizacao`, `data_hora_ocorrencia`, `observacoes_adicionais`).
     * Crie uma **Aresta `Relacao_Temporal`** (com `id`, `id_origem_no` = ID do Estímulo_Evento antecedente, `id_destino_no` = ID da Acao_Comportamento, `tipo_temporalidade = "PRECEDE_IMEDIATAMENTE"`, `intervalo_atraso_seg`, `contiguidade_percebida`, `observacoes_adicionais`).
 * **2.2: Identificar Consequências Imediatas:**
     * Para cada `Acao_Comportamento`, identifique eventos/objetos/ações de outros que ocorreram logo depois.
@@ -87,7 +87,7 @@ Com base no texto narrativo fornecido, siga as etapas abaixo para construir a re
     * Com base no texto, inferir e preencher `funcao_consequente` e outros atributos relevantes.
 * **5.3: Conectar e Detalhar `Relacoes_Moduladoras_Estado`:**
     * Crie **Arestas `Relacao_Moduladora_Estado`** (com `id`, `id_origem_no` = ID da Condicao_Estado, `id_destino_no` = ID do Nó modulado) entre as `Condicoes_Estado` e os `Estímulos_Evento` ou `Acoes_Comportamento` que elas modulam.
-    * Preencha os atributos da aresta (`tipo_modulacao_estado`, `alvo_da_modulacao_valor_ref_id_estimulo`, `descricao_efeito_modulatorio_valor`, `alvo_da_modulacao_frequencia_ref_id_acao`, `descricao_efeito_modulatorio_frequencia`, `observacoes_adicionais`).
+    * Preencha os atributos da aresta (`tipo_modulacao_estado`, `alvo_da_modulacao_valor_ref_id_estimulo`, `descricao_efeito_modulatorio_valor`, `alvo_da_modulacao_frequencia_ref_id`, `descricao_efeito_modulatorio_frequencia`, `observacoes_adicionais`).
 
 **Etapa 6: Formulação e Adição de Nós `Hipotese_Analitica`**
 * **Objetivo:** Formular hipóteses sobre as funções do comportamento com base na análise.
@@ -111,7 +111,7 @@ FOCO_ETAPA_ACOES = (
     "Crie também uma Aresta `Emissao_Comportamental` (com `id`, `id_origem_no` = ID do Sujeito, `id_destino_no` = ID da Acao_Comportamento, todos obrigatórios). "
     "A saída JSON DEVE ser um objeto com as chaves principais 'acoes_comportamentos' e 'emissoes_comportamentais' contendo listas de objetos `NoAcaoComportamento` e `ArestaEmissaoComportamental` respectivamente. "
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     "\nReferência no Procedimento: Etapa 1.2."
 )
 
@@ -123,7 +123,7 @@ FOCO_ETAPA_EVENTOS_TEMPORAIS = (
     "Para cada `ArestaRelacaoTemporal`, forneça `id`, `id_origem_no`, `id_destino_no`, e `tipo_temporalidade` (todos obrigatórios). "
     "A saída JSON DEVE ser um objeto com as chaves principais 'estimulos_eventos' e 'relacoes_temporais' contendo listas de objetos `NoEstimuloEvento` e `ArestaRelacaoTemporal` respectivamente. "
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     "Use os IDs das ações do contexto."
     "\nReferência no Procedimento: Etapas 2.1 e 2.2."
 )
@@ -135,7 +135,7 @@ FOCO_ETAPA_FUNCIONAIS_ANTECEDENTES = (
     "Para cada `ArestaRelacaoFuncionalAntecedente`, forneça `id`, `id_origem_no`, `id_destino_no`, e `funcao_antecedente` (todos obrigatórios). "
     "A saída JSON DEVE ser um objeto com a chave principal 'relacoes_funcionais_antecedentes' contendo uma lista de objetos `ArestaRelacaoFuncionalAntecedente`. "
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     "Use os IDs dos estímulos e ações do contexto."
     "\nReferência no Procedimento: Etapa 3.1 (parte antecedente)."
 )
@@ -147,7 +147,7 @@ FOCO_ETAPA_FUNCIONAIS_CONSEQUENTES = (
     "Para cada `ArestaRelacaoFuncionalConsequente`, forneça `id`, `id_origem_no`, `id_destino_no`, e `funcao_consequente` (todos obrigatórios). "
     "A saída JSON DEVE ser um objeto com a chave principal 'relacoes_funcionais_consequentes' contendo uma lista de objetos `ArestaRelacaoFuncionalConsequente`. "
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     "Use os IDs das ações e estímulos do contexto."
     "\nReferência no Procedimento: Etapa 3.1 (parte consequente)."
 )
@@ -158,19 +158,19 @@ FOCO_ETAPA_CONDICOES_ESTADO = (
     "Forneça `id` (obrigatório), `descricao` (obrigatório) e `tipo_condicao` (obrigatório). "
     "A saída JSON DEVE ser um objeto com a chave principal 'condicoes_estados' contendo uma lista de objetos `NoCondicaoEstado`. "
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     "\nReferência no Procedimento: Etapa 4."
 )
 
 FOCO_ETAPA_RELACOES_MODULADORAS = (
     "FOCO DESTA ETAPA: Para cada `Condicao_Estado` identificada no contexto (IDs: [CE1, CE2...]), determine como ela modula a rede. "
     "Ela altera o valor de um `Estímulo_Evento` consequente (referência `alvo_da_modulacao_valor_ref_id_estimulo`)? "
-    "Ela altera a frequência de uma `Acao_Comportamento` (referência `alvo_da_modulacao_frequencia_ref_id_acao`)? "
+    "Ela altera a frequência de uma `Acao_Comportamento` (referência `alvo_da_modulacao_frequencia_ref_id`)? "
     "Descreva o `tipo_modulacao_estado` e crie `ArestasRelacaoModuladoraEstado` (RME1, RME2...). "
     "Para cada `ArestaRelacaoModuladoraEstado`, forneça `id`, `id_origem_no`, `id_destino_no`, e `tipo_modulacao_estado` (todos obrigatórios). "
     "A saída JSON DEVE ser um objeto com a chave principal 'relacoes_moduladoras_estado' contendo uma lista de objetos `ArestaRelacaoModuladoraEstado`. "
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     "Use os IDs dos elementos do contexto."
     "\nReferência no Procedimento: Etapa 5.3."
 )
@@ -183,7 +183,7 @@ FOCO_ETAPA_HIPOTESES = (
     "Liste os `ids_elementos_contingencia_suporte` (outros nós e arestas da rede que evidenciam essa hipótese)."
     "A saída JSON DEVE ser um objeto com as chaves principais 'hipoteses_analiticas' e 'evidencias_para_hipoteses' contendo listas de objetos `NoHipoteseAnalitica` e `ArestaEvidenciaParaHipotese` respectivamente. "
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
     "\nReferência no Procedimento: Etapa 6."
 )
 
@@ -193,5 +193,5 @@ FOCO_ETAPA_TIMELINE = (
     "Todos os nós devem estar na lista final."
     "A saída JSON DEVE ser um objeto com a chave principal 'timeline' contendo uma lista de strings (IDs dos nós)."
     "Inclua o campo `raciocinio` no objeto JSON de nível superior, descrevendo a lógica para a extração nesta etapa. "
-    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id_acao`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
+    "Ao identificar elementos que já podem existir no `Contexto da rede atual`, reutilize seus IDs (`id`, `id`, etc.) em vez de criar novos, a menos que seja um elemento distinto."
 )

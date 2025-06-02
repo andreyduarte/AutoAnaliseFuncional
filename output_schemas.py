@@ -3,26 +3,6 @@ from pydantic import BaseModel, Field  # type: ignore
 from enum import Enum # Corrigido de pydantic.types import Enum
 
 # --- Enumerações para Tipos (Pydantic Models) ---
-class TipoEstimuloEventoFisico(str, Enum):
-    SOCIAL = "Social"
-    NAO_SOCIAL = "Não-Social"
-    VERBAL = "Verbal"
-    NAO_VERBAL = "Não-Verbal"
-    INTEROCEPTIVO = "Interoceptivo"
-    PROPRIOCEPTIVO = "Proprioceptivo"
-    MISTO = "Misto"
-
-class TipoModalidadeSensorial(str, Enum):
-    VISUAL = "Visual"
-    AUDITIVO = "Auditivo"
-    TATIL = "Tátil"
-    OLFATIVO = "Olfativo"
-    GUSTATIVO = "Gustativo"
-    INTEROCEPTIVO = "Interoceptivo"
-    PROPRIOCEPTIVO = "Proprioceptivo"
-    MISTO = "Misto"
-    NENHUMA_APLICAVEL = "Nenhuma Aplicável"
-
 class TipoObservabilidadeAcao(str, Enum):
     PUBLICO_OBSERVAVEL = "Observável"
     PRIVADO_ENCOBERTO = "Encoberto"
@@ -37,12 +17,6 @@ class NivelConfiancaHipotese(str, Enum):
     BAIXO = "Baixo"
     MEDIO = "Médio"
     ALTO = "Alto"
-
-class StatusHipotese(str, Enum):
-    AGUARDANDO_TESTE = "Aguardando teste"
-    SUPORTADA_POR_DADOS = "Suportada por dados"
-    REFUTADA_POR_DADOS = "Refutada por dados"
-    MODIFICADA = "Modificada"
 
 class TipoTemporalidade(str, Enum):
     PRECEDE_IMEDIATAMENTE = "PRECEDE_IMEDIATAMENTE"
@@ -87,14 +61,6 @@ class EsquemaDeEntrega(str, Enum):
     NAO_APLICAVEL = "Não Aplicável"
     DESCONHECIDO = "Desconhecido"
 
-class EfeitoObservadoFrequencia(str, Enum):
-    AUMENTO = "Aumento"
-    DIMINUICAO = "Diminuição"
-    MANUTENCAO = "Manutenção"
-    SEM_EFEITO_APARENTE = "Sem efeito aparente"
-    VARIABILIDADE = "Variabilidade"
-    A_INVESTIGAR = "A investigar"
-
 class TipoModulacaoEstado(str, Enum):
     OPERACAO_MOTIVADORA_ESTABELECEDORA_OE = "OPERAÇÃO_MOTIVADORA_ESTABELECEDORA_OE"
     OPERACAO_MOTIVADORA_ABOLIDORA_OA = "OPERAÇÃO_MOTIVADORA_ABOLIDORA_OA"
@@ -109,13 +75,6 @@ class TipoEvidenciaHipotese(str, Enum):
     SUPORTE_INDIRETO = "SUPORTE_INDIRETO"
     CONTRADICAO_PARCIAL = "CONTRADICAO_PARCIAL"
     CONTRADICAO_FORTE = "CONTRADICAO_FORTE"
-
-class FonteDadosEvidencia(str, Enum):
-    NARRATIVA_TEXTUAL = "Narrativa Textual"
-    OBSERVACAO_DIRETA_DESCRITIVA = "Observação Direta Descritiva"
-    ENTREVISTA = "Entrevista"
-    QUESTIONARIO = "Questionário"
-    ANALISE_FUNCIONAL_EXPERIMENTAL = "Análise Funcional Experimental"
 
 # --- Modelos de Nós ---
 class NoBase(BaseModel):
