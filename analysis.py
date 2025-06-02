@@ -76,7 +76,6 @@ def _processar_etapa(
     contexto_json = context_builder_func(rede_atual)
 
     # Corrected prompt to use
- for newlines
     prompt = (
         f"{SYSTEM_PROMPT}\n\n{PROCEDIMENTO_COMPLETO_AFC}\n\n{foco_etapa}\n\n"
         f"Texto narrativo para análise:\n```\n{texto_narrativo}\n```\n\n"
