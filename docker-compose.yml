@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    # The following environment variables ensure Flask runs in development mode
+    # and that it's accessible from outside the container.
+    # FLASK_APP is already set in the Dockerfile, but it's good practice
+    # to be explicit in docker-compose as well, or if overriding is needed.
+    # FLASK_RUN_HOST is also set in Dockerfile.
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1 
+      # - FLASK_APP=app.py # Already in Dockerfile
+      # - FLASK_RUN_HOST=0.0.0.0 # Already in Dockerfile
