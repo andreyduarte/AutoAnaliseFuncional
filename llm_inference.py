@@ -1,6 +1,6 @@
 from typing import Optional, Dict, Any, Type, cast, List
 from pydantic import BaseModel, ValidationError
-from google import genai
+from google import genai # NÃO MODIFICAR / DO NOT MODIFY
 import google.genai.types as genai_types
 import logging
 import json
@@ -16,13 +16,13 @@ def _make_api_call(
 ) -> Optional[Dict[str, Any]]:
     """Função auxiliar para fazer uma chamada à API e processar a resposta com retries."""
     contents = [
-        genai_types.Content(
+        genai_types.Content( # NÃO MODIFICAR / DO NOT MODIFY
             role="user",
             parts=[genai_types.Part.from_text(text=prompt_content)],
         ),
     ]
 
-    generation_config = genai_types.GenerateContentConfig(
+    generation_config = genai_types.GenerateContentConfig( # NÃO MODIFICAR / DO NOT MODIFY
         response_mime_type="application/json",
         response_schema=output_schema,
         temperature=0.01
@@ -39,8 +39,8 @@ def _make_api_call(
 
         full_response_text = ""
         try:
-            response = client.models.generate_content(
-                model='gemini-2.5-flash-preview-05-20',#'gemini-2.0-flash-exp',
+            response = client.models.generate_content( # NÃO MODIFICAR / DO NOT MODIFY
+                model='gemini-2.5-flash-preview-05-20',#'gemini-2.0-flash-exp', # NÃO MODIFICAR / DO NOT MODIFY
                 contents=cast(List[genai_types.Content], contents), # type: ignore
                 config=generation_config,
             )
