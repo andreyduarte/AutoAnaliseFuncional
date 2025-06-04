@@ -41,3 +41,19 @@ To stop and remove the containers, you can run:
 ```bash
 docker-compose down
 ```
+
+## Data Persistence and Analysis Storage
+
+This application now uses an SQLite database (`analysis_database.db`) to store all generated analyses, replacing the previous mechanism of saving to a single `output.json` file.
+
+**Key Features:**
+
+*   **Database Initialization:** The SQLite database and necessary tables are automatically created or verified when the Flask application starts. This is handled by the `init_db()` function in `db.py`, which is called from `app.py`. You can also manually initialize the database by running `python db.py` from the command line.
+*   **Unique Analysis IDs:** Each analysis performed is saved as a new record in the database and assigned a unique UUID.
+*   **Viewing Analyses:**
+    *   The main page (`/`) now lists all saved analyses from the database.
+    *   Each analysis in the list links to a dedicated viewing page using a URL structure like `/analysis/view/<analysis_uuid>`, where `<analysis_uuid>` is the unique ID of the analysis.
+*   **Downloading Analyses:** From an individual analysis viewing page, you can download the complete analysis data in JSON format using the "Baixar Análise (JSON)" button.
+*   **Database Interaction Module:** All database operations (initialization, insertion, querying) are managed by functions within the `db.py` module.
+
+This database-driven approach allows for persistent storage of multiple analyses, easy access to individual results, and a more robust way to manage the application's data.

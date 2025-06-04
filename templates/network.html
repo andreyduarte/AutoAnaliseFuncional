@@ -32,6 +32,19 @@
     </nav>
 
     <div class="main-content position-relative">
+        <!-- Analysis Info and Download Button -->
+        <div class="container-fluid mt-3 mb-3 text-center"> <!-- Changed to container-fluid and text-center for better integration -->
+            {% if analysis_name %}
+                <h2>Análise: <span class="badge bg-secondary">{{ analysis_name }}</span></h2>
+            {% endif %}
+
+            {% if analysis_uuid %}
+                <a href="{{ url_for('download_analysis_route', analysis_uuid=analysis_uuid) }}" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Baixar Análise (JSON)
+                </a>
+            {% endif %}
+        </div>
+
         <div id="mynetwork" class="flex-grow-1"></div>
         <div id="timeline-slider">
             <i class="fa-regular fa-clock"></i>

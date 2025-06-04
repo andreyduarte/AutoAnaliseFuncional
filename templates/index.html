@@ -82,6 +82,34 @@
             </div>
         </section>
 
+        <!-- ... existing HTML for text input form ... -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2>Análises Salvas</h2>
+                {% if saved_analyses %}
+                    <ul class="list-group">
+                        {% for analysis in saved_analyses %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{{ url_for('view_analysis_route', analysis_uuid=analysis.analysis_uuid) }}">
+                                    {{ analysis.name }}
+                                </a>
+                                <small>Salva em: {{ analysis.created_at.strftime('%Y-%m-%d %H:%M:%S') if analysis.created_at else 'Data desconhecida' }}</small>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>Nenhuma análise salva encontrada no banco de dados.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- This is where the network visualization usually starts -->
+        <!-- Ensure this new section is appropriately placed relative to your existing layout -->
+        <!-- The main network visualization for the index page is in the header in this template -->
+        <!-- The placeholder <div id="mynetwork"></div> is typically for the network page, not index. -->
+        <!-- So, the comment above about "mynetwork" might be slightly misleading for this specific index.html -->
+        <!-- For this template, the new section is placed before the "Sobre" card. -->
+
         <div class="card mb-4">
             <div class="card-header">
               Sobre
