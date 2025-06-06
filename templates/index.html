@@ -58,13 +58,13 @@
                 <div class="col-md-6">
                     <section id="ver-exemplos" class="mb-4">
                     <h2 class="my-2">Exemplos de Análises</h2>
-                    {% if example_files and example_files|length > 0 %}
-                        <p>Os seguintes exemplos de análises foram gerados a partir das Fábulas de Esopo.</p>
+                    {% if examples and examples|length > 0 %}
+                        <p>Os seguintes exemplos de análises foram gerados a partir de algumas Fábulas de Esopo.</p>
                         <ul class="list-group mt-3">
-                            {% for filename in example_files %}
+                            {% for obj in examples %}
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    {{ filename.replace('_', ' ')|replace('.json', '')|title }}
-                                    <a href="{{ url_for('load_example', example_filename=filename) }}" class="btn btn-primary btn-sm">
+                                    {{ obj['name']|title }}
+                                    <a href="/analysis/view/{{ obj['uuid'] }}" class="btn btn-primary btn-sm">
                                         Ver <i class="fas fa-eye"></i>
                                     </a>
                                 </li>
@@ -72,10 +72,8 @@
                         </ul>
                     {% else %}
                         <p class="alert alert-info mt-3">
-                            <i class="fas fa-info-circle"></i> Nenhum exemplo JSON encontrado na pasta <code>static/json/examples/</code>.
-                            Adicione arquivos <code>.json</code> nesta pasta para vê-los listados aqui.
+                            <i class="fas fa-info-circle"></i> Nenhum exemplo foi salvo para exibição aqui. ¯\_(ツ)_/¯
                         </p>
-                        <p>Por exemplo, se você tiver um arquivo de análise chamado <code>meu_exemplo_de_analise.json</code>, coloque-o em <code>static/json/examples/</code>.</p>
                     {% endif %}
                     </section>
                 </div>
