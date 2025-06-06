@@ -83,10 +83,12 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/network_graph.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/network_timeline.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/network_ui.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/progress_logger.js') }}"></script>
 
     <div id="loadingOverlay" class="loading-overlay">
         <div class="spinner"></div>
         <p>Gerando nova visualização...</p>
+    {% include 'progress_log.html' %}
     </div>
 </body>
 </html>

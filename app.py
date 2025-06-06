@@ -8,8 +8,17 @@ from analysis import analisar # Importa a função do arquivo analysis.py
 from utils import transformar_para_vis # Importa a função do arquivo utils.py
 import datetime # Added
 from db import init_db, insert_analysis, get_analysis_by_uuid, get_all_analyses # New import for this route
+import uuid
+import threading # For potential future async, but also for thread-safe access to shared dict if needed
+from functools import partial # To pass task_id to record_progress easily
+import time # For timestamps
 
 app = Flask(__name__)
+
+ANALYSIS_PROGRESS_STORE = {}
+# Using a lock for updating the shared dictionary, good practice even if Flask is single-threaded per request by default.
+# For a multi-worker setup, a proper external store (Redis, DB) would be needed.
+PROGRESS_STORE_LOCK = threading.Lock()
 
 # Initialize the database
 init_db()
@@ -20,6 +29,33 @@ app.logger.info(f"Análises salvas no Banco de Dados: {len(all_analyses)}")
 # Create static/json/examples directory if it doesn't exist
 examples_dir = os.path.join('static', 'json', 'examples')
 os.makedirs(examples_dir, exist_ok=True)
+
+def record_progress(task_id, message_text, message_type='info', status_update=None, current_step_name=None):
+    with PROGRESS_STORE_LOCK:
+        if task_id not in ANALYSIS_PROGRESS_STORE:
+            ANALYSIS_PROGRESS_STORE[task_id] = {
+                'status': 'queued',
+                'messages': [],
+                'current_step_name': '',
+                'start_time': time.time()
+            }
+
+        entry = ANALYSIS_PROGRESS_STORE[task_id]
+
+        log_message = {
+            'timestamp': datetime.datetime.now().isoformat(),
+            'text': message_text,
+            'type': message_type
+        }
+        entry['messages'].append(log_message)
+
+        if status_update:
+            entry['status'] = status_update
+        if current_step_name:
+            entry['current_step_name'] = current_step_name
+
+        # Optional: log to console as well
+        # app.logger.info(f"Progress for {task_id} [{message_type}]: {message_text}")
 
 @app.route('/')
 def index():
@@ -43,45 +79,83 @@ def index():
                            examples=examples) # For the static examples dropdown
 
 @app.route('/analise', methods=['POST'])
-def analise_route(): # Renamed to avoid conflict with imported 'analisar'
+def analise_route():
     texto_entrada = request.form.get('texto_entrada', '')
     if not texto_entrada:
-        # Handle empty input, maybe return an error or redirect
-        return redirect(url_for('index'))
+        # No task_id generated, just redirect or return error
+        return redirect(url_for('index')) # Consider flashing an error
 
-    # Calls the analysis function from analysis.py
-    json_analisado_dict = analisar(texto_entrada)
-
-    if not json_analisado_dict:
-        # Handle analysis failure
-        # You might want to flash a message to the user here
-        return redirect(url_for('index'))
-
-    # Add original text to the analysis dictionary before saving
-    json_analisado_dict['texto_original'] = texto_entrada
+    task_id = uuid.uuid4().hex
     
-    # Convert the dict to a JSON string for storage
-    analysis_data_json_string = json.dumps(json_analisado_dict)
-
-    # Create a name for the analysis (e.g., based on timestamp or first few words)
-    # For now, using a timestamp
-    analysis_name = f"Análise de {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    # Initialize progress for this task
+    record_progress(task_id, "Análise solicitada.", message_type='info', status_update='queued', current_step_name="Iniciando")
 
     try:
-        # Save to database
-        analysis_uuid = insert_analysis(
+        # Pass a recording function specific to this task_id to analisar
+        # This uses functools.partial to pre-fill the task_id argument
+        task_specific_recorder = partial(record_progress, task_id)
+
+        record_progress(task_id, "Processamento da análise iniciado.", message_type='info', status_update='running', current_step_name="Processando")
+
+        # Modify 'analisar' in analysis.py to accept 'progress_recorder' callable
+        json_analisado_dict = analisar(texto_entrada, progress_recorder=task_specific_recorder)
+
+        if not json_analisado_dict:
+            record_progress(task_id, "Falha na análise: nenhum resultado retornado.", message_type='error', status_update='error')
+            # Render index page with task_id so user can see the error log
+            # Re-fetch default index data and examples for error page:
+            json_data_main_error = get_analysis_by_uuid('0849e1cd-c9c6-4402-bb48-b388571fd091')
+            nodes_main_error, edges_main_error = [], []
+            if json_data_main_error:
+                try:
+                    nodes_main_error, edges_main_error = transformar_para_vis(json.loads(json_data_main_error['analysis_data']))
+                except Exception as transform_e:
+                    app.logger.error(f"Error transforming main example for error page: {transform_e}")
+            examples_error = [{"name":"A Águia e a Raposa","uuid":'bb224eba-ec17-4e54-9b0c-29eda1d73eeb'},
+                              {"name":"A Gansa dos Ovos de Ouro","uuid":'745a94dd-c678-457e-b2f1-e1961bd7f213'},
+                              {"name":"O Ladrão e o Cão de Guarda","uuid":'10f36ec9-efa9-4ce6-af17-bec598d29292'},
+                              {"name":"Rato do Campo e Rato da Cidade","uuid":'39ea7ddb-fb2a-4b8a-8c23-a27bb4fbf4c4'}]
+            return render_template('index.html', task_id_from_server=task_id, error_message="Análise falhou.",
+                                   nodes_data=json.dumps(nodes_main_error), edges_data=json.dumps(edges_main_error), examples=examples_error)
+
+        json_analisado_dict['texto_original'] = texto_entrada
+        analysis_data_json_string = json.dumps(json_analisado_dict)
+        analysis_name = f"Análise de {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+
+        record_progress(task_id, "Análise do texto concluída, salvando resultados...", message_type='info')
+
+        analysis_uuid_db = insert_analysis(
             name=analysis_name,
             analysis_data=analysis_data_json_string
         )
-        # Redirect to the new view page for this analysis
-        return redirect(url_for('view_analysis_route', analysis_uuid=analysis_uuid))
-    except Exception as e:
-        # Log the error
-        app.logger.error(f"Error saving analysis to database: {e}")
-        # Flash a message to the user
-        # For now, redirect to index
-        return redirect(url_for('index'))
 
+        record_progress(task_id, f"Resultados salvos com ID: {analysis_uuid_db}.", message_type='success', status_update='complete', current_step_name="Concluído")
+
+        return redirect(url_for('view_analysis_route', analysis_uuid=analysis_uuid_db))
+
+    except Exception as e:
+        app.logger.error(f"Erro durante a análise para task {task_id}: {e}", exc_info=True)
+        record_progress(task_id, f"Erro crítico durante a análise: {str(e)}", message_type='error', status_update='error')
+
+        json_data_main_error = get_analysis_by_uuid('0849e1cd-c9c6-4402-bb48-b388571fd091')
+        nodes_main_error, edges_main_error = [], []
+        if json_data_main_error:
+            try:
+                nodes_main_error, edges_main_error = transformar_para_vis(json.loads(json_data_main_error['analysis_data']))
+            except Exception as transform_e:
+                app.logger.error(f"Error transforming main example for error page: {transform_e}")
+
+        examples_error = [{"name":"A Águia e a Raposa","uuid":'bb224eba-ec17-4e54-9b0c-29eda1d73eeb'},
+                          {"name":"A Gansa dos Ovos de Ouro","uuid":'745a94dd-c678-457e-b2f1-e1961bd7f213'},
+                          {"name":"O Ladrão e o Cão de Guarda","uuid":'10f36ec9-efa9-4ce6-af17-bec598d29292'},
+                          {"name":"Rato do Campo e Rato da Cidade","uuid":'39ea7ddb-fb2a-4b8a-8c23-a27bb4fbf4c4'}]
+
+        return render_template('index.html',
+                               task_id_from_server=task_id,
+                               error_message=f"Erro na análise: {str(e)}",
+                               nodes_data=json.dumps(nodes_main_error),
+                               edges_data=json.dumps(edges_main_error),
+                               examples=examples_error)
 
 @app.route('/explanation')
 def explanation_page():
@@ -198,6 +272,35 @@ def view_analysis_route(analysis_uuid):
         app.logger.error(f"Error processing analysis {analysis_uuid} for viewing: {e}")
         # flash("Erro ao carregar a análise.", "error") # Example
         return redirect(url_for('index'))
+
+@app.route('/analysis_progress/<string:task_id>', methods=['GET'])
+def analysis_progress_route(task_id):
+    with PROGRESS_STORE_LOCK: # Use lock for reading in case of complex data or future updates here
+        task_info = ANALYSIS_PROGRESS_STORE.get(task_id)
+
+    if not task_info:
+        return jsonify({'status': 'error', 'messages': [{'text': 'Task ID not found.', 'type': 'error'}]}), 404
+
+    # Determine if the task is "finished" (either complete or error) for the client
+    # The client-side progress_logger.js expects 'complete' or 'error' to stop polling.
+    # We can add a 'finished' status internally if needed, but for client, map to 'complete' or 'error'.
+    client_status = task_info.get('status', 'unknown')
+
+    # To ensure the client stops polling correctly, if our internal status is 'complete' or 'error',
+    # we pass that through. If it's something else like 'queued' or 'running', it's still 'running' for the client.
+    if client_status not in ['complete', 'error']:
+        # If start_time exists and it's been too long (e.g. > 1 hour) without completion,
+        # consider it timed out / error. (Optional timeout logic)
+        # For now, any non-complete/error status is 'running' unless explicitly set otherwise.
+        pass # status remains as is ('running', 'queued', etc.)
+
+
+    return jsonify({
+        'status': client_status,
+        'messages': task_info.get('messages', []),
+        'current_step_name': task_info.get('current_step_name', ''),
+        # Add any other fields the client might need from task_info
+    })
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

@@ -488,3 +488,83 @@ textarea.form-control:focus {
 }
 
 /* Old style attribute selectors for legend have been removed. */
+
+/* Progress Log Styles */
+#progressLogContainer {
+    margin-top: 15px; /* Add some space above the log */
+    padding: 10px;
+    background-color: #333; /* Darker background for the log area */
+    color: #f1f1f1; /* Light text color */
+    border-radius: 4px;
+    font-size: 0.9em;
+    height: 150px; /* Or your desired height */
+    overflow-y: auto; /* Scroll for overflow */
+    border: 1px solid #444; /* Border for the log container */
+}
+
+#progressLogList {
+    list-style-type: none; /* Remove default list bullets */
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.log-message {
+    padding: 3px 5px;
+    border-bottom: 1px solid #444; /* Separator for messages */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for logs */
+}
+
+.log-message:last-child {
+    border-bottom: none; /* No border for the last message */
+}
+
+.log-message-info {
+    color: #e0e0e0; /* Light gray for info messages */
+}
+
+.log-message-success {
+    color: #77dd77; /* Pastel green for success */
+    font-weight: bold;
+}
+
+.log-message-error {
+    color: #ff6961; /* Pastel red for errors */
+    font-weight: bold;
+}
+
+.log-message-warning {
+    color: #fdfd96; /* Pastel yellow for warnings */
+}
+
+/* Adjustments for loading overlay text if needed */
+.loading-overlay p {
+    color: #f8f9fa; /* Ensure existing text is visible on dark background */
+    margin-top: 10px;
+}
+
+/* Ensure spinner is visible if its color was dependent on a light background */
+.loading-overlay .spinner-border {
+    color: #f8f9fa !important; /* Important to override bootstrap if needed */
+}
+
+/* Styling for the custom spinner in network.html if it exists */
+.loading-overlay .spinner {
+    /* If .spinner is a custom element, ensure its styling is compatible.
+       The existing network.html uses a div with class spinner,
+       which might be styled elsewhere or be a placeholder.
+       If it's the Bootstrap spinner, .spinner-border is used.
+       This rule is a placeholder if .spinner is a custom CSS spinner. */
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto; /* Center it if it's the only element */
+}
+
+/* Keyframes for .spinner if it's a custom CSS spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

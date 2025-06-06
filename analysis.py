@@ -12,6 +12,9 @@ import datetime
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(module)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# Ensure Callable is imported for type hinting progress_recorder
+from typing import Callable
+
 from prompt import (
     SYSTEM_PROMPT,
     PROCEDIMENTO_COMPLETO_AFC,
@@ -69,9 +72,11 @@ def _processar_etapa(
     ]],
     context_builder_func: callable,
     update_rede_func: callable, # Will now return a string
-    etapa_name: str
+    etapa_name: str,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     logger.info(f"Iniciando Etapa: {etapa_name}")
+    # No need to call progress_recorder here for "Iniciando Etapa", as `analisar` already does it before calling this.
 
     contexto_json = context_builder_func(rede_atual)
 
@@ -83,16 +88,33 @@ def _processar_etapa(
         f"```json\n{json.dumps(contexto_json, indent=2)}\n```"
     )
     
+    if progress_recorder:
+        progress_recorder(f"Preparando para chamar API para: {etapa_name}.", message_type='info')
+
     json_data = _make_api_call(client_model, prompt, output_schema) # type: ignore
 
     if json_data:
+        if progress_recorder:
+            progress_recorder(f"API retornou dados para: {etapa_name}. Processando...", message_type='info')
         try:
             log_details = update_rede_func(rede_atual, json_data) # update_rede_func returns string
             logger.info(f"Etapa {etapa_name} concluída. {log_details}") # Use returned string
+            # No need for a separate progress_recorder call here for "concluída",
+            # as `analisar` handles this after the etapa_func returns.
+            # However, `log_details` could be useful:
+            if progress_recorder:
+                 progress_recorder(f"Detalhes da {etapa_name}: {log_details}", message_type='debug') # 'debug' or 'info'
         except Exception as e:
             logger.error(f"Erro ao processar dados da Etapa {etapa_name}: {e}", exc_info=True)
+            if progress_recorder:
+                progress_recorder(f"Erro ao processar dados da API para {etapa_name}: {str(e)}", message_type='error')
             if isinstance(json_data, dict) and json_data.get("error_details"):
                  logger.error(f"Detalhes do erro da API: {json_data['error_details']}")
+    else:
+        logger.warn(f"Nenhum dado retornado pela API para a etapa: {etapa_name}")
+        if progress_recorder:
+            progress_recorder(f"API não retornou dados para: {etapa_name}.", message_type='warning')
+
     return rede_atual
 
 # --- Funções de Extração por Etapa ---
@@ -101,6 +123,7 @@ def extrair_sujeitos(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {'sujeitos': [s.model_dump(exclude_none=True) for s in rede.sujeitos]}
@@ -120,13 +143,15 @@ def extrair_sujeitos(
         output_schema=OutputEtapaSujeitos,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Extração de Sujeitos"
+        etapa_name="Extração de Sujeitos",
+        progress_recorder=progress_recorder # Pass down
     )
 
 def extrair_acoes_comportamentos(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client, # Type hint kept as genai.Client for now
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
@@ -157,13 +182,15 @@ def extrair_acoes_comportamentos(
         output_schema=OutputEtapaAcoes,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Extração de Ações e Emissões Comportamentais"
+        etapa_name="Extração de Ações e Emissões Comportamentais",
+        progress_recorder=progress_recorder # Pass down
     )
 
 def extrair_eventos_ambientais_e_relacoes_temporais(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
@@ -194,13 +221,15 @@ def extrair_eventos_ambientais_e_relacoes_temporais(
         output_schema=OutputEtapaEventosTemporais,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Extração de Eventos Ambientais e Relações Temporais" # Original log started with "Iniciando:", name matches previous "Etapa concluída."
+        etapa_name="Extração de Eventos Ambientais e Relações Temporais", # Original log started with "Iniciando:", name matches previous "Etapa concluída."
+        progress_recorder=progress_recorder # Pass down
     )
 
 def inferir_relacoes_funcionais_antecedentes(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         antecedentes_ids = set()
@@ -242,13 +271,15 @@ def inferir_relacoes_funcionais_antecedentes(
         output_schema=OutputEtapaFuncionaisAntecedentes,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Inferência de Relações Funcionais Antecedentes"
+        etapa_name="Inferência de Relações Funcionais Antecedentes",
+        progress_recorder=progress_recorder # Pass down
     )
 
 def inferir_relacoes_funcionais_consequentes(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         consequentes_ids = set()
@@ -289,13 +320,15 @@ def inferir_relacoes_funcionais_consequentes(
         output_schema=OutputEtapaFuncionaisConsequentes,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Inferência de Relações Funcionais Consequentes"
+        etapa_name="Inferência de Relações Funcionais Consequentes",
+        progress_recorder=progress_recorder # Pass down
     )
 
 def identificar_condicoes_estado(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
@@ -324,13 +357,15 @@ def identificar_condicoes_estado(
         output_schema=OutputEtapaCondicoesEstado,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Identificação de Condições/Estado"
+        etapa_name="Identificação de Condições/Estado",
+        progress_recorder=progress_recorder # Pass down
     )
 
 def estabelecer_relacoes_moduladoras_estado(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         return {
@@ -370,13 +405,15 @@ def estabelecer_relacoes_moduladoras_estado(
         output_schema=OutputEtapaRelacoesModuladoras,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Estabelecimento de Relações Moduladoras de Estado"
+        etapa_name="Estabelecimento de Relações Moduladoras de Estado",
+        progress_recorder=progress_recorder # Pass down
     )
 
 def formular_hipoteses_analiticas_e_evidencias(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         # Ensure datetime is available in this scope if not already imported globally
@@ -411,13 +448,15 @@ def formular_hipoteses_analiticas_e_evidencias(
         output_schema=OutputEtapaHipoteses,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Formulação de Hipóteses Analíticas e Evidências"
+        etapa_name="Formulação de Hipóteses Analíticas e Evidências",
+        progress_recorder=progress_recorder # Pass down
     )
 
 def ordenar_timeline(
     texto_narrativo: str,
     rede_atual: RedeContingencialOutput,
     client_model: Client,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> RedeContingencialOutput:
     def context_builder_func(rede: RedeContingencialOutput) -> dict:
         # Helper to extract id and descricao, ensuring items are dicts with these keys
@@ -470,14 +509,16 @@ def ordenar_timeline(
         output_schema=OutputEtapaTimeline,
         context_builder_func=context_builder_func,
         update_rede_func=update_rede_func,
-        etapa_name="Ordenação da Timeline"
+        etapa_name="Ordenação da Timeline",
+        progress_recorder=progress_recorder # Pass down
     )
 
 # --- Função Orquestradora Principal ---
 
 def analisar(
     texto_narrativo: str,
-    debug: bool = False
+    debug: bool = False,
+    progress_recorder: Optional[Callable] = None # New argument
 ) -> Optional[Dict[str, Any]]:
     
     load_dotenv()
@@ -486,16 +527,25 @@ def analisar(
     else:
         logger.setLevel(logging.INFO)
 
+    if progress_recorder:
+        progress_recorder("Iniciando análise do texto.", message_type='info', current_step_name="Setup")
+
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         logger.error("Variável de ambiente GEMINI_API_KEY não encontrada.")
+        if progress_recorder:
+            progress_recorder("Chave da API Gemini não configurada.", message_type='error', status_update='error')
         print("Erro: Chave da API Gemini não configurada na variável de ambiente GEMINI_API_KEY.")
         return None
 
     try:
         client_model = Client(api_key=api_key) # Modelo é instanciado aqui
+        if progress_recorder:
+            progress_recorder("Modelo Gemini inicializado com sucesso.", message_type='info')
     except Exception as e:
         logger.error(f"Falha ao inicializar o modelo Gemini: {e}", exc_info=True)
+        if progress_recorder:
+            progress_recorder(f"Falha ao inicializar o modelo Gemini: {str(e)}", message_type='error', status_update='error')
         print(f"Erro ao inicializar o modelo Gemini: {e}")
         return None
 
@@ -514,16 +564,30 @@ def analisar(
         ordenar_timeline
     ]
 
+    total_steps = len(etapas_de_extracao)
+
     for i, etapa_func in enumerate(etapas_de_extracao):
-        logger.info(f"--- Iniciando processamento da Etapa {i+1}: {etapa_func.__name__} ---")
+        step_name_for_log = etapa_func.__name__.replace("_", " ").title()
+        logger.info(f"--- Iniciando processamento da Etapa {i+1}/{total_steps}: {step_name_for_log} ---")
+        if progress_recorder:
+            progress_recorder(f"Iniciando Etapa {i+1}/{total_steps}: {step_name_for_log}", message_type='info', current_step_name=step_name_for_log)
+
         try:
-            rede_final = etapa_func(texto_narrativo, rede_final, client_model) # Passa client_model
-            logger.debug(f"Rede após Etapa {i+1} ({etapa_func.__name__}):\n{rede_final.model_dump_json(indent=2, exclude_none=True)}")
+            # Pass progress_recorder to each etapa_func
+            rede_final = etapa_func(texto_narrativo, rede_final, client_model, progress_recorder=progress_recorder)
+            logger.debug(f"Rede após Etapa {i+1} ({step_name_for_log}):\n{rede_final.model_dump_json(indent=2, exclude_none=True)}")
+            if progress_recorder:
+                progress_recorder(f"Etapa {i+1}/{total_steps}: {step_name_for_log} concluída.", message_type='info')
         except Exception as e:
-            logger.error(f"Erro durante a execução da etapa {etapa_func.__name__}: {e}", exc_info=True)
+            logger.error(f"Erro durante a execução da etapa {step_name_for_log}: {e}", exc_info=True)
+            if progress_recorder:
+                progress_recorder(f"Erro na Etapa {i+1}/{total_steps} ({step_name_for_log}): {str(e)}", message_type='error', status_update='error')
             # Decide se quer parar ou continuar em caso de erro em uma etapa
             # Por enquanto, continua para tentar obter o máximo possível
     
+    if progress_recorder:
+        progress_recorder("Todas as etapas de extração foram processadas.", message_type='info', current_step_name="Finalizando")
+
     logger.info("Todas as etapas de extração foram processadas.")
     return json.loads(rede_final.model_dump_json(exclude_none=True))
 

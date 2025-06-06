@@ -1,96 +1,82 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // JavaScript para o botão de ocultar/mostrar legenda
-    const toggleLegendButton = document.getElementById('toggleLegendButton');
-    if (toggleLegendButton) {
-        toggleLegendButton.addEventListener('click', function() {
-            var legend = document.getElementById('legendInfoBox');
-            if (legend.style.display === 'none') {
-                legend.style.display = 'block';
-                this.innerHTML = '<i class="fas fa-eye"></i>'; // Show eye icon
+// In static/js/network_ui.js
+document.addEventListener('DOMContentLoaded', function () {
+    const updateButton = document.getElementById('updateGraphButton'); // ID from network.html
+    const analysisForm = document.getElementById('updateForm'); // ID from network.html
+
+    if (analysisForm) {
+        analysisForm.addEventListener('submit', function(event) {
+            showLoadingOverlayWithProgress();
+            addProgressMessage('Enviando nova solicitação de análise do gráfico...', 'info');
+            // Polling will be started on page load if taskId is present
+        });
+    }
+
+    // On page load, check for a task ID
+    // This would be set by the server if a graph update is already in progress
+    // when the network page is loaded/reloaded.
+    if (typeof window.networkAnalysisTaskId !== 'undefined' && window.networkAnalysisTaskId) {
+        showLoadingOverlayWithProgress();
+        addProgressMessage('Atualização de gráfico anterior detectada. Buscando progresso...', 'info');
+        startPollingProgress(window.networkAnalysisTaskId);
+    }
+
+    // Existing UI logic for sidebar, legend, char counter (keep as is)
+
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('visible');
+            // Change icon based on sidebar visibility
+            const icon = sidebarToggle.querySelector('i');
+            if (sidebar.classList.contains('visible')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                legend.style.display = 'none';
-                this.innerHTML = '<i class="fas fa-eye-slash"></i>'; // Show eye-slash icon
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    const legendInfoBox = document.getElementById('legendInfoBox');
+    const toggleLegendButton = document.getElementById('toggleLegendButton');
+
+    if (toggleLegendButton && legendInfoBox) {
+        toggleLegendButton.addEventListener('click', () => {
+            const isHidden = legendInfoBox.style.display === 'none';
+            legendInfoBox.style.display = isHidden ? '' : 'none';
+            const icon = toggleLegendButton.querySelector('i');
+            if (isHidden) {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
             }
         });
         // Initialize legend state - start hidden, button shows eye-slash
-        var legend = document.getElementById('legendInfoBox');
-        if(legend){
-            legend.style.display = 'none';
-            toggleLegendButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
-        }
+        // This initialization was in the original file and seems reasonable.
+        legendInfoBox.style.display = 'none';
+        toggleLegendButton.querySelector('i').classList.remove('fa-eye');
+        toggleLegendButton.querySelector('i').classList.add('fa-eye-slash');
     }
 
-    // Lógica para o contador de caracteres no textarea
-    const analysisTextarea = document.getElementById('analysisTextarea');
+    // Lógica para o contador de caracteres no textarea da página de network
+    const analysisTextareaNetwork = document.getElementById('analysisTextarea');
     const charCountNetwork = document.getElementById('charCountNetwork');
-    if (analysisTextarea && charCountNetwork) {
-        const maxLengthNetwork = analysisTextarea.getAttribute('maxlength');
+
+    if (analysisTextareaNetwork && charCountNetwork) {
+        const maxLengthNetwork = analysisTextareaNetwork.getAttribute('maxlength');
 
         function updateCharCountNetwork() {
-            const currentLength = analysisTextarea.value.length;
+            const currentLength = analysisTextareaNetwork.value.length;
             charCountNetwork.innerText = `${currentLength}/${maxLengthNetwork} caracteres`;
         }
 
-        analysisTextarea.addEventListener('input', updateCharCountNetwork);
-        updateCharCountNetwork(); // Initial call to set the count
+        analysisTextareaNetwork.addEventListener('input', updateCharCountNetwork);
+        // Initialize counter
+        updateCharCountNetwork();
     }
-
-    // JavaScript para o botão de abrir/fechar a sidebar como overlay
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', function() {
-            var sidebar = document.getElementById('sidebar');
-            var icon = this.querySelector('i');
-
-            sidebar.classList.toggle('collapsed');
-            if (sidebar.classList.contains('collapsed')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
-        // Initialize sidebar state - starts visible (not collapsed), icon is fa-times
-        var sidebar = document.getElementById('sidebar');
-        var icon = sidebarToggle.querySelector('i');
-        if (sidebar && !sidebar.classList.contains('collapsed')) { // Should be visible by default
-             icon.classList.remove('fa-bars');
-             icon.classList.add('fa-times');
-        } else if (sidebar && sidebar.classList.contains('collapsed')) { // If somehow it starts collapsed
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    }
-
-    // Lógica para mostrar o overlay de carregamento
-    const updateForm = document.getElementById('updateForm');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    if (updateForm && loadingOverlay) {
-        updateForm.addEventListener('submit', function() {
-            loadingOverlay.classList.add('visible');
-        });
-    }
-
-    // Funções globais para controlar o overlay, pois network events são em outro arquivo
-    window.hideLoadingOverlay = function() {
-        if (loadingOverlay) {
-            loadingOverlay.classList.remove('visible');
-        }
-    }
-
-    window.showLoadingOverlay = function() {
-        if (loadingOverlay) {
-            loadingOverlay.classList.add('visible');
-        }
-    }
-
-    // Esconder o overlay se a página for carregada e a rede já estiver pronta (ex: via cache do navegador)
-    // Esta parte depende da 'network' object, será chamada de network_graph.js
-    // window.addEventListener('load', function() {
-    //     if (typeof network !== 'undefined' && network.getPositions && network.getPositions().length > 0) {
-    //         hideLoadingOverlay();
-    //     }
-    //     // initializeTimeline(); // This will be called from network_graph.js after stabilization
-    // });
 });

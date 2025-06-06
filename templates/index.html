@@ -20,6 +20,7 @@
             <span class="visually-hidden">Carregando...</span>
         </div>
         <p>Gerando Análise ... Isso vai levar alguns minutos. Não atualize a página.</p>
+    {% include 'progress_log.html' %}
     </div>
 
     <header class="jumbotron jumbotron-fluid text-center">
@@ -107,21 +108,40 @@
         // Lógica para o contador de caracteres no textarea
         const analysisTextareaIndex = document.querySelector('textarea[name="texto_entrada"]');
         const charCountIndex = document.getElementById('charCountIndex');
-        const maxLengthIndex = analysisTextareaIndex.getAttribute('maxlength');
+        if (analysisTextareaIndex && charCountIndex) { // Add null checks
+            const maxLengthIndex = analysisTextareaIndex.getAttribute('maxlength');
 
-        function updateCharCountIndex() {
-            const currentLength = analysisTextareaIndex.value.length;
-            charCountIndex.innerText = `${currentLength}/${maxLengthIndex} caracteres`;
+            function updateCharCountIndex() {
+                const currentLength = analysisTextareaIndex.value.length;
+                charCountIndex.innerText = `${currentLength}/${maxLengthIndex} caracteres`;
+            }
+            analysisTextareaIndex.addEventListener('input', updateCharCountIndex);
+            document.addEventListener('DOMContentLoaded', updateCharCountIndex);
         }
 
-        analysisTextareaIndex.addEventListener('input', updateCharCountIndex);
+        // Handle form submission to show overlay immediately
+        const mainForm = document.querySelector('form[action="/analise"]');
+        if (mainForm) {
+            mainForm.addEventListener('submit', function() {
+                showLoadingOverlayWithProgress(); // Show overlay and clear previous logs
+                addProgressMessage('Enviando sua solicitação ao servidor...', 'info');
+                // Polling will be started on page load if taskId is present
+            });
+        }
 
-        // Inicializa o contador ao carregar a página
-        document.addEventListener('DOMContentLoaded', updateCharCountIndex);
-
-        document.querySelector('form').addEventListener('submit', function() {
-            document.getElementById('loadingOverlay').classList.add('visible');
+        // On page load, check for a task ID provided by the server
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.analysisTaskId !== 'undefined' && window.analysisTaskId) {
+                showLoadingOverlayWithProgress(); // Ensure overlay is visible and logs cleared
+                addProgressMessage('Processamento anterior detectado. Buscando atualizações...', 'info');
+                startPollingProgress(window.analysisTaskId);
+            }
+            // Initialize char counter if not already done (it is above, but good practice for DOMContentLoaded)
+            if (analysisTextareaIndex && charCountIndex && typeof updateCharCountIndex === 'function') {
+                updateCharCountIndex();
+            }
         });
     </script>
+    <script src="{{ url_for('static', filename='js/progress_logger.js') }}"></script>
 </body>
 </html>
