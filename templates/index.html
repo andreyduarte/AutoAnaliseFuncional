@@ -23,40 +23,36 @@
     </div>
 
     <header class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-            <h1 class="display-4">Análise Funcional Automática</h1>
+            <h1 class="display-4 my-4">Análise de Redes Funcionais</h1>
             <p class="lead">Transforme textos narrativos em redes visuais de contingências comportamentais.</p>
-            
-            
-            <div id="network" class="flex-grow-1" style="height: 80vh;"></div>
+                        
+            <div id="network" style="height: 100vh;"></div>
             <p class="align-end">Esta é uma rede de contingências que demonstra o comportamento do usuário desse protótipo. Use (+) e (-) para o Zoom.</p>
 
-        </div>
     </header>
 
-    <div class="container mt-4">
-    
-        <div class="row">
-            <div class="col-md-6">
-                    <section id="nova-analise" class="mb-4">
-                    <h2 class="my-2">Nova Análise</h2>
-                    <form action="/analise" method="POST">
-                        <div class="mb-3">
-                            <textarea class="form-control mb-1" name="texto_entrada" rows="10" cols="80" placeholder="Insira aqui o texto que servirá de base para a análise funcional." maxlength="2000"></textarea>
+    <div class="d-flex align-items-center">
+        <div class="d-flex justify-content-center" style="padding-left: 10vh; padding-right: 10vh">
+            <div class="container col-md-5">
+                <section id="nova-analise" class="mb-4">
+                <h2 class="my-2">Nova Análise</h2>
+                <form action="/analise" method="POST">
+                    <div class="mb-3">
+                        <textarea class="form-control mb-1" name="texto_entrada" rows="10" cols="80" placeholder="Insira aqui o texto que servirá de base para a análise funcional." maxlength="2000"></textarea>
+                    </div>
+                    <div class="row ">
+                        <div class="col">
+                            <div id="charCountIndex" class="text-end text-muted">0/2000 caracteres</div>
                         </div>
-                        <div class="row ">
-                            <div class="col">
-                                <div id="charCountIndex" class="text-end text-muted">0/2000 caracteres</div>
-                            </div>
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">Analisar Texto</button>
-                            </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Analisar Texto</button>
                         </div>
-                    </form>
-                    </section>
-                </div>
-                <div class="col-md-6">
-                    <section id="ver-exemplos" class="mb-4">
+                    </div>
+                </form>
+                </section>
+            </div>
+            <div class="container col-md-5">
+                <section id="ver-exemplos" class="mb-4">
                     <h2 class="my-2">Exemplos de Análises</h2>
                     {% if examples and examples|length > 0 %}
                         <p>Os seguintes exemplos de análises foram gerados a partir de algumas Fábulas de Esopo.</p>
@@ -75,27 +71,16 @@
                             <i class="fas fa-info-circle"></i> Nenhum exemplo foi salvo para exibição aqui. ¯\_(ツ)_/¯
                         </p>
                     {% endif %}
-                    </section>
-                </div>
-            </div>
-        </section>
-
-        <div class="card mb-4">
-            <div class="card-header">
-              Sobre
-            </div>
-            <div class="card-body">
-                <p class="card-text"><strong>Andrey Alvarenga Duarte</strong><br>
-                <a href="mailto:andreyduarte.aad@gmail.com">andreyduarte.aad@gmail.com</a><br>
-                GitHub: <a href="https://github.com/andreyduarte/AutoAnaliseFuncional" target="_blank">AutoAnáliseFuncional</a></p>
+                </section>
             </div>
         </div>
     </div>
 
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container text-center">
-            <span class="text-muted">&copy; 2023 Análise Funcional Automática</span>
-        </div>
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        <p class="card-text"><strong>Andrey Alvarenga Duarte</strong><br>
+            <a href="mailto:andreyduarte.aad@gmail.com">andreyduarte.aad@gmail.com</a><br>
+            GitHub: <a href="https://github.com/andreyduarte/AutoAnaliseFuncional" target="_blank">AutoAnáliseFuncional</a></p>
+        <span >&copy; 2023 Análise Funcional Automática</span>
     </footer>
 
     <script type="text/javascript">
