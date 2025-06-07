@@ -5,6 +5,7 @@ import google.genai.types as genai_types
 import logging
 import json
 import time
+import config
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -29,7 +30,7 @@ def _make_api_call(
     )
 
     retries = 0
-    max_retries = 3
+    max_retries = config.MAX_TRIES
     success = False
     parsed_json = None
 
@@ -40,7 +41,7 @@ def _make_api_call(
         full_response_text = ""
         try:
             response = client.models.generate_content( # NÃO MODIFICAR / DO NOT MODIFY
-                model='gemini-2.5-flash-preview-05-20',#'gemini-2.0-flash-exp', # NÃO MODIFICAR / DO NOT MODIFY
+                model= config.MODEL,
                 contents=cast(List[genai_types.Content], contents), # type: ignore
                 config=generation_config,
             )
