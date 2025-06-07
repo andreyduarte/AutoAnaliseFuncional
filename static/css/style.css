@@ -427,7 +427,7 @@ textarea.form-control:focus {
     bottom: 20px; /* Same as info-box */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
-    width: 30%; /* Occupy 30% of screen width */
+    width: 40%; /* Occupy 30% of screen width */
     z-index: 11; /* Overlap mynetwork and info-box */
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
     padding: 15px 20px;
