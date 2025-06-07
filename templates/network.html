@@ -14,42 +14,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>  
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <i class="fas fa-project-diagram navbar-icon-style"></i><a class="navbar-brand" href="/">Análise de Rede Comportamental</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <!--<a class="nav-link" href="/"><i class="fas fa-file-alt"></i> Voltar ao Início</a> -->
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {% include 'navbar.html' %}
 
     <div class="main-content position-relative">
 
         <div id="mynetwork" class="flex-grow-1"></div>
-        <div id="timeline-slider">
+        <div id="timeline-slider" class ="semitrans">
             <i class="fas fa-stopwatch"></i>
             <input type="range" min="0" max="0" value="0" class="slider mx-4" id="timelineRange">
             <div id="timelineLabel" >0</div>
         </div>
 
         <!-- Sidebar como overlay -->
-        <div class="sidebar-overlay visible" id="sidebar">
+        <div class="sidebar-overlay visible semitrans" id="sidebar">
             <div class="sidebar-header">
-                <h3 class="text-end mb-3">Texto Analisado</h3>
+                <h3 class="text-center mb-3">Texto em Análise</h3>
                 <!-- O botão de fechar será o mesmo de abrir/fechar -->
             </div>
             <form action="/analise" method="post" class="d-flex flex-column flex-grow-1" id="updateForm">
-                <textarea id="analysisTextarea" name="texto_entrada" rows="15" class="form-control flex-grow-1 mb-1" maxlength="2000">{{ texto_original|e }}</textarea>
-                <div id="charCountNetwork" class="text-end text-muted mb-3">0/2000 caracteres</div>
-                <button type="submit" class="btn btn-success" id="updateGraphButton">
+                <textarea id="analysisTextarea" name="texto_entrada" rows="15" class="form-control flex-grow-1 mb-1 semitrans" maxlength="2000">{{ texto_original|e }}</textarea>
+                <div id="charCountNetwork" class="text-end text-muted my-1 mx-3 fs-6">0/2000 caracteres</div>
+                <button type="submit" class="btn btn-success semitrans" id="updateGraphButton">
                     <i class="fas fa-sync-alt"></i> Refazer Gráfico
                 </button>
             </form>
@@ -62,13 +48,10 @@
     </div>
 
     <div class="info-box">
-        <h3>Legenda da Rede <button id="toggleLegendButton" class="btn btn-sm btn-outline-secondary ms-2">
-            <i class="fas fa-eye-slash"></i>
-        </button></h3>
         <ul  id="legendInfoBox"  class="list-unstyled">
             <li><span class="legend-color-box legend-sujeito"></span><span class="fw-semibold">Sujeito</span></li>
-            <li><span class="legend-color-box legend-acao"></span><span class="fw-semibold">Ação/Comportamento</span></li>
-            <li><span class="legend-color-box legend-estimulo"></span><span class="fw-semibold">Estímulo/Evento</span></li>
+            <li><span class="legend-color-box legend-acao"></span><span class="fw-semibold">Ação</span></li>
+            <li><span class="legend-color-box legend-estimulo"></span><span class="fw-semibold">Estímulo</span></li>
             <li><span class="legend-color-box legend-hipotese"></span><span class="fw-semibold">Hipótese</span></li>
         </ul>
     </div>

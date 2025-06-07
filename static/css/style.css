@@ -63,10 +63,12 @@ textarea.form-control {
     padding: 12px 15px;
     margin-bottom: 20px;
     border: 1px solid #ced4da; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 2%; /* Rounded corners */
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-align: justify;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 textarea.form-control:focus {
@@ -74,6 +76,10 @@ textarea.form-control:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     outline: none;
 }
+
+.semitrans {
+    opacity: 0.80;
+  }
 
 /* Buttons */
 .btn {
@@ -129,9 +135,17 @@ textarea.form-control:focus {
 
 /* Navbar */
 .navbar {
+    position: absolute;
+    z-index:10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 32px;
     background-color: #343a40 !important; /* Darker, more solid navbar */
     padding: 0.2rem 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);    
+    display: flex;
+    flex-direction: row;
 }
 
 .navbar-brand {
@@ -223,10 +237,9 @@ textarea.form-control:focus {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.98); /* Slightly more opaque */
+    background-color: rgba(255, 255, 255, 0.0); /* Slightly more opaque */
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     z-index: 10;
     max-width: 300px;
     transition: all 0.3s ease;
@@ -329,10 +342,10 @@ textarea.form-control:focus {
 /* Sidebar Overlay Styles */
 .sidebar-overlay {
     position: absolute;
-    top: 20px; /* Same as info-box and timeline-slider */
+    top: 50px; /* Same as info-box and timeline-slider */
     left: 20px; /* Same as info-box */
-    background-color: rgba(255, 255, 255, 0.98);
-    padding: 20px; /* Same as info-box */
+    background-color: rgba(255, 255, 255, 0.75);
+    padding-top: 20px; /* Same as info-box */
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     z-index: 10;
@@ -373,13 +386,15 @@ textarea.form-control:focus {
 
 .sidebar-overlay .btn-success {
     width: 100%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
 }
 
 /* Adjust toggle button for overlay */
 .toggle-sidebar-btn {
     position: absolute;
-    top: 20px;
-    left: 20px; /* Positioned at the top-left, similar to info-box */
+    top: 55px;
+    left: 25px; /* Positioned at the top-left, similar to info-box */
     z-index: 100;
     background-color: #007bff;
     color: white;
@@ -389,7 +404,6 @@ textarea.form-control:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border: none;
     transition: all 0.3s ease;
 }
@@ -402,7 +416,7 @@ textarea.form-control:focus {
 /* Main content adjustments for overlay */
 .main-content {
     display: flex;
-    height: calc(100vh - 68px); /* Adjust for navbar height */
+    height: 100vh;
     width: 100vw;
     position: relative;
 }
