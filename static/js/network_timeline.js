@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         timelineRange.addEventListener('input', function() {
             var sliderValue = parseInt(this.value);
             // timelineLabel.innerText shows the number of visible nodes (index + 1)
-            timelineLabel.innerText = (window.timelineData && window.timelineData.length > 0) ? (sliderValue + 1).toString() : '0';
+            timelineLabel.innerText = (window.timelineData && window.timelineData.length > 0) ? (sliderValue + 1).toString().padStart(2, '0') : '0';
             updateNodeVisibility(sliderValue);
         });
     }

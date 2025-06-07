@@ -62,23 +62,31 @@ textarea.form-control {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 20px;
-    border: 1px solid #ced4da; /* Light gray border */
+    border: none; /* Light gray border */
     border-radius: 2%; /* Rounded corners */
     box-sizing: border-box;
     font-size: 0.9rem;
     text-align: justify;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     background-color: rgba(255, 255, 255, 0.08);
+    overflow: overlay;
+}
+
+textarea.form-control::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
 }
 
 textarea.form-control:focus {
-    border-color: #80bdff; /* Bootstrap primary focus color */
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     outline: none;
 }
 
 .semitrans {
-    opacity: 0.80;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 10px rgba(52, 58, 64, 0.15);
+
   }
 
 /* Buttons */
@@ -93,7 +101,7 @@ textarea.form-control:focus {
 }
 
 .btn-primary {
-    background-color: #007bff; /* Bootstrap primary blue */
+    background-color: #0056b3; /* Bootstrap primary blue */
     color: white;
 }
 
@@ -104,14 +112,15 @@ textarea.form-control:focus {
 }
 
 .btn-success {
-    background-color: #28a745; /* Bootstrap success green */
-    color: white;
+    color: black;
+    background-color: transparent;
+    box-shadow: 0 4px 10px #343a4056;
 }
 
 .btn-success:hover {
-    background-color: #218838; /* Darker green on hover */
     transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+    background-color: #212529 !important; /* Bootstrap success green */
+    color: white;
 }
 
 .btn-outline-secondary {
@@ -374,7 +383,6 @@ textarea.form-control:focus {
 .sidebar-overlay h3 {
     margin-top: 0;
     margin-bottom: 0; /* Reset margin for h3 inside header */
-    color: #007bff;
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -396,7 +404,7 @@ textarea.form-control:focus {
     top: 55px;
     left: 25px; /* Positioned at the top-left, similar to info-box */
     z-index: 100;
-    background-color: #007bff;
+    background-color: #343a40; /* Dark gray text for readability */
     color: white;
     border-radius: 50%;
     width: 40px; /* Slightly larger button */
@@ -409,8 +417,8 @@ textarea.form-control:focus {
 }
 
 .toggle-sidebar-btn:hover {
-    background-color: #0056b3;
     transform: scale(1.05);
+    background-color: #343a40; /* Dark gray text for readability */
 }
 
 /* Main content adjustments for overlay */
@@ -430,6 +438,7 @@ textarea.form-control:focus {
     width: 40%; /* Occupy 30% of screen width */
     z-index: 11; /* Overlap mynetwork and info-box */
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    color: 343a40;
     padding: 15px 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -441,10 +450,10 @@ textarea.form-control:focus {
 #timeline-slider .slider {
     -webkit-appearance: none; /* Override default look */
     width: 100%; /* Full width of its container */
-    height: 8px; /* Slider height */
-    background: #d3d3d3; /* Grey background */
+    height: 1rem; /* Slider height */
+    background: #343a40cb; /* Grey background */
     outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
     border-radius: 5px;
