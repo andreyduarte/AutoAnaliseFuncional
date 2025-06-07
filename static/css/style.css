@@ -511,3 +511,39 @@ textarea.form-control:focus {
 }
 
 /* Old style attribute selectors for legend have been removed. */
+
+/* Styles for the new node info box */
+.node-info-box {
+    position: absolute;
+    top: 50px; /* Ajuste conforme necessário para espaçamento do topo */
+    right: 10px; /* Ajuste conforme necessário para espaçamento da direita */
+    width: 300px; /* Largura da caixa de informação */
+    max-height: 60vh;
+    overflow-y:auto;
+    background-color: var(--bs-body-bg); /* Usar cor de fundo do tema */
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem; /* Bootstrap default border-radius */
+    padding: 15px;
+    z-index: 10; /* Para garantir que fique acima da rede */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Sombra similar ao Bootstrap */
+    display: none; /* Inicialmente oculta */
+    flex-direction: column;
+}
+
+.node-info-box.visible {
+    display: flex; /* Torna visível quando a classe 'visible' é adicionada */
+}
+
+.node-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.node-info-content p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}

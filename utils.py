@@ -79,7 +79,11 @@ def transformar_para_vis(json_data: dict):
                 "id": node_id,
                 "label": s.get("descricao", "Sujeito Desconhecido"),
                 "group": "sujeito",
-                "title": f"ID: {node_id}\nHistórico Relevante: {s.get('historico_relevante', 'N/A')}\nRaciocínio: {s.get('raciocinio', 'N/A')}",
+                "info": {
+                    "ID": node_id,
+                    "Histórico Relevante": s.get('historico_relevante', 'N/A'),
+                    "Raciocínio": s.get('raciocinio', 'N/A')
+                },
                 "color": colors['sujeito']
             })
             node_ids.add(node_id)
@@ -92,7 +96,12 @@ def transformar_para_vis(json_data: dict):
                 "id": node_id,
                 "label": ac.get("descricao", "Ação Desconhecida"),
                 "group": "acao",
-                "title": f"ID: {node_id}\nTipo Observabilidade: {ac.get('tipo_observabilidade', 'N/A')}\nClasse Funcional Hipotética: {', '.join(ac.get('classe_funcional_hipotetica', []))}\nRaciocínio: {ac.get('raciocinio', 'N/A')}",
+                "info": {
+                    "ID": node_id,
+                    "Tipo Observabilidade": ac.get('tipo_observabilidade', 'N/A'),
+                    "Classe Funcional Hipotética": ', '.join(ac.get('classe_funcional_hipotetica', ['N/A'])),
+                    "Raciocínio": ac.get('raciocinio', 'N/A')
+                },
                 "color": colors['acao'],
                 "shape": "box"
             })
@@ -106,7 +115,10 @@ def transformar_para_vis(json_data: dict):
                 "id": node_id,
                 "label": e.get("descricao", "Estímulo Desconhecido"),
                 "group": "estimulo",
-                "title": f"ID: {node_id}\nTipo Estímulo: {e.get('tipo_estimulo_evento_fisico', 'N/A')}\nModalidade Sensorial: {e.get('tipo_modalidade_sensorial', 'N/A')}\nRaciocínio: {e.get('raciocinio', 'N/A')}",
+                "info": {
+                    "ID": node_id,
+                    "Raciocínio": e.get('raciocinio', 'N/A')
+                },
                 "color": colors['estimulo'],
                 "shape": "ellipse"
             })
@@ -120,7 +132,12 @@ def transformar_para_vis(json_data: dict):
                 "id": node_id,
                 "label": ce.get("descricao", "Condição Desconhecida"),
                 "group": "condicao",
-                "title": f"ID: {node_id}\nTipo Condição: {ce.get('tipo_condicao', 'N/A')}\nDuração: {ce.get('duracao_condicao_desc', 'N/A')}\nRaciocínio: {ce.get('raciocinio', 'N/A')}",
+                "info": {
+                    "ID": node_id,
+                    "Tipo Condição": ce.get('tipo_condicao', 'N/A'),
+                    "Duração": ce.get('duracao_condicao_desc', 'N/A'),
+                    "Raciocínio": ce.get('raciocinio', 'N/A')
+                },
                 "color": colors['condicao'],
                 "shape": "diamond"
             })
@@ -134,7 +151,12 @@ def transformar_para_vis(json_data: dict):
                 "id": node_id,
                 "label": h.get("descricao", "Hipótese Desconhecida"),
                 "group": "hipotese",
-                "title": f"ID: {node_id}\nDescrição: {h.get('descricao', 'N/A')}\nConfiança: {h.get('nivel_confianca', 'N/A')}\nRaciocínio: {h.get('raciocinio', 'N/A')}",
+                "info": {
+                    "ID": node_id,
+                    "Descrição": h.get('descricao', 'N/A'),
+                    "Confiança": h.get('nivel_confianca', 'N/A'),
+                    "Raciocínio": h.get('raciocinio', 'N/A')
+                },
                 "color": '#a753f5', # Purple
                 "shape": "box"
             })
@@ -180,7 +202,11 @@ def transformar_para_vis(json_data: dict):
             "id_origem_no": em.get("id_origem_no"),
             "id_destino_no": em.get("id_destino_no"),
             "label": "Emite",
-            "title": f"ID Aresta: {em.get('id', f'em_edge_{em_idx}').replace('_', ' ').title()}\nTipo: {em.get('tipo_aresta', 'N/A')}\nRaciocínio: {em.get('raciocinio', 'N/A')}",
+            "info": {
+                "ID Aresta": em.get('id', f'em_edge_{em_idx}').replace('_', ' ').title(),
+                "Tipo": em.get('tipo_aresta', 'N/A'),
+                "Raciocínio": em.get('raciocinio', 'N/A')
+            },
         }, "emissao")
 
     # Processar Relações Temporais
@@ -196,7 +222,12 @@ def transformar_para_vis(json_data: dict):
             "id_destino_no": rt.get("id_destino_no"),
             "label": temporal_label,
             "dashes": True,
-            "title": f"ID Aresta: {rt.get('id', f'rt_edge_{rt_idx}').replace('_', ' ').title()}\nTipo: {rt.get('tipo_aresta', 'N/A')}\nContiguidade Percebida: {rt.get('contiguidade_percebida', 'N/A')}\nRaciocínio: {rt.get('raciocinio', 'N/A')}",
+            "info": {
+                "ID Aresta": rt.get('id', f'rt_edge_{rt_idx}').replace('_', ' ').title(),
+                "Tipo": rt.get('tipo_aresta', 'N/A'),
+                "Contiguidade Percebida": rt.get('contiguidade_percebida', 'N/A'),
+                "Raciocínio": rt.get('raciocinio', 'N/A')
+            },
             "color": {"color": "#50C878", "highlight": "#3AA05A", "hover": "#3AA05A"}
         }, "temporal")
 
@@ -207,7 +238,13 @@ def transformar_para_vis(json_data: dict):
             "id_origem_no": rfa.get("id_origem_no"),
             "id_destino_no": rfa.get("id_destino_no"),
             "label": f"Antecedente: {rfa.get('funcao_antecedente', 'N/A')}",
-            "title": f"ID Aresta: {rfa.get('id', f'rfa_edge_{rfa_idx}').replace('_', ' ').title()}\nFunção: {rfa.get('funcao_antecedente', 'N/A')}\nProb. Resposta na Presença: {rfa.get('prob_resposta_na_presenca', 'N/A')}\nProb. Resposta na Ausência: {rfa.get('prob_resposta_na_ausencia', 'N/A')}\nRaciocínio: {rfa.get('raciocinio', 'N/A')}",
+            "info": {
+                "ID Aresta": rfa.get('id', f'rfa_edge_{rfa_idx}').replace('_', ' ').title(),
+                "Função": rfa.get('funcao_antecedente', 'N/A'),
+                "Prob. Resposta na Presença": rfa.get('prob_resposta_na_presenca', 'N/A'),
+                "Prob. Resposta na Ausência": rfa.get('prob_resposta_na_ausencia', 'N/A'),
+                "Raciocínio": rfa.get('raciocinio', 'N/A')
+            },
             "color": {"color": "#4682B4", "highlight": "#3671A2", "hover": "#3671A2"}
         }, "antecedente")
 
@@ -218,7 +255,14 @@ def transformar_para_vis(json_data: dict):
             "id_origem_no": rfc.get("id_origem_no"),
             "id_destino_no": rfc.get("id_destino_no"),
             "label": f"Consequente: {rfc.get('funcao_consequente', 'N/A')}",
-            "title": f"ID Aresta: {rfc.get('id', f'rfc_edge_{rfc_idx}').replace('_', ' ').title()}\nFunção: {rfc.get('funcao_consequente', 'N/A')}\nImediatismo: {rfc.get('imediatismo_consequencia', 'N/A')}\nMagnitude: {rfc.get('magnitude_consequencia', 'N/A')}\nParâmetro Esquema: {rfc.get('parametro_esquema', 'N/A')}\nRaciocínio: {rfc.get('raciocinio', 'N/A')}",
+            "info": {
+                "ID Aresta": rfc.get('id', f'rfc_edge_{rfc_idx}').replace('_', ' ').title(),
+                "Função": rfc.get('funcao_consequente', 'N/A'),
+                "Imediatismo": rfc.get('imediatismo_consequencia', 'N/A'),
+                "Magnitude": rfc.get('magnitude_consequencia', 'N/A'),
+                "Parâmetro Esquema": rfc.get('parametro_esquema', 'N/A'),
+                "Raciocínio": rfc.get('raciocinio', 'N/A')
+            },
             "color": {"color": "#FF6347", "highlight": "#E05135", "hover": "#E05135"}
         }, "consequente")
 
@@ -229,7 +273,15 @@ def transformar_para_vis(json_data: dict):
             "id_origem_no": rms.get("id_origem_no"),
             "id_destino_no": rms.get("id_destino_no"),
             "label": f"Modula: {rms.get('tipo_modulacao_estado', 'N/A')}",
-            "title": f"ID Aresta: {rms.get('id', f'rms_edge_{rms_idx}').replace('_', ' ').title()}\nTipo Modulação: {rms.get('tipo_modulacao_estado', 'N/A')}\nAlvo Modulação Valor: {rms.get('alvo_da_modulacao_valor_ref_id_estimulo', 'N/A')}\nEfeito Modulatório Valor: {rms.get('descricao_efeito_modulatorio_valor', 'N/A')}\nAlvo Modulação Frequência: {rms.get('alvo_da_modulacao_frequencia_ref_id_acao', 'N/A')}\nEfeito Modulatório Frequência: {rms.get('descricao_efeito_modulatorio_frequencia', 'N/A')}\nRaciocínio: {rms.get('raciocinio', 'N/A')}",
+            "info": {
+                "ID Aresta": rms.get('id', f'rms_edge_{rms_idx}').replace('_', ' ').title(),
+                "Tipo Modulação": rms.get('tipo_modulacao_estado', 'N/A'),
+                "Alvo Modulação Valor": rms.get('alvo_da_modulacao_valor_ref_id_estimulo', 'N/A'),
+                "Efeito Modulatório Valor": rms.get('descricao_efeito_modulatorio_valor', 'N/A'),
+                "Alvo Modulação Frequência": rms.get('alvo_da_modulacao_frequencia_ref_id_acao', 'N/A'),
+                "Efeito Modulatório Frequência": rms.get('descricao_efeito_modulatorio_frequencia', 'N/A'),
+                "Raciocínio": rms.get('raciocinio', 'N/A')
+            },
             "color": {"color": "#8A2BE2", "highlight": "#6A1AC2", "hover": "#6A1AC2"} # BlueViolet
         }, "moduladora_estado")
 
@@ -240,7 +292,12 @@ def transformar_para_vis(json_data: dict):
             "id_origem_no": eph.get("id_origem_no"),
             "id_destino_no": eph.get("id_destino_no"),
             "label": eph.get("tipo_evidencia", "Evidência"),
-            "title": f"ID Aresta: {eph.get('id', f'eph_edge_{eph_idx}').replace('_', ' ').title()}\nTipo: {eph.get('tipo_evidencia', 'N/A')}\nElementos Suporte: {', '.join(eph.get('ids_elementos_contingencia_suporte', []))}\nRaciocínio: {eph.get('raciocinio', 'N/A')}",
+            "info": {
+                "ID Aresta": eph.get('id', f'eph_edge_{eph_idx}').replace('_', ' ').title(),
+                "Tipo": eph.get('tipo_evidencia', 'N/A'),
+                "Elementos Suporte": ', '.join(eph.get('ids_elementos_contingencia_suporte', [])),
+                "Raciocínio": eph.get('raciocinio', 'N/A')
+            },
             "color": {"color": "#8B4513", "highlight": "#6F360F", "hover": "#6F360F"} # SaddleBrown
         }, "evidencia_hipotese")
     

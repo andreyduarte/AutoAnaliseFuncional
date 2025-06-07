@@ -46,6 +46,18 @@
         <button class="btn btn-primary btn-sm toggle-sidebar-btn" id="sidebarToggle">
             <i class="fas fa-times"></i> <!-- Inicia com ícone de fechar, pois a sidebar começa aberta -->
         </button>
+
+        <!-- Novo elemento para exibir informações do nó selecionado -->
+        <div id="nodeInfoBox" class="node-info-box semitrans">
+            <div class="node-info-content">
+                <!-- Conteúdo do nó será carregado aqui pelo JavaScript -->
+                <p><strong>Tipo:</strong> <span id="nodeType"></span></p>
+                <!-- Adicionar outros campos conforme necessário -->
+                <div class="node-info-extra">
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="info-box">

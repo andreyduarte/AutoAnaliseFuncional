@@ -120,6 +120,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.network = new vis.Network(container, data, options);
 
+    // Handle node selection
+    window.network.on("selectNode", function (params) {
+        if (params.nodes.length > 0) {
+
+            // Limpa a caixa atualmente
+            document.getElementsByClassName('node-info-extra')[0].innerHTML = '';
+
+            const nodeId = params.nodes[0];
+            const node = window.nodes.get(nodeId); // Use window.nodes to access the DataSet
+
+            node_analysis = window.nodesData.find(n => n.id === nodeId);
+            
+            // Preencher a caixa de informação com os dados do nó
+            document.getElementById('nodeType').innerText = node_analysis['group']
+
+            for (var key in node_analysis['info']) {
+                const value = node_analysis['info'][key];
+                if (key == 'ID' || value == node.label) continue;
+
+                document.getElementsByClassName('node-info-extra')[0].innerHTML +=
+                    `<p><strong>${key}:</strong> <span>${value}</span></p>`
+                ;
+            }
+    
+            // Tornar a caixa de informação visível
+            document.getElementById('nodeInfoBox').classList.add('visible');
+        }
+    });
+
+    // Handle node deselection
+    window.network.on("deselectNode", function (params) {
+        // Ocultar a caixa de informação quando nenhum nó estiver selecionado
+        document.getElementById('nodeInfoBox').classList.remove('visible');
+    });
+
     // Esconder o overlay quando a rede estiver estabilizada
     window.network.on("stabilizationIterationsDone", function () {
         if (window.network && typeof window.network.fit === 'function') {
