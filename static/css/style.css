@@ -84,7 +84,7 @@ textarea.form-control:focus {
 
 .semitrans {
     background-color: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(52, 58, 64, 0.15);
 
   }
