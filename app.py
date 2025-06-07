@@ -82,17 +82,10 @@ def analise_route(): # Renamed to avoid conflict with imported 'analisar'
         # For now, redirect to index
         return redirect(url_for('index'))
 
-
 @app.route('/explanation')
 def explanation_page():
     """Renders the explanation page."""
     return render_template('explanation.html')
-
-# @app.route('/download')
-# def download():
-#     # Faz o download do arquivo output.json
-#     output_file = os.path.join('static', 'json', 'output.json')
-#     return render_template('download.html', output_file=output_file)
 
 @app.route('/analysis/download/<string:analysis_uuid>')
 def download_analysis_route(analysis_uuid):
@@ -101,7 +94,7 @@ def download_analysis_route(analysis_uuid):
     if not analysis_record:
         app.logger.warn(f"Download request for non-existent analysis UUID {analysis_uuid}")
         # Or return a 404 error page
-        return redirect(url_for('index'))
+        return '404 Not Found'
 
     analysis_data_json_string = analysis_record['analysis_data']
     analysis_name = analysis_record['name']
@@ -113,7 +106,6 @@ def download_analysis_route(analysis_uuid):
 
     # Ensure it's not too long
     safe_filename = safe_filename[:100] if len(safe_filename) > 100 else safe_filename
-
 
     return Response(
         analysis_data_json_string,

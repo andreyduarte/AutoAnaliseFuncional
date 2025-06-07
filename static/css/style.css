@@ -142,7 +142,7 @@ textarea.form-control:focus {
     width: 100%;
     height: 32px;
     background-color: #343a40 !important; /* Darker, more solid navbar */
-    padding: 0.2rem 1rem;
+    padding-top: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);    
     display: flex;
     flex-direction: row;
@@ -151,12 +151,13 @@ textarea.form-control:focus {
 .navbar-brand {
     font-weight: 700;
     font-size: 1.1rem;
+    padding-bottom: 1rem;
     color: #ffffff !important;
 }
 
 .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.7) !important;
-    padding: 0.5rem 1rem;
+    padding: 0px;
     transition: color 0.2s ease-in-out;
 }
 
@@ -167,8 +168,6 @@ textarea.form-control:focus {
 
 .navbar-nav .nav-link.active {
     font-weight: 600;
-    border-bottom: 2px solid #007bff; /* Highlight active link */
-    padding-bottom: 0.3rem;
 }
 
 /* Alerts */
@@ -238,7 +237,8 @@ textarea.form-control:focus {
     bottom: 20px;
     right: 20px;
     background-color: rgba(255, 255, 255, 0.0); /* Slightly more opaque */
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 12px;
     z-index: 10;
     max-width: 300px;
@@ -349,9 +349,9 @@ textarea.form-control:focus {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     z-index: 10;
-    max-width: 350px; /* Adjust as needed */
+    max-width: 325px; /* Adjust as needed */
     width: 100%;
-    height: calc(100vh - 100px); /* Adjust height to fit within viewport, considering top/bottom padding */
+    height: calc(100vh - 70px); /* Adjust height to fit within viewport, considering top/bottom padding */
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;

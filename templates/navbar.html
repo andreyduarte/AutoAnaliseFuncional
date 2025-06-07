@@ -1,16 +1,56 @@
 <nav class="navbar navbar-expand-lg navbar-dark semitrans">
     <div class="container-fluid">
-        <i class="fas fa-project-diagram navbar-icon-style"></i><a class="navbar-brand" href="/">Análise de Rede Comportamental</a>
+        <a class="navbar-brand" href="/"><i class="fas fa-project-diagram navbar-icon-style"></i> Análise de Rede Comportamental</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="/analysis/download/{{analysis_uuid}}">
+                        <i class="fa-solid fa-file-arrow-down"></i> Download
+                    </a>
+                </li>-->
                 <li class="nav-item">
-                    <!--<a class="nav-link" href="/"><i class="fas fa-file-alt"></i> Voltar ao Início</a> -->
+                    <a class="nav-link" href="#" onclick="copyAnalysisLink(event, '{{analysis_uuid}}'); return false;">
+                        <i class="fa-solid fa-share-nodes"></i> Compartilhar
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<!-- Bootstrap Toast Container and Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="shareToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Notificação</strong>
+      <small>Agora</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Link da análise copiado para a área de transferência!
+    </div>
+  </div>
+</div>
+
+<script>
+function copyAnalysisLink(event, analysisUuid) {
+    event.preventDefault(); // Prevent default link behavior
+    const linkToCopy = `${window.location.origin}/analysis/view/${analysisUuid}`;
+
+    navigator.clipboard.writeText(linkToCopy).then(() => {
+        // Show Bootstrap toast
+        const toastElement = document.getElementById('shareToast');
+        if (toastElement) {
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        }
+    }).catch(err => {
+        console.error('Failed to copy link: ', err);
+        // Optionally, show an error toast
+    });
+}
+</script>
